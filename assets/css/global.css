@@ -1,0 +1,216 @@
+html, body {
+  margin: 0;
+  height: 100%; }
+
+@keyframes rotate{
+  100% { transform: rotate(360deg);}
+}
+@-webkit-keyframes rotate{
+  100% { -webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes rotate{
+  100% { -moz-transform: rotate(360deg);}
+}
+
+/* Loading Page while JS, CSS etc. load */
+.loading{
+  height: 100%;
+  width: 100%;
+  background: #2e4b97;
+  color: white;
+}
+  .fa-cog{
+    top: 50%;
+    left: 48%;
+    font-size: 60px;
+    display: block;
+    position: absolute;
+    color: white;
+    animation: rotate 2s ease 0s infinite alternate;
+    -webkit-animation: rotate 2s ease 0s infinite alternate;
+    -moz-animation: rotate 2s ease 0s infinite alternate;
+  }
+
+/* Main Container, Navbar blocks*/
+.container {
+  margin: 30px auto;
+  max-width: 1280px;
+  width: 90%;
+  position: relative;
+  height: auto;
+  padding: 0px;
+  border: #2e4b97 solid 2px;
+}
+
+.nav-items{
+  display: block;
+  float: center;
+  background: white;
+  text-align: center;
+  position: relative;
+  font-size: 1em;
+  box-shadow: 0 0 5px #2e4b97;
+  -webkit-box-shadow: 0 0 5px #2e4b97;
+  -moz-box-shadow: 0 0 5px #2e4b97;
+}
+  .nav-items div{
+    color: #ababab;
+    background-color: white;
+    display: inline-block;
+    padding: 10px 10px;
+    font-weight: lighter;
+  }
+  .nav-item{
+    color: #2e4b97;
+    background: none;
+    display: inline-block;
+  }
+  .nav-item:hover{
+    background-color: #2e4b97;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+  }
+  
+/* Content block and styles */
+.content{
+  position: relative;
+  color: #ababab;
+  font-weight: lighter;
+  font-size: 0.9em;
+  text-align: center;
+  display: inline-block;
+  overflow: scroll;
+  height: auto;
+  width: 100%;
+ }
+   .content h1{
+    color: #2e4b97;
+    text-transform: uppercase;
+    padding: 10px;
+   }
+   .content h3{
+    margin: auto;
+   }
+   .content p{
+    margin: 50px 10%;
+    color: #111111;
+    font-size: 1em;
+    display: block;
+    text-align: justify;
+    padding: 2%;
+   }
+   .content a{
+      text-decoration: none;
+      color: #972e2e;
+      font-weight: 600;
+    }
+   p.left{
+    box-shadow: 0 0 5px #2e4b97;
+    -webkit-box-shadow: 0 0 5px #2e4b97;
+    -moz-box-shadow: 0 0 5px #2e4b97;
+    text-align: left;
+    margin: 25px 3%;
+    display: inline-block;
+    float: left;
+    width: 40%;
+    font-size: 0.8em;
+    color: #586FAC;
+   }
+   p.right{
+    box-shadow: 0 0 5px #2e4b97;
+    -webkit-box-shadow: 0 0 5px #2e4b97;
+    -moz-box-shadow: 0 0 5px #2e4b97;
+    text-align: right;
+    margin: 25px 3%;
+    display: inline-block;
+    float: right;
+    width: 40%;
+    font-size: 0.8em;
+    color: #586FAC;
+   }
+   p.center{
+    text-align: justify;
+    padding-right: 3%;
+    padding-left: 3%;
+   }
+   .highlight{
+    background: #972e2e;
+    color: white;
+    padding: 0.17em;
+    font-weight: bold;
+    font-size: 1em;
+   }
+   .small-header{
+    text-transform: uppercase;
+    color: #2e4b97;
+   }
+
+/* Code blocks */
+pre{
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.7em;
+}
+
+/* Image syles */
+img.full-img{
+  display: block;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+  .img-caption{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    font-weight: 300;
+    float: right;
+    font-size: 0.6em;
+    color: white;
+    background: #2e4b97;
+    padding: 2px;
+    margin-top: 0;
+  }
+
+/* Footer */
+.footer{
+  font-size: 10px;
+  padding: 2px;
+  border-top: #2e4b97 solid 2px;
+}
+  .footer p{
+    padding: 0;
+    text-align: center;
+  }
+
+/* Media Query for tablets and small desktops */
+@media screen and (max-width: 1075px) {
+  .container{
+    margin : 0px 0px 0px 0px; 
+    width : 100%;
+    border : none;
+  }
+}
+/* Media Query for phones/phablets */
+@media screen and (max-width: 860px){
+  .content p{
+    margin: 15px;
+  }
+  p.left {
+    width: 90%;
+    margin: 2%;
+    float: center;
+  }
+  p.right {
+    width: 90%;
+    margin: 2%;
+    float: center;
+  }
+}
