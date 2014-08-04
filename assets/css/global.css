@@ -1,38 +1,5 @@
+/* Body, Navbar blocks*/
 html, body {
-  margin: 0;
-  height: 100%; }
-
-@keyframes rotate{
-  100% { transform: rotate(360deg);}
-}
-@-webkit-keyframes rotate{
-  100% { -webkit-transform: rotate(360deg);}
-}
-@-moz-keyframes rotate{
-  100% { -moz-transform: rotate(360deg);}
-}
-
-/* Loading Page while JS, CSS etc. load */
-.loading{
-  height: 100%;
-  width: 100%;
-  background: #2e4b97;
-  color: white;
-}
-  .fa-cog{
-    top: 50%;
-    left: 48%;
-    font-size: 60px;
-    display: block;
-    position: absolute;
-    color: white;
-    animation: rotate 2s ease 0s infinite alternate;
-    -webkit-animation: rotate 2s ease 0s infinite alternate;
-    -moz-animation: rotate 2s ease 0s infinite alternate;
-  }
-
-/* Main Container, Navbar blocks*/
-.container {
   margin: 30px auto;
   max-width: 1280px;
   width: 90%;
@@ -40,6 +7,11 @@ html, body {
   height: auto;
   padding: 0px;
   border: #2e4b97 solid 2px;
+  background: white;
+}
+
+.hidden{
+  display: none;
 }
 
 .nav-items{
@@ -77,27 +49,19 @@ html, body {
     transition: color 0.3s ease-in-out;
   }
   
-/* Content block and styles */
-.content{
-  position: relative;
-  color: #ababab;
-  font-weight: lighter;
-  font-size: 0.9em;
-  text-align: center;
-  display: inline-block;
-  overflow: scroll;
-  height: auto;
-  width: 100%;
- }
-   .content h1{
+/* Content styles */
+
+   h1{
     color: #2e4b97;
     text-transform: uppercase;
-    padding: 10px;
+    text-align: center;
    }
-   .content h3{
+   h2{
     margin: auto;
+    text-align: center;
+    color: #972e2e;
    }
-   .content p{
+   p{
     margin: 50px 10%;
     color: #111111;
     font-size: 1em;
@@ -105,50 +69,21 @@ html, body {
     text-align: justify;
     padding: 2%;
    }
-   .content a{
+   a{
       text-decoration: none;
       color: #972e2e;
       font-weight: 600;
     }
-   p.left{
-    box-shadow: 0 0 5px #2e4b97;
-    -webkit-box-shadow: 0 0 5px #2e4b97;
-    -moz-box-shadow: 0 0 5px #2e4b97;
-    text-align: left;
-    margin: 25px 3%;
-    display: inline-block;
-    float: left;
-    width: 40%;
-    font-size: 0.8em;
-    color: #586FAC;
-   }
-   p.right{
-    box-shadow: 0 0 5px #2e4b97;
-    -webkit-box-shadow: 0 0 5px #2e4b97;
-    -moz-box-shadow: 0 0 5px #2e4b97;
-    text-align: right;
-    margin: 25px 3%;
-    display: inline-block;
-    float: right;
-    width: 40%;
-    font-size: 0.8em;
-    color: #586FAC;
-   }
-   p.center{
-    text-align: justify;
-    padding-right: 3%;
-    padding-left: 3%;
-   }
-   .highlight{
+   em{
     background: #972e2e;
     color: white;
     padding: 0.17em;
     font-weight: bold;
     font-size: 1em;
+    text-decoration: none;
    }
-   .small-header{
-    text-transform: uppercase;
-    color: #2e4b97;
+   blockquote{
+    margin: 20px 10%;
    }
 
 /* Code blocks */
@@ -156,7 +91,13 @@ pre{
   text-align: left;
   font-weight: 300;
   font-size: 0.7em;
+  background: #2e4b97;
+  margin: 0;
 }
+  code{
+    background: none;
+    color: white;
+  }
 
 /* Image syles */
 img.full-img{
@@ -165,6 +106,7 @@ img.full-img{
   position: relative;
   display: inline-block;
   padding: 0;
+  margin: 0;
 }
   .img-caption{
     text-decoration: none;
@@ -188,11 +130,12 @@ img.full-img{
   .footer p{
     padding: 0;
     text-align: center;
+    margin: 5px;
   }
 
 /* Media Query for tablets and small desktops */
 @media screen and (max-width: 1075px) {
-  .container{
+  html, body{
     margin : 0px 0px 0px 0px; 
     width : 100%;
     border : none;
@@ -200,17 +143,10 @@ img.full-img{
 }
 /* Media Query for phones/phablets */
 @media screen and (max-width: 860px){
-  .content p{
+  p{
     margin: 15px;
   }
-  p.left {
-    width: 90%;
-    margin: 2%;
-    float: center;
-  }
-  p.right {
-    width: 90%;
-    margin: 2%;
-    float: center;
+  blockquote{
+    margin: 15px;
   }
 }
