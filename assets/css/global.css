@@ -61,18 +61,25 @@ html, body {
     text-align: center;
     color: #972e2e;
    }
+   h1,h2,h3,h4{
+    text-align: center;
+   }
    p{
-    margin: 50px 10%;
+    margin: 10px 10%;
     color: #111111;
     font-size: 1em;
     display: block;
     text-align: justify;
-    padding: 2%;
+    padding: 10px;
    }
    a{
       text-decoration: none;
       color: #972e2e;
       font-weight: 600;
+    }
+    a:hover {
+      text-decoration: none;
+      color: #972e2e;
     }
    em{
     background: #972e2e;
@@ -85,18 +92,28 @@ html, body {
    blockquote{
     margin: 20px 10%;
    }
+   ol, ul {
+    margin: 20px 12%;
+   }
+   img{
+    margin: auto;
+    display: inherit;
+   }
 
 /* Code blocks */
 pre{
   text-align: left;
   font-weight: 300;
-  font-size: 0.7em;
+  font-size: 0.8em;
   background: #2e4b97;
   margin: 0;
 }
   code{
-    background: none;
+    background: #2e4b97;
     color: white;
+    font-size: 0.8em;
+    padding: 0.1em;
+    font-weight: 300;
   }
 
 /* Image syles */
@@ -123,7 +140,7 @@ img.full-img{
 
 /* Footer */
 .footer{
-  font-size: 10px;
+  font-size: 0.5em;
   padding: 2px;
   border-top: #2e4b97 solid 2px;
 }
