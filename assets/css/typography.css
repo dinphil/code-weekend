@@ -24,6 +24,10 @@ h3 {
   font-size: 1.3em;
   color: #972e2e; }
 
+h4 {
+  font-weight: 300;
+}
+
 p, ol, ul {
   letter-spacing: 0.07em;
   font-family: "Helvetica";

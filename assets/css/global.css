@@ -71,11 +71,12 @@ html, body {
     display: block;
     text-align: justify;
     padding: 10px;
+    font-weight: 300;
    }
    a{
       text-decoration: none;
       color: #972e2e;
-      font-weight: 600;
+      font-weight: 300;
     }
     a:hover {
       text-decoration: none;
@@ -85,7 +86,7 @@ html, body {
     background: #972e2e;
     color: white;
     padding: 0.17em;
-    font-weight: bold;
+    font-weight: 300;
     font-size: 1em;
     text-decoration: none;
    }
