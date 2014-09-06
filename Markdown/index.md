@@ -419,6 +419,8 @@ Topics to be covered:
 
 Please download [this ZIP file](./assets/files/workshop2.zip) before the tutorial. It contains starter files with checkpoints that will be referenced during the talk.
 
+You can find the slides from this tutorial [here](./assets/files/slides/workshop2.html).
+
 Intro to APIs <a id="api-section"></a>
 =============
 Adding the internet to your app
