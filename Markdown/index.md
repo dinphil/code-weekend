@@ -403,7 +403,7 @@ Full instructions to install MongoDB on Linux can be found [here](http://docs.mo
 
 #### Making a Personal Landing Page
 
-Well done! You've got everything you need installed. Now let's test what you've learned today. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can eventry adn create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration [Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com)), ([Brynn](http://bclay.github.io/homepage/), or browse around the internet to see nice design (like [Medium](http://medium.com)).
+Well done! You've got everything you need installed. Now let's test what you've learned today. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can eventry adn create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
 
 Intro to Javascript and NodeJS <a id="node-section"></a>
 ==============================
