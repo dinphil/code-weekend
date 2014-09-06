@@ -5,17 +5,17 @@ Code Weekend
 Building your first webapp
 --------------------------
 
-Code Weekend is scheduled for *September 6th and 7th, 2014* and will comprise four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding exposure as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers especially with [PennApps](http://pennapps.com "PennApps - The premier college hackathon") scheduled for the next weekend. If you haven't already, [sign up here](http://bit.do/penncw "Code Weekend Registration"). There is also a high likelihood of there being some food around.
+Code Weekend is scheduled for *September 6th and 7th, 2014* and will comprise four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding exposure as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers especially with [PennApps](http://pennapps.com "PennApps - The premier college hackathon") scheduled for the next weekend. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps.
 
 > These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.
 
-If you already do have some coding experience, then you can feel free to skip the first session. Here's what we expect you to know and have installed before you jump into the second session:
+If you already have some coding experience, then feel free to skip the first session. Here's what we expect you to know and have installed before you jump into the second session:
 
-- The basics of how the web works
-- HTML/CSS/Javascript to the extent that you can build a simple static webpage
+- The basics of how the web works.
+- HTML/CSS/Javascript to the extent that you can build a simple static webpage.
 - Have Node.JS, MongoDB and Sublime Text installed.
-- Know how to use NPM (Node Package Manager) to install something
-- Know how to use Terminal/Command Prompt to move folders, change directories and create files.
+- Know how to use NPM (Node Package Manager) to install something.
+- Know how to use Terminal/Command Prompt to move folders, change directories, and create files.
 - Know how to fire up the Node/MongoDB shell.
 
 Intro to Web Development and Setup <a id="setup-section"></a>
@@ -25,25 +25,31 @@ The first step in your coding career
 
 Welcome to your first coding experience!
 
-We're gonna be going over quite a few things in this opening workshop:
+We'll be going over quite a few things in this opening workshop:
 
 - [How to search effectively using Google + Using Stack Overflow](#an-introduction-to-the-life-of-a-developer)
-- [How the internet works and why web development is so different from say, Java](#an-introduction-to-the-web)
+- [How the internet works and why web development is so different from, say, Java](#an-introduction-to-the-web)
 - [Basic HTML and CSS and how webpages are structured](#simple-html-and-css)
 - [Javascript, JSON and how to make things more fun](#javascript-finally)
 - [What is Terminal/Command Prompt and how to run Node, Mongo and NPM](#what-is-terminalcommand-prompt)
 - [Install Stuff](#lets-start-doing-stuff)
 - [Build your own Personal landing page](#making-a-personal-landing-page)
 
-This shouldn't take too long though, and we're gonna go ahead and leave the rest of the time for you to actually install all the applications you're gonna need for the rest of these workshops. In addition, we'll give you a basic static webpage that you can edit and turn into your own Personal Landing Page.
+This shouldn't take too long though, and we're going to go ahead and leave the rest of the time for you to actually install all the applications you'll need for the rest of these workshops. In addition, we'll give you a basic static webpage that you can edit and turn into your own personal landing page.
 
 So let's get started!
 
-### An Introduction to (the) Life (of a developer)
+### An Introduction to (the) Life (of a Developer)
 
-You've probably searched for things using Google before, but perhaps not always as effectively as possible. Here's some tips to search for things effectively as well as some great resources:
+When coding, you'll run into tons of small problems and errors that you don't initially know how to solve. **_This is completely normal._** In order to teach solutions to every problem that you could hypothetically run into, we'd need a textbook taller than the Empire State building. 
+
+Thankfully, we all have a resource with more information than that constantly at our fingertips—teh interwebz. You've probably searched for things using Google before, but most coding problems can actually be solved by effective Googling of your issue. Here are some tips for finding the answers to all your problems on the Internet:
 
 - Be descriptive. If you're searching for what's causing an error then you can try just searching for the entire error message, or try describing what happened. For example, "Homebrew does not install through terminal on OSX Yosemite" is a better search query than "homebrew not working", though the best search query is often some combination of plain text and the actual error message. Often Error Codes make great search queries, as long as they are contextualized.
+- Along that vein, use as many specific words as possible. You can use complete sentences if you'd like, but normally four or five very descriptive nouns/verbs is ideal, and you won't throw Google off-track by searching for unnecessary things. For example, you try to put a banner at the top of a web page, but there's a weird white border around the entire page. Googling "there's a weird white border around the entire page" isn't helpful. Always start with the name of the language you think is suspect if you can (in this case, it's CSS, since all style things on the page are controlled by CSS). Then, describe the problem with just a few words. Here, I used "CSS no page border". The first result was really helpful, and ended up solving my problem.
+
+These resources are also awesome:
+
 - [Stack Overflow](http://stackoverflow.com) is the best. Search results that link here are often the most helpful, and you can almost always find someone who's had the same problem as you on here. This also means taht you should mostly refrain from posting questions to Stack Overflow since odds are you just haven't searched well enough yet.
 - If you're looking for syntax, or lists of inbuilt functions, then look for the Official Documentation for the language in question. [W3C Schools](http://www.w3schools.com) is great for HTML, CSS and Javascript.
 - [Bentobox](https://www.bento.io) is a great all-in-one resource to learn to code for a huge number of technologies. [Code Academy](http://www.codecademy.com/learn) has some great tutorials.
