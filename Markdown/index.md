@@ -465,6 +465,8 @@ Topics to be covered:
 - Authenticating with an API via OAuth
 - Sending emails and Venmo payments
 
+Please download [this zip file](assets/files/ws3.zip) before the workshop.
+
 Intro to Databases <a id="db-section"></a>
 ==================
 Making information stick around
