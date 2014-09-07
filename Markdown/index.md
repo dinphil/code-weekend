@@ -389,7 +389,7 @@ Now that you've got Node.JS installed, let's move on to MongoDB. Mongo is a NoSQ
 
 _Mac_
 
-Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Before you start mongo for the first time, type this into Terminal: `mkdir -p /data/db`. You should now be able to go straight into the MongoDB shell by typing in `mongod` into Terminal.
+Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: `mkdir -p /data/db`. You should now be able to go straight into the MongoDB shell by typing in `mongod` into Terminal.
 
 In case you run into any problems, [look at MongoDB's full instructions page](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/) and Google around before asking mentors for help.
 
@@ -449,7 +449,7 @@ To run on Mac/Linux, bring up a normal terminal window. On Windows, search your 
 
 Enter the folder the contains your Node app with simple terminal commands like "cd". Once there, type "node" and hit enter. If you see a blank line that starts with ">", Node is installed properly and you're ready to go. If not, go back to the installation instructions and reinstall.
 
-To run a Node app, type "node app.js" into the terminal from the folder that contains app.js.
+The first time you run a node app, cd into the directory and run `npm install`. To run the Node app, type `node app.js` into the terminal from the folder that contains app.js.
 
 To see the app working, pull up an Internet browser. In the address bar, enter "localhost:3000". If all goes well, you should be able to see your app!
 
@@ -465,7 +465,8 @@ Topics to be covered:
 - Authenticating with an API via OAuth
 - Sending emails and Venmo payments
 
-Please download [this zip file](assets/files/ws3.zip) before the workshop.
+Please download [this zip file](assets/files/ws3.zip) before the workshop. Check out the slides [here](assets/files/slides/workshop3.html).
+![OAuth](assets/img/ws3.jpg)
 
 Intro to Databases <a id="db-section"></a>
 ==================
@@ -478,6 +479,8 @@ Topics to be covered:
 - Why we pair MongoDB with Node and how
 - Persisting our prior inputs
 - Basic login authentication
+
+Make sure to download [these files](assets/files/ws4.zip) to follow along with this workshop. Check out the [slides here](assets/files/slides/workshop4.html).
 
 <div class="footer"><p>&copy; Dining Philosophers 2014. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
 

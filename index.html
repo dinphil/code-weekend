@@ -678,7 +678,7 @@ console.log(myDetails.interests[1]); // prints &lsquo;Javascript&rsquo; to the c
 <h4 id="mongodb"><a name="user-content-mongodb" href="#mongodb" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>MongoDB</h4>
 <p>Now that you&rsquo;ve got Node.JS installed, let&rsquo;s move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a databse, we can store, search and access large amounts of data very quickly.</p>
 <p><em>Mac</em></p>
-<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Before you start mongo for the first time, type this into Terminal: <code>mkdir -p /data/db</code>. You should now be able to go straight into the MongoDB shell by typing in <code>mongod</code> into Terminal.</p>
+<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: <code>mkdir -p /data/db</code>. You should now be able to go straight into the MongoDB shell by typing in <code>mongod</code> into Terminal.</p>
 <p>In case you run into any problems, <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/">look at MongoDB&rsquo;s full instructions page</a> and Google around before asking mentors for help.</p>
 <p><em>Windows</em></p>
 <p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&rsquo;dd need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
@@ -711,7 +711,7 @@ console.log(myDetails.interests[1]); // prints &lsquo;Javascript&rsquo; to the c
 <h3 id="running-a-node-app"><a name="user-content-running-a-node-app" href="#running-a-node-app" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Running a Node app</h3>
 <p>To run on Mac/Linux, bring up a normal terminal window. On Windows, search your computer for the Node.js Command Prompt application, and open it (it should look very similar to the normal command prompt).</p>
 <p>Enter the folder the contains your Node app with simple terminal commands like &ldquo;cd&rdquo;. Once there, type &ldquo;node&rdquo; and hit enter. If you see a blank line that starts with &ldquo;&gt;&rdquo;, Node is installed properly and you&rsquo;re ready to go. If not, go back to the installation instructions and reinstall.</p>
-<p>To run a Node app, type &ldquo;node app.js&rdquo; into the terminal from the folder that contains app.js.</p>
+<p>The first time you run a node app, cd into the directory and run <code>npm install</code>. To run the Node app, type <code>node app.js</code> into the terminal from the folder that contains app.js.</p>
 <p>To see the app working, pull up an Internet browser. In the address bar, enter &ldquo;localhost:3000&rdquo;. If all goes well, you should be able to see your app!</p>
 <h1 id="intro-to-apis"><a name="user-content-intro-to-apis" href="#intro-to-apis" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Intro to APIs <a id="api-section"></a></h1>
 <h2 id="adding-the-internet-to-your-app"><a name="user-content-adding-the-internet-to-your-app" href="#adding-the-internet-to-your-app" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Adding the internet to your app</h2>
@@ -722,7 +722,8 @@ console.log(myDetails.interests[1]); // prints &lsquo;Javascript&rsquo; to the c
 <li>Authenticating with an API via OAuth</li>
 <li>Sending emails and Venmo payments</li>
 </ul>
-<p>Please download <a href="assets/files/ws3.zip">this zip file</a> before the workshop.</p>
+<p>Please download <a href="assets/files/ws3.zip">this zip file</a> before the workshop. Check out the slides <a href="assets/files/slides/workshop3.html">here</a>.<br />
+<img alt="OAuth" src="assets/img/ws3.jpg" /></p>
 <h1 id="intro-to-databases"><a name="user-content-intro-to-databases" href="#intro-to-databases" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Intro to Databases <a id="db-section"></a></h1>
 <h2 id="making-information-stick-around"><a name="user-content-making-information-stick-around" href="#making-information-stick-around" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Making information stick around</h2>
 <p>Topics to be covered:</p>
@@ -732,6 +733,7 @@ console.log(myDetails.interests[1]); // prints &lsquo;Javascript&rsquo; to the c
 <li>Persisting our prior inputs</li>
 <li>Basic login authentication</li>
 </ul>
+<p>Make sure to download <a href="assets/files/ws4.zip">these files</a> to follow along with this workshop. Check out the <a href="assets/files/slides/workshop4.html">slides here</a>.</p>
 <div class="footer"><p>&copy; Dining Philosophers 2014. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
