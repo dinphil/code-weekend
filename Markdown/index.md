@@ -429,7 +429,7 @@ Node is a very common Javascript-based web framework. In other words, it's a str
 
 A common Node app has several main components, as described below:
 
-_app.js:_ The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. Then "get" and "post" requests are set up that tell the app which router methods to use. The last section tells the app to run on a particular port (5000 in this case).
+_app.js:_ The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. Then "get" and "post" requests are set up that tell the app which router methods to use. The last section tells the app to run on a particular port (3000 in this case).
 
 _package.json:_ A standardized JSON file containing information about this app. It's fairly readable, but there's info about the authors, version, repository, and versions of Node modules.
 
@@ -441,7 +441,17 @@ _public:_ Holds CSS, Javascript, image, and video files used to render web pages
 
 _routes:_ Contains the routing files. The routing files tell your app what to do and where to go when deliniated functions are performed. For example, a routing file can tell the application when to render the different web pages, and how to send your name from one web page to the next.
 
-_views:_ Contains files that are actually rendered. This folder contains EJS, or Embedded JavaScript, files. HJS is essentially HTML, but with a few extra features that make it easier to use.
+_views:_ Contains files that are actually rendered. This folder contains HJS, or Hogan.js, files. HJS is essentially HTML, but with a few extra features that make it easier to use.
+
+###Running a Node app
+
+To run on Mac/Linux, bring up a normal terminal window. On Windows, search your computer for the Node.js Command Prompt application, and open it (it should look very similar to the normal command prompt).
+
+Enter the folder the contains your Node app with simple terminal commands like "cd". Once there, type "node" and hit enter. If you see a blank line that starts with ">", Node is installed properly and you're ready to go. If not, go back to the installation instructions and reinstall.
+
+To run a Node app, type "node app.js" into the terminal from the folder that contains app.js.
+
+To see the app working, pull up an Internet browser. In the address bar, enter "localhost:3000". If all goes well, you should be able to see your app!
 
 Intro to APIs <a id="api-section"></a>
 =============
