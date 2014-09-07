@@ -436,7 +436,7 @@ pre .chunk {
 <li>Creating and processing forms</li>
 </ul>
 <p>We&#39;re using the finishing point from Workshop 3 as today&#39;s starting point. Like before, we have milestones to jump to if you get behind or need to copy/paste something.</p>
-<p>We&#39;ll start by going over the application from the end of Workshop 3 to make sure everyone is familiar. If you did not attend Workshop 3, you should still be okay - most of this workshop is agnostic to Workshop 3&#39;s results.</p>
+<p>We&#39;ll start by going over the application from the end of Workshop 3 to make sure everyone is familiar. If you did not attend Workshop 3, you should still be okay.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-5">
@@ -503,6 +503,19 @@ pre .chunk {
 </section>
   </div>
   <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="connecting-and-querying-">Connecting and querying:</h3>
+<pre><code>var Db = mongo.Db;
+var Server = mongo.Server;
+var db = new Db(&#39;codeweekend&#39;,
+  new Server(&#39;localhost&#39;, &#39;27017&#39;, {auto_reconnect: true}, {}),
+  {safe: true}
+);
+db.open(function(){});
+
+db.collection(&#39;test&#39;).find().toArray(...);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
     <section class="slide-content"><h3 id="milestone-2">Milestone 2</h3>
 <ul>
 <li>Store notes in the database</li>
@@ -511,7 +524,7 @@ pre .chunk {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h3 id="milestone-3">Milestone 3</h3>
 <ul>
 <li>Record each Venmo payment in the database</li>
@@ -519,11 +532,11 @@ pre .chunk {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-12">
+  <div class="slide hidden" id="slide-13">
     <section class="slide-content"><h1 id="questions-">Questions?</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-14">
     <section class="slide-content"><div class="author">
   <h1 class="name">Lewis Ellis</h1>
     <h3 class="twitter">
