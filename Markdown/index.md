@@ -421,6 +421,28 @@ Please download [this ZIP file](./assets/files/workshop2.zip) before the tutoria
 
 You can find the slides from this tutorial [here](./assets/files/slides/workshop2.html).
 
+###What is a Node app?
+
+Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It's great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app.
+
+###The Anatomy of a Node app
+
+A common Node app has several main components, as described below:
+
+_app.js:_ The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. Then "get" and "post" requests are set up that tell the app which router methods to use. The last section tells the app to run on a particular port (5000 in this case).
+
+_package.json:_ A standardized JSON file containing information about this app. It's fairly readable, but there's info about the authors, version, repository, and versions of Node modules.
+
+_node_modules:_ Contains external modules, which are snippets of code written by others that perform very specific functions within your code. These are really what make Node so powerful and flexible—you can easily import functionality written by other people. You can look through Node modules on http://www.npmjs.org, or just Google functionality you want and look for modules that perform that function. To add a new Node module to your program, type "npm install [[module name]]" in the main directory of your program.
+
+One very common module, Express, provides a lot of the framework to make our app work over the Internet.
+
+_public:_ Holds CSS, Javascript, image, and video files used to render web pages.
+
+_routes:_ Contains the routing files. The routing files tell your app what to do and where to go when deliniated functions are performed. For example, a routing file can tell the application when to render the different web pages, and how to send your name from one web page to the next.
+
+_views:_ Contains files that are actually rendered. This folder contains EJS, or Embedded JavaScript, files. HJS is essentially HTML, but with a few extra features that make it easier to use.
+
 Intro to APIs <a id="api-section"></a>
 =============
 Adding the internet to your app
