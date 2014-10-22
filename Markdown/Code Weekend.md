@@ -1,4 +1,4 @@
-<div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'><link rel="stylesheet" href="assets/css/typography.css"><link rel="stylesheet" href="assets/css/global.css"></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Setup</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">DBs</div></div>
+<div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Setup</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">DBs</div></div>
 
 Code Weekend
 ============
@@ -62,7 +62,7 @@ There's pretty much three things happening every time you open a website:
 - This server is what we call the *backend*. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.
 - Your computer now reads this response and converts it into the webpage you actually see on your computer. This last bit of conversion is what we call the *frontend* doing its work.
 
-![Server- Browser ](assets/img/server-browser.png)
+![Server- Browser](assets/img/server-browser.png)
 
 So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are basically the two main components of any website.
 
@@ -488,7 +488,7 @@ Make sure to download [these files](assets/files/ws4.zip) to follow along with t
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/FlowType.js"></script>
 <script type="text/javascript">
-    $('body').flowtype({
+    $('.markdown-body').flowtype({
         minimum   : 500,
         maximum   : 1000,
         minFont   : 16,

@@ -1,5 +1,48 @@
+/* Typography */
+
+@font-face {
+  font-family: Helvetica;
+  src: url("HelveticaNeueLTStd-Th.otf") format("opentype");
+}
+
+
+body {
+  font: 1em "Open Sans", Helvetica Neue, sans-serif;
+  color: #333333; }
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5em;
+  border: none; }
+
+h2 {
+  font-weight: 300;
+  line-height: 1.4;
+  font-size: 1.5em;
+  border: none; }
+
+h3 {
+  font-weight: 300;
+  font-size: 1.3em;
+  color: #972e2e; }
+
+h4 {
+  font-weight: 300;
+}
+
+p, ol, ul {
+  letter-spacing: 0.07em;
+  font-family: "Helvetica";
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444444;
+  font-weight: 300; }
+
+
+
+
 /* Body, Navbar blocks*/
-html, body {
+body {
   margin: 30px auto;
   max-width: 1280px;
   width: 90%;
@@ -118,6 +161,11 @@ pre{
   }
 
 /* Image syles */
+img{
+  display: block;
+  position: relative;
+  max-width: 100%;
+}
 img.full-img{
   display: block;
   width: 100%;
