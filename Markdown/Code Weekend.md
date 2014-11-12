@@ -5,7 +5,7 @@ Code Weekend
 Building your first webapp
 --------------------------
 
-Code Weekend is scheduled for *September 6th and 7th, 2014* and will comprise four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding exposure as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers especially with [PennApps](http://pennapps.com "PennApps - The premier college hackathon") scheduled for the next weekend. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps.
+Code Weekend is scheduled for *September 6th and 7th, 2014* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers especially with [PennApps](http://pennapps.com "PennApps - The premier college hackathon") scheduled for the next weekend. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps.
 
 > These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.
 
@@ -341,20 +341,20 @@ Once you fire up Terminal or Command Prompt (on Windows, you'll later need to ru
 
 - `ls` (`DIR` on Windows) lists all the files in the current folder
 - `cd` allows you to change directory. So `cd Documents` will move into the folder Documents, if there is such a folder in teh current directory. You can check this by using `ls` (`DIR` on windows). To move up a directory, say back to where you were before you went into Documents, type in `cd ../`.
-- `mkdir` allows you to make a folder. So `mkdir New` makes a folder named 'New'.
+- `mkdir` allows you to make a folder in the current directory. So `mkdir New` makes a folder named 'New'.
 - `mv` (`move` on windows) will let you move files and folders. In Terminal you can do `mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder` to move MyFile.rtf. On Windows `move c:\windows\temp\*.* c:\temp` will move everything from C:\windows\temp to C:\temp. * works as a wildcard operator here.
 
 Once you've installed Node.JS, you'll also be able to enter commands like `npm install express` that will use Node Package manager to install plugins such as Express. You'll aso be able to start up MongoDB from here.
 
 ### Let's start doing stuff!
 
-Whoohoo! We've made it this far, and it's finally time to start doing stuff.
+Whoohoo! We've made it this far, and it's finally time to start doing stuff!
 
 #### Sublime Text 2
 
 We've got to install a whole nuch of stuff now. Let's start simple, go and download [Sublime Text 2](http://www.sublimetext.com/2). It's the best text editor in existence and this is where we're gonna be doing all our work. If you have a different favorite text editor, feel free to use it, but we might be using some Sublime Packages later on.
 
-NOTE: Sometimes, when you save, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel".
+NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel".
 
 #### Node.JS
 
