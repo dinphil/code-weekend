@@ -1,11 +1,13 @@
-<div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Setup</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">DBs</div></div>
+<div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Web Pages &amp; The Internet</div><div class="nav-item" id="node-menu">NodeJS I</div><div class="nav-item" id="apis-menu">NodeJS II</div><div class="nav-item" id="dbs-menu">Databases</div></div>
 
 Code Weekend
 ============
 Building your first webapp
 --------------------------
 
-Code Weekend is scheduled for *September 6th and 7th, 2014* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers especially with [PennApps](http://pennapps.com "PennApps - The premier college hackathon") scheduled for the next weekend. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps.
+[Sign up here!](http://goo.gl/forms/hXb2IVeMM9)
+
+Code Weekend is scheduled for *January 24th and 25th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps Winter 2015") scheduled for the weekend before. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps, it's a great way to jump in the deep end and expose yourself to the incredible world of building things (but actually they're doing great stuff for first-time hackers as well).
 
 > These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.
 
@@ -13,15 +15,14 @@ If you already have some coding experience, then feel free to skip the first ses
 
 - The basics of how the web works.
 - HTML/CSS/Javascript to the extent that you can build a simple static webpage.
-- Have Node.JS, MongoDB and Sublime Text installed.
-- Know how to use NPM (Node Package Manager) to install something.
 - Know how to use Terminal/Command Prompt to move folders, change directories, and create files.
-- Know how to fire up the Node/MongoDB shell.
 
-Intro to Web Development and Setup <a id="setup-section"></a>
+> You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) [here](/past/fall14/index.html). However, this is really just an updated version of the same workshops so you should probably stay on this page.
+
+Intro to Web Development <a id="setup-section"></a>
 ==================================
-The first step in your coding career
-------------------------------------
+Web Pages and the basics of developing
+--------------------------------------
 
 Welcome to your first coding experience!
 
@@ -32,7 +33,6 @@ We'll be going over quite a few things in this opening workshop:
 - [Basic HTML and CSS and how webpages are structured](#simple-html-and-css)
 - [Javascript, JSON and how to make things more fun](#javascript-finally)
 - [What is Terminal/Command Prompt and how to run Node, Mongo and NPM](#what-is-terminalcommand-prompt)
-- [Install Stuff](#lets-start-doing-stuff)
 - [Build your own Personal landing page](#making-a-personal-landing-page)
 
 This shouldn't take too long though, and we're going to go ahead and leave the rest of the time for you to actually install all the applications you'll need for the rest of these workshops. In addition, we'll give you a basic static webpage that you can edit and turn into your own personal landing page.
@@ -92,11 +92,7 @@ HyperText is text that will hyperlink you to other text. That's it. Think [links
 
 It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called 'tags.' Tags are denoted by < followed by >. Below is the most basic HTML document we can create (except for the comments that we've added in to make things clearer).
 
-	<!-- This is the most basic HTML document you can create that is complete --> 
-	<!-- This, by the way, is a comment that does not affect any of the code we write.
-	 We can use this to leave notes in the code for our future selves,
-	 or for others reading our code -->
-	<!-- index.html -->
+	<!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. -->
 	<!DOCTYPE html>
 	<html>
 	    <head>
@@ -134,11 +130,7 @@ Now let's get to the fun part - the `<body>` tag. This is where all the actual s
 
 Let's look at this whole document now.
 
-    <!-- This is a slightly more complete HTML document, but with no styles as yet. --> 
-    <!-- This, by the way, is a comment that does not affect any of the code we write.
-     We can use this to leave notes in the code for our future selves,
-     or for others reading our code -->
-    <!-- index.html -->
+    <!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. -->
     <!DOCTYPE html>
     <html>
         <head>
@@ -177,11 +169,7 @@ Right. So before we can decide how things should look, we actually need a way to
 
 Now we have a way to decide on styles. Let's look at that HTML document again:
 
-    <!-- This is a slightly more complete HTML document, but with no styles as yet. --> 
-    <!-- This, by the way, is a comment that does not affect any of the code we write.
-     We can use this to leave notes in the code for our future selves,
-     or for others reading our code -->
-    <!-- index.html -->
+    <!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. It however does use identifiers, so we're one step closer to styling. -->
     <!DOCTYPE html>
     <html>
         <head>
@@ -241,10 +229,10 @@ The most common types we will use are Strings (just text, such as "This is some 
 
 Here's some sample Javascript code:
 
-    var myVariable = "September 12th";
-    alert ("PennApps starts on " + myVariable);
+    var myVariable = "January 16th";
+    alert ("PennApps started on " + myVariable);
 
-This creates an alert that says "PennApps starts on September 12th". There was absolutely no reason to use a variable here other than to show how we can use it. Here's a function in Javascript that squares a number:
+This creates an alert that says "PennApps starts on January 16th". There was absolutely no reason to use a variable here other than to show how we can use it. Here's a function in Javascript that squares a number:
 
     function square (number) {
         return number * number;
@@ -352,54 +340,9 @@ Whoohoo! We've made it this far, and it's finally time to start doing stuff!
 
 #### Sublime Text 2
 
-We've got to install a whole nuch of stuff now. Let's start simple, go and download [Sublime Text 2](http://www.sublimetext.com/2). It's the best text editor in existence and this is where we're gonna be doing all our work. If you have a different favorite text editor, feel free to use it, but we might be using some Sublime Packages later on.
+We've got to install a whole buch of stuff over the next few workshops. Let's start simple, go and download [Sublime Text 2](http://www.sublimetext.com/2). It's the best text editor in existence and this is where we're gonna be doing all our work. If you have a different favorite text editor, feel free to use it, but we might be using some Sublime Packages later on.
 
-NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel".
-
-#### Node.JS
-
-Now that you've got that installed, let's move on to some slightly more complicated stuff. Let's start with Node.JS.
-
-Node.js is a commonly used web framework for building applications with Javascript. You need to run Node from command line. Instructions for different operating systems are below.
-
-_Mac_
-
-The easiest way to install Node is through Homebrew, a package manager for OSX. Sometimes it's already installed on your computer, and sometimes you need to install it. Bring up a terminal window and type in "brew install node". If it doesn't work, go to the next paragraph. If it does, you're done!
-
-So, Homebrew didn't work for whatever reason. Let's try and install Homebrew, type this into Terminal: `ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
-
-If Homebrew installed succesfully, then go ahead and try `brew install node`. If you run into any more errors here, try Googling the error text and looking for solutions. If that still doesn't work, look around for a mentor to help.
-
-If Homebrew is causing too many problems then just try the installer [here](http://nodejs.org/download/). You can also install NodeJS using Fink (`fink install nodejs`) or MacPorts(`port install nodejs`).
-
-_Windows_
-
-Here is a guide to getting Node.js setup with a Windows machine. There's some extra info there that might be confusing, so below are the basic steps:
-
-1. Download the .msi file from [here](http://nodejs.org/download/)
-2. Use Windows Installer to get it set up.
-
-_Linux_
-
-There are about a million different ways to install things on various Linux-based operating systems. Go to [this link](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) for a full list.
-
-#### MongoDB
-
-Now that you've got Node.JS installed, let's move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a databse, we can store, search and access large amounts of data very quickly.
-
-_Mac_
-
-Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: `mkdir -p /data/db`. You should now be able to go straight into the MongoDB shell by typing in `mongod` into Terminal.
-
-In case you run into any problems, [look at MongoDB's full instructions page](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/) and Google around before asking mentors for help.
-
-_Windows_
-
-MongoDB has a full set of instructions [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/) that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you'dd need to run this from Command Prompt: `md \data\db`. Follow the instructions on the above link to run MongoDB.
-
-_Linux_
-
-Full instructions to install MongoDB on Linux can be found [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
+NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel" and you can use it forever, or buy it and support a fellow developer!
 
 #### Making a Personal Landing Page
 
@@ -410,16 +353,46 @@ Intro to Javascript and NodeJS <a id="node-section"></a>
 The most powerful web development tools ever
 --------------------------------------------
 
-Topics to be covered:
+Stuff to be covered:
 
+- Installing Node
 - Basics of Node.js and Node package manager
 - The Express framework
 - Templates, sessions, and middlewares
 - Simple form processing
 
-Please download [this ZIP file](./assets/files/workshop2.zip) before the tutorial. It contains starter files with checkpoints that will be referenced during the talk.
+#### Installing NodeJS
 
-You can find the slides from this tutorial [here](./assets/files/slides/workshop2.html).
+Now that you've got that installed, let's move on to some slightly more complicated stuff. Let's start with Node.JS.
+
+Node.js is a commonly used web framework for building applications with Javascript. You need to run Node from command line. Instructions for different operating systems are below.
+
+_Mac_
+
+The easiest way to install Node is through Homebrew, a package manager for OSX. Sometimes it's already installed on your computer, and sometimes you need to install it. Bring up a terminal window and type in `brew install node`. When it finishes, it might show you a few commands you need to run in Terminal. Run those commands and you're all set! If that command instead spit out something about not knowing what `brew` is, read on.
+
+So, you don't have homebrew. Let's try and install Homebrew, type this into Terminal: `ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
+
+If Homebrew installed succesfully, then go ahead and try `brew install node`. If you run into any more errors here, try Googling the error text and looking for solutions. If that still doesn't work, look around for a mentor to help.
+
+If Homebrew is causing too many problems then just try the installer [here](http://nodejs.org/download/). You can also install NodeJS using Fink (`fink install nodejs`) or MacPorts(`port install nodejs`).
+
+_Windows_
+
+It's easy to get Node.js setup with a Windows machine:
+
+1. Download the .msi file from [here](http://nodejs.org/download/)
+2. Use Windows Installer to get it set up.
+
+_Linux_
+
+There are about a million different ways to install things on various Linux-based operating systems. Go to [this link](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) for a full list.
+
+
+
+
+[This ZIP file](assets/files/workshop2.zip) contains a snapshot of what your code should look like at the end of this workshop.
+
 
 ###What is a Node app?
 
@@ -451,7 +424,7 @@ Enter the folder the contains your Node app with simple terminal commands like "
 
 The first time you run a node app, cd into the directory and run `npm install`. To run the Node app, type `node app.js` into the terminal from the folder that contains app.js.
 
-To see the app working, pull up an Internet browser. In the address bar, enter "localhost:3000". If all goes well, you should be able to see your app!
+To see the app working, pull up an Internet browser. In the address bar, enter `localhost:3000`. If all goes well, you should be able to see your app!
 
 Intro to APIs <a id="api-section"></a>
 =============
@@ -465,7 +438,8 @@ Topics to be covered:
 - Authenticating with an API via OAuth
 - Sending emails and Venmo payments
 
-Please download [this zip file](assets/files/ws3.zip) before the workshop. Check out the slides [here](assets/files/slides/workshop3.html).
+[This zip file](assets/files/ws3.zip) contains what you should have at the end of this workshop. 
+
 ![OAuth](assets/img/ws3.jpg)
 
 Intro to Databases <a id="db-section"></a>
@@ -480,9 +454,32 @@ Topics to be covered:
 - Persisting our prior inputs
 - Basic login authentication
 
-Make sure to download [these files](assets/files/ws4.zip) to follow along with this workshop. Check out the [slides here](assets/files/slides/workshop4.html).
+#### Installing MongoDB
 
-<div class="footer"><p>&copy; Dining Philosophers 2014. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
+Let's move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a database, we can store, search and access large amounts of data very quickly.
+
+_Mac_
+
+Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: `mkdir -p /data/db`. You should now be able to go straight into the MongoDB shell by typing in `mongod` into Terminal.
+
+In case you run into any problems, [look at MongoDB's full instructions page](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/) and Google around before asking mentors for help.
+
+_Windows_
+
+MongoDB has a full set of instructions [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/) that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you'dd need to run this from Command Prompt: `md \data\db`. Follow the instructions on the above link to run MongoDB.
+
+_Linux_
+
+Full instructions to install MongoDB on Linux can be found [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
+
+
+
+
+
+
+[These files](assets/files/ws4.zip) should give you the end product that you should have at the end of the workshop.
+
+<div class="footer"><p>&copy; Dining Philosophers 2015. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="assets/js/nav.js"></script>
@@ -494,10 +491,5 @@ Make sure to download [these files](assets/files/ws4.zip) to follow along with t
         minFont   : 16,
         maxFont   : 65,
         fontRatio : 40
-    });
-</script>
-<script>
-    $(window).load(function(){
-        $('.loading').fadeOut('200');
     });
 </script>

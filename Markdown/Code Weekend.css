@@ -13,21 +13,23 @@ body {
 h1 {
   font-weight: 400;
   font-size: 2.5em;
-  border: none; }
+  border: none;
+  margin: 0.2em 0em; }
 
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
   font-size: 1.5em;
   border: none; }
 
 h3 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.3em;
   color: #972e2e; }
 
 h4 {
-  font-weight: 300;
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
 p, ol, ul {
@@ -112,7 +114,6 @@ body {
     color: #111111;
     font-size: 1em;
     display: block;
-    text-align: justify;
     padding: 10px;
     font-weight: 300;
    }
@@ -126,8 +127,7 @@ body {
       color: #972e2e;
     }
    em{
-    background: #972e2e;
-    color: white;
+    color: #972e2e;
     padding: 0.17em;
     font-weight: 300;
     font-size: 1em;
@@ -135,7 +135,12 @@ body {
    }
    blockquote{
     margin: 20px 10%;
+    border-left: 2vw solid #004E78;
    }
+    blockquote p {
+      color: #14587D;
+      margin: 0;
+    }
    ol, ul {
     margin: 20px 12%;
    }
@@ -149,13 +154,13 @@ pre{
   text-align: left;
   font-weight: 300;
   font-size: 0.8em;
-  background: #2e4b97;
   margin: 0;
-  overflow: scroll;
+  word-wrap: break-word;
+  background: #004E78;
 }
   code{
-    background: #2e4b97;
-    color: white;
+    background: #004E78;
+    color: #66BEED;
     font-size: 0.8em;
     padding: 0.1em;
     font-weight: 300;
