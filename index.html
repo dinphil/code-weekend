@@ -1,228 +1,69 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>/* Typography */
-
-@font-face {
-  font-family: Helvetica;
-  src: url("HelveticaNeueLTStd-Th.otf") format("opentype");
-}
-
-
-body {
-  font: 1em "Open Sans", Helvetica Neue, sans-serif;
-  color: #333333; }
-
-h1 {
-  font-weight: 400;
-  font-size: 2.5em;
-  border: none;
-  margin: 0.2em 0em; }
-
-h2 {
-  font-weight: 400;
-  line-height: 1.4;
-  font-size: 1.5em;
-  border: none; }
-
-h3 {
-  font-weight: 400;
-  font-size: 1.3em;
-  color: #972e2e; }
-
-h4 {
-  font-size: 1.2em;
-  font-weight: 400;
-}
-
-p, ol, ul {
-  letter-spacing: 0.07em;
-  font-family: "Helvetica";
-  font-size: 1em;
-  line-height: 1.4em;
-  color: #444444;
-  font-weight: 300; }
-
-
-
-
-/* Body, Navbar blocks*/
-body {
-  margin: 30px auto;
-  max-width: 1280px;
-  width: 90%;
-  position: relative;
-  height: auto;
-  padding: 0px;
-  border: #2e4b97 solid 2px;
-  background: white;
-}
-
-.hidden{
-  display: none;
-}
-
-.nav-items{
-  display: block;
-  float: center;
-  background: white;
-  text-align: center;
-  position: relative;
-  font-size: 1em;
-  box-shadow: 0 0 5px #2e4b97;
-  -webkit-box-shadow: 0 0 5px #2e4b97;
-  -moz-box-shadow: 0 0 5px #2e4b97;
-}
-  .nav-items div{
-    color: #ababab;
-    background-color: white;
-    display: inline-block;
-    padding: 10px 10px;
-    font-weight: lighter;
-  }
-  .nav-item{
-    color: #2e4b97;
-    background: none;
-    display: inline-block;
-  }
-  .nav-item:hover{
-    background-color: #2e4b97;
-    color: white;
-    cursor: pointer;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: color 0.3s ease-in-out;
-    -moz-transition: color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out;
-  }
-  
-/* Content styles */
-
-   h1{
-    color: #2e4b97;
-    text-transform: uppercase;
-    text-align: center;
-   }
-   h2{
-    margin: auto;
-    text-align: center;
-    color: #972e2e;
-   }
-   h1,h2,h3,h4{
-    text-align: center;
-   }
-   p{
-    margin: 10px 10%;
-    color: #111111;
-    font-size: 1em;
-    display: block;
-    padding: 10px;
-    font-weight: 300;
-   }
-   a{
-      text-decoration: none;
-      color: #972e2e;
-      font-weight: 300;
-    }
-    a:hover {
-      text-decoration: none;
-      color: #972e2e;
-    }
-   em{
-    color: #972e2e;
-    padding: 0.17em;
-    font-weight: 300;
-    font-size: 1em;
-    text-decoration: none;
-   }
-   blockquote{
-    margin: 20px 10%;
-    border-left: 2vw solid #004E78;
-   }
-    blockquote p {
-      color: #14587D;
-      margin: 0;
-    }
-   ol, ul {
-    margin: 20px 12%;
-   }
-   img{
-    margin: auto;
-    display: inherit;
-   }
-
-/* Code blocks */
-pre{
-  text-align: left;
-  font-weight: 300;
-  font-size: 0.8em;
-  margin: 0;
-  word-wrap: break-word;
-  background: #004E78;
-}
-  code{
-    background: #004E78;
-    color: #66BEED;
-    font-size: 0.8em;
-    padding: 0.1em;
-    font-weight: 300;
-  }
-
-/* Image syles */
-img{
-  display: block;
-  position: relative;
-  max-width: 100%;
-}
-img.full-img{
-  display: block;
-  width: 100%;
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-  .img-caption{
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    font-weight: 300;
-    float: right;
-    font-size: 0.6em;
-    color: white;
-    background: #2e4b97;
-    padding: 2px;
-    margin-top: 0;
-  }
-
-/* Footer */
-.footer{
-  font-size: 0.5em;
-  padding: 2px;
-  border-top: #2e4b97 solid 2px;
-}
-  .footer p{
-    padding: 0;
-    text-align: center;
-    margin: 5px;
-  }
-
-/* Media Query for tablets and small desktops */
-@media screen and (max-width: 1075px) {
-  html, body{
-    margin : 0px 0px 0px 0px; 
-    width : 100%;
-    border : none;
-  }
-}
-/* Media Query for phones/phablets */
-@media screen and (max-width: 860px){
-  p{
-    margin: 15px;
-  }
-  blockquote{
-    margin: 15px;
-  }
-}
-</style><title>Code Weekend</title></head><body><article class="markdown-body"><div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div>
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>.codehilite pre .hll { background-color: #f8eec7 }
+.codehilite pre  { background: #ffffff; color: #333333 }
+.codehilite pre .c { color: #999988; font-style: italic } /* Comment */
+.codehilite pre .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.codehilite pre .k { font-weight: bold } /* Keyword */
+.codehilite pre .n { color: #333333 } /* Name */
+.codehilite pre .o { font-weight: bold } /* Operator */
+.codehilite pre .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.codehilite pre .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.codehilite pre .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.codehilite pre .cs { color: #999988; font-style: italic } /* Comment.Special */
+.codehilite pre .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.codehilite pre .ge { font-style: italic } /* Generic.Emph */
+.codehilite pre .gr { color: #aa0000 } /* Generic.Error */
+.codehilite pre .gh { color: #999999 } /* Generic.Heading */
+.codehilite pre .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.codehilite pre .go { color: #888888 } /* Generic.Output */
+.codehilite pre .gp { color: #555555 } /* Generic.Prompt */
+.codehilite pre .gs { font-weight: bold } /* Generic.Strong */
+.codehilite pre .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite pre .gt { color: #aa0000 } /* Generic.Traceback */
+.codehilite pre .kc { font-weight: bold } /* Keyword.Constant */
+.codehilite pre .kd { font-weight: bold } /* Keyword.Declaration */
+.codehilite pre .kn { font-weight: bold } /* Keyword.Namespace */
+.codehilite pre .kp { font-weight: bold } /* Keyword.Pseudo */
+.codehilite pre .kr { font-weight: bold } /* Keyword.Reserved */
+.codehilite pre .kt { font-weight: bold } /* Keyword.Type */
+.codehilite pre .m { color: #945277 } /* Literal.Number */
+.codehilite pre .s { color: #df5000 } /* Literal.String */
+.codehilite pre .na { color: #008080 } /* Name.Attribute */
+.codehilite pre .nb { color: #0086b3 } /* Name.Builtin */
+.codehilite pre .nc { color: #445588; font-weight: bold } /* Name.Class */
+.codehilite pre .no { color: #094e99 } /* Name.Constant */
+.codehilite pre .nd { color: #333333 } /* Name.Decorator */
+.codehilite pre .ni { color: #800080 } /* Name.Entity */
+.codehilite pre .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.codehilite pre .nf { color: #945277; font-weight: bold } /* Name.Function */
+.codehilite pre .nl { color: #333333 } /* Name.Label */
+.codehilite pre .nn { color: #555555 } /* Name.Namespace */
+.codehilite pre .nx { color: #333333 } /* Name.Other */
+.codehilite pre .py { color: #333333 } /* Name.Property */
+.codehilite pre .nt { color: #000080 } /* Name.Tag */
+.codehilite pre .nv { color: #008080 } /* Name.Variable */
+.codehilite pre .ow { font-weight: bold } /* Operator.Word */
+.codehilite pre .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite pre .mb { color: #945277 } /* Literal.Number.Bin */
+.codehilite pre .mf { color: #945277 } /* Literal.Number.Float */
+.codehilite pre .mh { color: #945277 } /* Literal.Number.Hex */
+.codehilite pre .mi { color: #945277 } /* Literal.Number.Integer */
+.codehilite pre .mo { color: #945277 } /* Literal.Number.Oct */
+.codehilite pre .sb { color: #df5000 } /* Literal.String.Backtick */
+.codehilite pre .sc { color: #df5000 } /* Literal.String.Char */
+.codehilite pre .sd { color: #df5000 } /* Literal.String.Doc */
+.codehilite pre .s2 { color: #df5000 } /* Literal.String.Double */
+.codehilite pre .se { color: #df5000 } /* Literal.String.Escape */
+.codehilite pre .sh { color: #df5000 } /* Literal.String.Heredoc */
+.codehilite pre .si { color: #df5000 } /* Literal.String.Interpol */
+.codehilite pre .sx { color: #df5000 } /* Literal.String.Other */
+.codehilite pre .sr { color: #017936 } /* Literal.String.Regex */
+.codehilite pre .s1 { color: #df5000 } /* Literal.String.Single */
+.codehilite pre .ss { color: #8b467f } /* Literal.String.Symbol */
+.codehilite pre .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.codehilite pre .vc { color: #008080 } /* Name.Variable.Class */
+.codehilite pre .vg { color: #008080 } /* Name.Variable.Global */
+.codehilite pre .vi { color: #008080 } /* Name.Variable.Instance */
+.codehilite pre .il { color: #945277 } /* Literal.Number.Integer.Long */</style><title>Code Weekend</title></head><body><article class="markdown-body"><div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/global.css"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div>
 
 <p><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Web Pages &amp; The Internet</div><div class="nav-item" id="node-menu">NodeJS I</div><div class="nav-item" id="apis-menu">NodeJS II</div><div class="nav-item" id="dbs-menu">Databases</div></div></p>
 <h1 id="code-weekend"><a name="user-content-code-weekend" href="#code-weekend" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code Weekend</h1>
@@ -290,53 +131,65 @@ img.full-img{
 <p><img alt="HTML meme" src="http://38.media.tumblr.com/tumblr_m4fl5qPjdU1rw659vo1_400.png" /></p>
 <p>HyperText is text that will hyperlink you to other text. That&rsquo;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
 <p>It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called &lsquo;tags.&rsquo; Tags are denoted by &lt; followed by &gt;. Below is the most basic HTML document we can create (except for the comments that we&rsquo;ve added in to make things clearer).</p>
-<pre><code>&lt;!&ndash; This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. &ndash;&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p&gt;This is a basic HTML webpage.&lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<div class="codehilite"><pre><span class="c">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This is a basic HTML webpage.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
 <p><code>&lt;!DOCTYPE html&gt; &lt;html&gt;</code> is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contatined in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, <code>&lt;html&gt;</code> must eventually be closed by <code>&lt;/html&gt;</code>.</p>
 <p>Usually though, we&rsquo;ll include more information about the page in the <code>&lt;head&gt;</code> tag like this:</p>
-<pre><code>&lt;head&gt;
-    &lt;meta charset=&rdquo;utf-8&rdquo;&gt;
-    &lt;meta name=&rdquo;description&rdquo; content=&rdquo;Code Weekend Sample Page&rdquo;&gt;
-    &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
-    &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;main.css&rdquo;&gt;
-&lt;/head&gt;</code></pre>
+<div class="codehilite"><pre><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;Code Weekend Sample Page&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;main.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+
 <p>So now we&rsquo;ve specified the character set that the page uses - this is just to make sure the browser doesn&rsquo;t think that the page is in a language other than english. Then there&rsquo;s a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there&rsquo;s a tag where we&rsquo;ve linked this HTML file to a CSS document (the href component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.</p>
 <p>Now let&rsquo;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your webpage goes. Let&rsquo;s try adding some information in.</p>
-<pre><code>&lt;body&gt;
-    &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
-    &lt;h2&gt;Here&rsquo;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
-    &lt;!&ndash; Here&rsquo;s a comment that will not show up on the actual page &ndash;&gt;
-    &lt;p&gt;
-        Here&rsquo;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
-    &lt;/p&gt;
-&lt;/body&gt;</code></pre>
+<div class="codehilite"><pre><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Here&#39;s a smaller heading. We can go all the way down to H6<span class="nt">&lt;/h2&gt;</span>
+    <span class="c">&lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></div>
+
+
 <p>Let&rsquo;s look at this whole document now.</p>
-<pre><code>&lt;!&ndash; This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&rsquo;t have any information about styles. &ndash;&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset=&rdquo;utf-8&rdquo;&gt;
-        &lt;meta name=&rdquo;description&rdquo; content=&rdquo;Code Weekend Sample Page&rdquo;&gt;
-        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
-        &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;main.css&rdquo;&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
-        &lt;h2&gt;Here&rsquo;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
-        &lt;!&ndash; Here&rsquo;s a comment that will not show up on the actual page &ndash;&gt;
-        &lt;p&gt;
-            Here&rsquo;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
-        &lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<div class="codehilite"><pre><span class="c">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&#39;t have any information about styles. --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;Code Weekend Sample Page&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;main.css&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>Here&#39;s a smaller heading. We can go all the way down to H6<span class="nt">&lt;/h2&gt;</span>
+        <span class="c">&lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+            Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+        <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
 <p>Here are some more important HTML tags:</p>
 <ul>
 <li><code>&lt;a href="link here"&gt;text for the link&lt;/a&gt;</code> - used to create links</li>
@@ -355,40 +208,45 @@ img.full-img{
 <li>Classes: These are reusable names that we give to ranges of elements. This allows us to do thigns like apply the same style (say, a font) to multiple elements rather than having to rewrtie the same thing over and over. For example, we can create multiple paragraphs with the same class <code>&lt;p class="red-text"&gt; This text is theoretically red.&lt;/p&gt; &lt;p class="red-text"&gt; This text is also presumably red. &lt;/p&gt;</code>.</li>
 </ul>
 <p>Now we have a way to decide on styles. Let&rsquo;s look at that HTML document again:</p>
-<pre><code>&lt;!&ndash; This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&rsquo;t have any information about styles. It however does use identifiers, so we&rsquo;re one step closer to styling. &ndash;&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset=&rdquo;utf-8&rdquo;&gt;
-        &lt;meta name=&rdquo;description&rdquo; content=&rdquo;Code Weekend Sample Page&rdquo;&gt;
-        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
-        &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;main.css&rdquo;&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
-        &lt;h2&gt;Here&rsquo;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
-        &lt;!&ndash; Here&rsquo;s a comment that will not show up on the actual page &ndash;&gt;
-        &lt;p class=&rdquo;red-text&rdquo; id=&rdquo;intro-para&rdquo;&gt;
-            Here&rsquo;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
-        &lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<div class="codehilite"><pre><span class="c">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&#39;t have any information about styles. It however does use identifiers, so we&#39;re one step closer to styling. --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;Code Weekend Sample Page&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;main.css&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>Here&#39;s a smaller heading. We can go all the way down to H6<span class="nt">&lt;/h2&gt;</span>
+        <span class="c">&lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;red-text&quot;</span> <span class="na">id=</span><span class="s">&quot;intro-para&quot;</span><span class="nt">&gt;</span>
+            Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+        <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
 <p>We can also just change the style for an entire kind of element. So we could just change how all <code>&lt;h1&gt;</code> tags look. Let&rsquo;s take a look at what CSS looks like:</p>
-<pre><code>body {
-    padding: 50px 100px;
-}
-h1 {
-    font-size: 40px;
-    font-weight: lighter;
-    color: blue;
-}
-.red-text {
-    color: red;
-}
-#intro-para {
-    border: 2px solid black;
-}
-</code></pre>
+<div class="codehilite"><pre><span class="vg">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nl">padding:</span><span class="w"> </span><span class="il">50</span><span class="vg">px</span><span class="w"> </span><span class="il">100</span><span class="vg">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="vg">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">font</span><span class="o">-</span><span class="nl">size:</span><span class="w"> </span><span class="il">40</span><span class="vg">px</span><span class="p">;</span>
+<span class="w">    </span><span class="vg">font</span><span class="o">-</span><span class="nl">weight:</span><span class="w"> </span><span class="vg">lighter</span><span class="p">;</span>
+<span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="vg">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="vg">red</span><span class="o">-</span><span class="vg">text</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="vg">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">#</span><span class="vg">intro</span><span class="o">-</span><span class="vg">para</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nl">border:</span><span class="w"> </span><span class="il">2</span><span class="vg">px</span><span class="w"> </span><span class="vg">solid</span><span class="w"> </span><span class="vg">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>As you can see, there are small differences in syntax depending on the selector (whether you&rsquo;re changing all instances of an element, instances of a class, or just a single element by ID) but it&rsquo;s mostly quite simple.</p>
 <p>You should look through the resources at the top of this section for more information on HTML tags and CSS attributes, but the best thing to do is to Google things you&rsquo;re looking to do and look for the <a href="http://www.w3schools.com">W3C Schools</a> or <a href="http://stackoverflow.com">Stack Overflow</a> results.</p>
 <p><img alt="Stack Overflow" src="http://i.stack.imgur.com/XdONP.png" /></p>
@@ -401,84 +259,98 @@ h1 {
 <p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <code>Integer</code> with the value of <code>5</code>. Writing <code>var x = "5"</code> would create a <code>String</code> named <code>x</code> with the string <code>5</code> as its value.</p>
 <p>The most common types we will use are Strings (just text, such as &ldquo;This is some text&rdquo;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&rsquo;ll be surprised by how common almost everyhting you wanna do is).</p>
 <p>Here&rsquo;s some sample Javascript code:</p>
-<pre><code>var myVariable = &ldquo;January 16th&rdquo;;
-alert (&ldquo;PennApps started on &rdquo; + myVariable);</code></pre>
+<div class="codehilite"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">myVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;January 16th&quot;</span><span class="p">;</span>
+<span class="vg">alert</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;PennApps started on &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="vg">myVariable</span><span class="p">);</span>
+</pre></div>
+
+
 <p>This creates an alert that says &ldquo;PennApps starts on January 16th&rdquo;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&rsquo;s a function in Javascript that squares a number:</p>
-<pre><code>function square (number) {
-    return number * number;
+<div class="codehilite"><pre><span class="n">function</span> <span class="n">square</span> (<span class="n">number</span>) {
+    <span class="k">return</span> <span class="n">number</span> * <span class="n">number</span>;
 }
-// This is a single line comment that does not need to be closed.
-console.log(square (5)); // This prints the result to the javascript console in your browser&rsquo;s (Chrome or Firefox) developer tools.
-/* This is a multi-line comment
-   that only ends when we do this */
+// <span class="n">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">single</span> <span class="n">line</span> <span class="n">comment</span> <span class="n">that</span> <span class="nb">does</span> <span class="nb">not</span> <span class="n">need</span> <span class="nb">to</span> <span class="n">be</span> <span class="n">closed</span>.
+<span class="n">console</span>.<span class="nb">log</span>(<span class="n">square</span> (<span class="mi">5</span>)); // <span class="n">This</span> <span class="n">prints</span> <span class="n">the</span> <span class="n">result</span> <span class="nb">to</span> <span class="n">the</span> <span class="n">javascript</span> <span class="n">console</span> <span class="n">in</span> <span class="n">your</span> <span class="n">browser&#39;s</span> (<span class="n">Chrome</span> <span class="o">or</span> <span class="n">Firefox</span>) <span class="n">developer</span> <span class="n">tools</span>.
+/* <span class="n">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">multi-line</span> <span class="n">comment</span>
+   <span class="n">that</span> <span class="k">only</span> <span class="n">ends</span> <span class="k">when</span> <span class="n">we</span> <span class="k">do</span> <span class="n">this</span> */
 
-// We can also write the above function as the following:
-var square = function (number) {
-    return number * number;
+// <span class="n">We</span> <span class="nb">can</span> <span class="o">also</span> <span class="nb">write</span> <span class="n">the</span> <span class="n">above</span> <span class="n">function</span> <span class="k">as</span> <span class="n">the</span> <span class="n">following:</span>
+<span class="n">var</span> <span class="n">square</span> = <span class="n">function</span> (<span class="n">number</span>) {
+    <span class="k">return</span> <span class="n">number</span> * <span class="n">number</span>;
 }
 
-// Here&rsquo;s an anonymous function that calculates the square of 5:
+// <span class="n">Here&#39;s</span> <span class="n">an</span> <span class="n">anonymous</span> <span class="n">function</span> <span class="n">that</span> <span class="n">calculates</span> <span class="n">the</span> <span class="n">square</span> <span class="k">of</span> <span class="mi">5</span>:
 
-(function (number) {
-    return number*number;
-}) (5);
-// In this case, we are executing the anonymous function immediately, but we don&rsquo;t have to always do this:
+(<span class="n">function</span> (<span class="n">number</span>) {
+    <span class="k">return</span> <span class="n">number</span><span class="o">*</span><span class="n">number</span>;
+}) (<span class="mi">5</span>);
+// <span class="n">In</span> <span class="n">this</span> <span class="n">case</span>, <span class="n">we</span> <span class="n">are</span> <span class="n">executing</span> <span class="n">the</span> <span class="n">anonymous</span> <span class="n">function</span> <span class="n">immediately</span>, <span class="k">but</span> <span class="n">we</span> <span class="n">don&#39;t</span> <span class="n">have</span> <span class="nb">to</span> <span class="n">always</span> <span class="k">do</span> <span class="n">this:</span>
 
-function idPlusString (number) {
-    var cube = number * number * number;
-    return function (name) {
-        return &ldquo;Hi &ldquo;+ name + &ldquo;. &rdquo; + &ldquo;Your ID is &rdquo; + cube + &ldquo;.&rdquo;;
+<span class="n">function</span> <span class="n">idPlusString</span> (<span class="n">number</span>) {
+    <span class="n">var</span> <span class="n">cube</span> = <span class="n">number</span> * <span class="n">number</span> * <span class="n">number</span>;
+    <span class="k">return</span> <span class="n">function</span> (<span class="nb">name</span>) {
+        <span class="k">return</span> <span class="s">&quot;Hi &quot;</span>+ <span class="nb">name</span> + <span class="s">&quot;. &quot;</span> + <span class="s">&quot;Your ID is &quot;</span> + <span class="n">cube</span> + <span class="s">&quot;.&quot;</span>;
     }
 }
-// This returns a function that you can add a string to. If you don&rsquo;t understand this last function, it&rsquo;s okay.</code></pre>
+// <span class="n">This</span> <span class="k">returns</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">you</span> <span class="nb">can</span> <span class="n">add</span> <span class="n">a</span> <span class="n">string</span> <span class="nb">to</span>. <span class="n">If</span> <span class="n">you</span> <span class="n">don&#39;t</span> <span class="n">understand</span> <span class="n">this</span> <span class="k">last</span> <span class="n">function</span>, <span class="n">it&#39;s</span> <span class="n">okay</span>.
+</pre></div>
+
+
 <p>Javascript mainly works on Objects and Arrays to store and access data.</p>
-<pre><code>// Here&rsquo;s an Object that conatins an array
-var myDetails = {
-    &lsquo;name&rsquo; : &ldquo;Mark Gates&rdquo;,
-    &lsquo;age&rsquo; : 24,
-    &lsquo;interests&rsquo;: [&lsquo;Figure Skating&rsquo;, &lsquo;Javascript&rsquo;, &lsquo;Tennis&rsquo;, &lsquo;EDM&rsquo;]
-}
-console.log(myDetails.name); // prints the name property of the object, ie, &lsquo;Mark Gates&rsquo;
-console.log(myDetails.interests[1]); // prints &lsquo;Javascript&rsquo; to the console</code></pre>
+<div class="codehilite"><pre><span class="c1">// Here&#39;s an Object that conatins an array</span>
+<span class="k">var</span> <span class="n">myDetails</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">&#39;</span><span class="n">name</span><span class="p">&#39;</span> <span class="o">:</span> <span class="s">&quot;Mark Gates&quot;</span><span class="p">,</span>
+    <span class="p">&#39;</span><span class="n">age</span><span class="p">&#39;</span> <span class="o">:</span> <span class="mh">24</span><span class="p">,</span>
+    <span class="p">&#39;</span><span class="n">interests</span><span class="p">&#39;</span><span class="o">:</span> <span class="p">[&#39;</span><span class="n">Figure</span> <span class="n">Skating</span><span class="p">&#39;,</span> <span class="p">&#39;</span><span class="n">Javascript</span><span class="p">&#39;,</span> <span class="p">&#39;</span><span class="n">Tennis</span><span class="p">&#39;,</span> <span class="p">&#39;</span><span class="no">EDM</span><span class="p">&#39;]</span>
+<span class="p">}</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">myDetails</span><span class="p">.</span><span class="n">name</span><span class="p">);</span> <span class="c1">// prints the name property of the object, ie, &#39;Mark Gates&#39;</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">myDetails</span><span class="p">.</span><span class="n">interests</span><span class="p">[</span><span class="mh">1</span><span class="p">]);</span> <span class="c1">// prints &#39;Javascript&#39; to the console</span>
+</pre></div>
+
+
 <p>Objects are essentially key-value pairs. We can access to values easily using the notation <code>object.key</code>.</p>
 <p>If you haven&rsquo;t noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It&rsquo;s okay if you end every line with one, it&rsquo;s better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitionsand pretty much everything that ends in curly braces (<code>}</code>).</p>
 <p><em>JSON (Javascript Object Notation)</em> is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays liberally to store information. Let&rsquo;s look at an example of a JSON file:</p>
-<pre><code>{
-    &ldquo;employees&rdquo;:[
-        {
-            &ldquo;firstName&rdquo;:&rdquo;John&rdquo;, 
-            &ldquo;lastName&rdquo;:&rdquo;Doe&rdquo;
-        }, 
-        {
-            &ldquo;firstName&rdquo;:&rdquo;Anna&rdquo;, 
-            &ldquo;lastName&rdquo;:&rdquo;Smith&rdquo;
-        },
-        {
-            &ldquo;firstName&rdquo;:&rdquo;Peter&rdquo;, 
-            &ldquo;lastName&rdquo;:&rdquo;Jones&rdquo;
-        }
-        ],
-    &ldquo;company&rdquo; : &ldquo;ABC Holdings&rdquo;,
-    &ldquo;lastUpdated&rdquo; : &ldquo;September 6th&rdquo;
-}</code></pre>
+<div class="codehilite"><pre><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;employees&quot;</span><span class="o">:</span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;firstName&quot;</span><span class="o">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;lastName&quot;</span><span class="o">:</span><span class="s2">&quot;Doe&quot;</span>
+<span class="w">        </span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;firstName&quot;</span><span class="o">:</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;lastName&quot;</span><span class="o">:</span><span class="s2">&quot;Smith&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;firstName&quot;</span><span class="o">:</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;lastName&quot;</span><span class="o">:</span><span class="s2">&quot;Jones&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;company&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ABC Holdings&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;lastUpdated&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;September 6th&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>It&rsquo;s exactly like a Javascript Object, and that&rsquo;s because that&rsquo;s exactly what it is. Just for kicks, let&rsquo;s compare this to XML:</p>
-<pre><code>&lt;employees&gt;
-    &lt;employee&gt;
-        &lt;firstName&gt;John&lt;/firstName&gt; 
-        &lt;lastName&gt;Doe&lt;/lastName&gt;
-    &lt;/employee&gt;
-    &lt;employee&gt;
-        &lt;firstName&gt;Anna&lt;/firstName&gt; 
-        &lt;lastName&gt;Smith&lt;/lastName&gt;
-    &lt;/employee&gt;
-    &lt;employee&gt;
-        &lt;firstName&gt;Peter&lt;/firstName&gt; 
-        &lt;lastName&gt;Jones&lt;/lastName&gt;
-    &lt;/employee&gt;
-&lt;/employees&gt;
-&lt;company&gt;ABC Holdings&lt;/company&gt;
-&lt;lastUpdated&gt;September 6th&lt;/lastUpdated&gt;
-</code></pre>
+<div class="codehilite"><pre><span class="nt">&lt;employees&gt;</span>
+    <span class="nt">&lt;employee&gt;</span>
+        <span class="nt">&lt;firstName&gt;</span>John<span class="nt">&lt;/firstName&gt;</span> 
+        <span class="nt">&lt;lastName&gt;</span>Doe<span class="nt">&lt;/lastName&gt;</span>
+    <span class="nt">&lt;/employee&gt;</span>
+    <span class="nt">&lt;employee&gt;</span>
+        <span class="nt">&lt;firstName&gt;</span>Anna<span class="nt">&lt;/firstName&gt;</span> 
+        <span class="nt">&lt;lastName&gt;</span>Smith<span class="nt">&lt;/lastName&gt;</span>
+    <span class="nt">&lt;/employee&gt;</span>
+    <span class="nt">&lt;employee&gt;</span>
+        <span class="nt">&lt;firstName&gt;</span>Peter<span class="nt">&lt;/firstName&gt;</span> 
+        <span class="nt">&lt;lastName&gt;</span>Jones<span class="nt">&lt;/lastName&gt;</span>
+    <span class="nt">&lt;/employee&gt;</span>
+<span class="nt">&lt;/employees&gt;</span>
+<span class="nt">&lt;company&gt;</span>ABC Holdings<span class="nt">&lt;/company&gt;</span>
+<span class="nt">&lt;lastUpdated&gt;</span>September 6th<span class="nt">&lt;/lastUpdated&gt;</span>
+</pre></div>
+
+
 <p>So much better isn&rsquo;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier.</p>
 <h3 id="what-is-terminalcommand-prompt"><a name="user-content-what-is-terminalcommand-prompt" href="#what-is-terminalcommand-prompt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is Terminal/Command Prompt?</h3>
 <p><img alt="Terminal" src="assets/img/terminal.png" /></p>

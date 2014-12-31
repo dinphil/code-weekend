@@ -150,13 +150,13 @@ body {
    }
 
 /* Code blocks */
-pre{
+.codehilite pre{
   text-align: left;
   font-weight: 300;
   font-size: 0.8em;
   margin: 0;
   word-wrap: break-word;
-  background: #004E78;
+  border: solid 2px #004E78;
 }
   code{
     background: #004E78;
