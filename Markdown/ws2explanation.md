@@ -4,10 +4,12 @@ Package.json
 
 This is a basic JSON file that describes the app we're building and its associated dependencies.
 
+```json
 Name: Module name 
 Version: Version number 
 Private: Keep npm repo private 
 Dependencies: Automatically installed when people install your app 
+```
 
 ======
 App.js
@@ -66,9 +68,11 @@ This catches 404 errors and forwards them to our error handler.
 
 And finally, to get the app really off the ground, let's make it listen for requests.
 
+```javascript
 app.listen(app.get('port'), function() { 
   console.log('Express server listening on port ' + app.get('port')); 
 });
+```
 
 We'll use the port and resources we defined earlier on.
 
