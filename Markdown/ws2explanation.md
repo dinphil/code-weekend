@@ -24,13 +24,15 @@ var bodyParser = require('body-parser');
 var session = require('cookie-session');
 ``` 
 
-We start off by obtaining all of the required resources and packages for the application that we're going to use later on. Now that we've stated what we need, let's instantiate our app:
+We start off by obtaining all of the required resources and packages for the application that we're going to use later on. Morgan is an HTTP request logger middleware for node.js. Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides "guest" sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We'll see more of both cookie modules - and their applications in our web app - a little later on.
+
+Now that we've stated what we need, let's instantiate our app:
 
 ```javascript
 var app = express();
 ```
 
-This line both instantiates Express and assigns our app to it.
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. This line both instantiates Express and assigns our app to it.
 
 We should now tell the app where to find the views it needs, what engines to render them with and which methods to use to get things up and running.
 
@@ -46,7 +48,9 @@ app.use(session({secret: 'codeweekend'}));
 app.use(express.static(path.join(__dirname, 'public')));
 ```
 
-Note how the last line tells the app to treat the folder directory like the top-level. It's always important to look out for errors, and let's make sure our app does the same:
+Note how the last line tells the app to treat the folder directory like the top-level.
+
+It's always important to look out for errors, and let's make sure our app does the same:
 
 ```javascript
 app.use(function(req, res, next) { 
@@ -94,5 +98,5 @@ app.use(function(req, res, next) {
 });
 ```
 
-If we get session messages, we set them to our local state. And if no session notes exist, lets make an empty collection for them. We'll use this nifty code soon. 
+If we get session messages, we set them to our local state. And if no session notes exist, let's make an empty collection for them. We'll use this nifty code soon. 
 
