@@ -388,15 +388,11 @@ _Linux_
 
 There are about a million different ways to install things on various Linux-based operating systems. Go to [this link](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) for a full list.
 
+Alright, let's get started.
 
+###What is a NodeJS app?
 
-
-[This ZIP file](assets/files/workshop2.zip) contains a snapshot of what your code should look like at the end of this workshop.
-
-
-###What is a Node app?
-
-Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It's great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app.
+Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It's great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app. NodeJS has the most modules of any modern web framework, and that's part of what makes it really great for writing webapps fast.
 
 ###The Anatomy of a Node app
 
@@ -425,6 +421,115 @@ Enter the folder the contains your Node app with simple terminal commands like "
 The first time you run a node app, cd into the directory and run `npm install`. To run the Node app, type `node app.js` into the terminal from the folder that contains app.js.
 
 To see the app working, pull up an Internet browser. In the address bar, enter `localhost:3000`. If all goes well, you should be able to see your app!
+
+### Writing our first NodeJS app
+
+Download [this file](assets/files/ws2-start.zip) to get the directory structure and files we need to start off with.
+
+Let's start off by looking at the code that's already there in the package.json file, and then moving on to the code we need to write in app.js.
+
+#### Package.json
+
+This is a basic JSON file that describes the app we're building and its associated dependencies. Dependencies are basically modules, or other pieces of software that somebody else made, that lets us do things like use Express, the module that makes it really easy to create webapps using NodeJS.
+
+```json
+Name: Module name 
+Version: Version number 
+Private: Keep npm repo private 
+Dependencies: Automatically installed when people install your app 
+```
+
+#### App.js
+
+
+```javascript
+var path = require('path'); 
+var logger = require('morgan'); 
+var express = require('express'); 
+var cookieParser = require('cookie-parser'); 
+var bodyParser = require('body-parser'); 
+var session = require('cookie-session');
+``` 
+
+We start off by obtaining all of the required resources and packages for the application that we're going to use later on. We can do this in Node by using the `require('name of module')` syntax. `name of module` can either be the name of some module you specified or the path to a file. Morgan is an HTTP request logger middleware for NodeJS (don't worry if you don't udnerstand that, this isn't too important and the app won't break if we get rid of it). Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides "guest" sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We'll see more of both cookie modules - and their applications in our web app - a little later on.
+
+Now that we've stated what we need, let's instantiate our app:
+
+```javascript
+var app = express();
+```
+
+Express is a minimal and flexible NodeJS web application framework that provides a robust set of features for web and mobile applications. This line both instantiates Express and assigns our variable `app` to it.
+
+We should now tell the app where to find the views (HTML templates/files) it needs, what engines to render them with (we're going to use HJS, you can find more on the tempalte syntax it uses [here](http://mustache.github.io/mustache.5.html)) and which methods to use to get things up and running (just telling our app to use the logger and parsers we defined above, setting the secret that we use to encrypt cookies that store session information and telling the app where to look for public files like CSS, and frontend Javascript).
+
+```javascript
+app.set('views', path.join(__dirname, 'views')); 
+app.set('view engine', 'hjs'); 
+app.set('port', process.env.PORT || 3000);
+
+app.use(logger('dev')); 
+app.use(bodyParser.urlencoded({extended: false})); 
+app.use(cookieParser()); 
+app.use(session({secret: 'codeweekend'})); 
+app.use(express.static(path.join(__dirname, 'public')));
+```
+
+Note how the last line tells the app to treat the folder directory like the top-level.
+
+It's always important to look out for paths that don't exist (like google.com/kasjdhfkjashdfkjashdfkajsdhfkjsda), and let's make sure our app does the same:
+
+```javascript
+app.use(function(req, res, next) { 
+  var err = new Error('Not Found'); 
+  err.status = 404; 
+  next(err); 
+}); 
+
+app.use(function(err, req, res, next) { 
+  res.status(err.status || 500); 
+  res.render('error', { 
+    errorMessage: err.message, 
+    error: app.get('env') === 'development' ? err : {} 
+  }); 
+});
+```
+
+This catches 404 errors (ie, this path doesn't exist) and forwards them to our error handler, which prints out a bunch of error info, since we're really in a developer environment/debuggin mode.
+
+And finally, to get the app really off the ground, let's make it listen for requests.
+
+```javascript
+app.listen(app.get('port'), function() { 
+  console.log('Express server listening on port ' + app.get('port')); 
+});
+```
+
+We'll use the port and resources we defined earlier on.
+
+We can also add in some middleware, which is code that runs in before routes are searched for by the app. In this case we use:
+
+
+```javascript
+app.use(function(req, res, next) { 
+  if (req.session.message) { 
+    res.locals.message = req.session.message; 
+    req.session.message = null; 
+  }
+
+  if (!req.session.notes) { 
+    req.session.notes = []; 
+  }
+
+  next(); 
+});
+```
+
+If we get session messages, we set them to our local state. And if no session notes exist, let's make an empty collection for them. We'll use this nifty code soon. 
+
+#### Views
+
+[This ZIP file](assets/files/ws2.zip) contains a snapshot of what your code should look like at the end of this workshop.
 
 Intro to APIs <a id="api-section"></a>
 =============
