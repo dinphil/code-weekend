@@ -69,7 +69,7 @@
 <h1 id="code-weekend"><a name="user-content-code-weekend" href="#code-weekend" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code Weekend</h1>
 <h2 id="building-your-first-webapp"><a name="user-content-building-your-first-webapp" href="#building-your-first-webapp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your first webapp</h2>
 <p><a href="http://goo.gl/forms/hXb2IVeMM9">Sign up here!</a></p>
-<p>Code Weekend is scheduled for <em>January 24th and 25th, 2015</em> and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with <a href="http://pennapps.com" title="PennApps Winter 2015">PennApps</a> scheduled for the weekend before. If you haven&rsquo;t already, <a href="https://my.pennapps.com/register_penn" title="PennApps Registration">sign up here</a> for PennApps, it&rsquo;s a great way to jump in the deep end and expose yourself to the incredible world of building things (but actually they&rsquo;re doing great stuff for first-time hackers as well).</p>
+<p>Code Weekend is scheduled for <em>January 24th and 25th, 2015</em> and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with <a href="http://pennapps.com" title="PennApps Winter 2015">PennApps</a> scheduled for the weekend before. If you haven&rsquo;t already, <a href="https://my.pennapps.com/register_penn" title="PennApps Registration">sign up here</a> for PennApps, it&rsquo;s a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they&rsquo;re doing great stuff for first-time hackers as well).</p>
 <blockquote>
 <p>These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.</p>
 </blockquote>
@@ -83,7 +83,7 @@
 <p>You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) <a href="/past/fall14/index.html">here</a>. However, this is really just an updated version of the same workshops so you should probably stay on this page.</p>
 </blockquote>
 <h1 id="intro-to-web-development"><a name="user-content-intro-to-web-development" href="#intro-to-web-development" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Web Development <a id="setup-section"></a></h1>
-<h2 id="web-pages-and-the-basics-of-developing"><a name="user-content-web-pages-and-the-basics-of-developing" href="#web-pages-and-the-basics-of-developing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Web Pages and the basics of developing</h2>
+<h2 id="web-pages-and-the-basics-of-development"><a name="user-content-web-pages-and-the-basics-of-development" href="#web-pages-and-the-basics-of-development" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Web Pages and the basics of development</h2>
 <p>Welcome to your first coding experience!</p>
 <p>We&rsquo;ll be going over quite a few things in this opening workshop:</p>
 <ul>
@@ -91,10 +91,10 @@
 <li><a href="#an-introduction-to-the-web">How the internet works and why web development is so different from, say, Java</a></li>
 <li><a href="#simple-html-and-css">Basic HTML and CSS and how webpages are structured</a></li>
 <li><a href="#javascript-finally">Javascript, JSON and how to make things more fun</a></li>
-<li><a href="#what-is-terminalcommand-prompt">What is Terminal/Command Prompt and how to run Node, Mongo and NPM</a></li>
+<li><a href="#what-is-terminalcommand-prompt">What is Terminal/Command Prompt</a></li>
 <li><a href="#making-a-personal-landing-page">Build your own Personal landing page</a></li>
 </ul>
-<p>This shouldn&rsquo;t take too long though, and we&rsquo;re going to go ahead and leave the rest of the time for you to actually install all the applications you&rsquo;ll need for the rest of these workshops. In addition, we&rsquo;ll give you a basic static webpage that you can edit and turn into your own personal landing page.</p>
+<p>This shouldn&rsquo;t take too long though, and we&rsquo;re going to go ahead and leave the rest of the time for you to turn a basic static webpage that we&rsquo;ll give you into your own personal landing page.</p>
 <p>So let&rsquo;s get started!</p>
 <h3 id="an-introduction-to-the-life-of-a-developer"><a name="user-content-an-introduction-to-the-life-of-a-developer" href="#an-introduction-to-the-life-of-a-developer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>An Introduction to (the) Life (of a Developer)</h3>
 <p>When coding, you&rsquo;ll run into tons of small problems and errors that you don&rsquo;t initially know how to solve. <strong><em>This is completely normal.</em></strong> In order to teach solutions to every problem that you could hypothetically run into, we&rsquo;d need a textbook taller than the Empire State building. </p>
@@ -118,7 +118,7 @@
 </ul>
 <p><img alt="Server- Browser" src="assets/img/server-browser.png" /></p>
 <p>So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are basically the two main components of any website.</p>
-<p>You&rsquo;ll see later on that requests aren&rsquo;t just made of the server when we first open the website; it&rsquo;s often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when thhey&rsquo;re needed (think Facebook&rsquo;s Newsfeed). It&rsquo;s also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.</p>
+<p>You&rsquo;ll see later on that requests aren&rsquo;t just made of the server when we first open the website; it&rsquo;s often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they&rsquo;re needed (think Facebook&rsquo;s Newsfeed). It&rsquo;s also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.</p>
 <p><img alt="Facebook Loading using Javascript" src="http://www.product-reviews.net/wp-content/uploads/facebook-not-working.jpg" /></p>
 <h3 id="simple-html-and-css"><a name="user-content-simple-html-and-css" href="#simple-html-and-css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Simple HTML and CSS</h3>
 <p>HTML (Hypertext Markup Language) is like the backbone of any webpage. It&rsquo;s where we add in all the information - what they webpage actually displays as well as information about the page itself such as its title.</p>
@@ -130,7 +130,7 @@
 <p>Let&rsquo;s start with HTML (Hypertext Markup Language).</p>
 <p><img alt="HTML meme" src="http://38.media.tumblr.com/tumblr_m4fl5qPjdU1rw659vo1_400.png" /></p>
 <p>HyperText is text that will hyperlink you to other text. That&rsquo;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
-<p>It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called &lsquo;tags.&rsquo; Tags are denoted by &lt; followed by &gt;. Below is the most basic HTML document we can create (except for the comments that we&rsquo;ve added in to make things clearer).</p>
+<p>It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called &lsquo;tags.&rsquo; Tags are denoted by <code>&lt;</code> followed by <code>&gt;</code>. Below is the most basic HTML document we can create (except for the comments that we&rsquo;ve added in to make things clearer).</p>
 <div class="codehilite"><pre><span class="c">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -155,7 +155,7 @@
 </pre></div>
 
 
-<p>So now we&rsquo;ve specified the character set that the page uses - this is just to make sure the browser doesn&rsquo;t think that the page is in a language other than english. Then there&rsquo;s a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there&rsquo;s a tag where we&rsquo;ve linked this HTML file to a CSS document (the href component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.</p>
+<p>So now we&rsquo;ve specified the character set that the page uses - this is just to make sure the browser doesn&rsquo;t think that the page is in a language other than english. Then there&rsquo;s a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there&rsquo;s a tag where we&rsquo;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.</p>
 <p>Now let&rsquo;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your webpage goes. Let&rsquo;s try adding some information in.</p>
 <div class="codehilite"><pre><span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/h1&gt;</span>
@@ -196,8 +196,10 @@
 <li><code>&lt;img src="path/link to image" alt="text to show if image doesn't load" /&gt;</code> - used to add images</li>
 <li><code>&lt;em&gt;text here&lt;/em&gt;</code> - used for italicising text</li>
 <li><code>&lt;strong&gt;text here&lt;/strong&gt;</code> - used to bold text</li>
-<li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> - used to start Unordered and Ordered Lists</li>
+<li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> - used to start Unordered and Ordered Lists<ul>
 <li><code>&lt;li&gt;Item here&lt;/li&gt;</code> - used to denote each item in a list</li>
+</ul>
+</li>
 <li><code>&lt;script&gt; Code in here &lt;/script&gt;</code> - used to add non-HTML code such as Javascript to a page. We can (and should) instead add an <code>src</code> attribute to the <code>&lt;script&gt;</code> tag and link to an external Javascript file to keep our ccode clean and maintainable.</li>
 <li><code>&lt;div&gt;</code> - used to denote different divisions within your HTML body. Possibly one of the most useful tags when it comes to layout and styling in CSS.</li>
 </ul>
@@ -230,19 +232,19 @@
 
 
 <p>We can also just change the style for an entire kind of element. So we could just change how all <code>&lt;h1&gt;</code> tags look. Let&rsquo;s take a look at what CSS looks like:</p>
-<div class="codehilite"><pre><span class="vg">body</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nl">padding:</span><span class="w"> </span><span class="il">50</span><span class="vg">px</span><span class="w"> </span><span class="il">100</span><span class="vg">px</span><span class="p">;</span>
+<div class="codehilite"><pre><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">50px</span> <span class="m">100px</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="vg">h1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="vg">font</span><span class="o">-</span><span class="nl">size:</span><span class="w"> </span><span class="il">40</span><span class="vg">px</span><span class="p">;</span>
-<span class="w">    </span><span class="vg">font</span><span class="o">-</span><span class="nl">weight:</span><span class="w"> </span><span class="vg">lighter</span><span class="p">;</span>
-<span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="vg">blue</span><span class="p">;</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="o">:</span> <span class="k">lighter</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">.</span><span class="vg">red</span><span class="o">-</span><span class="vg">text</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="vg">red</span><span class="p">;</span>
+<span class="nc">.red-text</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="err">#</span><span class="vg">intro</span><span class="o">-</span><span class="vg">para</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nl">border:</span><span class="w"> </span><span class="il">2</span><span class="vg">px</span><span class="w"> </span><span class="vg">solid</span><span class="w"> </span><span class="vg">black</span><span class="p">;</span>
+<span class="nf">#intro-para</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">2px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -254,79 +256,82 @@
 <p>A great way to play around with CSS styles is to right-click on this page in Chrome of Firefox, Inspect Element, and try changing the CSS styles on the right hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
 <p><img alt="Chrome dev tools" src="https://developer.chrome.com/devtools/docs/css-preprocessors-files/sass-debugging.png" /></p>
 <h3 id="javascript-finally"><a name="user-content-javascript-finally" href="#javascript-finally" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Javascript, finally!</h3>
-<p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&rsquo;re used to. You just write code in a file, link to it in your HTML and it exectutes.</p>
-<p><img alt="javascript meme" src="http://www.memegenerator.eu/media/created/iyflyp.jpg" /></p>
+<p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&rsquo;re (maybe) used to. You just write code in a file, link to it in your HTML and it exectutes.</p>
+<p><img alt="Javascript meme" src="http://www.memegenerator.eu/media/created/iyflyp.jpg" /></p>
 <p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <code>Integer</code> with the value of <code>5</code>. Writing <code>var x = "5"</code> would create a <code>String</code> named <code>x</code> with the string <code>5</code> as its value.</p>
-<p>The most common types we will use are Strings (just text, such as &ldquo;This is some text&rdquo;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&rsquo;ll be surprised by how common almost everyhting you wanna do is).</p>
+<p>The most common types we will use are Strings (just text, such as &ldquo;This is some text&rdquo;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&rsquo;ll be surprised by how common almost everything you wanna do is).</p>
 <p>Here&rsquo;s some sample Javascript code:</p>
-<div class="codehilite"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">myVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;January 16th&quot;</span><span class="p">;</span>
-<span class="vg">alert</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;PennApps started on &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="vg">myVariable</span><span class="p">);</span>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">myVariable</span> <span class="o">=</span> <span class="s2">&quot;January 16th&quot;</span><span class="p">;</span>
+<span class="nx">alert</span> <span class="p">(</span><span class="s2">&quot;PennApps started on &quot;</span> <span class="o">+</span> <span class="nx">myVariable</span><span class="p">);</span>
 </pre></div>
 
 
 <p>This creates an alert that says &ldquo;PennApps starts on January 16th&rdquo;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&rsquo;s a function in Javascript that squares a number:</p>
-<div class="codehilite"><pre><span class="n">function</span> <span class="n">square</span> (<span class="n">number</span>) {
-    <span class="k">return</span> <span class="n">number</span> * <span class="n">number</span>;
-}
-// <span class="n">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">single</span> <span class="n">line</span> <span class="n">comment</span> <span class="n">that</span> <span class="nb">does</span> <span class="nb">not</span> <span class="n">need</span> <span class="nb">to</span> <span class="n">be</span> <span class="n">closed</span>.
-<span class="n">console</span>.<span class="nb">log</span>(<span class="n">square</span> (<span class="mi">5</span>)); // <span class="n">This</span> <span class="n">prints</span> <span class="n">the</span> <span class="n">result</span> <span class="nb">to</span> <span class="n">the</span> <span class="n">javascript</span> <span class="n">console</span> <span class="n">in</span> <span class="n">your</span> <span class="n">browser&#39;s</span> (<span class="n">Chrome</span> <span class="o">or</span> <span class="n">Firefox</span>) <span class="n">developer</span> <span class="n">tools</span>.
-/* <span class="n">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">multi-line</span> <span class="n">comment</span>
-   <span class="n">that</span> <span class="k">only</span> <span class="n">ends</span> <span class="k">when</span> <span class="n">we</span> <span class="k">do</span> <span class="n">this</span> */
+<div class="codehilite"><pre><span class="kd">function</span> <span class="nx">square</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
 
-// <span class="n">We</span> <span class="nb">can</span> <span class="o">also</span> <span class="nb">write</span> <span class="n">the</span> <span class="n">above</span> <span class="n">function</span> <span class="k">as</span> <span class="n">the</span> <span class="n">following:</span>
-<span class="n">var</span> <span class="n">square</span> = <span class="n">function</span> (<span class="n">number</span>) {
-    <span class="k">return</span> <span class="n">number</span> * <span class="n">number</span>;
-}
+<span class="c1">// This is a single line comment that does not need to be closed.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span> <span class="p">(</span><span class="mi">5</span><span class="p">));</span> <span class="c1">// This prints the result to the javascript console in your browser&#39;s (Chrome or Firefox) developer tools.</span>
 
-// <span class="n">Here&#39;s</span> <span class="n">an</span> <span class="n">anonymous</span> <span class="n">function</span> <span class="n">that</span> <span class="n">calculates</span> <span class="n">the</span> <span class="n">square</span> <span class="k">of</span> <span class="mi">5</span>:
+<span class="cm">/* This is a multi-line comment</span>
+<span class="cm">   that only ends when we do this */</span>
 
-(<span class="n">function</span> (<span class="n">number</span>) {
-    <span class="k">return</span> <span class="n">number</span><span class="o">*</span><span class="n">number</span>;
-}) (<span class="mi">5</span>);
-// <span class="n">In</span> <span class="n">this</span> <span class="n">case</span>, <span class="n">we</span> <span class="n">are</span> <span class="n">executing</span> <span class="n">the</span> <span class="n">anonymous</span> <span class="n">function</span> <span class="n">immediately</span>, <span class="k">but</span> <span class="n">we</span> <span class="n">don&#39;t</span> <span class="n">have</span> <span class="nb">to</span> <span class="n">always</span> <span class="k">do</span> <span class="n">this:</span>
+<span class="c1">// We can also write the above function as the following:</span>
+<span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">function</span> <span class="n">idPlusString</span> (<span class="n">number</span>) {
-    <span class="n">var</span> <span class="n">cube</span> = <span class="n">number</span> * <span class="n">number</span> * <span class="n">number</span>;
-    <span class="k">return</span> <span class="n">function</span> (<span class="nb">name</span>) {
-        <span class="k">return</span> <span class="s">&quot;Hi &quot;</span>+ <span class="nb">name</span> + <span class="s">&quot;. &quot;</span> + <span class="s">&quot;Your ID is &quot;</span> + <span class="n">cube</span> + <span class="s">&quot;.&quot;</span>;
-    }
-}
-// <span class="n">This</span> <span class="k">returns</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">you</span> <span class="nb">can</span> <span class="n">add</span> <span class="n">a</span> <span class="n">string</span> <span class="nb">to</span>. <span class="n">If</span> <span class="n">you</span> <span class="n">don&#39;t</span> <span class="n">understand</span> <span class="n">this</span> <span class="k">last</span> <span class="n">function</span>, <span class="n">it&#39;s</span> <span class="n">okay</span>.
+<span class="c1">// Here&#39;s an anonymous function that calculates the square of 5:</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span><span class="o">*</span><span class="nx">number</span><span class="p">;</span>
+<span class="p">})</span> <span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// In that case, we were executing the anonymous function immediately, but we don&#39;t have to always do that:</span>
+<span class="kd">function</span> <span class="nx">idPlusString</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cube</span> <span class="o">=</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&quot;Hi &quot;</span><span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="s2">&quot;Your ID is &quot;</span> <span class="o">+</span> <span class="nx">cube</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// This returns a function that you can add a string to. If you don&#39;t understand this last function, it&#39;s okay.</span>
 </pre></div>
 
 
 <p>Javascript mainly works on Objects and Arrays to store and access data.</p>
 <div class="codehilite"><pre><span class="c1">// Here&#39;s an Object that conatins an array</span>
-<span class="k">var</span> <span class="n">myDetails</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">&#39;</span><span class="n">name</span><span class="p">&#39;</span> <span class="o">:</span> <span class="s">&quot;Mark Gates&quot;</span><span class="p">,</span>
-    <span class="p">&#39;</span><span class="n">age</span><span class="p">&#39;</span> <span class="o">:</span> <span class="mh">24</span><span class="p">,</span>
-    <span class="p">&#39;</span><span class="n">interests</span><span class="p">&#39;</span><span class="o">:</span> <span class="p">[&#39;</span><span class="n">Figure</span> <span class="n">Skating</span><span class="p">&#39;,</span> <span class="p">&#39;</span><span class="n">Javascript</span><span class="p">&#39;,</span> <span class="p">&#39;</span><span class="n">Tennis</span><span class="p">&#39;,</span> <span class="p">&#39;</span><span class="no">EDM</span><span class="p">&#39;]</span>
+<span class="kd">var</span> <span class="nx">myDetails</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span> <span class="o">:</span> <span class="s2">&quot;Mark Gates&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span> <span class="o">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s1">&#39;interests&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Figure Skating&#39;</span><span class="p">,</span> <span class="s1">&#39;Javascript&#39;</span><span class="p">,</span> <span class="s1">&#39;Tennis&#39;</span><span class="p">,</span> <span class="s1">&#39;EDM&#39;</span><span class="p">]</span>
 <span class="p">}</span>
-<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">myDetails</span><span class="p">.</span><span class="n">name</span><span class="p">);</span> <span class="c1">// prints the name property of the object, ie, &#39;Mark Gates&#39;</span>
-<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">myDetails</span><span class="p">.</span><span class="n">interests</span><span class="p">[</span><span class="mh">1</span><span class="p">]);</span> <span class="c1">// prints &#39;Javascript&#39; to the console</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDetails</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// prints the name property of the object, ie, &#39;Mark Gates&#39;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDetails</span><span class="p">.</span><span class="nx">interests</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// prints &#39;Javascript&#39; to the console</span>
 </pre></div>
 
 
 <p>Objects are essentially key-value pairs. We can access to values easily using the notation <code>object.key</code>.</p>
-<p>If you haven&rsquo;t noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It&rsquo;s okay if you end every line with one, it&rsquo;s better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitionsand pretty much everything that ends in curly braces (<code>}</code>).</p>
+<p>If you haven&rsquo;t noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It&rsquo;s okay if you end every line with one, it&rsquo;s better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitions and pretty much everything that ends in curly braces (<code>}</code>).</p>
 <p><em>JSON (Javascript Object Notation)</em> is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays liberally to store information. Let&rsquo;s look at an example of a JSON file:</p>
 <div class="codehilite"><pre><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;employees&quot;</span><span class="o">:</span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;firstName&quot;</span><span class="o">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">            </span><span class="s2">&quot;lastName&quot;</span><span class="o">:</span><span class="s2">&quot;Doe&quot;</span>
-<span class="w">        </span><span class="p">},</span><span class="w"> </span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;firstName&quot;</span><span class="o">:</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">            </span><span class="s2">&quot;lastName&quot;</span><span class="o">:</span><span class="s2">&quot;Smith&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;firstName&quot;</span><span class="o">:</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">            </span><span class="s2">&quot;lastName&quot;</span><span class="o">:</span><span class="s2">&quot;Jones&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">    </span><span class="s2">&quot;company&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ABC Holdings&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;lastUpdated&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;September 6th&quot;</span>
+    <span class="nt">&quot;employees&quot;</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> 
+            <span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span>
+        <span class="p">},</span> 
+        <span class="p">{</span>
+            <span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span> 
+            <span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Smith&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> 
+            <span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Jones&quot;</span>
+        <span class="p">}</span>
+        <span class="p">],</span>
+    <span class="nt">&quot;company&quot;</span> <span class="p">:</span> <span class="s2">&quot;ABC Holdings&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lastUpdated&quot;</span> <span class="p">:</span> <span class="s2">&quot;September 6th&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -351,25 +356,25 @@
 </pre></div>
 
 
-<p>So much better isn&rsquo;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier.</p>
+<p>So much better isn&rsquo;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier, and websites much faster.</p>
 <h3 id="what-is-terminalcommand-prompt"><a name="user-content-what-is-terminalcommand-prompt" href="#what-is-terminalcommand-prompt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is Terminal/Command Prompt?</h3>
 <p><img alt="Terminal" src="assets/img/terminal.png" /></p>
-<p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending s good amount of time this weekend in here, so let&rsquo;s take some time to get used to it.</p>
-<p>Once you fire up Terminal or Command Prompt (on Windows, you&rsquo;ll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you&rsquo;ll know it&rsquo;s running as Admin if your path ends in ../system32), here&rsquo;s how you get around:</p>
+<p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let&rsquo;s take some time to get used to it.</p>
+<p>Once you fire up Terminal or Command Prompt (on Windows, you&rsquo;ll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you&rsquo;ll know it&rsquo;s running as Admin if your path ends in <code>../system32</code>), here&rsquo;s how you get around:</p>
 <ul>
 <li><code>ls</code> (<code>DIR</code> on Windows) lists all the files in the current folder</li>
 <li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents, if there is such a folder in teh current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
 <li><code>mkdir</code> allows you to make a folder in the current directory. So <code>mkdir New</code> makes a folder named &lsquo;New&rsquo;.</li>
-<li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from C:\windows\temp to C:\temp. * works as a wildcard operator here.</li>
+<li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from <code>C:\windows\temp</code> to <code>C:\temp</code>. <code>*</code> works as a wildcard operator here.</li>
 </ul>
-<p>Once you&rsquo;ve installed Node.JS, you&rsquo;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&rsquo;ll aso be able to start up MongoDB from here.</p>
+<p>Once you&rsquo;ve installed Node.JS, you&rsquo;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&rsquo;ll aso be able to start up MongoDB from here using <code>mongod</code>.</p>
 <h3 id="lets-start-doing-stuff"><a name="user-content-lets-start-doing-stuff" href="#lets-start-doing-stuff" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Let&rsquo;s start doing stuff!</h3>
 <p>Whoohoo! We&rsquo;ve made it this far, and it&rsquo;s finally time to start doing stuff!</p>
 <h4 id="sublime-text-2"><a name="user-content-sublime-text-2" href="#sublime-text-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Sublime Text 2</h4>
-<p>We&rsquo;ve got to install a whole buch of stuff over the next few workshops. Let&rsquo;s start simple, go and download <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. It&rsquo;s the best text editor in existence and this is where we&rsquo;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it, but we might be using some Sublime Packages later on.</p>
+<p>We&rsquo;ve got to install a whole buch of stuff over the next few workshops. Let&rsquo;s start simple, go and download <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. It&rsquo;s the best text editor in existence (yes, that&rsquo;s arguable) and this is where we&rsquo;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it.</p>
 <p>NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit &ldquo;Cancel&rdquo; and you can use it forever, or buy it and support a fellow developer!</p>
 <h4 id="making-a-personal-landing-page"><a name="user-content-making-a-personal-landing-page" href="#making-a-personal-landing-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Making a Personal Landing Page</h4>
-<p>Well done! You&rsquo;ve got everything you need installed. Now let&rsquo;s test what you&rsquo;ve learned today. Here&rsquo;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can eventry adn create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration (<a href="http://pvrnav.com">Pranav</a>, <a href="http://lewisjellis.com">Lewis</a>, <a href="http://bclay.github.io/homepage/">Brynn</a>) or browse around the internet to see nice design (like <a href="http://medium.com">Medium</a>).</p>
+<p>Well done! You&rsquo;ve got everything you need installed. Now let&rsquo;s test what you&rsquo;ve learned in this workshop. Here&rsquo;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration (<a href="http://pvrnav.com">Pranav</a>, <a href="http://lewisjellis.com">Lewis</a>, <a href="http://bclay.github.io/homepage/">Brynn</a>) or browse around the internet to see nice design (like <a href="http://medium.com">Medium</a>).</p>
 <h1 id="intro-to-javascript-and-nodejs"><a name="user-content-intro-to-javascript-and-nodejs" href="#intro-to-javascript-and-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Javascript and NodeJS <a id="node-section"></a></h1>
 <h2 id="the-most-powerful-web-development-tools-ever"><a name="user-content-the-most-powerful-web-development-tools-ever" href="#the-most-powerful-web-development-tools-ever" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The most powerful web development tools ever</h2>
 <p>Stuff to be covered:</p>
@@ -396,9 +401,9 @@
 </ol>
 <p><em>Linux</em></p>
 <p>There are about a million different ways to install things on various Linux-based operating systems. Go to <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">this link</a> for a full list.</p>
-<p><a href="assets/files/workshop2.zip">This ZIP file</a> contains a snapshot of what your code should look like at the end of this workshop.</p>
-<h3 id="what-is-a-node-app"><a name="user-content-what-is-a-node-app" href="#what-is-a-node-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is a Node app?</h3>
-<p>Node is a very common Javascript-based web framework. In other words, it&rsquo;s a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It&rsquo;s great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app.</p>
+<p>Alright, let&rsquo;s get started.</p>
+<h3 id="what-is-a-nodejs-app"><a name="user-content-what-is-a-nodejs-app" href="#what-is-a-nodejs-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is a NodeJS app?</h3>
+<p>Node is a very common Javascript-based web framework. In other words, it&rsquo;s a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It&rsquo;s great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app. NodeJS has the most modules of any modern web framework, and that&rsquo;s part of what makes it really great for writing webapps fast.</p>
 <h3 id="the-anatomy-of-a-node-app"><a name="user-content-the-anatomy-of-a-node-app" href="#the-anatomy-of-a-node-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Anatomy of a Node app</h3>
 <p>A common Node app has several main components, as described below:</p>
 <p><em>app.js:</em> The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. Then &ldquo;get&rdquo; and &ldquo;post&rdquo; requests are set up that tell the app which router methods to use. The last section tells the app to run on a particular port (3000 in this case).</p>
@@ -413,6 +418,94 @@
 <p>Enter the folder the contains your Node app with simple terminal commands like &ldquo;cd&rdquo;. Once there, type &ldquo;node&rdquo; and hit enter. If you see a blank line that starts with &ldquo;&gt;&rdquo;, Node is installed properly and you&rsquo;re ready to go. If not, go back to the installation instructions and reinstall.</p>
 <p>The first time you run a node app, cd into the directory and run <code>npm install</code>. To run the Node app, type <code>node app.js</code> into the terminal from the folder that contains app.js.</p>
 <p>To see the app working, pull up an Internet browser. In the address bar, enter <code>localhost:3000</code>. If all goes well, you should be able to see your app!</p>
+<h3 id="writing-our-first-nodejs-app"><a name="user-content-writing-our-first-nodejs-app" href="#writing-our-first-nodejs-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Writing our first NodeJS app</h3>
+<p>Download <a href="assets/files/ws2-start.zip">this file</a> to get the directory structure and files we need to start off with.</p>
+<p>Let&rsquo;s start off by looking at the code that&rsquo;s already there in the package.json file, and then moving on to the code we need to write in app.js.</p>
+<h4 id="packagejson"><a name="user-content-packagejson" href="#packagejson" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Package.json</h4>
+<p>This is a basic JSON file that describes the app we&rsquo;re building and its associated dependencies. Dependencies are basically modules, or other pieces of software that somebody else made, that lets us do things like use Express, the module that makes it really easy to create webapps using NodeJS.</p>
+<div class="codehilite"><pre><span class="err">Name:</span> <span class="err">Module</span> <span class="err">name</span> 
+<span class="err">Version:</span> <span class="err">Version</span> <span class="err">number</span> 
+<span class="err">Private:</span> <span class="err">Keep</span> <span class="err">npm</span> <span class="err">repo</span> <span class="err">private</span> 
+<span class="err">Dependencies:</span> <span class="err">Automatically</span> <span class="err">installed</span> <span class="err">when</span> <span class="err">people</span> <span class="err">install</span> <span class="err">your</span> <span class="err">app</span> 
+</pre></div>
+
+
+<h4 id="appjs"><a name="user-content-appjs" href="#appjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App.js</h4>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;morgan&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">cookieParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cookie-parser&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;body-parser&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cookie-session&#39;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>We start off by obtaining all of the required resources and packages for the application that we&rsquo;re going to use later on. We can do this in Node by using the <code>require('name of module')</code> syntax. <code>name of module</code> can either be the name of some module you specified or the path to a file. Morgan is an HTTP request logger middleware for NodeJS (don&rsquo;t worry if you don&rsquo;t udnerstand that, this isn&rsquo;t too important and the app won&rsquo;t break if we get rid of it). Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides &ldquo;guest&rdquo; sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We&rsquo;ll see more of both cookie modules - and their applications in our web app - a little later on.</p>
+<p>Now that we&rsquo;ve stated what we need, let&rsquo;s instantiate our app:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+</pre></div>
+
+
+<p>Express is a minimal and flexible NodeJS web application framework that provides a robust set of features for web and mobile applications. This line both instantiates Express and assigns our variable <code>app</code> to it.</p>
+<p>We should now tell the app where to find the views (HTML templates/files) it needs, what engines to render them with (we&rsquo;re going to use HJS, you can find more on the tempalte syntax it uses <a href="http://mustache.github.io/mustache.5.html">here</a>) and which methods to use to get things up and running (just telling our app to use the logger and parsers we defined above, setting the secret that we use to encrypt cookies that store session information and telling the app where to look for public files like CSS, and frontend Javascript).</p>
+<div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;views&#39;</span><span class="p">,</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;views&#39;</span><span class="p">));</span> 
+<span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;view engine&#39;</span><span class="p">,</span> <span class="s1">&#39;hjs&#39;</span><span class="p">);</span> 
+<span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3000</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">logger</span><span class="p">(</span><span class="s1">&#39;dev&#39;</span><span class="p">));</span> 
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span><span class="nx">extended</span><span class="o">:</span> <span class="kc">false</span><span class="p">}));</span> 
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cookieParser</span><span class="p">());</span> 
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">session</span><span class="p">({</span><span class="nx">secret</span><span class="o">:</span> <span class="s1">&#39;codeweekend&#39;</span><span class="p">}));</span> 
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;public&#39;</span><span class="p">)));</span>
+</pre></div>
+
+
+<p>Note how the last line tells the app to treat the folder directory like the top-level.</p>
+<p>It&rsquo;s always important to look out for paths that don&rsquo;t exist (like google.com/kasjdhfkjashdfkjashdfkajsdhfkjsda), and let&rsquo;s make sure our app does the same:</p>
+<div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="kd">var</span> <span class="nx">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Not Found&#39;</span><span class="p">);</span> 
+  <span class="nx">err</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">404</span><span class="p">;</span> 
+  <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> 
+<span class="p">});</span> 
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">status</span> <span class="o">||</span> <span class="mi">500</span><span class="p">);</span> 
+  <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="p">{</span> 
+    <span class="nx">errorMessage</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span> 
+    <span class="nx">error</span><span class="o">:</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;env&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;development&#39;</span> <span class="o">?</span> <span class="nx">err</span> <span class="o">:</span> <span class="p">{}</span> 
+  <span class="p">});</span> 
+<span class="p">});</span>
+</pre></div>
+
+
+<p>This catches 404 errors (ie, this path doesn&rsquo;t exist) and forwards them to our error handler, which prints out a bunch of error info, since we&rsquo;re really in a developer environment/debuggin mode.</p>
+<p>And finally, to get the app really off the ground, let&rsquo;s make it listen for requests.</p>
+<div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Express server listening on port &#39;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">));</span> 
+<span class="p">});</span>
+</pre></div>
+
+
+<p>We&rsquo;ll use the port and resources we defined earlier on.</p>
+<p>We can also add in some middleware, which is code that runs in before routes are searched for by the app. In this case we use:</p>
+<div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="nx">res</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span> 
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> 
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span> <span class="o">=</span> <span class="p">[];</span> 
+  <span class="p">}</span>
+
+  <span class="nx">next</span><span class="p">();</span> 
+<span class="p">});</span>
+</pre></div>
+
+
+<p>If we get session messages, we set them to our local state. And if no session notes exist, let&rsquo;s make an empty collection for them. We&rsquo;ll use this nifty code soon. </p>
+<h4 id="views"><a name="user-content-views" href="#views" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Views</h4>
+<p><a href="assets/files/ws2.zip">This ZIP file</a> contains a snapshot of what your code should look like at the end of this workshop.</p>
 <h1 id="intro-to-apis"><a name="user-content-intro-to-apis" href="#intro-to-apis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to APIs <a id="api-section"></a></h1>
 <h2 id="adding-the-internet-to-your-app"><a name="user-content-adding-the-internet-to-your-app" href="#adding-the-internet-to-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adding the internet to your app</h2>
 <p>Topics to be covered:</p>

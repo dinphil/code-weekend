@@ -7,7 +7,7 @@ Building your first webapp
 
 [Sign up here!](http://goo.gl/forms/hXb2IVeMM9)
 
-Code Weekend is scheduled for *January 24th and 25th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps Winter 2015") scheduled for the weekend before. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps, it's a great way to jump in the deep end and expose yourself to the incredible world of building things (but actually they're doing great stuff for first-time hackers as well).
+Code Weekend is scheduled for *January 24th and 25th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps Winter 2015") scheduled for the weekend before. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps, it's a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they're doing great stuff for first-time hackers as well).
 
 > These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.
 
@@ -21,8 +21,8 @@ If you already have some coding experience, then feel free to skip the first ses
 
 Intro to Web Development <a id="setup-section"></a>
 ==================================
-Web Pages and the basics of developing
---------------------------------------
+Web Pages and the basics of development
+---------------------------------------
 
 Welcome to your first coding experience!
 
@@ -32,10 +32,10 @@ We'll be going over quite a few things in this opening workshop:
 - [How the internet works and why web development is so different from, say, Java](#an-introduction-to-the-web)
 - [Basic HTML and CSS and how webpages are structured](#simple-html-and-css)
 - [Javascript, JSON and how to make things more fun](#javascript-finally)
-- [What is Terminal/Command Prompt and how to run Node, Mongo and NPM](#what-is-terminalcommand-prompt)
+- [What is Terminal/Command Prompt](#what-is-terminalcommand-prompt)
 - [Build your own Personal landing page](#making-a-personal-landing-page)
 
-This shouldn't take too long though, and we're going to go ahead and leave the rest of the time for you to actually install all the applications you'll need for the rest of these workshops. In addition, we'll give you a basic static webpage that you can edit and turn into your own personal landing page.
+This shouldn't take too long though, and we're going to go ahead and leave the rest of the time for you to turn a basic static webpage that we'll give you into your own personal landing page.
 
 So let's get started!
 
@@ -66,7 +66,7 @@ There's pretty much three things happening every time you open a website:
 
 So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are basically the two main components of any website.
 
-You'll see later on that requests aren't just made of the server when we first open the website; it's often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when thhey're needed (think Facebook's Newsfeed). It's also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.
+You'll see later on that requests aren't just made of the server when we first open the website; it's often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they're needed (think Facebook's Newsfeed). It's also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.
 
 ![Facebook Loading using Javascript](http://www.product-reviews.net/wp-content/uploads/facebook-not-working.jpg)
 
@@ -90,35 +90,61 @@ Let's start with HTML (Hypertext Markup Language).
 
 HyperText is text that will hyperlink you to other text. That's it. Think [links](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 
-It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called 'tags.' Tags are denoted by < followed by >. Below is the most basic HTML document we can create (except for the comments that we've added in to make things clearer).
+It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called 'tags.' Tags are denoted by `<` followed by `>`. Below is the most basic HTML document we can create (except for the comments that we've added in to make things clearer).
 
-	<!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. -->
-	<!DOCTYPE html>
-	<html>
-	    <head>
-	        <title>Code Weekend Sample Page</title>
-	    </head>
-	    <body>
-	        <p>This is a basic HTML webpage.</p>
-	    </body>
-	</html>
-	
+```html
+<!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Weekend Sample Page</title>
+    </head>
+    <body>
+        <p>This is a basic HTML webpage.</p>
+    </body>
+</html>
+```
 
 `<!DOCTYPE html> <html>` is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contatined in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, `<html>` must eventually be closed by `</html>`.
 
 Usually though, we'll include more information about the page in the `<head>` tag like this:
 
+```html
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Code Weekend Sample Page">
+    <title>Code Weekend Sample Page</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+```
+
+So now we've specified the character set that the page uses - this is just to make sure the browser doesn't think that the page is in a language other than english. Then there's a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there's a tag where we've linked this HTML file to a CSS document (the `href` component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.
+
+Now let's get to the fun part - the `<body>` tag. This is where all the actual stuff that shows up on your webpage goes. Let's try adding some information in.
+
+```html
+<body>
+    <h1>Code Weekend Sample Page</h1>
+    <h2>Here's a smaller heading. We can go all the way down to H6</h2>
+    <!-- Here's a comment that will not show up on the actual page -->
+    <p>
+        Here's a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+    </p>
+</body>
+```
+
+Let's look at this whole document now.
+
+```html
+<!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. -->
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Code Weekend Sample Page">
         <title>Code Weekend Sample Page</title>
         <link rel="stylesheet" href="main.css">
     </head>
-
-So now we've specified the character set that the page uses - this is just to make sure the browser doesn't think that the page is in a language other than english. Then there's a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there's a tag where we've linked this HTML file to a CSS document (the href component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.
-
-Now let's get to the fun part - the `<body>` tag. This is where all the actual stuff that shows up on your webpage goes. Let's try adding some information in.
-
     <body>
         <h1>Code Weekend Sample Page</h1>
         <h2>Here's a smaller heading. We can go all the way down to H6</h2>
@@ -127,27 +153,8 @@ Now let's get to the fun part - the `<body>` tag. This is where all the actual s
             Here's a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
         </p>
     </body>
-
-Let's look at this whole document now.
-
-    <!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. -->
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="description" content="Code Weekend Sample Page">
-            <title>Code Weekend Sample Page</title>
-            <link rel="stylesheet" href="main.css">
-        </head>
-        <body>
-            <h1>Code Weekend Sample Page</h1>
-            <h2>Here's a smaller heading. We can go all the way down to H6</h2>
-            <!-- Here's a comment that will not show up on the actual page -->
-            <p>
-                Here's a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
-            </p>
-        </body>
-    </html>
+</html>
+```
 
 Here are some more important HTML tags:
 
@@ -156,7 +163,7 @@ Here are some more important HTML tags:
 - `<em>text here</em>` - used for italicising text
 - `<strong>text here</strong>` - used to bold text
 - `<ul>` and `<ol>` - used to start Unordered and Ordered Lists
-- `<li>Item here</li>` - used to denote each item in a list
+    + `<li>Item here</li>` - used to denote each item in a list
 - `<script> Code in here </script>` - used to add non-HTML code such as Javascript to a page. We can (and should) instead add an `src` attribute to the `<script>` tag and link to an external Javascript file to keep our ccode clean and maintainable.
 - `<div>` - used to denote different divisions within your HTML body. Possibly one of the most useful tags when it comes to layout and styling in CSS.
 
@@ -169,41 +176,45 @@ Right. So before we can decide how things should look, we actually need a way to
 
 Now we have a way to decide on styles. Let's look at that HTML document again:
 
-    <!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. It however does use identifiers, so we're one step closer to styling. -->
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="description" content="Code Weekend Sample Page">
-            <title>Code Weekend Sample Page</title>
-            <link rel="stylesheet" href="main.css">
-        </head>
-        <body>
-            <h1>Code Weekend Sample Page</h1>
-            <h2>Here's a smaller heading. We can go all the way down to H6</h2>
-            <!-- Here's a comment that will not show up on the actual page -->
-            <p class="red-text" id="intro-para">
-                Here's a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
-            </p>
-        </body>
-    </html>
+```html
+<!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. It however does use identifiers, so we're one step closer to styling. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Code Weekend Sample Page">
+        <title>Code Weekend Sample Page</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Code Weekend Sample Page</h1>
+        <h2>Here's a smaller heading. We can go all the way down to H6</h2>
+        <!-- Here's a comment that will not show up on the actual page -->
+        <p class="red-text" id="intro-para">
+            Here's a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+        </p>
+    </body>
+</html>
+```
 
 We can also just change the style for an entire kind of element. So we could just change how all `<h1>` tags look. Let's take a look at what CSS looks like:
 
-    body {
-        padding: 50px 100px;
-    }
-    h1 {
-        font-size: 40px;
-        font-weight: lighter;
-        color: blue;
-    }
-    .red-text {
-        color: red;
-    }
-    #intro-para {
-        border: 2px solid black;
-    }
+```css
+body {
+    padding: 50px 100px;
+}
+h1 {
+    font-size: 40px;
+    font-weight: lighter;
+    color: blue;
+}
+.red-text {
+    color: red;
+}
+#intro-para {
+    border: 2px solid black;
+}
+```
 
 As you can see, there are small differences in syntax depending on the selector (whether you're changing all instances of an element, instances of a class, or just a single element by ID) but it's mostly quite simple.
 
@@ -219,120 +230,133 @@ A great way to play around with CSS styles is to right-click on this page in Chr
 
 ### Javascript, finally!
 
-Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we're used to. You just write code in a file, link to it in your HTML and it exectutes.
+Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we're (maybe) used to. You just write code in a file, link to it in your HTML and it exectutes.
 
-![javascript meme](http://www.memegenerator.eu/media/created/iyflyp.jpg)
+![Javascript meme](http://www.memegenerator.eu/media/created/iyflyp.jpg)
 
 Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing `var x = 5` will create a variable named `x` of the type `Integer` with the value of `5`. Writing `var x = "5"` would create a `String` named `x` with the string `5` as its value.
 
-The most common types we will use are Strings (just text, such as "This is some text"), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you'll be surprised by how common almost everyhting you wanna do is).
+The most common types we will use are Strings (just text, such as "This is some text"), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you'll be surprised by how common almost everything you wanna do is).
 
 Here's some sample Javascript code:
 
-    var myVariable = "January 16th";
-    alert ("PennApps started on " + myVariable);
+```javascript
+var myVariable = "January 16th";
+alert ("PennApps started on " + myVariable);
+```
 
 This creates an alert that says "PennApps starts on January 16th". There was absolutely no reason to use a variable here other than to show how we can use it. Here's a function in Javascript that squares a number:
 
-    function square (number) {
-        return number * number;
+```javascript
+function square (number) {
+    return number * number;
+}
+
+// This is a single line comment that does not need to be closed.
+console.log(square (5)); // This prints the result to the javascript console in your browser's (Chrome or Firefox) developer tools.
+
+/* This is a multi-line comment
+   that only ends when we do this */
+
+// We can also write the above function as the following:
+var square = function (number) {
+    return number * number;
+}
+
+// Here's an anonymous function that calculates the square of 5:
+(function (number) {
+    return number*number;
+}) (5);
+
+// In that case, we were executing the anonymous function immediately, but we don't have to always do that:
+function idPlusString (number) {
+    var cube = number * number * number;
+    return function (name) {
+        return "Hi "+ name + ". " + "Your ID is " + cube + ".";
     }
-    // This is a single line comment that does not need to be closed.
-    console.log(square (5)); // This prints the result to the javascript console in your browser's (Chrome or Firefox) developer tools.
-    /* This is a multi-line comment
-       that only ends when we do this */
-
-    // We can also write the above function as the following:
-    var square = function (number) {
-        return number * number;
-    }
-
-    // Here's an anonymous function that calculates the square of 5:
-
-    (function (number) {
-        return number*number;
-    }) (5);
-    // In this case, we are executing the anonymous function immediately, but we don't have to always do this:
-
-    function idPlusString (number) {
-        var cube = number * number * number;
-        return function (name) {
-            return "Hi "+ name + ". " + "Your ID is " + cube + ".";
-        }
-    }
-    // This returns a function that you can add a string to. If you don't understand this last function, it's okay.
+}
+// This returns a function that you can add a string to. If you don't understand this last function, it's okay.
+```
 
 Javascript mainly works on Objects and Arrays to store and access data.
 
-    // Here's an Object that conatins an array
-    var myDetails = {
-        'name' : "Mark Gates",
-        'age' : 24,
-        'interests': ['Figure Skating', 'Javascript', 'Tennis', 'EDM']
-    }
-    console.log(myDetails.name); // prints the name property of the object, ie, 'Mark Gates'
-    console.log(myDetails.interests[1]); // prints 'Javascript' to the console
+```javascript
+// Here's an Object that conatins an array
+var myDetails = {
+    'name' : "Mark Gates",
+    'age' : 24,
+    'interests': ['Figure Skating', 'Javascript', 'Tennis', 'EDM']
+}
+
+console.log(myDetails.name); // prints the name property of the object, ie, 'Mark Gates'
+
+console.log(myDetails.interests[1]); // prints 'Javascript' to the console
+```
 
 Objects are essentially key-value pairs. We can access to values easily using the notation `object.key`.
 
-If you haven't noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It's okay if you end every line with one, it's better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitionsand pretty much everything that ends in curly braces (`}`).
+If you haven't noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It's okay if you end every line with one, it's better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitions and pretty much everything that ends in curly braces (`}`).
 
 *JSON (Javascript Object Notation)* is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays liberally to store information. Let's look at an example of a JSON file:
 
-    {
-        "employees":[
-            {
-                "firstName":"John", 
-                "lastName":"Doe"
-            }, 
-            {
-                "firstName":"Anna", 
-                "lastName":"Smith"
-            },
-            {
-                "firstName":"Peter", 
-                "lastName":"Jones"
-            }
-            ],
-        "company" : "ABC Holdings",
-        "lastUpdated" : "September 6th"
-    }
+```json
+{
+    "employees":[
+        {
+            "firstName":"John", 
+            "lastName":"Doe"
+        }, 
+        {
+            "firstName":"Anna", 
+            "lastName":"Smith"
+        },
+        {
+            "firstName":"Peter", 
+            "lastName":"Jones"
+        }
+        ],
+    "company" : "ABC Holdings",
+    "lastUpdated" : "September 6th"
+}
+```
 
 It's exactly like a Javascript Object, and that's because that's exactly what it is. Just for kicks, let's compare this to XML:
 
-    <employees>
-        <employee>
-            <firstName>John</firstName> 
-            <lastName>Doe</lastName>
-        </employee>
-        <employee>
-            <firstName>Anna</firstName> 
-            <lastName>Smith</lastName>
-        </employee>
-        <employee>
-            <firstName>Peter</firstName> 
-            <lastName>Jones</lastName>
-        </employee>
-    </employees>
-    <company>ABC Holdings</company>
-    <lastUpdated>September 6th</lastUpdated>
+```xml
+<employees>
+    <employee>
+        <firstName>John</firstName> 
+        <lastName>Doe</lastName>
+    </employee>
+    <employee>
+        <firstName>Anna</firstName> 
+        <lastName>Smith</lastName>
+    </employee>
+    <employee>
+        <firstName>Peter</firstName> 
+        <lastName>Jones</lastName>
+    </employee>
+</employees>
+<company>ABC Holdings</company>
+<lastUpdated>September 6th</lastUpdated>
+```
 
-So much better isn't it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier.
+So much better isn't it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier, and websites much faster.
 
 ### What is Terminal/Command Prompt?
 
 ![Terminal](assets/img/terminal.png)
 
-Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending s good amount of time this weekend in here, so let's take some time to get used to it.
+Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let's take some time to get used to it.
 
-Once you fire up Terminal or Command Prompt (on Windows, you'll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you'll know it's running as Admin if your path ends in ../system32), here's how you get around:
+Once you fire up Terminal or Command Prompt (on Windows, you'll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you'll know it's running as Admin if your path ends in `../system32`), here's how you get around:
 
 - `ls` (`DIR` on Windows) lists all the files in the current folder
 - `cd` allows you to change directory. So `cd Documents` will move into the folder Documents, if there is such a folder in teh current directory. You can check this by using `ls` (`DIR` on windows). To move up a directory, say back to where you were before you went into Documents, type in `cd ../`.
 - `mkdir` allows you to make a folder in the current directory. So `mkdir New` makes a folder named 'New'.
-- `mv` (`move` on windows) will let you move files and folders. In Terminal you can do `mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder` to move MyFile.rtf. On Windows `move c:\windows\temp\*.* c:\temp` will move everything from C:\windows\temp to C:\temp. * works as a wildcard operator here.
+- `mv` (`move` on windows) will let you move files and folders. In Terminal you can do `mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder` to move MyFile.rtf. On Windows `move c:\windows\temp\*.* c:\temp` will move everything from `C:\windows\temp` to `C:\temp`. `*` works as a wildcard operator here.
 
-Once you've installed Node.JS, you'll also be able to enter commands like `npm install express` that will use Node Package manager to install plugins such as Express. You'll aso be able to start up MongoDB from here.
+Once you've installed Node.JS, you'll also be able to enter commands like `npm install express` that will use Node Package manager to install plugins such as Express. You'll aso be able to start up MongoDB from here using `mongod`.
 
 ### Let's start doing stuff!
 
@@ -340,13 +364,13 @@ Whoohoo! We've made it this far, and it's finally time to start doing stuff!
 
 #### Sublime Text 2
 
-We've got to install a whole buch of stuff over the next few workshops. Let's start simple, go and download [Sublime Text 2](http://www.sublimetext.com/2). It's the best text editor in existence and this is where we're gonna be doing all our work. If you have a different favorite text editor, feel free to use it, but we might be using some Sublime Packages later on.
+We've got to install a whole buch of stuff over the next few workshops. Let's start simple, go and download [Sublime Text 2](http://www.sublimetext.com/2). It's the best text editor in existence (yes, that's arguable) and this is where we're gonna be doing all our work. If you have a different favorite text editor, feel free to use it.
 
 NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel" and you can use it forever, or buy it and support a fellow developer!
 
 #### Making a Personal Landing Page
 
-Well done! You've got everything you need installed. Now let's test what you've learned today. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can eventry adn create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
+Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
 
 Intro to Javascript and NodeJS <a id="node-section"></a>
 ==============================
