@@ -126,3 +126,4 @@ router.post('/email', function(req, res, next) {
 
 module.exports = router;
 ```
+Well that wasn't so bad. Who know switching storage stage could be that easy? Anyway, with that you've succesfully integrated your first database into a Node application and it's up and running. Congratulations on making it this far and please give members of the Code Weekend Team feedback on how to improve these workshops in the future!
