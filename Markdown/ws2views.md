@@ -1,4 +1,4 @@
-#### Views
+## Views
 
 As you may have already noticed, there's another folder in our project files called Views. This is where you write the front-end of the application. Let's break it down by looking at what each file is supposed to do and how it does it. First, we have:
 
