@@ -4,7 +4,7 @@ As you may have already noticed, there's another folder in our project files cal
 
 ###index.hjs
 
-As we can see, most of the code follows from the very basic HTML structure you saw earlier on in the first workshop. This file builds the first landing page for the application and a basica web form for creating a new ntoe.
+As we can see, most of the code follows from the very basic HTML structure you saw earlier on in the first workshop. This file builds the first landing page for the application and a basic web form for creating a new ntoe.
 
 ```html
 <html>
@@ -36,7 +36,7 @@ As we can see, most of the code follows from the very basic HTML structure you s
 </html>
 ```
 
-If you look carefully, you'll see that some parts of this code are a little different form the basic syntax we introduced you to. That's right, you're probably confused about what lines of code like this mean:
+If you look carefully, you'll see that some parts of this code are a little different from the basic syntax we introduced you to. That's right, you're probably confused about what lines of code like this mean:
 
 ```html
 {{ title }}
