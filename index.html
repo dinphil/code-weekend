@@ -375,6 +375,8 @@
 <p>NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit &ldquo;Cancel&rdquo; and you can use it forever, or buy it and support a fellow developer!</p>
 <h4 id="making-a-personal-landing-page"><a name="user-content-making-a-personal-landing-page" href="#making-a-personal-landing-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Making a Personal Landing Page</h4>
 <p>Well done! You&rsquo;ve got everything you need installed. Now let&rsquo;s test what you&rsquo;ve learned in this workshop. Here&rsquo;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration (<a href="http://pvrnav.com">Pranav</a>, <a href="http://lewisjellis.com">Lewis</a>, <a href="http://bclay.github.io/homepage/">Brynn</a>) or browse around the internet to see nice design (like <a href="http://medium.com">Medium</a>).</p>
+<h4 id="files"><a name="user-content-files" href="#files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Files</h4>
+<p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links. Use these as starting points for building your personal landing pages.</p>
 <h1 id="intro-to-javascript-and-nodejs"><a name="user-content-intro-to-javascript-and-nodejs" href="#intro-to-javascript-and-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Javascript and NodeJS <a id="node-section"></a></h1>
 <h2 id="the-most-powerful-web-development-tools-ever"><a name="user-content-the-most-powerful-web-development-tools-ever" href="#the-most-powerful-web-development-tools-ever" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The most powerful web development tools ever</h2>
 <p>Stuff to be covered:</p>
@@ -478,8 +480,14 @@
 </pre></div>
 
 
-<p>This catches 404 errors (ie, this path doesn&rsquo;t exist) and forwards them to our error handler, which prints out a bunch of error info, since we&rsquo;re really in a developer environment/debuggin mode.</p>
-<p>And finally, to get the app really off the ground, let&rsquo;s make it listen for requests.</p>
+<p>This catches 404 errors (ie, this path doesn&rsquo;t exist) and forwards them to our error handler, which prints out a bunch of error info, since we&rsquo;re really in a developer environment/debugging mode.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">routes</span><span class="p">);</span>
+</pre></div>
+
+
+<p>These lines initialize our routes. Routes are basically what tells our app what to do when the user goes to a certain url within our website. For example, going to google.com/mail corresponds to the &lsquo;/mail&rsquo; route as far as Google&rsquo;s backend is concerned. By requiring the <code>'./routes'</code> file, we&rsquo;re saying that we&rsquo;ve stored our routes in a separate file, and the next line tells node to look there for all its routes. We&rsquo;ll take a look at the routes file soon.</p>
+<p>And finally, to get the app really off the ground and make it actually work for someone trying to reach our website, let&rsquo;s make it listen for requests.</p>
 <div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Express server listening on port &#39;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">));</span> 
 <span class="p">});</span>
@@ -503,8 +511,90 @@
 </pre></div>
 
 
-<p>If we get session messages, we set them to our local state. And if no session notes exist, let&rsquo;s make an empty collection for them. We&rsquo;ll use this nifty code soon. </p>
+<p>If we get session messages, we set them to our local state. And if no session notes exist, let&rsquo;s make an empty collection for them. We&rsquo;ll use this nifty code soon to create and store notes in the user&rsquo;s browser cookies. </p>
+<h4 id="routesjs"><a name="user-content-routesjs" href="#routesjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>routes.js</h4>
 <h4 id="views"><a name="user-content-views" href="#views" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Views</h4>
+<p>As you may have already noticed, there&rsquo;s another folder in our project files called Views. This is where you write the front-end of the application. The front-end is basically the part of the website that the users see and interact with, the HTML/CSS/Javascript that we&rsquo;ve seen in the last workshop. Let&rsquo;s break it down by looking at what each file is supposed to do and how it does it. First, we have:</p>
+<h4 id="indexhjs"><a name="user-content-indexhjs" href="#indexhjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>index.hjs</h4>
+<p>As we can see, most of the code follows from the very basic HTML structure you saw earlier on in the first workshop. This file builds the first landing page for the application and a basic web form for creating a new one. </p>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>{{ title }}<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">href=</span><span class="s">&#39;/stylesheets/style.css&#39;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{{ title }}<span class="nt">&lt;/h1&gt;</span>
+    {{#message}}
+      <span class="nt">&lt;h3&gt;</span>{{message}}<span class="nt">&lt;/h3&gt;</span>
+    {{/message}}
+    <span class="nt">&lt;p&gt;</span>Welcome to {{ title }}. Your notes:<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+    {{#notes}}
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&#39;/{{ id }}&#39;</span><span class="nt">&gt;</span>{{ title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {{/notes}}
+    {{^notes}}
+      <span class="nt">&lt;li&gt;</span>You don&#39;t have any notes yet!<span class="nt">&lt;/li&gt;</span>
+    {{/notes}}
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Make a new note:<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&#39;/create&#39;</span> <span class="na">method=</span><span class="s">&#39;post&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;text&#39;</span> <span class="na">name=</span><span class="s">&#39;title&#39;</span> <span class="na">placeholder=</span><span class="s">&#39;Title&#39;</span><span class="nt">&gt;&lt;br/&gt;</span>
+      <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&#39;body&#39;</span> <span class="na">rows=</span><span class="s">&#39;8&#39;</span> <span class="na">cols=</span><span class="s">&#39;80&#39;</span> <span class="na">placeholder=</span><span class="s">&#39;Body&#39;</span><span class="nt">&gt;&lt;/textarea&gt;&lt;br/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;submit&#39;</span> <span class="na">value=</span><span class="s">&#39;Save Note&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>If you look carefully, you&rsquo;ll see that some parts of this code are a little different from the basic syntax we introduced you to. That&rsquo;s right, you&rsquo;re probably confused about what lines of code like this mean:</p>
+<div class="codehilite"><pre>{{ title }}
+</pre></div>
+
+
+<p>The way this works, is that the application dynamically treats these fields as variables and fills them in when the app is run. It then sends the filled in HTML file to the client&rsquo;s web browser. In this way, we only ever have to state, for example, the title of the application, once while sending the command to render the template - and it&rsquo;ll change everywhere around the views.</p>
+<p>The page gets access to all these variables from the object that gets passed to the page when we use <code>res.render</code> from our Node backend. So <code>{{ title }}</code> just prints out whatever the contents of the attribute <code>title</code> is from that object. The syntax <code>{{#notes}}</code> is the same as saying &ldquo;if the notes attribute is non-empty/non-null, then display everything between this and <code>{{/notes}}</code>&rdquo; and <code>{{^notes}}</code> is the same idea, but if the notes variable is empty/null.</p>
+<p>Let&rsquo;s now move on to the next view.</p>
+<h4 id="errorhjs"><a name="user-content-errorhjs" href="#errorhjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>error.hjs</h4>
+<p>The code in this file is mainly used to build a generic view for any error that our application may have to handle and process.</p>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Error<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">href=</span><span class="s">&#39;/stylesheets/style.css&#39;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{{ errorMessage }}<span class="nt">&lt;/h1&gt;</span>
+    {{#error}}
+      <span class="nt">&lt;h3&gt;</span>{{ status }}<span class="nt">&lt;/h3&gt;</span>
+      <span class="nt">&lt;pre&gt;</span>{{ stack }}<span class="nt">&lt;/pre&gt;</span>
+    {{/error}}
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>As you can see above, the <code>errorMessage</code>, <code>status</code> and <code>stack</code> will all be dynamically completed, depending on the error. This means the screen will be structually identical for any error that we display - even if the content is different.</p>
+<h4 id="notehjs"><a name="user-content-notehjs" href="#notehjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>note.hjs</h4>
+<p>This file works in a similar manner to the previous error.hjs file, in that it uses static HTML code to create a structurally identical page to display notes in, with dynamically loaded varied content. </p>
+<div class="codehilite"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Note: {{ note.title }}<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">href=</span><span class="s">&#39;/stylesheets/style.css&#39;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    {{#message}}
+      <span class="nt">&lt;h3&gt;</span>{{message}}<span class="nt">&lt;/h3&gt;</span>
+    {{/message}}
+    <span class="nt">&lt;h1&gt;</span>{{ note.title }}<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>{{ note.body }}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#39;/&#39;</span><span class="nt">&gt;</span>Go back<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>In this specific case, tags such as note.title or note.body are loaded and populated once the application is run.</p>
+<h4 id="files_1"><a name="user-content-files_1" href="#files_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Files</h4>
 <p><a href="assets/files/ws2.zip">This ZIP file</a> contains a snapshot of what your code should look like at the end of this workshop.</p>
 <h1 id="intro-to-apis"><a name="user-content-intro-to-apis" href="#intro-to-apis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to APIs <a id="api-section"></a></h1>
 <h2 id="adding-the-internet-to-your-app"><a name="user-content-adding-the-internet-to-your-app" href="#adding-the-internet-to-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adding the internet to your app</h2>
@@ -515,8 +605,145 @@
 <li>Authenticating with an API via OAuth</li>
 <li>Sending emails and Venmo payments</li>
 </ul>
-<p><a href="assets/files/ws3.zip">This zip file</a> contains what you should have at the end of this workshop. </p>
+<h4 id="whats-an-api"><a name="user-content-whats-an-api" href="#whats-an-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What&rsquo;s an API?</h4>
+<p>APIs are basically ways to interact with, or access data, on other parts of the internet that are not our own website. So we can make requests of teh Rotten Tomatoes API to pull movie information into our website, or use the Facebook API to let people login and import their credentials to our website. For this workshop we&rsquo;re going to be using the Venmo API to send payments to our friends.</p>
+<h4 id="before-that-oauth"><a name="user-content-before-that-oauth" href="#before-that-oauth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Before that, OAuth</h4>
+<p>OAuth is what makes interacting with other APIs secure. It allows us to sign into spammygames.com using our Facebook login, without compromising our Facebook credentials since what actually happens is that spammygames.com send us to Facebook.com where we log in. Facebook then sends back a token to spammygames.com asking it to verify that it signed up with facebook to be a developer and they send back their credentials to Facebook. On seeing that both the user and the website have valid credentials, Facebook now send back an access token taht the website can use to access thsi particular user&rsquo;s data. This is often called 2-legged oauth, since there are two steps to it.</p>
 <p><img alt="OAuth" src="assets/img/ws3.jpg" /></p>
+<p>For the Venmo API to work, it&rsquo;s important to get these keys. You&rsquo;ll have to go to the <a href="https://venmo.com/account/settings/developers">Venmo Developer Console</a> and create a new app. Then you should be able to get your &lsquo;Secret&rsquo; and &lsquo;ID&rsquo; that you should add into your code as shown a little below. Also make sure to set your web redirect url to &lsquo;<a href="http://localhost:3000/venmo/oauth">http://localhost:3000/venmo/oauth</a>&lsquo;. Time to get to some real code.</p>
+<h4 id="preppin-appjs-for-our-api"><a name="user-content-preppin-appjs-for-our-api" href="#preppin-appjs-for-our-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Preppin&rsquo; app.js for our API</h4>
+<p>First open app.js. We need to set our Node app to try to reach venmo if someone using the app goes to localhost:3000/venmo. This is a route that takes us into venmo.js, and, importantly, relativizes the URL so that what here is /venmo/foo looks to venmo.js just like /foo.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">venmo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./venmo&#39;</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">,</span> <span class="nx">venmo</span><span class="p">);</span>
+</pre></div>
+
+
+<h4 id="where-all-the-venmo-happens-venmojs"><a name="user-content-where-all-the-venmo-happens-venmojs" href="#where-all-the-venmo-happens-venmojs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Where all the venmo happens : venmo.js</h4>
+<p>In the same directory as your other .js files, write to venmo.js. We&rsquo;ll go through it line by line. First off, list dependencies, request, express, and router, which you&rsquo;ve used before. We won&rsquo;t focus on those now, but to review: </p>
+<p><div class="codehilite"><pre><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;request&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+</pre></div>
+<br />
+We&rsquo;ll use the express router.<br />
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+</pre></div>
+</p>
+<p>Now we get into config with Venmo. We need Venmo to know our requests are legit, so you&rsquo;ll need to be a venmo developer. You can do that <a href="https://venmo.com/account/settings/developers">here.</a> </p>
+<p>Once you&rsquo;ve done that, make a new application, and it&rsquo;ll give you the ID and the Secret. Make sure as well to set Web Redirect Url, under the application page, to <code>http://localhost:300/venmo/oauth</code>. Once you&rsquo;ve gone through with that, let&rsquo;s go over the rest of the code.</p>
+<p>First off after the five lines of Venmo config are three separate routes, for<br />
+<div class="codehilite"><pre><span class="s1">&#39;/&#39;</span>
+<span class="s1">&#39;/authorize&#39;</span>
+<span class="s1">&#39;/oauth&#39;</span>
+</pre></div>
+</p>
+<p>As you know, each of these routes is activated when the proper URL is requested by your app&rsquo;s adoring fans. As a reminder, the fact that the function call is &ldquo;router.get&rdquo; does not mean you&rsquo;re &ldquo;getting&rdquo; something from the router (like Java&rsquo;s ArrayList.get()), it means it&rsquo;s responding to a HTTP GET call from the browser.</p>
+<p>Let&rsquo;s go through each of the routes. First up is the &ldquo;root&rdquo; or &ldquo;/&rdquo; venmo page. First off, we initialize the variable venmo.</p>
+<div class="codehilite"><pre><span class="nx">venmo</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+
+
+<p>This variable will hold the user&rsquo;s venmo information. The next thing we do is check to see if we have a cookie with the info (meaning the user has already logged in). Regardless, it then renders &ldquo;venmo.hjs&rdquo;, the actual HTML document that the user will see. We&rsquo;ll go over this in a bit.</p>
+<p>Second up is <code>'/authorize'</code>. The user clicks on a link from the root venmo page to come here, and its one line of code is why you had to tell venmo what your Web Redirect URL was. When the user hits this page, you hand them off to venmo (notice how you send them the authorizeUrl defined at the top of the file.) Venmo then sends them back to &ldquo;/oauth&rdquo;, which is the path you define next!</p>
+<p>The next route in our venmo app, <code>'/oauth'</code>, is the second part of venmo&rsquo;s verification process. We already sent the user to Venmo so that Venmo could tell us they were all set. They called our <code>/oauth</code> page, and passed it req.query.code if the authorization went well. The first if statement under router.get(&lsquo;oauth&rsquo;) simply means that if the authorization failed, we don&rsquo;t continue with the exchange.</p>
+<p>In the event that the authorization went through, Venmo needs to verify us as a developer. This is the request module comes into play. We actually have to make a call directly to Venmo&rsquo;s website (using their API). Notice that we&rsquo;re using a POST request, sending them both our unique clientId and clientSecret, and req.query.code, which venmo sent back to us. If this all checks out on Venmo&rsquo;s side, what we get back,</p>
+<div class="codehilite"><pre><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">venmo</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+</pre></div>
+
+
+<p>is a session from venmo that&rsquo;s unique between your application and your client, so venmo knows that future payment requests are legit. If all goes well, it prints a notice to the user that they&rsquo;ve been authenticated, and redirects them to your app&rsquo;s venmo hompage.</p>
+<p>Okay, so, our last route in venmo.js, <code>router.post('/send')</code>, is where the magic happens. Handshakes have gone through, and if your user types in the amount, phone #, and note fields properly (checked by the first if statement), you&rsquo;re ready to do a payment.</p>
+<p>This takes the form of another POST request to Venmo&rsquo;s API. You send them the relevant transfer information, as well as the unique user/client token that you generated in &ldquo;/oauth.&rdquo; The following code defines how you handle this.</p>
+<div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">amount</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">amount</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">phone</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">phone</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">note</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">amount</span> <span class="o">&amp;&amp;</span> <span class="nx">phone</span> <span class="o">&amp;&amp;</span> <span class="nx">note</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;You must provide all three fields!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="nx">paymentUrl</span><span class="p">,</span>
+    <span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">access_token</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">venmo</span><span class="p">.</span><span class="nx">access_token</span><span class="p">,</span>
+      <span class="nx">phone</span><span class="o">:</span> <span class="nx">phone</span><span class="p">,</span>
+      <span class="nx">amount</span><span class="o">:</span> <span class="nx">amount</span><span class="p">,</span>
+      <span class="nx">note</span><span class="o">:</span> <span class="nx">note</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">recipient</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">).</span><span class="nx">data</span><span class="p">.</span><span class="nx">payment</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">display_name</span><span class="p">;</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;payments&#39;</span><span class="p">).</span><span class="nx">insert</span><span class="p">({</span>
+      <span class="nx">amount</span><span class="o">:</span> <span class="nx">amount</span><span class="p">,</span>
+      <span class="nx">phone</span><span class="o">:</span> <span class="nx">phone</span><span class="p">,</span>
+      <span class="nx">note</span><span class="o">:</span> <span class="nx">note</span><span class="p">,</span>
+      <span class="nx">recipient</span><span class="o">:</span> <span class="nx">recipient</span><span class="p">,</span>
+      <span class="nx">date</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Sent $&#39;</span> <span class="o">+</span> <span class="nx">amount</span> <span class="o">+</span> <span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="nx">recipient</span> <span class="o">+</span> <span class="s1">&#39; successfully!&#39;</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>Take a peek at this portion of the function in the callback to <code>request.post</code> here and in context in venmo.js. First, it checks to see if venmo returned an error. If not, it continues, and parses the Venmo response for user data. Finally, it prints a message to the user telling them that the payment was successful as it redirects them back to the root venmo page!</p>
+<h4 id="okay-but-were-not-done-yet"><a name="user-content-okay-but-were-not-done-yet" href="#okay-but-were-not-done-yet" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Okay, but we&rsquo;re not done yet</h4>
+<p>So, especially if you learned HTML/CSS earlier this weekend, you may be wondering, &ldquo;what actually is determining what the user sees at page /vemno?&rdquo; What a great question! They&rsquo;re seeing <code>views/venmo.hjs</code>!</p>
+<p>So, you&rsquo;ve seen .hjs before, but to recap, the biggest difference between .hjs and html is that you update certain parts of it dynamically based on what we tell NodeJS. So, if you remember in the last block of code,</p>
+<div class="codehilite"><pre><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;yodelyodelyoda&quot;</span>
+</pre></div>
+
+
+<p>In venmo.hjs, when you see</p>
+<div class="codehilite"><pre>{{#message}}
+    <span class="nt">&lt;h3&gt;</span>{{message}}<span class="nt">&lt;/h3&gt;</span>
+{{/message}}
+</pre></div>
+
+
+<p>You&rsquo;re taking req.session.message and inserting it into {{message}} in venmo.hjs!</p>
+<p>Take note that the field,</p>
+<p><code>{{#message}}</code> means &ldquo;if this field is present, show the following&rdquo;,</p>
+<p><code>{{^message}}</code> means &ldquo;if this field is not present, show the following&rdquo;, and</p>
+<p><code>{{/message}}</code> just closes these blocks.</p>
+<p>This becomes more important at the next &ldquo;if statement&rdquo;,</p>
+<div class="codehilite"><pre>{{#venmo}}
+    code
+{{/venmo}}
+</pre></div>
+
+
+<p>There&rsquo;s a lot of code between these tags, and none of it is shown unless the &ldquo;venmo&rdquo; field, denoting that the user has authenticated, is present. This is important, because not only does the venmo variable decide what would be shown if you happened to include <code>{{venmo}}</code> as part of the text, but it actually acts as an &ldquo;if&rdquo; statement for what should be shown to the user.</p>
+<p>So, let&rsquo;s assume that the user has authenticated. In this case, it shows the fields <code>{{display_name}}</code> and <code>{{username}}</code>, and most importantly, includes a <code>&lt;form&gt;</code>. Let&rsquo;s see the whole thing: </p>
+<div class="codehilite"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&#39;/venmo/send&#39;</span> <span class="na">method=</span><span class="s">&#39;post&#39;</span><span class="nt">&gt;</span>
+    Pay $<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;text&#39;</span> <span class="na">name=</span><span class="s">&#39;amount&#39;</span> <span class="na">placeholder=</span><span class="s">&#39;Amount in dollars&#39;</span><span class="nt">&gt;</span> to
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;text&#39;</span> <span class="na">name=</span><span class="s">&#39;phone&#39;</span> <span class="na">placeholder=</span><span class="s">&#39;Phone Number&#39;</span><span class="nt">&gt;</span> for:<span class="nt">&lt;br/&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&#39;note&#39;</span> <span class="na">rows=</span><span class="s">&#39;3&#39;</span> <span class="na">cols=</span><span class="s">&#39;80&#39;</span> <span class="na">placeholder=</span><span class="s">&#39;For...&#39;</span><span class="nt">&gt;&lt;/textarea&gt;</span>           <span class="nt">&lt;br/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&#39;submit&#39;</span> <span class="na">name=</span><span class="s">&#39;Send Payment&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+
+
+<p>The form action designates what type of call the the browser will make when the form is submitted. In this case, the form is for the user to actually make a payment, and we have a venmo.js route that we created to handle a POST request to /venmo/send, so we want the browser to send the request to that URL (action=&rsquo;/venmo/send&rsquo;), with POST (method=&rsquo;post&rsquo;).</p>
+<p>In this form, there are 3 input fields. The first is the total amount of money being transfered. While we will parse it as a decimal, its input <code>type='text'</code>. The &lsquo;name&rsquo; field we use to tell our app what variable it is assigned to, so we can access it in venmo.js. The placeholder, as you can probably tell, determines what is shown when the user has not yet typed anything in.</p>
+<p>The next form is, by most measures, the same. Make sure to note, however, that the field name is assigned the value &lsquo;phone&rsquo;, again so we can reference the input as a variable by that name in venmo.js. The third field is of type <code>&lt;textarea&gt;</code> instead of type <code>&lt;input&gt;</code>. The biggest difference between a textarea and an input to understand is that a textarea has better accounting for large input of paragraph-length. Note that we specify the field <code>rows='3'</code>, and <code>cols='80'</code>. Thus, unlike an <code>&lt;input&gt;</code>, we can guess that this field might be a sentence or two but probably no longer, and tailor the size of hte textfield to that. Furthermore, it handles newlines well, so the user can happily use multiple paragraphs.</p>
+<p>The final important piece of your form is <code>&lt;input type='submit' name='Send Payment.'&gt;</code>. Note that the <code>type='submit'</code> field is not specifying a variable, but is a keyword in your form that your browser knows to interpret as a submission of the form. the name field determines what is shown on the button. Because this submit button is within the same form as the other input fields (see that it comes before the ending <code>&lt;/form&gt;</code> tag), it will submit everything within that form.</p>
+<p>Notice now the end tag {{/venmo}}. This is the end of our if statement. i.e., if the user hadn&rsquo;t authenticated yet, she would have seen none of what we just went over. Now, on the next lines, we see</p>
+<div class="codehilite"><pre>{{^venmo}}
+    <span class="nt">&lt;p&gt;</span>You have not authorized yet. <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#39;authorize&#39;</span><span class="nt">&gt;</span>Click here<span class="nt">&lt;/a&gt;</span> to authorize with Venmo.<span class="nt">&lt;/p&gt;</span>
+{{/venmo}}
+</pre></div>
+
+
+<p>So, if <code>{{#venmo}}</code> is the beginning of an if statement, <code>{{^venmo}}</code> is the beginning of an &ldquo;if not&rdquo; statement. Thus, the first time your user sees a venmo page, since they will not yet have authenticated, this statement will return &ldquo;true&rdquo;, and they&rsquo;ll be given the link to the &ldquo;authorize&rdquo; page, and be allowed to authorize. Not very tricky, very cool. As always, make sure to end your if with a <code>{{/venmo}}</code>, just like you always remember to end your <strong> tags, right? Right. &hellip; </strong>.</p>
+<h4 id="files_2"><a name="user-content-files_2" href="#files_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Files</h4>
+<p><a href="assets/files/ws3.zip">This zip file</a> contains what you should have at the end of this workshop. </p>
 <h1 id="intro-to-databases"><a name="user-content-intro-to-databases" href="#intro-to-databases" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Databases <a id="db-section"></a></h1>
 <h2 id="making-information-stick-around"><a name="user-content-making-information-stick-around" href="#making-information-stick-around" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Making information stick around</h2>
 <p>Topics to be covered:</p>
@@ -535,7 +762,121 @@
 <p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&rsquo;dd need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
 <p><em>Linux</em></p>
 <p>Full instructions to install MongoDB on Linux can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
-<p><a href="assets/files/ws4.zip">These files</a> should give you the end product that you should have at the end of the workshop.</p>
+<h4 id="running-mongodb"><a name="user-content-running-mongodb" href="#running-mongodb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Running MongoDB</h4>
+<p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>).</p>
+<h4 id="now-for-the-code"><a name="user-content-now-for-the-code" href="#now-for-the-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Now for the code!</h4>
+<p>We&rsquo;re now going to integrate a database into our application to store data. A really popular database to use with NodeJS is MongoDB. It&rsquo;s a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we&rsquo;re going to have to do is add MongoDB to our dependencies list inside of <code>package.json</code>.</p>
+<p>Add &ldquo;mongodb&rdquo;: &ldquo;~1.4.19&rdquo; to the dependencies object inside the JSON so that it looks like this.</p>
+<div class="codehilite"><pre><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;codeweekend&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;private&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;body-parser&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.6.6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cookie-parser&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.3.3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cookie-session&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0.2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;~4.8.6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hjs&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.0.6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mongodb&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.4.19&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;morgan&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.2.3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;nodemailer&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.2.2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;^2.42.0&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now, let&rsquo;s actually import the database into the app. Any guesses on how to allow our app to use MongoDB&rsquo;s core functionality? Yup, we&rsquo;re first going to tell our app that we require it, which is done with the line: </p>
+<div class="codehilite"><pre><span class="s2">&quot;var mongo = require(&#39;mongodb&#39;);&quot;</span> 
+</pre></div>
+
+
+<p>Add it to our main file, app.js. Cool. Now let&rsquo;s make use of it. We&rsquo;re first going to have to create a database object and a server object and then create &amp; open a specific database so that we can use it later. See if you can understand the lines below.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">Db</span> <span class="o">=</span> <span class="nx">mongo</span><span class="p">.</span><span class="nx">Db</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">Server</span> <span class="o">=</span> <span class="nx">mongo</span><span class="p">.</span><span class="nx">Server</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Db</span><span class="p">(</span><span class="s1">&#39;codeweekend&#39;</span><span class="p">,</span>
+  <span class="k">new</span> <span class="nx">Server</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="s1">&#39;27017&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">auto_reconnect</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span> <span class="p">{}),</span>
+  <span class="p">{</span><span class="nx">safe</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span>
+<span class="p">);</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="kd">function</span><span class="p">(){});</span>
+</pre></div>
+
+
+<p>Hopefully, that was easy to follow. We&rsquo;ve created a new database called &lsquo;codeweekend&rsquo; that we can reach at port 27017. Inside of our middleware, we&rsquo;re also going to have to route any incoming database requests to our MongoDB, so let&rsquo;s add in this to the end of the function.</p>
+<div class="codehilite"><pre><span class="nx">req</span><span class="p">.</span><span class="nx">db</span> <span class="o">=</span> <span class="nx">db</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Now, let&rsquo;s really get our hands messy and jump into <code>routes.js</code>, where we&rsquo;ll change our existing code to make use of the powerful database we know have access to.</p>
+<p>First things first:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">ObjectID</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongodb&#39;</span><span class="p">).</span><span class="nx">ObjectID</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Let&rsquo;s get our database Object ID. Now, our existing code looks a little something like this:</p>
+<div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Codeweekend Notes&#39;</span><span class="p">,</span>
+    <span class="nx">notes</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>We already know that this stores our notes in a session. However, now, let&rsquo;s make use of our up and runnig database instead. With a little change in how we access and store the notes object, we can now route the entire process through our DB, to change the routes.js file to:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">ObjectID</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongodb&#39;</span><span class="p">).</span><span class="nx">ObjectID</span><span class="p">;</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;notes&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">().</span><span class="nx">toArray</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">notes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Codeweekend Notes&#39;</span><span class="p">,</span>
+      <span class="nx">notes</span><span class="o">:</span> <span class="nx">notes</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/db&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">().</span><span class="nx">toArray</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;notes&#39;</span><span class="p">).</span><span class="nx">findOne</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="nx">ObjectID</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">note</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="o">||</span> <span class="o">!</span><span class="nx">note</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;That note does not exist!&#39;</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//return.res.sender</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/create&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">title</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">body</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;You must provide a title and a body!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;notes&#39;</span><span class="p">).</span><span class="nx">insert</span><span class="p">({</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">body</span>
+  <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Note created!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Well that wasn&rsquo;t so bad. Every call to the database involves referencing our middleware <code>req.db</code> and using the collection (aka database) called &lsquo;notes&rsquo;. We then use different functions like <code>findOne</code>, that finds one result, or <code>find().toArray</code> that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there&rsquo;s an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy? </p>
+<h4 id="youre-done"><a name="user-content-youre-done" href="#youre-done" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>You&rsquo;re done!</h4>
+<p>With that you&rsquo;ve succesfully integrated your first database into a Node application and it&rsquo;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
+<p>Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you&rsquo;ve learned!</p>
+<h4 id="files_3"><a name="user-content-files_3" href="#files_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Files</h4>
+<p><a href="assets/files/ws4.zip">These files</a> should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!</p>
 <div class="footer"><p>&copy; Dining Philosophers 2015. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
