@@ -88,3 +88,68 @@ This file works in a similar manner to the previous error.hjs file, in that it u
 ```
 
 In this specific case, tags such as note.title or note.body are loaded and populated once the application is run.
+
+## Routes
+
+Let's talk about a file called routes.js. This handles all the middleware routing that our app has to do. To begin with, as usual, we'll get Express. Except this time, we'll specify a new variable called router which is created as folows:
+
+```javascript
+var express = require('express');
+var router = express.Router();
+```
+
+A router is an isolated instance of middleware and routes. Routers can be thought of as "mini" applications, capable only of performing middleware and routing functions. Every express application has a built-in app router.
+
+Routers behave like middleware themselves and can be ".use()'d" by the app or in other routers.
+
+We'll now make simple route definitions for the HTTP GET method as below:
+
+```javascript
+router.get('/', function(req, res) {
+  return res.render('index', {
+    title: 'Codeweekend Notes',
+    notes: req.session.notes
+  });
+});
+
+router.get('/:id', function(req, res) {
+  var noteId = Number(req.params.id);
+  if (isNaN(noteId) || noteId < 1 || noteId > req.session.notes.length) {
+    req.session.message = 'That note does not exist!';
+    return res.redirect('/');
+  }
+
+  return res.render('note', {
+    note: req.session.notes[noteId - 1]
+  });
+});
+
+router.post('/create', function(req, res) {
+  if (!(req.body.title && req.body.body)) {
+    req.session.message = 'You must provide a title and a body!';
+    return res.redirect('/');
+  }
+
+  req.session.notes.push({
+    id: req.session.notes.length + 1,
+    title: req.body.title,
+    body: req.body.body
+  });
+
+  req.session.message = 'Note created!';
+  return res.redirect('/');
+});
+```
+
+You'll notice that the first function specifies what is supposed to happen when a  simple route path is requested (such as '/'). Similarly, whenever we have an error in any of the follow up code, we can see that we store the error message into the session and return a redirect back to the simply routing path using this nifty structure inside the callback functions:
+
+```javascript
+req.session.message = 'Error message goes here';
+return res.redirect('/');
+```
+
+And lastly, just so that we get all this handy code available to the rest of the application, let's export it with:
+
+```javascript
+module.exports = router;
+```
