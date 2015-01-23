@@ -372,6 +372,10 @@ NOTE: Sometimes, when you save your work, a window will pop up asking you to buy
 
 Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
 
+#### Files
+
+You can download the [HTML](assets/files/sample.html) and [CSS](assets/files/main.css) files we looked at here by following these links. Use these as starting points for building your personal landing pages.
+
 Intro to Javascript and NodeJS <a id="node-section"></a>
 ==============================
 The most powerful web development tools ever
@@ -519,9 +523,16 @@ app.use(function(err, req, res, next) {
 });
 ```
 
-This catches 404 errors (ie, this path doesn't exist) and forwards them to our error handler, which prints out a bunch of error info, since we're really in a developer environment/debuggin mode.
+This catches 404 errors (ie, this path doesn't exist) and forwards them to our error handler, which prints out a bunch of error info, since we're really in a developer environment/debugging mode.
 
-And finally, to get the app really off the ground, let's make it listen for requests.
+```javascript
+var routes = require('./routes');
+app.use('/', routes);
+```
+
+These lines initialize our routes. Routes are basically what tells our app what to do when the user goes to a certain url within our website. For example, going to google.com/mail corresponds to the '/mail' route as far as Google's backend is concerned. By requiring the `'./routes'` file, we're saying that we've stored our routes in a separate file, and the next line tells node to look there for all its routes. We'll take a look at the routes file soon.
+
+And finally, to get the app really off the ground and make it actually work for someone trying to reach our website, let's make it listen for requests.
 
 ```javascript
 app.listen(app.get('port'), function() { 
@@ -549,9 +560,108 @@ app.use(function(req, res, next) {
 });
 ```
 
-If we get session messages, we set them to our local state. And if no session notes exist, let's make an empty collection for them. We'll use this nifty code soon. 
+If we get session messages, we set them to our local state. And if no session notes exist, let's make an empty collection for them. We'll use this nifty code soon to create and store notes in the user's browser cookies. 
+
+#### routes.js
+
+
 
 #### Views
+
+As you may have already noticed, there's another folder in our project files called Views. This is where you write the front-end of the application. The front-end is basically the part of the website that the users see and interact with, the HTML/CSS/Javascript that we've seen in the last workshop. Let's break it down by looking at what each file is supposed to do and how it does it. First, we have:
+
+#### index.hjs
+
+As we can see, most of the code follows from the very basic HTML structure you saw earlier on in the first workshop. This file builds the first landing page for the application and a basic web form for creating a new one. 
+
+```html
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    {{#message}}
+      <h3>{{message}}</h3>
+    {{/message}}
+    <p>Welcome to {{ title }}. Your notes:</p>
+    <ul>
+    {{#notes}}
+      <li><a href='/{{ id }}'>{{ title }}</a></li>
+    {{/notes}}
+    {{^notes}}
+      <li>You don't have any notes yet!</li>
+    {{/notes}}
+    </ul>
+    <p>Make a new note:</p>
+    <form action='/create' method='post'>
+      <input type='text' name='title' placeholder='Title'><br/>
+      <textarea name='body' rows='8' cols='80' placeholder='Body'></textarea><br/>
+      <input type='submit' value='Save Note'>
+    </form>
+  </body>
+</html>
+```
+
+If you look carefully, you'll see that some parts of this code are a little different from the basic syntax we introduced you to. That's right, you're probably confused about what lines of code like this mean:
+
+```html
+{{ title }}
+```
+
+The way this works, is that the application dynamically treats these fields as variables and fills them in when the app is run. It then sends the filled in HTML file to the client's web browser. In this way, we only ever have to state, for example, the title of the application, once while sending the command to render the template - and it'll change everywhere around the views.
+
+The page gets access to all these variables from the object that gets passed to the page when we use `res.render` from our Node backend. So `{{ title }}` just prints out whatever the contents of the attribute `title` is from that object. The syntax `{{#notes}}` is the same as saying "if the notes attribute is non-empty/non-null, then display everything between this and `{{/notes}}`" and `{{^notes}}` is the same idea, but if the notes variable is empty/null.
+
+Let's now move on to the next view.
+
+#### error.hjs
+
+The code in this file is mainly used to build a generic view for any error that our application may have to handle and process.
+
+```html
+<html>
+  <head>
+    <title>Error</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ errorMessage }}</h1>
+    {{#error}}
+      <h3>{{ status }}</h3>
+      <pre>{{ stack }}</pre>
+    {{/error}}
+  </body>
+</html>
+```
+
+As you can see above, the `errorMessage`, `status` and `stack` will all be dynamically completed, depending on the error. This means the screen will be structually identical for any error that we display - even if the content is different.
+
+#### note.hjs
+
+This file works in a similar manner to the previous error.hjs file, in that it uses static HTML code to create a structurally identical page to display notes in, with dynamically loaded varied content. 
+
+```html
+<html>
+  <head>
+    <title>Note: {{ note.title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{#message}}
+      <h3>{{message}}</h3>
+    {{/message}}
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.body }}</p>
+    <a href='/'>Go back</a>
+  </body>
+</html>
+```
+
+In this specific case, tags such as note.title or note.body are loaded and populated once the application is run.
+
+#### Files
 
 [This ZIP file](assets/files/ws2.zip) contains a snapshot of what your code should look like at the end of this workshop.
 
@@ -567,9 +677,188 @@ Topics to be covered:
 - Authenticating with an API via OAuth
 - Sending emails and Venmo payments
 
-[This zip file](assets/files/ws3.zip) contains what you should have at the end of this workshop. 
+#### What's an API?
+
+APIs are basically ways to interact with, or access data, on other parts of the internet that are not our own website. So we can make requests of teh Rotten Tomatoes API to pull movie information into our website, or use the Facebook API to let people login and import their credentials to our website. For this workshop we're going to be using the Venmo API to send payments to our friends.
+
+#### Before that, OAuth
+
+OAuth is what makes interacting with other APIs secure. It allows us to sign into spammygames.com using our Facebook login, without compromising our Facebook credentials since what actually happens is that spammygames.com send us to Facebook.com where we log in. Facebook then sends back a token to spammygames.com asking it to verify that it signed up with facebook to be a developer and they send back their credentials to Facebook. On seeing that both the user and the website have valid credentials, Facebook now send back an access token taht the website can use to access thsi particular user's data. This is often called 2-legged oauth, since there are two steps to it.
 
 ![OAuth](assets/img/ws3.jpg)
+
+For the Venmo API to work, it's important to get these keys. You'll have to go to the [Venmo Developer Console](https://venmo.com/account/settings/developers) and create a new app. Then you should be able to get your 'Secret' and 'ID' that you should add into your code as shown a little below. Also make sure to set your web redirect url to 'http://localhost:3000/venmo/oauth'. Time to get to some real code.
+
+#### Preppin' app.js for our API
+
+First open app.js. We need to set our Node app to try to reach venmo if someone using the app goes to localhost:3000/venmo. This is a route that takes us into venmo.js, and, importantly, relativizes the URL so that what here is /venmo/foo looks to venmo.js just like /foo.
+
+```javascript
+var venmo = require('./venmo');
+app.use('/venmo', venmo);
+```
+
+#### Where all the venmo happens : venmo.js
+
+In the same directory as your other .js files, write to venmo.js. We'll go through it line by line. First off, list dependencies, request, express, and router, which you've used before. We won't focus on those now, but to review: 
+
+```javascript    
+var request = require('request');
+var express = require('express');
+```
+We'll use the express router.
+```javascript
+var router = express.Router();
+```
+
+Now we get into config with Venmo. We need Venmo to know our requests are legit, so you'll need to be a venmo developer. You can do that [here.](https://venmo.com/account/settings/developers) 
+
+Once you've done that, make a new application, and it'll give you the ID and the Secret. Make sure as well to set Web Redirect Url, under the application page, to `http://localhost:300/venmo/oauth`. Once you've gone through with that, let's go over the rest of the code.
+
+First off after the five lines of Venmo config are three separate routes, for
+```javascript
+'/'
+'/authorize'
+'/oauth'
+```
+ 
+As you know, each of these routes is activated when the proper URL is requested by your app's adoring fans. As a reminder, the fact that the function call is "router.get" does not mean you're "getting" something from the router (like Java's ArrayList.get()), it means it's responding to a HTTP GET call from the browser.
+
+Let's go through each of the routes. First up is the "root" or "/" venmo page. First off, we initialize the variable venmo.
+
+```javascript
+venmo = {};
+```
+
+This variable will hold the user's venmo information. The next thing we do is check to see if we have a cookie with the info (meaning the user has already logged in). Regardless, it then renders "venmo.hjs", the actual HTML document that the user will see. We'll go over this in a bit.
+        
+Second up is `'/authorize'`. The user clicks on a link from the root venmo page to come here, and its one line of code is why you had to tell venmo what your Web Redirect URL was. When the user hits this page, you hand them off to venmo (notice how you send them the authorizeUrl defined at the top of the file.) Venmo then sends them back to "/oauth", which is the path you define next!
+
+The next route in our venmo app, `'/oauth'`, is the second part of venmo's verification process. We already sent the user to Venmo so that Venmo could tell us they were all set. They called our `/oauth` page, and passed it req.query.code if the authorization went well. The first if statement under router.get('oauth') simply means that if the authorization failed, we don't continue with the exchange.
+
+In the event that the authorization went through, Venmo needs to verify us as a developer. This is the request module comes into play. We actually have to make a call directly to Venmo's website (using their API). Notice that we're using a POST request, sending them both our unique clientId and clientSecret, and req.query.code, which venmo sent back to us. If this all checks out on Venmo's side, what we get back,
+
+```javascript
+req.session.venmo = JSON.parse(body)
+```
+
+is a session from venmo that's unique between your application and your client, so venmo knows that future payment requests are legit. If all goes well, it prints a notice to the user that they've been authenticated, and redirects them to your app's venmo hompage.
+
+Okay, so, our last route in venmo.js, `router.post('/send')`, is where the magic happens. Handshakes have gone through, and if your user types in the amount, phone #, and note fields properly (checked by the first if statement), you're ready to do a payment.
+
+This takes the form of another POST request to Venmo's API. You send them the relevant transfer information, as well as the unique user/client token that you generated in "/oauth." The following code defines how you handle this.
+
+```javascript
+router.post('/send', function(req, res, next) {
+  var amount = req.body.amount;
+  var phone = req.body.phone;
+  var note = req.body.note;
+
+  if (!(amount && phone && note)) {
+    req.session.message = 'You must provide all three fields!';
+    return res.redirect('/venmo');
+  }
+
+  request.post({
+    url: paymentUrl,
+    form: {
+      access_token: req.session.venmo.access_token,
+      phone: phone,
+      amount: amount,
+      note: note
+    }
+  }, function(err, response, body) {
+    if (err) {
+      next(err);
+    }
+
+    var recipient = JSON.parse(body).data.payment.target.user.display_name;
+    req.db.collection('payments').insert({
+      amount: amount,
+      phone: phone,
+      note: note,
+      recipient: recipient,
+      date: Date.now()
+    }, function(err, result) {
+      req.session.message = 'Sent $' + amount + ' to ' + recipient + ' successfully!';
+      return res.redirect('/venmo');
+    });
+  });
+});
+```
+
+Take a peek at this portion of the function in the callback to `request.post` here and in context in venmo.js. First, it checks to see if venmo returned an error. If not, it continues, and parses the Venmo response for user data. Finally, it prints a message to the user telling them that the payment was successful as it redirects them back to the root venmo page!
+
+#### Okay, but we're not done yet
+
+So, especially if you learned HTML/CSS earlier this weekend, you may be wondering, "what actually is determining what the user sees at page /vemno?" What a great question! They're seeing `views/venmo.hjs`!
+
+So, you've seen .hjs before, but to recap, the biggest difference between .hjs and html is that you update certain parts of it dynamically based on what we tell NodeJS. So, if you remember in the last block of code,
+
+```javascript
+req.session.message = "yodelyodelyoda"
+```
+
+In venmo.hjs, when you see
+
+```html
+{{#message}}
+    <h3>{{message}}</h3>
+{{/message}}
+```
+
+You're taking req.session.message and inserting it into {{message}} in venmo.hjs!
+
+Take note that the field,
+
+`{{#message}}` means "if this field is present, show the following",
+
+`{{^message}}` means "if this field is not present, show the following", and
+
+`{{/message}}` just closes these blocks.
+
+This becomes more important at the next "if statement",
+
+```html
+{{#venmo}}
+    code
+{{/venmo}}
+```
+
+There's a lot of code between these tags, and none of it is shown unless the "venmo" field, denoting that the user has authenticated, is present. This is important, because not only does the venmo variable decide what would be shown if you happened to include `{{venmo}}` as part of the text, but it actually acts as an "if" statement for what should be shown to the user.
+
+So, let's assume that the user has authenticated. In this case, it shows the fields `{{display_name}}` and `{{username}}`, and most importantly, includes a `<form>`. Let's see the whole thing: 
+
+```html
+<form action='/venmo/send' method='post'>
+    Pay $<input type='text' name='amount' placeholder='Amount in dollars'> to
+    <input type='text' name='phone' placeholder='Phone Number'> for:<br/>
+    <textarea name='note' rows='3' cols='80' placeholder='For...'></textarea>           <br/>
+    <input type='submit' name='Send Payment'>
+</form>
+```
+
+The form action designates what type of call the the browser will make when the form is submitted. In this case, the form is for the user to actually make a payment, and we have a venmo.js route that we created to handle a POST request to /venmo/send, so we want the browser to send the request to that URL (action='/venmo/send'), with POST (method='post').
+
+In this form, there are 3 input fields. The first is the total amount of money being transfered. While we will parse it as a decimal, its input `type='text'`. The 'name' field we use to tell our app what variable it is assigned to, so we can access it in venmo.js. The placeholder, as you can probably tell, determines what is shown when the user has not yet typed anything in.
+
+The next form is, by most measures, the same. Make sure to note, however, that the field name is assigned the value 'phone', again so we can reference the input as a variable by that name in venmo.js. The third field is of type `<textarea>` instead of type `<input>`. The biggest difference between a textarea and an input to understand is that a textarea has better accounting for large input of paragraph-length. Note that we specify the field `rows='3'`, and `cols='80'`. Thus, unlike an `<input>`, we can guess that this field might be a sentence or two but probably no longer, and tailor the size of hte textfield to that. Furthermore, it handles newlines well, so the user can happily use multiple paragraphs.
+
+The final important piece of your form is `<input type='submit' name='Send Payment.'>`. Note that the `type='submit'` field is not specifying a variable, but is a keyword in your form that your browser knows to interpret as a submission of the form. the name field determines what is shown on the button. Because this submit button is within the same form as the other input fields (see that it comes before the ending `</form>` tag), it will submit everything within that form.
+
+Notice now the end tag {{/venmo}}. This is the end of our if statement. i.e., if the user hadn't authenticated yet, she would have seen none of what we just went over. Now, on the next lines, we see
+
+```html
+{{^venmo}}
+    <p>You have not authorized yet. <a href='authorize'>Click here</a> to authorize with Venmo.</p>
+{{/venmo}}
+```
+
+So, if `{{#venmo}}` is the beginning of an if statement, `{{^venmo}}` is the beginning of an "if not" statement. Thus, the first time your user sees a venmo page, since they will not yet have authenticated, this statement will return "true", and they'll be given the link to the "authorize" page, and be allowed to authorize. Not very tricky, very cool. As always, make sure to end your if with a `{{/venmo}}`, just like you always remember to end your <strong> tags, right? Right. ... </strong>.
+
+#### Files
+
+[This zip file](assets/files/ws3.zip) contains what you should have at the end of this workshop. 
 
 Intro to Databases <a id="db-section"></a>
 ==================
@@ -601,12 +890,138 @@ _Linux_
 
 Full instructions to install MongoDB on Linux can be found [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
 
+#### Running MongoDB
 
+Just type in `mongod` into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at `C:\Program Files\MongoDB\bin\mongod.exe`).
 
+#### Now for the code!
 
+We're now going to integrate a database into our application to store data. A really popular database to use with NodeJS is MongoDB. It's a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we're going to have to do is add MongoDB to our dependencies list inside of ```package.json```.
 
+Add "mongodb": "~1.4.19" to the dependencies object inside the JSON so that it looks like this.
 
-[These files](assets/files/ws4.zip) should give you the end product that you should have at the end of the workshop.
+```json
+{
+  "name": "codeweekend",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.6.6",
+    "cookie-parser": "~1.3.3",
+    "cookie-session": "~1.0.2",
+    "express": "~4.8.6",
+    "hjs": "~0.0.6",
+    "mongodb": "~1.4.19",
+    "morgan": "~1.2.3",
+    "nodemailer": "^1.2.2",
+    "request": "^2.42.0"
+  }
+}
+```
+
+Now, let's actually import the database into the app. Any guesses on how to allow our app to use MongoDB's core functionality? Yup, we're first going to tell our app that we require it, which is done with the line: 
+
+```javascript
+"var mongo = require('mongodb');" 
+```
+
+Add it to our main file, app.js. Cool. Now let's make use of it. We're first going to have to create a database object and a server object and then create & open a specific database so that we can use it later. See if you can understand the lines below.
+
+```javascript
+var Db = mongo.Db;
+var Server = mongo.Server;
+var db = new Db('codeweekend',
+  new Server('localhost', '27017', {auto_reconnect: true}, {}),
+  {safe: true}
+);
+db.open(function(){});
+```
+
+Hopefully, that was easy to follow. We've created a new database called 'codeweekend' that we can reach at port 27017. Inside of our middleware, we're also going to have to route any incoming database requests to our MongoDB, so let's add in this to the end of the function.
+
+```javascript
+req.db = db;
+```
+
+Now, let's really get our hands messy and jump into `routes.js`, where we'll change our existing code to make use of the powerful database we know have access to.
+
+First things first:
+
+```javascript
+var ObjectID = require('mongodb').ObjectID;
+```
+
+Let's get our database Object ID. Now, our existing code looks a little something like this:
+
+```javascript
+router.get('/', function(req, res) {
+  return res.render('index', {
+    title: 'Codeweekend Notes',
+    notes: req.session.notes
+  });
+});
+```
+
+We already know that this stores our notes in a session. However, now, let's make use of our up and runnig database instead. With a little change in how we access and store the notes object, we can now route the entire process through our DB, to change the routes.js file to:
+
+```javascript
+var ObjectID = require('mongodb').ObjectID;
+
+router.get('/', function(req, res) {
+  req.db.collection('notes').find().toArray(function(err, notes) {
+    return res.render('index', {
+      title: 'Codeweekend Notes',
+      notes: notes
+    });
+  });
+});
+
+router.get('/db', function(req, res) {
+  req.db.collection('test').find().toArray(function(err, items) {
+    return res.send(items);
+  });
+});
+
+router.get('/:id', function(req, res) {
+  req.db.collection('notes').findOne({_id: ObjectID(req.params.id)}, function(err, note) {
+    if (err || !note) {
+      req.session.message = 'That note does not exist!';
+      return res.redirect('/');
+    }
+
+    //return.res.sender
+  });
+});
+
+router.post('/create', function(req, res) {
+  if (!(req.body.title && req.body.body)) {
+    req.session.message = 'You must provide a title and a body!';
+    return res.redirect('/');
+  }
+
+  req.db.collection('notes').insert({
+    title: req.body.title,
+    body: req.body.body
+  }, function(err, result) {
+    req.session.message = 'Note created!';
+    return res.redirect('/');
+  });
+});
+
+module.exports = router;
+```
+
+Well that wasn't so bad. Every call to the database involves referencing our middleware `req.db` and using the collection (aka database) called 'notes'. We then use different functions like `findOne`, that finds one result, or `find().toArray` that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there's an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy? 
+
+#### You're done!
+
+With that you've succesfully integrated your first database into a Node application and it's up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. 
+
+Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you've learned!
+
+#### Files
+
+[These files](assets/files/ws4.zip) should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!
 
 <div class="footer"><p>&copy; Dining Philosophers 2015. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
 
