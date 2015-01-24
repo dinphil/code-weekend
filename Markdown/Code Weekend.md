@@ -72,7 +72,7 @@ You'll see later on that requests aren't just made of the server when we first o
 
 ### Simple HTML and CSS
 
-HTML (Hypertext Markup Language) is like the backbone of any webpage. It's where we add in all the information - what they webpage actually displays as well as information about the page itself such as its title.
+HTML (Hypertext Markup Language) is like the backbone of any webpage. It's where we add in all the information - what the webpage actually displays as well as information about the page itself such as its title.
 
 ![With and without CSS](http://static.webplatform.org/w/public/6/6e/article4.gif)
 
