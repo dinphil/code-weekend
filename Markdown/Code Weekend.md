@@ -7,9 +7,9 @@ Building your first webapp
 
 [Sign up here!](http://goo.gl/forms/hXb2IVeMM9)
 
-Code Weekend is scheduled for *January 24th and 25th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps Winter 2015") scheduled for the weekend before. If you haven't already, [sign up here](https://my.pennapps.com/register_penn "PennApps Registration") for PennApps, it's a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they're doing great stuff for first-time hackers as well).
+Code Weekend is scheduled for *January 24th and 25th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps Winter 2015") scheduled for the weekend before. If you haven't already, check it out - it's a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they're doing great stuff for first-time hackers as well).
 
-> These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.
+> These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding-based workshops.
 
 If you already have some coding experience, then feel free to skip the first session. Here's what we expect you to know and have installed before you jump into the second session:
 
@@ -45,14 +45,15 @@ When coding, you'll run into tons of small problems and errors that you don't in
 
 Thankfully, we all have a resource with more information than that constantly at our fingertips - teh interwebz. You've probably searched for things using Google before, but most coding problems can actually be solved by effective Googling of your issue. Here are some tips for finding the answers to all your problems on the Internet:
 
-- Be descriptive. If you're searching for what's causing an error then you can try just searching for the entire error message, or try describing what happened. For example, "Homebrew does not install through terminal on OSX Yosemite" is a better search query than "homebrew not working", though the best search query is often some combination of plain text and the actual error message. Often Error Codes make great search queries, as long as they are contextualized.
+- Be descriptive. If you're searching for what's causing an error then you can try just searching for the entire error message, or try describing what happened. For example, "Homebrew does not install through terminal on OSX Yosemite" is a better search query than "homebrew not working", though the best search query is often some combination of plain text and the actual error message. Often error codes make great search queries, as long as they are contextualized (i.e. with the name of the language/environment).
 - Along that vein, use as many specific words as possible. You can use complete sentences if you'd like, but normally four or five very descriptive nouns/verbs is ideal, and you won't throw Google off-track by searching for unnecessary things. For example, you try to put a banner at the top of a web page, but there's a weird white border around the entire page. Googling "there's a weird white border around the entire page" isn't helpful. Always start with the name of the language you think is suspect if you can (in this case, it's CSS, since all style things on the page are controlled by CSS). Then, describe the problem with just a few words. Here, I used "CSS no page border". The first result was really helpful, and ended up solving my problem.
 
 These resources are also awesome:
 
 - [Stack Overflow](http://stackoverflow.com) is the best. Search results that link here are often the most helpful, and you can almost always find someone who's had the same problem as you on here. You should mostly refrain from posting questions to Stack Overflow since odds are your question has already been answered there somewhere.
-- If you're looking for syntax, or lists of inbuilt functions, then look for the Official Documentation for the language in question. [W3C Schools](http://www.w3schools.com) is great for HTML, CSS and Javascript.
-- [Bentobox](https://www.bento.io) is a great all-in-one resource to learn to code for a huge number of technologies. [Code Academy](http://www.codecademy.com/learn) has some great tutorials.
+- If you're looking for syntax, or lists of inbuilt functions, then look for the Official Documentation for the language in question. [W3C Schools](http://www.w3schools.com) is great for HTML, CSS, and Javascript.
+- [Bentobox](https://www.bento.io) is a great all-in-one resource to learn to code for a huge number of technologies. 
+- [Code Academy](http://www.codecademy.com/learn) has some great tutorials. The lessons for each language can get tedious, but the tutorials where you build actual things are pretty great. If you're looking for a good introduction to HTML/CSS, [General Assembly's Dash](https://dash.generalassemb.ly/) is probably the best place to start.
 
 ### An Introduction to the web
 
