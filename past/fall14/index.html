@@ -1,0 +1,603 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>/* Typography */
+
+@font-face {
+  font-family: Helvetica;
+  src: url("HelveticaNeueLTStd-Th.otf") format("opentype");
+}
+
+
+body {
+  font: 1em "Open Sans", Helvetica Neue, sans-serif;
+  color: #333333; }
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5em;
+  border: none; }
+
+h2 {
+  font-weight: 300;
+  line-height: 1.4;
+  font-size: 1.5em;
+  border: none; }
+
+h3 {
+  font-weight: 300;
+  font-size: 1.3em;
+  color: #972e2e; }
+
+h4 {
+  font-weight: 300;
+}
+
+p, ol, ul {
+  letter-spacing: 0.07em;
+  font-family: "Helvetica";
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444444;
+  font-weight: 300; }
+
+
+
+
+/* Body, Navbar blocks*/
+body {
+  margin: 30px auto;
+  max-width: 1280px;
+  width: 90%;
+  position: relative;
+  height: auto;
+  padding: 0px;
+  border: #2e4b97 solid 2px;
+  background: white;
+}
+
+.hidden{
+  display: none;
+}
+
+.nav-items{
+  display: block;
+  float: center;
+  background: white;
+  text-align: center;
+  position: relative;
+  font-size: 1em;
+  box-shadow: 0 0 5px #2e4b97;
+  -webkit-box-shadow: 0 0 5px #2e4b97;
+  -moz-box-shadow: 0 0 5px #2e4b97;
+}
+  .nav-items div{
+    color: #ababab;
+    background-color: white;
+    display: inline-block;
+    padding: 10px 10px;
+    font-weight: lighter;
+  }
+  .nav-item{
+    color: #2e4b97;
+    background: none;
+    display: inline-block;
+  }
+  .nav-item:hover{
+    background-color: #2e4b97;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+  }
+  
+/* Content styles */
+
+   h1{
+    color: #2e4b97;
+    text-transform: uppercase;
+    text-align: center;
+   }
+   h2{
+    margin: auto;
+    text-align: center;
+    color: #972e2e;
+   }
+   h1,h2,h3,h4{
+    text-align: center;
+   }
+   p{
+    margin: 10px 10%;
+    color: #111111;
+    font-size: 1em;
+    display: block;
+    text-align: justify;
+    padding: 10px;
+    font-weight: 300;
+   }
+   a{
+      text-decoration: none;
+      color: #972e2e;
+      font-weight: 300;
+    }
+    a:hover {
+      text-decoration: none;
+      color: #972e2e;
+    }
+   em{
+    background: #972e2e;
+    color: white;
+    padding: 0.17em;
+    font-weight: 300;
+    font-size: 1em;
+    text-decoration: none;
+   }
+   blockquote{
+    margin: 20px 10%;
+   }
+   ol, ul {
+    margin: 20px 12%;
+   }
+   img{
+    margin: auto;
+    display: inherit;
+   }
+
+/* Code blocks */
+pre{
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.8em;
+  background: #2e4b97;
+  margin: 0;
+  overflow: scroll;
+}
+  code{
+    background: #2e4b97;
+    color: white;
+    font-size: 0.8em;
+    padding: 0.1em;
+    font-weight: 300;
+  }
+
+/* Image syles */
+img{
+  display: block;
+  position: relative;
+  max-width: 100%;
+}
+img.full-img{
+  display: block;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+  .img-caption{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    font-weight: 300;
+    float: right;
+    font-size: 0.6em;
+    color: white;
+    background: #2e4b97;
+    padding: 2px;
+    margin-top: 0;
+  }
+
+/* Footer */
+.footer{
+  font-size: 0.5em;
+  padding: 2px;
+  border-top: #2e4b97 solid 2px;
+}
+  .footer p{
+    padding: 0;
+    text-align: center;
+    margin: 5px;
+  }
+
+/* Media Query for tablets and small desktops */
+@media screen and (max-width: 1075px) {
+  html, body{
+    margin : 0px 0px 0px 0px; 
+    width : 100%;
+    border : none;
+  }
+}
+/* Media Query for phones/phablets */
+@media screen and (max-width: 860px){
+  p{
+    margin: 15px;
+  }
+  blockquote{
+    margin: 15px;
+  }
+}
+</style><title>Code Weekend</title></head><body><article class="markdown-body"><div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div>
+
+<p><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Setup</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">DBs</div></div></p>
+<h1 id="code-weekend"><a name="user-content-code-weekend" href="#code-weekend" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Code Weekend</h1>
+<h2 id="building-your-first-webapp"><a name="user-content-building-your-first-webapp" href="#building-your-first-webapp" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Building your first webapp</h2>
+<p>Code Weekend is scheduled for <em>September 6th and 7th, 2014</em> and will comprise four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding exposure as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers especially with <a href="http://pennapps.com" title="PennApps - The premier college hackathon">PennApps</a> scheduled for the next weekend. If you haven&rsquo;t already, <a href="https://my.pennapps.com/register_penn" title="PennApps Registration">sign up here</a> for PennApps.</p>
+<blockquote>
+<p>These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding based workshops.</p>
+</blockquote>
+<p>If you already have some coding experience, then feel free to skip the first session. Here&rsquo;s what we expect you to know and have installed before you jump into the second session:</p>
+<ul>
+<li>The basics of how the web works.</li>
+<li>HTML/CSS/Javascript to the extent that you can build a simple static webpage.</li>
+<li>Have Node.JS, MongoDB and Sublime Text installed.</li>
+<li>Know how to use NPM (Node Package Manager) to install something.</li>
+<li>Know how to use Terminal/Command Prompt to move folders, change directories, and create files.</li>
+<li>Know how to fire up the Node/MongoDB shell.</li>
+</ul>
+<h1 id="intro-to-web-development-and-setup"><a name="user-content-intro-to-web-development-and-setup" href="#intro-to-web-development-and-setup" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Intro to Web Development and Setup <a id="setup-section"></a></h1>
+<h2 id="the-first-step-in-your-coding-career"><a name="user-content-the-first-step-in-your-coding-career" href="#the-first-step-in-your-coding-career" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>The first step in your coding career</h2>
+<p>Welcome to your first coding experience!</p>
+<p>We&rsquo;ll be going over quite a few things in this opening workshop:</p>
+<ul>
+<li><a href="#an-introduction-to-the-life-of-a-developer">How to search effectively using Google + Using Stack Overflow</a></li>
+<li><a href="#an-introduction-to-the-web">How the internet works and why web development is so different from, say, Java</a></li>
+<li><a href="#simple-html-and-css">Basic HTML and CSS and how webpages are structured</a></li>
+<li><a href="#javascript-finally">Javascript, JSON and how to make things more fun</a></li>
+<li><a href="#what-is-terminalcommand-prompt">What is Terminal/Command Prompt and how to run Node, Mongo and NPM</a></li>
+<li><a href="#lets-start-doing-stuff">Install Stuff</a></li>
+<li><a href="#making-a-personal-landing-page">Build your own Personal landing page</a></li>
+</ul>
+<p>This shouldn&rsquo;t take too long though, and we&rsquo;re going to go ahead and leave the rest of the time for you to actually install all the applications you&rsquo;ll need for the rest of these workshops. In addition, we&rsquo;ll give you a basic static webpage that you can edit and turn into your own personal landing page.</p>
+<p>So let&rsquo;s get started!</p>
+<h3 id="an-introduction-to-the-life-of-a-developer"><a name="user-content-an-introduction-to-the-life-of-a-developer" href="#an-introduction-to-the-life-of-a-developer" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>An Introduction to (the) Life (of a Developer)</h3>
+<p>When coding, you&rsquo;ll run into tons of small problems and errors that you don&rsquo;t initially know how to solve. <strong><em>This is completely normal.</em></strong> In order to teach solutions to every problem that you could hypothetically run into, we&rsquo;d need a textbook taller than the Empire State building. </p>
+<p>Thankfully, we all have a resource with more information than that constantly at our fingertips - teh interwebz. You&rsquo;ve probably searched for things using Google before, but most coding problems can actually be solved by effective Googling of your issue. Here are some tips for finding the answers to all your problems on the Internet:</p>
+<ul>
+<li>Be descriptive. If you&rsquo;re searching for what&rsquo;s causing an error then you can try just searching for the entire error message, or try describing what happened. For example, &ldquo;Homebrew does not install through terminal on OSX Yosemite&rdquo; is a better search query than &ldquo;homebrew not working&rdquo;, though the best search query is often some combination of plain text and the actual error message. Often Error Codes make great search queries, as long as they are contextualized.</li>
+<li>Along that vein, use as many specific words as possible. You can use complete sentences if you&rsquo;d like, but normally four or five very descriptive nouns/verbs is ideal, and you won&rsquo;t throw Google off-track by searching for unnecessary things. For example, you try to put a banner at the top of a web page, but there&rsquo;s a weird white border around the entire page. Googling &ldquo;there&rsquo;s a weird white border around the entire page&rdquo; isn&rsquo;t helpful. Always start with the name of the language you think is suspect if you can (in this case, it&rsquo;s CSS, since all style things on the page are controlled by CSS). Then, describe the problem with just a few words. Here, I used &ldquo;CSS no page border&rdquo;. The first result was really helpful, and ended up solving my problem.</li>
+</ul>
+<p>These resources are also awesome:</p>
+<ul>
+<li><a href="http://stackoverflow.com">Stack Overflow</a> is the best. Search results that link here are often the most helpful, and you can almost always find someone who&rsquo;s had the same problem as you on here. You should mostly refrain from posting questions to Stack Overflow since odds are your question has already been answered there somewhere.</li>
+<li>If you&rsquo;re looking for syntax, or lists of inbuilt functions, then look for the Official Documentation for the language in question. <a href="http://www.w3schools.com">W3C Schools</a> is great for HTML, CSS and Javascript.</li>
+<li><a href="https://www.bento.io">Bentobox</a> is a great all-in-one resource to learn to code for a huge number of technologies. <a href="http://www.codecademy.com/learn">Code Academy</a> has some great tutorials.</li>
+</ul>
+<h3 id="an-introduction-to-the-web"><a name="user-content-an-introduction-to-the-web" href="#an-introduction-to-the-web" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>An Introduction to the web</h3>
+<p>There&rsquo;s pretty much three things happening every time you open a website:</p>
+<ul>
+<li>Your browser looks up an address (say google.com) and follows it back to its home - the server which actually runs the website. This server is basically just a computer, albeit a huge, immensely powerful computer possibly comprising acres of computer hardware connected together.</li>
+<li>This server is what we call the <em>backend</em>. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.</li>
+<li>Your computer now reads this response and converts it into the webpage you actually see on your computer. This last bit of conversion is what we call the <em>frontend</em> doing its work.</li>
+</ul>
+<p><img alt="Server- Browser" src="assets/img/server-browser.png" /></p>
+<p>So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are basically the two main components of any website.</p>
+<p>You&rsquo;ll see later on that requests aren&rsquo;t just made of the server when we first open the website; it&rsquo;s often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when thhey&rsquo;re needed (think Facebook&rsquo;s Newsfeed). It&rsquo;s also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.</p>
+<p><img alt="Facebook Loading using Javascript" src="http://www.product-reviews.net/wp-content/uploads/facebook-not-working.jpg" /></p>
+<h3 id="simple-html-and-css"><a name="user-content-simple-html-and-css" href="#simple-html-and-css" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Simple HTML and CSS</h3>
+<p>HTML (Hypertext Markup Language) is like the backbone of any webpage. It&rsquo;s where we add in all the information - what they webpage actually displays as well as information about the page itself such as its title.</p>
+<p><img alt="With and without CSS" src="http://static.webplatform.org/w/public/6/6e/article4.gif" /></p>
+<p>CSS dresses up this information. Most (but really all) webpages link to a CSS file that stores information on how a browser should display the information it recieves in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
+<p>Javascript is the fun part. It does dynamic things with your webpage, updates content on the fly and can animate just about anything. We&rsquo;ll talk about this later.</p>
+<p><img alt="Javascript meme" src="http://splurd.com/comics/images/1337794967.jpg" /></p>
+<p>Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathamatical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
+<p>Let&rsquo;s start with HTML (Hypertext Markup Language).</p>
+<p><img alt="HTML meme" src="http://38.media.tumblr.com/tumblr_m4fl5qPjdU1rw659vo1_400.png" /></p>
+<p>HyperText is text that will hyperlink you to other text. That&rsquo;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
+<p>It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called &lsquo;tags.&rsquo; Tags are denoted by &lt; followed by &gt;. Below is the most basic HTML document we can create (except for the comments that we&rsquo;ve added in to make things clearer).</p>
+<pre><code>&lt;!&ndash; This is the most basic HTML document you can create that is complete &ndash;&gt; 
+&lt;!&ndash; This, by the way, is a comment that does not affect any of the code we write.
+ We can use this to leave notes in the code for our future selves,
+ or for others reading our code &ndash;&gt;
+&lt;!&ndash; index.html &ndash;&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;This is a basic HTML webpage.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><code>&lt;!DOCTYPE html&gt; &lt;html&gt;</code> is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contatined in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, <code>&lt;html&gt;</code> must eventually be closed by <code>&lt;/html&gt;</code>.</p>
+<p>Usually though, we&rsquo;ll include more information about the page in the <code>&lt;head&gt;</code> tag like this:</p>
+<pre><code>&lt;head&gt;
+    &lt;meta charset=&rdquo;utf-8&rdquo;&gt;
+    &lt;meta name=&rdquo;description&rdquo; content=&rdquo;Code Weekend Sample Page&rdquo;&gt;
+    &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+    &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;main.css&rdquo;&gt;
+&lt;/head&gt;</code></pre>
+<p>So now we&rsquo;ve specified the character set that the page uses - this is just to make sure the browser doesn&rsquo;t think that the page is in a language other than english. Then there&rsquo;s a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there&rsquo;s a tag where we&rsquo;ve linked this HTML file to a CSS document (the href component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.</p>
+<p>Now let&rsquo;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your webpage goes. Let&rsquo;s try adding some information in.</p>
+<pre><code>&lt;body&gt;
+    &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+    &lt;h2&gt;Here&rsquo;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+    &lt;!&ndash; Here&rsquo;s a comment that will not show up on the actual page &ndash;&gt;
+    &lt;p&gt;
+        Here&rsquo;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+    &lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<p>Let&rsquo;s look at this whole document now.</p>
+<pre><code>&lt;!&ndash; This is a slightly more complete HTML document, but with no styles as yet. &ndash;&gt; 
+&lt;!&ndash; This, by the way, is a comment that does not affect any of the code we write.
+ We can use this to leave notes in the code for our future selves,
+ or for others reading our code &ndash;&gt;
+&lt;!&ndash; index.html &ndash;&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&rdquo;utf-8&rdquo;&gt;
+        &lt;meta name=&rdquo;description&rdquo; content=&rdquo;Code Weekend Sample Page&rdquo;&gt;
+        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+        &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;main.css&rdquo;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+        &lt;h2&gt;Here&rsquo;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+        &lt;!&ndash; Here&rsquo;s a comment that will not show up on the actual page &ndash;&gt;
+        &lt;p&gt;
+            Here&rsquo;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Here are some more important HTML tags:</p>
+<ul>
+<li><code>&lt;a href="link here"&gt;text for the link&lt;/a&gt;</code> - used to create links</li>
+<li><code>&lt;img src="path/link to image" alt="text to show if image doesn't load" /&gt;</code> - used to add images</li>
+<li><code>&lt;em&gt;text here&lt;/em&gt;</code> - used for italicising text</li>
+<li><code>&lt;strong&gt;text here&lt;/strong&gt;</code> - used to bold text</li>
+<li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> - used to start Unordered and Ordered Lists</li>
+<li><code>&lt;li&gt;Item here&lt;/li&gt;</code> - used to denote each item in a list</li>
+<li><code>&lt;script&gt; Code in here &lt;/script&gt;</code> - used to add non-HTML code such as Javascript to a page. We can (and should) instead add an <code>src</code> attribute to the <code>&lt;script&gt;</code> tag and link to an external Javascript file to keep our ccode clean and maintainable.</li>
+<li><code>&lt;div&gt;</code> - used to denote different divisions within your HTML body. Possibly one of the most useful tags when it comes to layout and styling in CSS.</li>
+</ul>
+<h4 id="umm-what-about-css"><a name="user-content-umm-what-about-css" href="#umm-what-about-css" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Umm, what about CSS?</h4>
+<p>Right. So before we can decide how things should look, we actually need a way to find these things. That HTML document we said was almost complete, well, it was almost complete. The last thing we need to add in are identifiers, and these fall into two categories:</p>
+<ul>
+<li>IDs: These are unique to an individual HTML element. Once I give an ID to an element, it cannot be used again. Every element can be assigned an ID. For example, <code>&lt;p id="introduction"&gt;</code>.</li>
+<li>Classes: These are reusable names that we give to ranges of elements. This allows us to do thigns like apply the same style (say, a font) to multiple elements rather than having to rewrtie the same thing over and over. For example, we can create multiple paragraphs with the same class <code>&lt;p class="red-text"&gt; This text is theoretically red.&lt;/p&gt; &lt;p class="red-text"&gt; This text is also presumably red. &lt;/p&gt;</code>.</li>
+</ul>
+<p>Now we have a way to decide on styles. Let&rsquo;s look at that HTML document again:</p>
+<pre><code>&lt;!&ndash; This is a slightly more complete HTML document, but with no styles as yet. &ndash;&gt; 
+&lt;!&ndash; This, by the way, is a comment that does not affect any of the code we write.
+ We can use this to leave notes in the code for our future selves,
+ or for others reading our code &ndash;&gt;
+&lt;!&ndash; index.html &ndash;&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&rdquo;utf-8&rdquo;&gt;
+        &lt;meta name=&rdquo;description&rdquo; content=&rdquo;Code Weekend Sample Page&rdquo;&gt;
+        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+        &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;main.css&rdquo;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+        &lt;h2&gt;Here&rsquo;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+        &lt;!&ndash; Here&rsquo;s a comment that will not show up on the actual page &ndash;&gt;
+        &lt;p class=&rdquo;red-text&rdquo; id=&rdquo;intro-para&rdquo;&gt;
+            Here&rsquo;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>We can also just change the style for an entire kind of element. So we could just change how all <code>&lt;h1&gt;</code> tags look. Let&rsquo;s take a look at what CSS looks like:</p>
+<pre><code>body {
+    padding: 50px 100px;
+}
+h1 {
+    font-size: 40px;
+    font-weight: lighter;
+    color: blue;
+}
+.red-text {
+    color: red;
+}
+#intro-para {
+    border: 2px solid black;
+}
+</code></pre>
+<p>As you can see, there are small differences in syntax depending on the selector (whether you&rsquo;re changing all instances of an element, instances of a class, or just a single element by ID) but it&rsquo;s mostly quite simple.</p>
+<p>You should look through the resources at the top of this section for more information on HTML tags and CSS attributes, but the best thing to do is to Google things you&rsquo;re looking to do and look for the <a href="http://www.w3schools.com">W3C Schools</a> or <a href="http://stackoverflow.com">Stack Overflow</a> results.</p>
+<p><img alt="Stack Overflow" src="http://i.stack.imgur.com/XdONP.png" /></p>
+<p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links.</p>
+<p>A great way to play around with CSS styles is to right-click on this page in Chrome of Firefox, Inspect Element, and try changing the CSS styles on the right hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
+<p><img alt="Chrome dev tools" src="https://developer.chrome.com/devtools/docs/css-preprocessors-files/sass-debugging.png" /></p>
+<h3 id="javascript-finally"><a name="user-content-javascript-finally" href="#javascript-finally" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Javascript, finally!</h3>
+<p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&rsquo;re used to. You just write code in a file, link to it in your HTML and it exectutes.</p>
+<p><img alt="javascript meme" src="http://www.memegenerator.eu/media/created/iyflyp.jpg" /></p>
+<p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <code>Integer</code> with the value of <code>5</code>. Writing <code>var x = "5"</code> would create a <code>String</code> named <code>x</code> with the string <code>5</code> as its value.</p>
+<p>The most common types we will use are Strings (just text, such as &ldquo;This is some text&rdquo;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&rsquo;ll be surprised by how common almost everyhting you wanna do is).</p>
+<p>Here&rsquo;s some sample Javascript code:</p>
+<pre><code>var myVariable = &ldquo;September 12th&rdquo;;
+alert (&ldquo;PennApps starts on &rdquo; + myVariable);</code></pre>
+<p>This creates an alert that says &ldquo;PennApps starts on September 12th&rdquo;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&rsquo;s a function in Javascript that squares a number:</p>
+<pre><code>function square (number) {
+    return number * number;
+}
+// This is a single line comment that does not need to be closed.
+console.log(square (5)); // This prints the result to the javascript console in your browser&rsquo;s (Chrome or Firefox) developer tools.
+/* This is a multi-line comment
+   that only ends when we do this */
+
+// We can also write the above function as the following:
+var square = function (number) {
+    return number * number;
+}
+
+// Here&rsquo;s an anonymous function that calculates the square of 5:
+
+(function (number) {
+    return number*number;
+}) (5);
+// In this case, we are executing the anonymous function immediately, but we don&rsquo;t have to always do this:
+
+function idPlusString (number) {
+    var cube = number * number * number;
+    return function (name) {
+        return &ldquo;Hi &ldquo;+ name + &ldquo;. &rdquo; + &ldquo;Your ID is &rdquo; + cube + &ldquo;.&rdquo;;
+    }
+}
+// This returns a function that you can add a string to. If you don&rsquo;t understand this last function, it&rsquo;s okay.</code></pre>
+<p>Javascript mainly works on Objects and Arrays to store and access data.</p>
+<pre><code>// Here&rsquo;s an Object that conatins an array
+var myDetails = {
+    &lsquo;name&rsquo; : &ldquo;Mark Gates&rdquo;,
+    &lsquo;age&rsquo; : 24,
+    &lsquo;interests&rsquo;: [&lsquo;Figure Skating&rsquo;, &lsquo;Javascript&rsquo;, &lsquo;Tennis&rsquo;, &lsquo;EDM&rsquo;]
+}
+console.log(myDetails.name); // prints the name property of the object, ie, &lsquo;Mark Gates&rsquo;
+console.log(myDetails.interests[1]); // prints &lsquo;Javascript&rsquo; to the console</code></pre>
+<p>Objects are essentially key-value pairs. We can access to values easily using the notation <code>object.key</code>.</p>
+<p>If you haven&rsquo;t noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It&rsquo;s okay if you end every line with one, it&rsquo;s better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitionsand pretty much everything that ends in curly braces (<code>}</code>).</p>
+<p><em>JSON (Javascript Object Notation)</em> is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays liberally to store information. Let&rsquo;s look at an example of a JSON file:</p>
+<pre><code>{
+    &ldquo;employees&rdquo;:[
+        {
+            &ldquo;firstName&rdquo;:&rdquo;John&rdquo;, 
+            &ldquo;lastName&rdquo;:&rdquo;Doe&rdquo;
+        }, 
+        {
+            &ldquo;firstName&rdquo;:&rdquo;Anna&rdquo;, 
+            &ldquo;lastName&rdquo;:&rdquo;Smith&rdquo;
+        },
+        {
+            &ldquo;firstName&rdquo;:&rdquo;Peter&rdquo;, 
+            &ldquo;lastName&rdquo;:&rdquo;Jones&rdquo;
+        }
+        ],
+    &ldquo;company&rdquo; : &ldquo;ABC Holdings&rdquo;,
+    &ldquo;lastUpdated&rdquo; : &ldquo;September 6th&rdquo;
+}</code></pre>
+<p>It&rsquo;s exactly like a Javascript Object, and that&rsquo;s because that&rsquo;s exactly what it is. Just for kicks, let&rsquo;s compare this to XML:</p>
+<pre><code>&lt;employees&gt;
+    &lt;employee&gt;
+        &lt;firstName&gt;John&lt;/firstName&gt; 
+        &lt;lastName&gt;Doe&lt;/lastName&gt;
+    &lt;/employee&gt;
+    &lt;employee&gt;
+        &lt;firstName&gt;Anna&lt;/firstName&gt; 
+        &lt;lastName&gt;Smith&lt;/lastName&gt;
+    &lt;/employee&gt;
+    &lt;employee&gt;
+        &lt;firstName&gt;Peter&lt;/firstName&gt; 
+        &lt;lastName&gt;Jones&lt;/lastName&gt;
+    &lt;/employee&gt;
+&lt;/employees&gt;
+&lt;company&gt;ABC Holdings&lt;/company&gt;
+&lt;lastUpdated&gt;September 6th&lt;/lastUpdated&gt;
+</code></pre>
+<p>So much better isn&rsquo;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier.</p>
+<h3 id="what-is-terminalcommand-prompt"><a name="user-content-what-is-terminalcommand-prompt" href="#what-is-terminalcommand-prompt" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>What is Terminal/Command Prompt?</h3>
+<p><img alt="Terminal" src="assets/img/terminal.png" /></p>
+<p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending s good amount of time this weekend in here, so let&rsquo;s take some time to get used to it.</p>
+<p>Once you fire up Terminal or Command Prompt (on Windows, you&rsquo;ll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you&rsquo;ll know it&rsquo;s running as Admin if your path ends in ../system32), here&rsquo;s how you get around:</p>
+<ul>
+<li><code>ls</code> (<code>DIR</code> on Windows) lists all the files in the current folder</li>
+<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents, if there is such a folder in teh current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
+<li><code>mkdir</code> allows you to make a folder. So <code>mkdir New</code> makes a folder named &lsquo;New&rsquo;.</li>
+<li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from C:\windows\temp to C:\temp. * works as a wildcard operator here.</li>
+</ul>
+<p>Once you&rsquo;ve installed Node.JS, you&rsquo;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&rsquo;ll aso be able to start up MongoDB from here.</p>
+<h3 id="lets-start-doing-stuff"><a name="user-content-lets-start-doing-stuff" href="#lets-start-doing-stuff" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Let&rsquo;s start doing stuff!</h3>
+<p>Whoohoo! We&rsquo;ve made it this far, and it&rsquo;s finally time to start doing stuff.</p>
+<h4 id="sublime-text-2"><a name="user-content-sublime-text-2" href="#sublime-text-2" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Sublime Text 2</h4>
+<p>We&rsquo;ve got to install a whole nuch of stuff now. Let&rsquo;s start simple, go and download <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. It&rsquo;s the best text editor in existence and this is where we&rsquo;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it, but we might be using some Sublime Packages later on.</p>
+<p>NOTE: Sometimes, when you save, a window will pop up asking you to buy Sublime. Just ignore this and hit &ldquo;Cancel&rdquo;.</p>
+<h4 id="nodejs"><a name="user-content-nodejs" href="#nodejs" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Node.JS</h4>
+<p>Now that you&rsquo;ve got that installed, let&rsquo;s move on to some slightly more complicated stuff. Let&rsquo;s start with Node.JS.</p>
+<p>Node.js is a commonly used web framework for building applications with Javascript. You need to run Node from command line. Instructions for different operating systems are below.</p>
+<p><em>Mac</em></p>
+<p>The easiest way to install Node is through Homebrew, a package manager for OSX. Sometimes it&rsquo;s already installed on your computer, and sometimes you need to install it. Bring up a terminal window and type in &ldquo;brew install node&rdquo;. If it doesn&rsquo;t work, go to the next paragraph. If it does, you&rsquo;re done!</p>
+<p>So, Homebrew didn&rsquo;t work for whatever reason. Let&rsquo;s try and install Homebrew, type this into Terminal: <code>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</code></p>
+<p>If Homebrew installed succesfully, then go ahead and try <code>brew install node</code>. If you run into any more errors here, try Googling the error text and looking for solutions. If that still doesn&rsquo;t work, look around for a mentor to help.</p>
+<p>If Homebrew is causing too many problems then just try the installer <a href="http://nodejs.org/download/">here</a>. You can also install NodeJS using Fink (<code>fink install nodejs</code>) or MacPorts(<code>port install nodejs</code>).</p>
+<p><em>Windows</em></p>
+<p>Here is a guide to getting Node.js setup with a Windows machine. There&rsquo;s some extra info there that might be confusing, so below are the basic steps:</p>
+<ol>
+<li>Download the .msi file from <a href="http://nodejs.org/download/">here</a></li>
+<li>Use Windows Installer to get it set up.</li>
+</ol>
+<p><em>Linux</em></p>
+<p>There are about a million different ways to install things on various Linux-based operating systems. Go to <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">this link</a> for a full list.</p>
+<h4 id="mongodb"><a name="user-content-mongodb" href="#mongodb" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>MongoDB</h4>
+<p>Now that you&rsquo;ve got Node.JS installed, let&rsquo;s move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a databse, we can store, search and access large amounts of data very quickly.</p>
+<p><em>Mac</em></p>
+<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: <code>mkdir -p /data/db</code>. You should now be able to go straight into the MongoDB shell by typing in <code>mongod</code> into Terminal.</p>
+<p>In case you run into any problems, <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/">look at MongoDB&rsquo;s full instructions page</a> and Google around before asking mentors for help.</p>
+<p><em>Windows</em></p>
+<p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&rsquo;dd need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
+<p><em>Linux</em></p>
+<p>Full instructions to install MongoDB on Linux can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
+<h4 id="making-a-personal-landing-page"><a name="user-content-making-a-personal-landing-page" href="#making-a-personal-landing-page" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Making a Personal Landing Page</h4>
+<p>Well done! You&rsquo;ve got everything you need installed. Now let&rsquo;s test what you&rsquo;ve learned today. Here&rsquo;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can eventry adn create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration (<a href="http://pvrnav.com">Pranav</a>, <a href="http://lewisjellis.com">Lewis</a>, <a href="http://bclay.github.io/homepage/">Brynn</a>) or browse around the internet to see nice design (like <a href="http://medium.com">Medium</a>).</p>
+<h1 id="intro-to-javascript-and-nodejs"><a name="user-content-intro-to-javascript-and-nodejs" href="#intro-to-javascript-and-nodejs" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Intro to Javascript and NodeJS <a id="node-section"></a></h1>
+<h2 id="the-most-powerful-web-development-tools-ever"><a name="user-content-the-most-powerful-web-development-tools-ever" href="#the-most-powerful-web-development-tools-ever" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>The most powerful web development tools ever</h2>
+<p>Topics to be covered:</p>
+<ul>
+<li>Basics of Node.js and Node package manager</li>
+<li>The Express framework</li>
+<li>Templates, sessions, and middlewares</li>
+<li>Simple form processing</li>
+</ul>
+<p>Please download <a href="./assets/files/workshop2.zip">this ZIP file</a> before the tutorial. It contains starter files with checkpoints that will be referenced during the talk.</p>
+<p>You can find the slides from this tutorial <a href="./assets/files/slides/workshop2.html">here</a>.</p>
+<h3 id="what-is-a-node-app"><a name="user-content-what-is-a-node-app" href="#what-is-a-node-app" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>What is a Node app?</h3>
+<p>Node is a very common Javascript-based web framework. In other words, it&rsquo;s a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It&rsquo;s great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app.</p>
+<h3 id="the-anatomy-of-a-node-app"><a name="user-content-the-anatomy-of-a-node-app" href="#the-anatomy-of-a-node-app" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>The Anatomy of a Node app</h3>
+<p>A common Node app has several main components, as described below:</p>
+<p><em>app.js:</em> The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. Then &ldquo;get&rdquo; and &ldquo;post&rdquo; requests are set up that tell the app which router methods to use. The last section tells the app to run on a particular port (3000 in this case).</p>
+<p><em>package.json:</em> A standardized JSON file containing information about this app. It&rsquo;s fairly readable, but there&rsquo;s info about the authors, version, repository, and versions of Node modules.</p>
+<p><em>node_modules:</em> Contains external modules, which are snippets of code written by others that perform very specific functions within your code. These are really what make Node so powerful and flexible—you can easily import functionality written by other people. You can look through Node modules on <a href="http://www.npmjs.org">http://www.npmjs.org</a>, or just Google functionality you want and look for modules that perform that function. To add a new Node module to your program, type &ldquo;npm install <a class="wikilink" href="/module_name/">module name</a>&rdquo; in the main directory of your program.</p>
+<p>One very common module, Express, provides a lot of the framework to make our app work over the Internet.</p>
+<p><em>public:</em> Holds CSS, Javascript, image, and video files used to render web pages.</p>
+<p><em>routes:</em> Contains the routing files. The routing files tell your app what to do and where to go when deliniated functions are performed. For example, a routing file can tell the application when to render the different web pages, and how to send your name from one web page to the next.</p>
+<p><em>views:</em> Contains files that are actually rendered. This folder contains HJS, or Hogan.js, files. HJS is essentially HTML, but with a few extra features that make it easier to use.</p>
+<h3 id="running-a-node-app"><a name="user-content-running-a-node-app" href="#running-a-node-app" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Running a Node app</h3>
+<p>To run on Mac/Linux, bring up a normal terminal window. On Windows, search your computer for the Node.js Command Prompt application, and open it (it should look very similar to the normal command prompt).</p>
+<p>Enter the folder the contains your Node app with simple terminal commands like &ldquo;cd&rdquo;. Once there, type &ldquo;node&rdquo; and hit enter. If you see a blank line that starts with &ldquo;&gt;&rdquo;, Node is installed properly and you&rsquo;re ready to go. If not, go back to the installation instructions and reinstall.</p>
+<p>The first time you run a node app, cd into the directory and run <code>npm install</code>. To run the Node app, type <code>node app.js</code> into the terminal from the folder that contains app.js.</p>
+<p>To see the app working, pull up an Internet browser. In the address bar, enter &ldquo;localhost:3000&rdquo;. If all goes well, you should be able to see your app!</p>
+<h1 id="intro-to-apis"><a name="user-content-intro-to-apis" href="#intro-to-apis" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Intro to APIs <a id="api-section"></a></h1>
+<h2 id="adding-the-internet-to-your-app"><a name="user-content-adding-the-internet-to-your-app" href="#adding-the-internet-to-your-app" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Adding the internet to your app</h2>
+<p>Topics to be covered:</p>
+<ul>
+<li>What APIs are, how they work, why we use them</li>
+<li>Sending HTTP requests from Node</li>
+<li>Authenticating with an API via OAuth</li>
+<li>Sending emails and Venmo payments</li>
+</ul>
+<p>Please download <a href="assets/files/ws3.zip">this zip file</a> before the workshop. Check out the slides <a href="assets/files/slides/workshop3.html">here</a>.<br />
+<img alt="OAuth" src="assets/img/ws3.jpg" /></p>
+<h1 id="intro-to-databases"><a name="user-content-intro-to-databases" href="#intro-to-databases" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Intro to Databases <a id="db-section"></a></h1>
+<h2 id="making-information-stick-around"><a name="user-content-making-information-stick-around" href="#making-information-stick-around" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Making information stick around</h2>
+<p>Topics to be covered:</p>
+<ul>
+<li>MongoDB: what it is, how to use it</li>
+<li>Why we pair MongoDB with Node and how</li>
+<li>Persisting our prior inputs</li>
+<li>Basic login authentication</li>
+</ul>
+<p>Make sure to download <a href="assets/files/ws4.zip">these files</a> to follow along with this workshop. Check out the <a href="assets/files/slides/workshop4.html">slides here</a>.</p>
+<div class="footer"><p>&copy; Dining Philosophers 2014. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script src="assets/js/nav.js"></script>
+
+<script src="assets/js/FlowType.js"></script>
+
+<script type="text/javascript">
+    $('.markdown-body').flowtype({
+        minimum   : 500,
+        maximum   : 1000,
+        minFont   : 16,
+        maxFont   : 65,
+        fontRatio : 40
+    });
+</script>
+
+<script>
+    $(window).load(function(){
+        $('.loading').fadeOut('200');
+    });
+</script></article></body></html>
