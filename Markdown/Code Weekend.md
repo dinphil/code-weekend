@@ -178,7 +178,7 @@ Right. So before we can decide how things should look, we actually need a way to
 Now we have a way to decide on styles. Let's look at that HTML document again:
 
 ```html
-<!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. It however does use identifiers, so we're one step closer to styling. -->
+<!-- This is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn't have any information about styles. It however does use identifiers, so we're one step closer to styling. -->
 <!DOCTYPE html>
 <html>
     <head>
