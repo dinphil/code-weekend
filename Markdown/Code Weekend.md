@@ -1,4 +1,4 @@
-<div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/global.css"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Web Pages &amp; The Internet</div><div class="nav-item" id="node-menu">NodeJS I</div><div class="nav-item" id="apis-menu">NodeJS II</div><div class="nav-item" id="dbs-menu">Databases</div></div>
+<div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/global.css"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Intro to Web</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">Databases</div></div>
 
 Code Weekend
 ============
@@ -17,7 +17,7 @@ If you already have some coding experience, then feel free to skip the first ses
 - HTML/CSS/Javascript to the extent that you can build a simple static webpage.
 - Know how to use Terminal/Command Prompt to move folders, change directories, and create files.
 
-> You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) [here](/past/fall14/index.html). However, this is really just an updated version of the same workshops so you should probably stay on this page.
+> You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) [here](past/fall14/index.html). However, this is really just an updated version of the same workshops so you should probably stay on this page.
 
 Intro to Web Development <a id="setup-section"></a>
 ==================================
@@ -352,7 +352,7 @@ Terminal (or Command Prompt on Windows) is basically a way for us to access the 
 Once you fire up Terminal or Command Prompt (on Windows, you'll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you'll know it's running as Admin if your path ends in `../system32`), here's how you get around:
 
 - `ls` (`DIR` on Windows) lists all the files in the current folder
-- `cd` allows you to change directory. So `cd Documents` will move into the folder Documents, if there is such a folder in teh current directory. You can check this by using `ls` (`DIR` on windows). To move up a directory, say back to where you were before you went into Documents, type in `cd ../`.
+- `cd` allows you to change directory. So `cd Documents` will move into the folder Documents, if there is such a folder in the current directory. You can check this by using `ls` (`DIR` on windows). To move up a directory, say back to where you were before you went into Documents, type in `cd ../`.
 - `mkdir` allows you to make a folder in the current directory. So `mkdir New` makes a folder named 'New'.
 - `mv` (`move` on windows) will let you move files and folders. In Terminal you can do `mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder` to move MyFile.rtf. On Windows `move c:\windows\temp\*.* c:\temp` will move everything from `C:\windows\temp` to `C:\temp`. `*` works as a wildcard operator here.
 
@@ -564,7 +564,72 @@ If we get session messages, we set them to our local state. And if no session no
 
 #### routes.js
 
+Let's talk about a file called routes.js. This handles all the "middleware routing: that our app has to do. So basically it tells our app what to do when someone goes to google.com/mail or to google.com/maps, ie, it specifies the behavior and results for making GET/POST requests at different routes (or paths). To begin with, as usual, we'll get the Express variable. Except this time, we'll specify a new variable called router which is created as folows:
 
+```javascript
+var express = require('express');
+var router = express.Router();
+```
+
+A router is an isolated instance of middleware and routes. Routers can be thought of as "mini" applications, capable only of performing middleware and routing functions. Every express application has a built-in app router.
+
+Routers behave like middleware themselves and can be `.use()`d by the app or in other routers.
+
+We'll now make simple route definitions for the HTTP GET method as below:
+
+```javascript
+router.get('/', function(req, res) {
+  return res.render('index', {
+    title: 'Codeweekend Notes',
+    notes: req.session.notes
+  });
+});
+
+router.get('/:id', function(req, res) {
+  var noteId = Number(req.params.id);
+  if (isNaN(noteId) || noteId < 1 || noteId > req.session.notes.length) {
+    req.session.message = 'That note does not exist!';
+    return res.redirect('/');
+  }
+
+  return res.render('note', {
+    note: req.session.notes[noteId - 1]
+  });
+});
+
+router.post('/create', function(req, res) {
+  if (!(req.body.title && req.body.body)) {
+    req.session.message = 'You must provide a title and a body!';
+    return res.redirect('/');
+  }
+
+  req.session.notes.push({
+    id: req.session.notes.length + 1,
+    title: req.body.title,
+    body: req.body.body
+  });
+
+  req.session.message = 'Note created!';
+  return res.redirect('/');
+});
+```
+
+You'll notice that the first function specifies what is supposed to happen when a  simple route path is requested (such as '/'). Each all to `router.get` or `router.post` takes a callback function that has two objects `req` and `res`. The `req` object usually contains information that is containted in the request. It also gives us access to the session cookie so that we can access and store some information about the user in their browser. The `res` object let's us control the response. Thus `res.redirect` redirects the user to another page and `res.render` uses our templating engine to create a webpage that we send back to the user. 
+
+Whenever we have an error in the request made to our webapp, we can see that we store the error message into the session and return a redirect back to the simply routing path using this nifty structure inside the callback functions:
+
+```javascript
+req.session.message = 'Error message goes here';
+return res.redirect('/');
+```
+
+This allows for clean error handling since we always send users to the same page when they get an error, and the actual error message is bound to the user's cookie, not the page itself.
+
+And lastly, just so that we get all this handy code available to the rest of the application, let's export it with:
+
+```javascript
+module.exports = router;
+```
 
 #### Views
 
@@ -872,7 +937,7 @@ Topics to be covered:
 - Persisting our prior inputs
 - Basic login authentication
 
-#### Installing MongoDB
+### Installing MongoDB
 
 Let's move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a database, we can store, search and access large amounts of data very quickly.
 
@@ -890,11 +955,23 @@ _Linux_
 
 Full instructions to install MongoDB on Linux can be found [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
 
-#### Running MongoDB
+### Running MongoDB
 
 Just type in `mongod` into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at `C:\Program Files\MongoDB\bin\mongod.exe`).
 
-#### Now for the code!
+### Why use a database? And why MongoDB?
+
+Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.
+
+So we've been storing information in the user's cookies till now, why use a database? After all, doesn't it make sense to distribute this information across everyones computers rather than have everything in one place?
+
+Well there's a lot of reasons why not, but here's a few major ones. First, not all information is relevant to a user, and users don't neccessarily have a lot fo space on their devices. You don't want Amazon's entire catalogue on you iPhone. Cookies are best kept for storing information specific to a user that we can afoord to loose. Which leads us to our next point, which is that cookeis are easily deleted. All a user needs to do is hit the "Clear Cookies" button in theri settings menu. So obviously, this isn't reliable.
+
+So databases let us store the information our website needs close to us, making it faster for us to get access to the correct information, as needed, to serve to our users. They make it possible to efficiently store a lot of information and access it quickly. But this means an extra layer of trouble dealing with asking our database for data and sending it new data from our webapp.
+
+That's why MongoDB is so popular with NodeJS. While it is still a separate database, it stores its information in a large JSON file. That's right, just JSON. So when we ask Mongo for results, it can jsut give us an array of javascript objects and that means we don't have to worry about the formatting of the data, cause it's already in the format we need! You might hear people argue for the use of MongoDB because it's a NoSQL database, but this has a lot of tradeoffs and there's no clear cut winner between SQL and NoSQL; they've each more apporpriate for different sets of circumstances.
+
+### Now for the code!
 
 We're now going to integrate a database into our application to store data. A really popular database to use with NodeJS is MongoDB. It's a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we're going to have to do is add MongoDB to our dependencies list inside of ```package.json```.
 

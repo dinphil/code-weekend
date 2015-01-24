@@ -65,7 +65,7 @@
 .codehilite pre .vi { color: #008080 } /* Name.Variable.Instance */
 .codehilite pre .il { color: #945277 } /* Literal.Number.Integer.Long */</style><title>Code Weekend</title></head><body><article class="markdown-body"><div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/global.css"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div>
 
-<p><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Web Pages &amp; The Internet</div><div class="nav-item" id="node-menu">NodeJS I</div><div class="nav-item" id="apis-menu">NodeJS II</div><div class="nav-item" id="dbs-menu">Databases</div></div></p>
+<p><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Intro to Web</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">Databases</div></div></p>
 <h1 id="code-weekend"><a name="user-content-code-weekend" href="#code-weekend" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code Weekend</h1>
 <h2 id="building-your-first-webapp"><a name="user-content-building-your-first-webapp" href="#building-your-first-webapp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your first webapp</h2>
 <p><a href="http://goo.gl/forms/hXb2IVeMM9">Sign up here!</a></p>
@@ -80,7 +80,7 @@
 <li>Know how to use Terminal/Command Prompt to move folders, change directories, and create files.</li>
 </ul>
 <blockquote>
-<p>You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) <a href="/past/fall14/index.html">here</a>. However, this is really just an updated version of the same workshops so you should probably stay on this page.</p>
+<p>You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) <a href="past/fall14/index.html">here</a>. However, this is really just an updated version of the same workshops so you should probably stay on this page.</p>
 </blockquote>
 <h1 id="intro-to-web-development"><a name="user-content-intro-to-web-development" href="#intro-to-web-development" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Web Development <a id="setup-section"></a></h1>
 <h2 id="web-pages-and-the-basics-of-development"><a name="user-content-web-pages-and-the-basics-of-development" href="#web-pages-and-the-basics-of-development" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Web Pages and the basics of development</h2>
@@ -121,12 +121,12 @@
 <p>You&rsquo;ll see later on that requests aren&rsquo;t just made of the server when we first open the website; it&rsquo;s often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they&rsquo;re needed (think Facebook&rsquo;s Newsfeed). It&rsquo;s also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.</p>
 <p><img alt="Facebook Loading using Javascript" src="http://www.product-reviews.net/wp-content/uploads/facebook-not-working.jpg" /></p>
 <h3 id="simple-html-and-css"><a name="user-content-simple-html-and-css" href="#simple-html-and-css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Simple HTML and CSS</h3>
-<p>HTML (Hypertext Markup Language) is like the backbone of any webpage. It&rsquo;s where we add in all the information - what they webpage actually displays as well as information about the page itself such as its title.</p>
+<p>HTML (Hypertext Markup Language) is like the backbone of any webpage. It&rsquo;s where we add in all the information - what the webpage actually displays as well as information about the page itself such as its title.</p>
 <p><img alt="With and without CSS" src="http://static.webplatform.org/w/public/6/6e/article4.gif" /></p>
 <p>CSS dresses up this information. Most (but really all) webpages link to a CSS file that stores information on how a browser should display the information it recieves in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
 <p>Javascript is the fun part. It does dynamic things with your webpage, updates content on the fly and can animate just about anything. We&rsquo;ll talk about this later.</p>
 <p><img alt="Javascript meme" src="http://splurd.com/comics/images/1337794967.jpg" /></p>
-<p>Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathamatical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
+<p>Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
 <p>Let&rsquo;s start with HTML (Hypertext Markup Language).</p>
 <p><img alt="HTML meme" src="http://38.media.tumblr.com/tumblr_m4fl5qPjdU1rw659vo1_400.png" /></p>
 <p>HyperText is text that will hyperlink you to other text. That&rsquo;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
@@ -155,7 +155,7 @@
 </pre></div>
 
 
-<p>So now we&rsquo;ve specified the character set that the page uses - this is just to make sure the browser doesn&rsquo;t think that the page is in a language other than english. Then there&rsquo;s a description followed by the actualy page title (this is what you see in the title bar of your browser). Finally there&rsquo;s a tag where we&rsquo;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.</p>
+<p>So now we&rsquo;ve specified the character set that the page uses - this is just to make sure the browser doesn&rsquo;t think that the page is in a language other than english. Then there&rsquo;s a description followed by the actual page title (this is what you see in the title bar of your browser). Finally there&rsquo;s a tag where we&rsquo;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.</p>
 <p>Now let&rsquo;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your webpage goes. Let&rsquo;s try adding some information in.</p>
 <div class="codehilite"><pre><span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Code Weekend Sample Page<span class="nt">&lt;/h1&gt;</span>
@@ -363,7 +363,7 @@
 <p>Once you fire up Terminal or Command Prompt (on Windows, you&rsquo;ll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you&rsquo;ll know it&rsquo;s running as Admin if your path ends in <code>../system32</code>), here&rsquo;s how you get around:</p>
 <ul>
 <li><code>ls</code> (<code>DIR</code> on Windows) lists all the files in the current folder</li>
-<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents, if there is such a folder in teh current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
+<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents, if there is such a folder in the current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
 <li><code>mkdir</code> allows you to make a folder in the current directory. So <code>mkdir New</code> makes a folder named &lsquo;New&rsquo;.</li>
 <li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from <code>C:\windows\temp</code> to <code>C:\temp</code>. <code>*</code> works as a wildcard operator here.</li>
 </ul>
@@ -513,6 +513,65 @@
 
 <p>If we get session messages, we set them to our local state. And if no session notes exist, let&rsquo;s make an empty collection for them. We&rsquo;ll use this nifty code soon to create and store notes in the user&rsquo;s browser cookies. </p>
 <h4 id="routesjs"><a name="user-content-routesjs" href="#routesjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>routes.js</h4>
+<p>Let&rsquo;s talk about a file called routes.js. This handles all the &ldquo;middleware routing: that our app has to do. So basically it tells our app what to do when someone goes to google.com/mail or to google.com/maps, ie, it specifies the behavior and results for making GET/POST requests at different routes (or paths). To begin with, as usual, we&rsquo;ll get the Express variable. Except this time, we&rsquo;ll specify a new variable called router which is created as folows:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+</pre></div>
+
+
+<p>A router is an isolated instance of middleware and routes. Routers can be thought of as &ldquo;mini&rdquo; applications, capable only of performing middleware and routing functions. Every express application has a built-in app router.</p>
+<p>Routers behave like middleware themselves and can be <code>.use()</code>d by the app or in other routers.</p>
+<p>We&rsquo;ll now make simple route definitions for the HTTP GET method as below:</p>
+<div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Codeweekend Notes&#39;</span><span class="p">,</span>
+    <span class="nx">notes</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">noteId</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">noteId</span><span class="p">)</span> <span class="o">||</span> <span class="nx">noteId</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">noteId</span> <span class="o">&gt;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;That note does not exist!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;note&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">note</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span><span class="p">[</span><span class="nx">noteId</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/create&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">title</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">body</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;You must provide a title and a body!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">notes</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">body</span>
+  <span class="p">});</span>
+
+  <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Note created!&#39;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>You&rsquo;ll notice that the first function specifies what is supposed to happen when a  simple route path is requested (such as &lsquo;/&rsquo;). Each all to <code>router.get</code> or <code>router.post</code> takes a callback function that has two objects <code>req</code> and <code>res</code>. The <code>req</code> object usually contains information that is containted in the request. It also gives us access to the session cookie so that we can access and store some information about the user in their browser. The <code>res</code> object let&rsquo;s us control the response. Thus <code>res.redirect</code> redirects the user to another page and <code>res.render</code> uses our templating engine to create a webpage that we send back to the user. </p>
+<p>Whenever we have an error in the request made to our webapp, we can see that we store the error message into the session and return a redirect back to the simply routing path using this nifty structure inside the callback functions:</p>
+<div class="codehilite"><pre><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Error message goes here&#39;</span><span class="p">;</span>
+<span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>This allows for clean error handling since we always send users to the same page when they get an error, and the actual error message is bound to the user&rsquo;s cookie, not the page itself.</p>
+<p>And lastly, just so that we get all this handy code available to the rest of the application, let&rsquo;s export it with:</p>
+<div class="codehilite"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</pre></div>
+
+
 <h4 id="views"><a name="user-content-views" href="#views" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Views</h4>
 <p>As you may have already noticed, there&rsquo;s another folder in our project files called Views. This is where you write the front-end of the application. The front-end is basically the part of the website that the users see and interact with, the HTML/CSS/Javascript that we&rsquo;ve seen in the last workshop. Let&rsquo;s break it down by looking at what each file is supposed to do and how it does it. First, we have:</p>
 <h4 id="indexhjs"><a name="user-content-indexhjs" href="#indexhjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>index.hjs</h4>
@@ -753,7 +812,7 @@ We&rsquo;ll use the express router.<br />
 <li>Persisting our prior inputs</li>
 <li>Basic login authentication</li>
 </ul>
-<h4 id="installing-mongodb"><a name="user-content-installing-mongodb" href="#installing-mongodb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing MongoDB</h4>
+<h3 id="installing-mongodb"><a name="user-content-installing-mongodb" href="#installing-mongodb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing MongoDB</h3>
 <p>Let&rsquo;s move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a database, we can store, search and access large amounts of data very quickly.</p>
 <p><em>Mac</em></p>
 <p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: <code>mkdir -p /data/db</code>. You should now be able to go straight into the MongoDB shell by typing in <code>mongod</code> into Terminal.</p>
@@ -762,9 +821,15 @@ We&rsquo;ll use the express router.<br />
 <p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&rsquo;dd need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
 <p><em>Linux</em></p>
 <p>Full instructions to install MongoDB on Linux can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
-<h4 id="running-mongodb"><a name="user-content-running-mongodb" href="#running-mongodb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Running MongoDB</h4>
+<h3 id="running-mongodb"><a name="user-content-running-mongodb" href="#running-mongodb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Running MongoDB</h3>
 <p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>).</p>
-<h4 id="now-for-the-code"><a name="user-content-now-for-the-code" href="#now-for-the-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Now for the code!</h4>
+<h3 id="why-use-a-database-and-why-mongodb"><a name="user-content-why-use-a-database-and-why-mongodb" href="#why-use-a-database-and-why-mongodb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why use a database? And why MongoDB?</h3>
+<p>Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
+<p>So we&rsquo;ve been storing information in the user&rsquo;s cookies till now, why use a database? After all, doesn&rsquo;t it make sense to distribute this information across everyones computers rather than have everything in one place?</p>
+<p>Well there&rsquo;s a lot of reasons why not, but here&rsquo;s a few major ones. First, not all information is relevant to a user, and users don&rsquo;t neccessarily have a lot fo space on their devices. You don&rsquo;t want Amazon&rsquo;s entire catalogue on you iPhone. Cookies are best kept for storing information specific to a user that we can afoord to loose. Which leads us to our next point, which is that cookeis are easily deleted. All a user needs to do is hit the &ldquo;Clear Cookies&rdquo; button in theri settings menu. So obviously, this isn&rsquo;t reliable.</p>
+<p>So databases let us store the information our website needs close to us, making it faster for us to get access to the correct information, as needed, to serve to our users. They make it possible to efficiently store a lot of information and access it quickly. But this means an extra layer of trouble dealing with asking our database for data and sending it new data from our webapp.</p>
+<p>That&rsquo;s why MongoDB is so popular with NodeJS. While it is still a separate database, it stores its information in a large JSON file. That&rsquo;s right, just JSON. So when we ask Mongo for results, it can jsut give us an array of javascript objects and that means we don&rsquo;t have to worry about the formatting of the data, cause it&rsquo;s already in the format we need! You might hear people argue for the use of MongoDB because it&rsquo;s a NoSQL database, but this has a lot of tradeoffs and there&rsquo;s no clear cut winner between SQL and NoSQL; they&rsquo;ve each more apporpriate for different sets of circumstances.</p>
+<h3 id="now-for-the-code"><a name="user-content-now-for-the-code" href="#now-for-the-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Now for the code!</h3>
 <p>We&rsquo;re now going to integrate a database into our application to store data. A really popular database to use with NodeJS is MongoDB. It&rsquo;s a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we&rsquo;re going to have to do is add MongoDB to our dependencies list inside of <code>package.json</code>.</p>
 <p>Add &ldquo;mongodb&rdquo;: &ldquo;~1.4.19&rdquo; to the dependencies object inside the JSON so that it looks like this.</p>
 <div class="codehilite"><pre><span class="p">{</span>
