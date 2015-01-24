@@ -371,7 +371,7 @@ NOTE: Sometimes, when you save your work, a window will pop up asking you to buy
 
 #### Making a Personal Landing Page
 
-Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
+Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/), [Sudarshan](http://smuralidhar.com)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
 
 #### Files
 
@@ -421,7 +421,7 @@ Alright, let's get started.
 
 ###What is a NodeJS app?
 
-Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It's great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app. NodeJS has the most modules of any modern web framework, and that's part of what makes it really great for writing webapps fast.
+Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It's great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app. NodeJS has the most modules of most modern web frameworks, and that's part of what makes it really great for writing webapps fast.
 
 ###The Anatomy of a Node app
 
@@ -565,7 +565,7 @@ If we get session messages, we set them to our local state. And if no session no
 
 #### routes.js
 
-Let's talk about a file called routes.js. This handles all the "middleware routing: that our app has to do. So basically it tells our app what to do when someone goes to google.com/mail or to google.com/maps, ie, it specifies the behavior and results for making GET/POST requests at different routes (or paths). To begin with, as usual, we'll get the Express variable. Except this time, we'll specify a new variable called router which is created as folows:
+Let's talk about a file called routes.js. This handles all the "middleware routing": that our app has to do. So basically it tells our app what to do when someone goes to google.com/mail or to google.com/maps, ie, it specifies the behavior and results for making GET/POST requests at different routes (or paths). To begin with, as usual, we'll get the Express variable. Except this time, we'll specify a new variable called router which is created as folows:
 
 ```javascript
 var express = require('express');
@@ -950,7 +950,7 @@ In case you run into any problems, [look at MongoDB's full instructions page](ht
 
 _Windows_
 
-MongoDB has a full set of instructions [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/) that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you'dd need to run this from Command Prompt: `md \data\db`. Follow the instructions on the above link to run MongoDB.
+MongoDB has a full set of instructions [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/) that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you'd need to run this from Command Prompt: `md \data\db`. Follow the instructions on the above link to run MongoDB.
 
 _Linux_
 
