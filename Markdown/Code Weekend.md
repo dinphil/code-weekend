@@ -922,6 +922,37 @@ Notice now the end tag {{/venmo}}. This is the end of our if statement. i.e., if
 
 So, if `{{#Venmo}}` is the beginning of an if statement, `{{^Venmo}}` is the beginning of an "if not" statement. Thus, the first time your user sees a Venmo page, since they will not yet have authenticated, this statement will return "true", and they'll be given the link to the "authorize" page, and be allowed to authorize. Not very tricky, very cool. As always, make sure to end your if with a `{{/venmo}}`, just like you always remember to end your <strong> tags, right? Right. ... </strong>.
 
+#### Incorporating SendGrid API to Send Email
+
+Let's incorporate one other API. Unlike Venmo, SendGrid doesn't use OAuth, and so is much easier to include.
+
+First, we make a SendGrid developer account. Go to [SendGrid](https://sendgrid.com) and register. Then, import the SendGrid module at the top of venmo.js
+```javascript
+var sendgrid = require("sendgrid")("username", "password");
+```
+
+Next, we write a function to send an email. Fill in your email address for my_email.
+```javascript
+var sendEmail = function (phone, amount) {
+  var my_email = "your email address";
+  var email = new sendgrid.Email();
+
+  email.addTo(my_email);
+  email.setFrom("venmo@codeweekend.com");
+  email.setSubject("Your Venmo Payment");
+  email.setHtml("You paid " + phone + " $" + amount + "! Hope it was worth it!");
+
+  sendgrid.send(email);
+}
+```
+
+This is fairly self-explanatory, and is copied directly from the SendGrid developer documentation.
+
+Finally, we call this function at the end of the `router.post('/send')` route.
+```javascript
+sendEmail (req.body.phone, req.body.amount);
+```
+
 #### Files
 
 [This zip file](assets/files/ws3.zip) contains what you should have at the end of this workshop. 

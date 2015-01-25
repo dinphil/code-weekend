@@ -802,6 +802,31 @@ We&rsquo;ll use the express router.<br />
 
 
 <p>So, if <code>{{#Venmo}}</code> is the beginning of an if statement, <code>{{^Venmo}}</code> is the beginning of an &ldquo;if not&rdquo; statement. Thus, the first time your user sees a Venmo page, since they will not yet have authenticated, this statement will return &ldquo;true&rdquo;, and they&rsquo;ll be given the link to the &ldquo;authorize&rdquo; page, and be allowed to authorize. Not very tricky, very cool. As always, make sure to end your if with a <code>{{/venmo}}</code>, just like you always remember to end your <strong> tags, right? Right. &hellip; </strong>.</p>
+<h4 id="incorporating-sendgrid-api-to-send-email"><a name="user-content-incorporating-sendgrid-api-to-send-email" href="#incorporating-sendgrid-api-to-send-email" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Incorporating SendGrid API to Send Email</h4>
+<p>Let&rsquo;s incorporate one other API. Unlike Venmo, SendGrid doesn&rsquo;t use OAuth, and so is much easier to include.</p>
+<p>First, we make a SendGrid developer account. Go to <a href="https://sendgrid.com">SendGrid</a> and register. Then, import the SendGrid module at the top of venmo.js<br />
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">sendgrid</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;sendgrid&quot;</span><span class="p">)(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">);</span>
+</pre></div>
+</p>
+<p>Next, we write a function to send an email. Fill in your email address for my_email.<br />
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">sendEmail</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">phone</span><span class="p">,</span> <span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">my_email</span> <span class="o">=</span> <span class="s2">&quot;your email address&quot;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">email</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sendgrid</span><span class="p">.</span><span class="nx">Email</span><span class="p">();</span>
+
+  <span class="nx">email</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">my_email</span><span class="p">);</span>
+  <span class="nx">email</span><span class="p">.</span><span class="nx">setFrom</span><span class="p">(</span><span class="s2">&quot;venmo@codeweekend.com&quot;</span><span class="p">);</span>
+  <span class="nx">email</span><span class="p">.</span><span class="nx">setSubject</span><span class="p">(</span><span class="s2">&quot;Your Venmo Payment&quot;</span><span class="p">);</span>
+  <span class="nx">email</span><span class="p">.</span><span class="nx">setHtml</span><span class="p">(</span><span class="s2">&quot;You paid &quot;</span> <span class="o">+</span> <span class="nx">phone</span> <span class="o">+</span> <span class="s2">&quot; $&quot;</span> <span class="o">+</span> <span class="nx">amount</span> <span class="o">+</span> <span class="s2">&quot;! Hope it was worth it!&quot;</span><span class="p">);</span>
+
+  <span class="nx">sendgrid</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p>
+<p>This is fairly self-explanatory, and is copied directly from the SendGrid developer documentation.</p>
+<p>Finally, we call this function at the end of the <code>router.post('/send')</code> route.<br />
+<div class="codehilite"><pre><span class="nx">sendEmail</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">phone</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">amount</span><span class="p">);</span>
+</pre></div>
+</p>
 <h4 id="files_2"><a name="user-content-files_2" href="#files_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Files</h4>
 <p><a href="assets/files/ws3.zip">This zip file</a> contains what you should have at the end of this workshop. </p>
 <h1 id="intro-to-databases"><a name="user-content-intro-to-databases" href="#intro-to-databases" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Databases <a id="db-section"></a></h1>
