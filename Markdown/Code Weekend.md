@@ -1098,7 +1098,9 @@ router.get('/:id', function(req, res) {
       return res.redirect('/');
     }
 
-    //return.res.sender
+    return.res.render('note', {
+        note: note
+    })
   });
 });
 
