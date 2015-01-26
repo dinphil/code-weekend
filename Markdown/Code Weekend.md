@@ -1137,7 +1137,7 @@ Please do give members of the Code Weekend Team feedback on how to improve these
 
 [These files](assets/files/ws4.zip) should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!
 
-<div class="footer"><p>&copy; Dining Philosophers 2015. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a> and <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>.</div>
+<div class="footer"><p>&copy; Dining Philosophers 2015. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a>, <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a> and <a href="http://smuralidhar.com">Sudarshan Muralidhar</a>.</div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="assets/js/nav.js"></script>
