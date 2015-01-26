@@ -749,7 +749,7 @@ APIs are basically ways to interact with, or access data, on other parts of the 
 
 #### Before that, OAuth
 
-OAuth is what makes interacting with other APIs secure. It allows us to sign into spammygames.com using our Facebook login, without compromising our Facebook credentials - first, spammygames has us log in on Facebook.com. Then, Facebook then sends back a token to spammygames.com asking it to verify that it is a valid Facebook developer; spammygames sends back its credentials to  Facebook. On seeing that both the user and the website have valid credentials, Facebook now send back an access token that the website can use to access this particular user's data. This is often called 2-legged oauth, since there are two steps to it.
+OAuth is what makes interacting with other APIs secure. It allows us to sign into spammygames.com using our Facebook login, without compromising our Facebook credentials - first, spammygames has us log in on Facebook.com. Then, Facebook then sends back a token to spammygames.com asking it to verify that it is a valid Facebook developer; spammygames sends back its credentials to  Facebook. On seeing that both the user and the website have valid credentials, Facebook now sends back an access token that the website can use to access this particular user's data. This is often called 2-legged OAuth, since there are two steps to it.
 
 ![OAuth](assets/img/ws3.jpg)
 
@@ -777,11 +777,10 @@ We'll use the express router.
 var router = express.Router();
 ```
 
-Now we get into config with venmo. We need Venmo to know our requests are legit, so you'll need to be a Venmo developer. You can do that [here.](https://venmo.com/account/settings/developers) 
-
-Once you've done that, make a new application, and it'll give you the ID and the Secret. Make sure as well to set Web Redirect Url, under the application page, to `http://localhost:300/venmo/oauth`. Once you've gone through with that, let's go over the rest of the code.
+Next, we have a few lines of Venmo configuration - information identifying our application (fill this in with your App Secret and ID, which you got when you created an application on the Venmo Developer Console page), the location of the Venmo authentication service, the location that Venmo should redirect to after a user authenticates (so that we can authenticate our application), and the API url where we can send payment requests. All of this is copy-pasted from the Venmo documentation.
 
 After the five lines of Venmo config are three separate routes, for
+
 ```javascript
 '/'
 '/authorize'
@@ -793,24 +792,24 @@ As you know, each of these routes is activated when the proper URL is requested 
 Let's go through each of the routes. First up is the "root" or "/" Venmo page. First off, we initialize the variable venmo.
 
 ```javascript
-venmo = {};
+venmo = null;
 ```
 
 This variable will hold the user's Venmo information. The next thing we do is check to see if we have a cookie with the info (meaning the user has already logged in). Regardless, it then renders "venmo.hjs", the actual HTML document that the user will see. We'll go over this in a bit.
         
-Second up is `'/authorize'`. The user clicks on a link from the root Venmo page to come here, and its one line of code is why you had to tell Venmo what your Web Redirect URL was. When the user hits this page, you hand them off to Venmo (notice how you send them the authorizeUrl defined at the top of the file.) Venmo then sends them back to "/oauth", which is the path you define next!
+Second up is `'/authorize'`. The user clicks on a link from the root Venmo page to come here, and its one line of code is why you had to tell Venmo what your Web Redirect URL was. When the user hits this page, you hand them off to Venmo (notice how you send them the authorizeUrl defined at the top of the file.) After they log in, Venmo sends them back to "/oauth", which is the path you define next!
 
 The next route in our Venmo app, `'/oauth'`, is the second part of Venmo's verification process. We already sent the user to Venmo so that Venmo could tell us they were all set. They called our `/oauth` page, and passed it req.query.code if the authorization went well. The first if statement under router.get('oauth') simply means that if the authorization failed, we don't continue with the exchange.
 
 In the event that the authorization went through, Venmo needs to verify us as a developer. This is where the request module comes into play. We actually have to make a call directly to Venmo's website (using their API). Notice that we're using a POST request, sending them both our unique clientId and clientSecret, and req.query.code, which Venmo sent back to us. If this all checks out on Venmo's side, what we get back,
 
 ```javascript
-req.session.venmo = JSON.parse(body)
+req.session.venmo = JSON.parse(body);
 ```
 
 is a session from Venmo that's unique between your application and your client, so Venmo knows that future payment requests are legit. If all goes well, it prints a notice to the user that they've been authenticated, and redirects them to your app's Venmo hompage.
 
-Okay, so, our last route in venmo.js, `router.post('/send')`, is where the magic happens. Handshakes have gone through, and if your user types in the amount, phone #, and note fields properly (checked by the first if statement), you're ready to do a payment.
+Our last route in venmo.js, `router.post('/send')`, is where the magic happens. Handshakes have gone through, and if your user types in the amount, phone #, and note fields properly (checked by the first if statement), you're ready to do a payment.
 
 This takes the form of another POST request to Venmo's API. You send them the relevant transfer information, as well as the unique user/client token that you generated in "/oauth." The following code defines how you handle this.
 
@@ -853,13 +852,17 @@ router.post('/send', function(req, res, next) {
 });
 ```
 
-Take a peek at this portion of the function in the callback to `request.post` here and in context in venmo.js. First, it checks to see if Venmo returned an error. If not, it continues, and parses the Venmo response for user data. Finally, it prints a message to the user telling them that the payment was successful as it redirects them back to the root Venmo page!
+What does this code do? It first says that we are listening for post requests on the route `/send`, which is where our form will be submitting its request (more on that below). We expect 3 form inputs - if any of these don't exist, we create an error page and redirect back to the main page.
+
+If the form was submitted correctly, we send a post request containing this information to Venmo's payment API (recall we defined `paymentUrl` at the top). We also include the access token, which is part of the `venmo` cookie (we created this in the `oauth` route when we get a response to our authentication post request).
+
+Next, look at the callback function to this post request. First, it checks to see if Venmo returned an error. If not, it continues, and parses the Venmo response for user data. Finally, it prints a message to the user telling them that the payment was successful, and it redirects them back to the root Venmo page!
 
 #### Okay, but we're not done yet
 
-So, especially if you learned HTML/CSS earlier this weekend, you may be wondering, "what actually is determining what the user sees at page /vemno?" What a great question! They're seeing `views/venmo.hjs`!
+Now, especially if you learned HTML/CSS earlier this weekend, you may be wondering, "what actually is determining what the user sees at page /vemno?" What a great question! They're seeing `views/venmo.hjs`!
 
-So, you've seen .hjs before, but to recap, the biggest difference between .hjs and html is that you update certain parts of it dynamically based on what we tell NodeJS. So, if you remember in the last block of code,
+You've seen .hjs before, but to recap, the biggest difference between .hjs and html is that you update certain parts of it dynamically based on what we tell NodeJS. So, if we were to change the value of `req.session.message` in the last block of code,
 
 ```javascript
 req.session.message = "yodelyodelyoda"
@@ -908,7 +911,7 @@ The form action designates what type of call the the browser will make when the 
 
 In this form, there are 3 input fields. The first is the total amount of money being transfered. While we will parse it as a decimal, its input `type='text'`. The 'name' field we use to tell our app what variable it is assigned to, so we can access it in venmo.js. The placeholder, as you can probably tell, determines what is shown when the user has not yet typed anything in.
 
-The next form is, by most measures, the same. Make sure to note, however, that the field name is assigned the value 'phone', again so we can reference the input as a variable by that name in venmo.js. The third field is of type `<textarea>` instead of type `<input>`. The biggest difference between a textarea and an input to understand is that a textarea has better accounting for large input of paragraph-length. Note that we specify the field `rows='3'`, and `cols='80'`. Thus, unlike an `<input>`, we can guess that this field might be a sentence or two but probably no longer, and tailor the size of hte textfield to that. Furthermore, it handles newlines well, so the user can happily use multiple paragraphs.
+The next field is, by most measures, the same. Make sure to note, however, that the field name is assigned the value 'phone', again so we can reference the input as a variable by that name in venmo.js. The third field is of type `<textarea>` instead of type `<input>`. The biggest difference between a textarea and an input to understand is that a textarea has better accounting for large input of paragraph-length. Note that we specify the field `rows='3'`, and `cols='80'`. Thus, unlike an `<input>`, we can guess that this field might be a sentence or two but probably no longer, and tailor the size of hte textfield to that. Furthermore, it handles newlines well, so the user can happily use multiple paragraphs.
 
 The final important piece of your form is `<input type='submit' name='Send Payment.'>`. Note that the `type='submit'` field is not specifying a variable, but is a keyword in your form that your browser knows to interpret as a submission of the form. the name field determines what is shown on the button. Because this submit button is within the same form as the other input fields (see that it comes before the ending `</form>` tag), it will submit everything within that form.
 
@@ -916,7 +919,7 @@ Notice now the end tag {{/venmo}}. This is the end of our if statement. i.e., if
 
 ```html
 {{^Venmo}}
-    <p>You have not authorized yet. <a href='authorize'>Click here</a> to authorize with venmo.</p>
+    <p>You have not authorized yet. <a href='/venmo/authorize'>Click here</a> to authorize with venmo.</p>
 {{/venmo}}
 ```
 
