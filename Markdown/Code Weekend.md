@@ -73,7 +73,7 @@ You'll see later on that requests aren't just made of the server when we first o
 
 ### Simple HTML and CSS
 
-HTML (Hypertext Markup Language) is like the backbone of any webpage. It's where we add in all the information - what the webpage actually displays as well as information about the page itself such as its title.
+HTML (HyperText Markup Language) is the backbone of any webpage. It's where we add in all the information - what the webpage actually displays as well as information about the page itself such as its title.
 
 ![With and without CSS](http://static.webplatform.org/w/public/6/6e/article4.gif)
 
@@ -85,7 +85,7 @@ Javascript is the fun part. It does dynamic things with your webpage, updates co
 
 Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.
 
-Let's start with HTML (Hypertext Markup Language).
+Let's start with HTML (HyperText Markup Language).
 
 ![HTML meme](http://38.media.tumblr.com/tumblr_m4fl5qPjdU1rw659vo1_400.png)
 
