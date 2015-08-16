@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    {{#message}}
+      <h3>{{message}}</h3>
+    {{/message}}
+    <p>Welcome to {{ title }}. Your notes:</p>
+    <ul>
+    {{#notes}}
+      <li><a href='/{{ id }}'>{{ title }}</a></li>
+    {{/notes}}
+    {{^notes}}
+      <li>You don't have any notes yet!</li>
+    {{/notes}}
+    </ul>
+    <p>Make a new note:</p>
+    <form action='/create' method='post'>
+      <input type='text' name='title' placeholder='Title'><br/>
+      <textarea name='body' rows='8' cols='80' placeholder='Body'></textarea><br/>
+      <input type='submit' value='Save Note'>
+    </form>
+  </body>
+</html>

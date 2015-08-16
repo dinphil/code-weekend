@@ -5,9 +5,9 @@ Code Weekend
 Building your first webapp
 --------------------------
 
-[Sign up here!](http://goo.gl/forms/0lg3QIwvMB)
+[Sign up here!](http://goo.gl/forms/hXb2IVeMM9)
 
-Code Weekend is scheduled for *August 29 and 30th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps XII") scheduled for the weekend after. If you haven't already, check it out - it's a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they're doing great stuff for first-time hackers as well).
+Code Weekend is scheduled for *January 24th and 25th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps Winter 2015") scheduled for the weekend before. If you haven't already, check it out - it's a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they're doing great stuff for first-time hackers as well).
 
 > These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding-based workshops.
 
@@ -17,7 +17,7 @@ If you already have some coding experience, then feel free to skip the first ses
 - HTML/CSS/Javascript to the extent that you can build a simple static webpage.
 - Know how to use Terminal/Command Prompt to move folders, change directories, and create files.
 
-> You can find the workshops from the last Code Weekend (Spring 2015) [here](past/spring15/index.html).
+> You can find the workshops from the last Code Weekend (September 6th and 7th, 2014) [here](past/fall14/index.html). However, this is really just an updated version of the same workshops so you should probably stay on this page.
 
 Intro to Web Development <a id="setup-section"></a>
 ==================================
@@ -32,18 +32,18 @@ We'll be going over quite a few things in this opening workshop:
 - [How the internet works and why web development is so different from, say, Java](#an-introduction-to-the-web)
 - [Basic HTML and CSS and how webpages are structured](#simple-html-and-css)
 - [Javascript, JSON and how to make things more fun](#javascript-finally)
-- [The basics of Terminal/Command Prompt](#what-is-terminalcommand-prompt)
-- [Building your own personal landing page!](#making-a-personal-landing-page)
+- [What is Terminal/Command Prompt](#what-is-terminalcommand-prompt)
+- [Build your own Personal landing page](#making-a-personal-landing-page)
 
-This shouldn't take too long though, so whatever time we have left at the end of the workshop will be for you to make your own personal landing page!
+This shouldn't take too long though, and we're going to go ahead and leave the rest of the time for you to turn a basic static webpage that we'll give you into your own personal landing page.
 
-Alright, let's get started!
+So let's get started!
 
 ### An Introduction to (the) Life (of a Developer)
 
-When coding, you'll run into tons of small problems and errors that you don't initially know how to solve. **_This is completely normal._** In order to write solutions to every problem that you could hypothetically run into, you'd need a manual taller than the Empire State building. 
+When coding, you'll run into tons of small problems and errors that you don't initially know how to solve. **_This is completely normal._** In order to teach solutions to every problem that you could hypothetically run into, we'd need a textbook taller than the Empire State building. 
 
-Thankfully, we all have a resource with more information that we can possibly imagine - teh interwebz. You've probably searched for things using Google before, but most coding problems can actually be solved by effectively Googling your issue. Here are some tips for finding the answers to all your problems on the Internet:
+Thankfully, we all have a resource with more information than that constantly at our fingertips - teh interwebz. You've probably searched for things using Google before, but most coding problems can actually be solved by effective Googling of your issue. Here are some tips for finding the answers to all your problems on the Internet:
 
 - Be descriptive. If you're searching for what's causing an error then you can try just searching for the entire error message, or try describing what happened. For example, "Homebrew does not install through terminal on OSX Yosemite" is a better search query than "homebrew not working", though the best search query is often some combination of plain text and the actual error message. Often error codes make great search queries, as long as they are contextualized (i.e. with the name of the language/environment).
 - Along that vein, use as many specific words as possible. You can use complete sentences if you'd like, but normally four or five very descriptive nouns/verbs is ideal, and you won't throw Google off-track by searching for unnecessary things. For example, you try to put a banner at the top of a web page, but there's a weird white border around the entire page. Googling "there's a weird white border around the entire page" isn't helpful. Always start with the name of the language you think is suspect if you can (in this case, it's CSS, since all style things on the page are controlled by CSS). Then, describe the problem with just a few words. Here, I used "CSS no page border". The first result was really helpful, and ended up solving my problem.
@@ -59,29 +59,29 @@ These resources are also awesome:
 
 There's pretty much three things happening every time you open a website:
 
-- Your browser looks up an address (say google.com) and follows it back to its home - the server which actually runs the website. This server is basically just a computer, albeit a huge, immensely powerful computer possibly comprising acres of computer hardware connected together. For this workshop though, that's just going to be your laptop...we don't provide that kind of computing power.
-- This server is what we call the *backend*. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in to a dashboard - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.
+- Your browser looks up an address (say google.com) and follows it back to its home - the server which actually runs the website. This server is basically just a computer, albeit a huge, immensely powerful computer possibly comprising acres of computer hardware connected together.
+- This server is what we call the *backend*. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.
 - Your computer now reads this response and converts it into the webpage you actually see on your computer. This last bit of conversion is what we call the *frontend* doing its work.
 
 ![Server- Browser](assets/img/server-browser.png)
 
-So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are the two main components of any website.
+So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are basically the two main components of any website.
 
-You'll see later on that requests aren't just made to the server when we first open the website; it's often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they're needed (think [Facebook's Newsfeed](http://www.facebook.com)). It's also used when we do things like attempt to log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.
+You'll see later on that requests aren't just made of the server when we first open the website; it's often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they're needed (think Facebook's Newsfeed). It's also used when we do things like log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.
 
 ![Facebook Loading using Javascript](http://www.product-reviews.net/wp-content/uploads/facebook-not-working.jpg)
 
 ### Simple HTML and CSS
 
-HTML (HyperText Markup Language) is the backbone of any webpage. It's where we add in all the information - what the webpage actually displays, as well as information about the page itself such as its title.
+HTML (HyperText Markup Language) is the backbone of any webpage. It's where we add in all the information - what the webpage actually displays as well as information about the page itself such as its title.
 
 ![With and without CSS](http://static.webplatform.org/w/public/6/6e/article4.gif)
 
-CSS (Cascading Style Sheets) dresses up this information. Most (but really all) webpages link to a CSS file that stores information on how a browser should display the information it recieves in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.
+CSS dresses up this information. Most (but really all) webpages link to a CSS file that stores information on how a browser should display the information it recieves in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.
 
 Javascript is the fun part. It does dynamic things with your webpage, updates content on the fly and can animate just about anything. We'll talk about this later.
 
-In short, we can visualize it as follows: a full website is a program with raw structure defined via HTML, dressed up with CSS and controlled/manipulated with JavaScript.
+![Javascript meme](http://splurd.com/comics/images/1337794967.jpg)
 
 Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.
 
@@ -108,7 +108,7 @@ It is called a Markup Language because HTML is not written as plain text. It is 
 
 `<!DOCTYPE html> <html>` is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contatined in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, `<html>` must eventually be closed by `</html>`.
 
-Aside from the content rendered into the *body* of a webpage, we often define more information about the site in the `<head>` tag like this:
+Usually though, we'll include more information about the page in the `<head>` tag like this:
 
 ```html
 <head>
@@ -119,7 +119,7 @@ Aside from the content rendered into the *body* of a webpage, we often define mo
 </head>
 ```
 
-So now we've specified the character set that the page uses - this is just to make sure the browser doesn't think that the page is in a language other than english. Then there's a description followed by the actual page title (this is what you see in the title bar of your browser). Finally there's a tag where we've linked this HTML file to a CSS document (the `href` component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage - which we'll do soon enough, don't worry!
+So now we've specified the character set that the page uses - this is just to make sure the browser doesn't think that the page is in a language other than english. Then there's a description followed by the actual page title (this is what you see in the title bar of your browser). Finally there's a tag where we've linked this HTML file to a CSS document (the `href` component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage.
 
 Now let's get to the fun part - the `<body>` tag. This is where all the actual stuff that shows up on your webpage goes. Let's try adding some information in.
 
@@ -170,10 +170,10 @@ Here are some more important HTML tags:
 
 #### Umm, what about CSS?
 
-Almost there! Before we can decide how elements on the page should look, we actually need a way to find and identify these elements. That HTML document we said was almost complete, well, it was almost complete. The last thing we need to add in are identifiers as *tag attributes*, and these fall into two categories:
+Right. So before we can decide how things should look, we actually need a way to find these things. That HTML document we said was almost complete, well, it was almost complete. The last thing we need to add in are identifiers, and these fall into two categories:
 
-- IDs: These are unique to an individual HTML element. Once I give an ID to an element, it cannot be used again. Think Penn IDs. Every element can be assigned an ID. For example: `<p id="workshop-introduction">`.
-- Classes: These are reusable names that we give to ranges of elements. This allows us to do thigns like apply the same style (say, a font) to multiple elements that have the same class, rather than writing the same thing over and over. For example, we can create multiple paragraphs with the same class: `<p class="red-text"> This text is theoretically red.</p> <p class="red-text"> This text is also presumably red. </p>`.
+- IDs: These are unique to an individual HTML element. Once I give an ID to an element, it cannot be used again. Every element can be assigned an ID. For example, `<p id="introduction">`.
+- Classes: These are reusable names that we give to ranges of elements. This allows us to do thigns like apply the same style (say, a font) to multiple elements rather than having to rewrtie the same thing over and over. For example, we can create multiple paragraphs with the same class `<p class="red-text"> This text is theoretically red.</p> <p class="red-text"> This text is also presumably red. </p>`.
 
 Now we have a way to decide on styles. Let's look at that HTML document again:
 
@@ -192,15 +192,13 @@ Now we have a way to decide on styles. Let's look at that HTML document again:
         <h2>Here's a smaller heading. We can go all the way down to H6</h2>
         <!-- Here's a comment that will not show up on the actual page -->
         <p class="red-text" id="intro-para">
-            Here's a paragraph of text. It's ID is 'intro-para' and it belongs to the 'red-text' class.
+            Here's a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
         </p>
     </body>
 </html>
 ```
 
-We can also just change the style for an entire kind of element. So we could just change how all the `p` or `<h1>` tags look. 
-
-####Let's take a look at what CSS looks like!
+We can also just change the style for an entire kind of element. So we could just change how all `<h1>` tags look. Let's take a look at what CSS looks like:
 
 ```css
 body {
@@ -227,7 +225,7 @@ You should look through the resources at the top of this section for more inform
 
 You can download the [HTML](assets/files/sample.html) and [CSS](assets/files/main.css) files we looked at here by following these links.
 
-A great way to play around with CSS styles is to right-click on this page in Chrome, Firefox or Safari ([Here's why you should avoid Internet Explorer](http://www.howtogeek.com/howto/32372/htg-explains-why-do-so-many-geeks-hate-internet-explorer/)), choose Inspect Element, and try changing the CSS styles on the right hand side of the Developer Tools window after selecting the HTML element you want to edit.
+A great way to play around with CSS styles is to right-click on this page in Chrome of Firefox, Inspect Element, and try changing the CSS styles on the right hand side of the Developer Tools window after selecting the HTML element you want to edit.
 
 ![Chrome dev tools](https://developer.chrome.com/devtools/docs/css-preprocessors-files/sass-debugging.png)
 
@@ -235,22 +233,20 @@ A great way to play around with CSS styles is to right-click on this page in Chr
 
 Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we're (maybe) used to. You just write code in a file, link to it in your HTML and it exectutes.
 
-#### In fact...
-
 ![Javascript meme](http://www.memegenerator.eu/media/created/iyflyp.jpg)
 
-Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing `var x = 5` will create a variable named `x` of the type *Integer* with the value of `5`. Writing `var x = "5"` would create a *String* named `x` with the string `5` as its value.
+Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing `var x = 5` will create a variable named `x` of the type `Integer` with the value of `5`. Writing `var x = "5"` would create a `String` named `x` with the string `5` as its value.
 
-The most common types we will use are Strings (just text, such as "This is some text"), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you'll be surprised by how common almost everything you want to do is).
+The most common types we will use are Strings (just text, such as "This is some text"), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you'll be surprised by how common almost everything you wanna do is).
 
 Here's some sample Javascript code:
 
 ```javascript
-var myVariable = "Code Weekend";
-alert ("I'm learning the basics of JavaScript at " + myVariable);
+var myVariable = "January 16th";
+alert ("PennApps started on " + myVariable);
 ```
 
-This creates an alert (a pop-up on a webpage) that says "I'm learning the basics of JavaScript at Code Weekend". There was absolutely no reason to use a variable here other than to show how we can use it. Here's a function in Javascript that squares a number:
+This creates an alert that says "PennApps starts on January 16th". There was absolutely no reason to use a variable here other than to show how we can use it. Here's a function in Javascript that squares a number:
 
 ```javascript
 function square (number) {
@@ -258,11 +254,10 @@ function square (number) {
 }
 
 // This is a single line comment that does not need to be closed.
+console.log(square (5)); // This prints the result to the javascript console in your browser's (Chrome or Firefox) developer tools.
 
 /* This is a multi-line comment
    that only ends when we do this */
-
-console.log(square (5)); // This prints the result to the javascript console in your browser's (Chrome or Firefox) developer tools.
 
 // We can also write the above function as the following:
 var square = function (number) {
@@ -296,16 +291,14 @@ var myDetails = {
 
 console.log(myDetails.name); // prints the name property of the object, ie, 'Mark Gates'
 
-console.log(myDetails.interests[1]); // prints 'Javascript' (array positions start from 0!) to the console
+console.log(myDetails.interests[1]); // prints 'Javascript' to the console
 ```
 
 Objects are essentially key-value pairs. We can access to values easily using the notation `object.key`.
 
 If you haven't noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It's okay if you end every line with one, it's better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitions and pretty much everything that ends in curly braces (`}`).
 
-![Semicolons are death](http://classic.splurd.com/comics/images/1337794967.jpg)
-
-*JSON (Javascript Object Notation)* is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays to liberally to store information. Let's look at an example of a JSON file:
+*JSON (Javascript Object Notation)* is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays liberally to store information. Let's look at an example of a JSON file:
 
 ```json
 {
@@ -351,37 +344,34 @@ It's exactly like a Javascript Object, and that's because that's exactly what it
 
 So much better isn't it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier, and websites much faster.
 
-And that covers the basics of HTML, CSS and JavaScript. Naturally, there's a lot more we could go into depth about for each of them, but we've found that it's best to learn by experimenting and trying out things on your own, using the resources listed at the start of this session. But before we get to that, let's not forget the pertinent question:
-
 ### What is Terminal/Command Prompt?
 
 ![Terminal](assets/img/terminal.png)
 
 Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let's take some time to get used to it.
 
-Once you fire up Terminal or Command Prompt (on Windows, you'll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you'll know it's running as Admin if your path ends in `../system32`), here are a few simple commands that you can type:
+Once you fire up Terminal or Command Prompt (on Windows, you'll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you'll know it's running as Admin if your path ends in `../system32`), here's how you get around:
 
 - `ls` (`DIR` on Windows) lists all the files in the current folder
 - `cd` allows you to change directory. So `cd Documents` will move into the folder Documents, if there is such a folder in the current directory. You can check this by using `ls` (`DIR` on windows). To move up a directory, say back to where you were before you went into Documents, type in `cd ../`.
-- `pwd` prints out the current path you've traversed in the file system. It's particularly helpful once you've used `cd` a few times, and aren't sure where you are anymore.
-- `mkdir` allows you to make a folder in the current directory. So `mkdir Such Magic` makes a folder named 'Such Magic'.
-- `mv` (`move` on windows) will let you move files and folders. In Terminal you can do `mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder` to move MyFile.rtf. On Windows `move c:\windows\temp\*.* c:\temp` will move everything from `C:\windows\temp` to `C:\temp`. `*` works as a wildcard operator here. Careful with this one - you may not want to move things around haphazardly.
+- `mkdir` allows you to make a folder in the current directory. So `mkdir New` makes a folder named 'New'.
+- `mv` (`move` on windows) will let you move files and folders. In Terminal you can do `mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder` to move MyFile.rtf. On Windows `move c:\windows\temp\*.* c:\temp` will move everything from `C:\windows\temp` to `C:\temp`. `*` works as a wildcard operator here.
 
-Once you've installed Node.JS (which we'll do in the next workshop), you'll also be able to enter commands like `npm install express` that will use Node Package manager to install plugins such as Express. You'll aso be able to start up MongoDB from here using `mongod`.
+Once you've installed Node.JS, you'll also be able to enter commands like `npm install express` that will use Node Package manager to install plugins such as Express. You'll aso be able to start up MongoDB from here using `mongod`.
 
-### Let's start making stuff!
+### Let's start doing stuff!
 
-Whoohoo! We've made it this far, and it's finally time to start making stuff!
+Whoohoo! We've made it this far, and it's finally time to start doing stuff!
 
 #### Sublime Text 2
 
 We've got to install a whole buch of stuff over the next few workshops. Let's start simple, go and download [Sublime Text 2](http://www.sublimetext.com/2). It's the best text editor in existence (yes, that's arguable) and this is where we're gonna be doing all our work. If you have a different favorite text editor, feel free to use it.
 
-NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel" and you can use it forever. Alternatively, you can buy it and support a fellow developer.
+NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit "Cancel" and you can use it forever, or buy it and support a fellow developer!
 
-### Making a Personal Landing Page
+#### Making a Personal Landing Page
 
-Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Take a look at some of our organizers' websites for inspiration ([Devesh](http://www.seas.upenn.edu), [Brady](http://www.google.com)) or browse around the internet to see nice designs (like [Medium](http://medium.com)).
+Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a compelte static website, you know enough that you can just Google anything further. Take a look at some of our organizers websites for inspiration ([Pranav](http://pvrnav.com), [Lewis](http://lewisjellis.com), [Brynn](http://bclay.github.io/homepage/), [Sudarshan](http://smuralidhar.com)) or browse around the internet to see nice design (like [Medium](http://medium.com)).
 
 #### Files
 
@@ -408,9 +398,9 @@ Node.js is a commonly used web framework for building applications with Javascri
 
 _Mac_
 
-The easiest way to install Node is through Homebrew, a package manager for OSX. Sometimes Homebrew is already installed on your computer, and sometimes you need to install it. Bring up a terminal window and type in `brew install node`. When it finishes, it might show you a few commands you need to run in Terminal. Run those commands and you're all set! 
+The easiest way to install Node is through Homebrew, a package manager for OSX. Sometimes it's already installed on your computer, and sometimes you need to install it. Bring up a terminal window and type in `brew install node`. When it finishes, it might show you a few commands you need to run in Terminal. Run those commands and you're all set! If that command instead spit out something about not knowing what `brew` is, read on.
 
-If instead that command spit out something about not knowing what `brew` is, it means you don't have Homebrew installed. No worries. Let's try and install Homebrew by typing this into Terminal: `ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
+So, you don't have homebrew. Let's try and install Homebrew, type this into Terminal: `ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
 
 If Homebrew installed succesfully, then go ahead and try `brew install node`. If you run into any more errors here, try Googling the error text and looking for solutions. If that still doesn't work, look around for a mentor to help.
 
@@ -431,25 +421,25 @@ Alright, let's get started.
 
 ###What is a NodeJS app?
 
-Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. Remember the servers we spoke about in the first workshop? Node is a framework that lets us write our own servers in JavaScript to run on our machines. Node is great because it has *modules*, which are bits of code other people have already written that can easily be added to give new functionality to your app. NodeJS has the most modules of most modern web frameworks, and that's part of what makes it really great for writing webapps fast.
+Node is a very common Javascript-based web framework. In other words, it's a structure for making websites that many people use where the app/server logic is written mostly in Javascript. It's great because it has modules, which are bits of code other people write that can easily be added to give new functionality to your app. NodeJS has the most modules of most modern web frameworks, and that's part of what makes it really great for writing webapps fast.
 
 ###The Anatomy of a Node app
 
 A common Node app has several main components, as described below:
 
-_app.js:_ The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. The last section tells the app to run on a particular [port](https://answers.yahoo.com/question/index?qid=20080617203733AA9kwiT) (3000 in this case).
+_app.js:_ The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. Then "get" and "post" requests are set up that tell the app which router methods to use. The last section tells the app to run on a particular port (3000 in this case).
 
-_package.json:_ A standardized JSON file containing information about this app. It's fairly readable, but there's info about the authors, app version and versions of Node modules used.
+_package.json:_ A standardized JSON file containing information about this app. It's fairly readable, but there's info about the authors, version, repository, and versions of Node modules.
 
-_node_modules:_ This is a folder which contains external modules, which are snippets of code written by others that perform very specific functions within your code. These are really what make Node so powerful and flexible—you can easily import functionality written by other people. You can look through Node modules on http://www.npmjs.org, or just Google functionality you want and look for modules that perform that function. To add a new Node module to your program, type "npm install [[module_name]]" in the main directory of your program.
+_node_modules:_ Contains external modules, which are snippets of code written by others that perform very specific functions within your code. These are really what make Node so powerful and flexible—you can easily import functionality written by other people. You can look through Node modules on http://www.npmjs.org, or just Google functionality you want and look for modules that perform that function. To add a new Node module to your program, type "npm install [[module name]]" in the main directory of your program.
 
-One very common module is called Express. It provides a lot of the framework required to make our app work over the Internet.
+One very common module, Express, provides a lot of the framework to make our app work over the Internet.
 
 _public:_ Holds CSS, Javascript, image, and video files used to render web pages.
 
-_routes:_ Contains the routing files. Think of each existing URL contained in a website as a route (website.com/home and website.com/contact). Files in this folder contain information on how handle requests made to specific routes on the site.
+_routes:_ Contains the routing files. The routing files tell your app what to do and where to go when deliniated functions are performed. For example, a routing file can tell the application when to render the different web pages, and how to send your name from one web page to the next.
 
-_views:_ Contains files that are actually rendered. This folder contains HJS, or Hogan.js, files. HJS is essentially HTML, but with a few extra features that make it easier to use. This lets us populate HTML with variables that are determined depending on the nature of te request made from a browser to our server.
+_views:_ Contains files that are actually rendered. This folder contains HJS, or Hogan.js, files. HJS is essentially HTML, but with a few extra features that make it easier to use.
 
 ###Running a Node app
 
@@ -457,9 +447,9 @@ To run on Mac/Linux, bring up a normal terminal window. On Windows, search your 
 
 Enter the folder the contains your Node app with simple terminal commands like "cd". Once there, type "node" and hit enter. If you see a blank line that starts with ">", Node is installed properly and you're ready to go. If not, go back to the installation instructions and reinstall.
 
-The first time you run a node app, `cd` into the directory (remember Terminal/Command Line?) and run `npm install`. This installs the *node_modules* folder if it doesn't already exist, and overwrites it if it does. To run the Node app, type `node app.js` into the terminal from the folder that contains app.js.
+The first time you run a node app, cd into the directory and run `npm install`. To run the Node app, type `node app.js` into the terminal from the folder that contains app.js.
 
-To see the app working, pull up an Internet browser. In the address bar, enter `localhost:3000`. Since we're running this server on our own machines and not publicly on the internet, our website *domain* is `localhost` (common to all systems) and the port is `3000`. If all goes well, you should be able to see your app!
+To see the app working, pull up an Internet browser. In the address bar, enter `localhost:3000`. If all goes well, you should be able to see your app!
 
 ### Writing our first NodeJS app
 
@@ -469,17 +459,13 @@ Let's start off by looking at the code that's already there in the package.json 
 
 #### Package.json
 
-This is a basic JSON file that describes the app we're building and its associated *dependencies*. Dependencies are basically modules, or other pieces of software that somebody else made, that lets us do things, like use Express, the module that makes it really easy to create webapps using NodeJS. This file lists the minimum version we require for each of the modules (if for example, only v2.0 and above of a module has a feature that we need). When we run `npm install` via command line, the package manager goes and finds modules that are least the version we've specified, and installs them. It's actually pretty neat!
+This is a basic JSON file that describes the app we're building and its associated dependencies. Dependencies are basically modules, or other pieces of software that somebody else made, that lets us do things like use Express, the module that makes it really easy to create webapps using NodeJS.
 
 ```json
-{
-    "Name": "code-weekend" // Module name 
-    "Version": "v1.0.0" // Version number 
-    "Private": true // keep this node app private 
-    "Dependencies": {
-        "express": "^v1.0.0"
-    }
-}
+Name: Module name 
+Version: Version number 
+Private: Keep npm repo private 
+Dependencies: Automatically installed when people install your app 
 ```
 
 #### App.js
@@ -492,10 +478,9 @@ var express = require('express');
 var cookieParser = require('cookie-parser'); 
 var bodyParser = require('body-parser'); 
 var session = require('cookie-session');
-var routes = require('./routes'); // this refers to the routes.js file we will write soon
 ``` 
 
-We start off by obtaining all of the required resources and packages for the application that we're going to use later on. We can do this in Node by using the `require('name of module')` syntax. `name of module` can either be the name of some module you specified or the path to a file that you've written yourself. Morgan is an HTTP request logger middleware for NodeJS (don't worry if you don't understand that, this isn't too important and the app won't break if we get rid of it). Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides "guest" sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We'll see more of both cookie modules - and their applications in our web app - a little later on.
+We start off by obtaining all of the required resources and packages for the application that we're going to use later on. We can do this in Node by using the `require('name of module')` syntax. `name of module` can either be the name of some module you specified or the path to a file. Morgan is an HTTP request logger middleware for NodeJS (don't worry if you don't udnerstand that, this isn't too important and the app won't break if we get rid of it). Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides "guest" sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We'll see more of both cookie modules - and their applications in our web app - a little later on.
 
 Now that we've stated what we need, let's instantiate our app:
 
@@ -517,16 +502,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser()); 
 app.use(session({secret: 'codeweekend'})); 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', routes); // this a custom route handler, which we will write soon in routes.js
 ```
 
-Note how the last line tells the app to treat the folder directory like the top-level. This just means that if we have a web page running on the server and we want to link a CSS file to it which has a filepath of `public/stylesheets/main.css`, we simply have to link to it as `stylesheets/main.css` and it's automatically found for us. This makes it pretty easy to locate files you need to render a webpage, doesn't it?
+Note how the last line tells the app to treat the folder directory like the top-level.
 
-The second section above constitutes a set of functions known as middleware. Each of these functions are run *in order* whenever an incoming request is processed by the server. The first parameter to the `app.use` function is a *path* to run the middleware on (depending on which route/path the incoming request is made on) - and if left blank, as above, it runs the functions - specified in the second parameter - for *every* incoming request, regardless of path.
-
-Notice the last middleware in this section is a custom route handler that we will write soon. This will handle specific types of requests on specific paths, for example, to '/' and '/home'. We only write handler functions for the routes we care about, and for the rest, we'll simply return one of the most famous errors on the Internet - 404 Not Found!
-
-Google's server handles routes like '/mail' or '/search', but it almost certainly returns a 404 error to '/mail/lakdfmladkfmadlkfmadlkfmaldkfmadlkfmad'. Let's make sure that any routes we haven't *explicitly* defined return a 404 error as the server response:
+It's always important to look out for paths that don't exist (like google.com/kasjdhfkjashdfkjashdfkajsdhfkjsda), and let's make sure our app does the same:
 
 ```javascript
 app.use(function(req, res, next) { 
@@ -543,11 +523,8 @@ app.use(function(err, req, res, next) {
   }); 
 });
 ```
-This section of code serves as the last of the middleware in the app - if any requests find themselves here *without* being handled by our previous middleware handler function, they should return 404 errors.
 
-The functions used by the application here accept `req` (request), `res` (response) and `next` (the next function in the middleware stack) parameters. In order to send a response from our server to any incoming requests, we use the `res` object that's passed into the function. In this case, we set the response status to the error status (404) and render an error page.
-
-Just to really drill down on our route handler, let's look at the code again.
+This catches 404 errors (ie, this path doesn't exist) and forwards them to our error handler, which prints out a bunch of error info, since we're really in a developer environment/debugging mode.
 
 ```javascript
 var routes = require('./routes');
@@ -566,7 +543,8 @@ app.listen(app.get('port'), function() {
 
 We'll use the port and resources we defined earlier on.
 
-Just to make things interesting, we can also add in some *more* middleware. This middleware will work with data stored in request cookies, and since we want this to run for every route before they're handled by our route handler, don't forget to put it *before* the middleware `app.use` call for the route handler!
+We can also add in some middleware, which is code that runs in before routes are searched for by the app. In this case we use:
+
 
 ```javascript
 app.use(function(req, res, next) { 
@@ -583,7 +561,7 @@ app.use(function(req, res, next) {
 });
 ```
 
-If we get session messages, we set them to our local state. This means we can access these messages later when we're handling routes. And if no session notes exist, let's make an empty collection (array) for them. We'll use this nifty code soon to create and store notes in the user's browser cookies. Each time a request comes into the server, it'll contain the same cookies (which will reflect any changes we make to them). Think of cookies as contextual data provided with each incoming request to the server that lets us provide contextual reponses!
+If we get session messages, we set them to our local state. And if no session notes exist, let's make an empty collection for them. We'll use this nifty code soon to create and store notes in the user's browser cookies. 
 
 #### routes.js
 
@@ -594,14 +572,13 @@ var express = require('express');
 var router = express.Router();
 ```
 
-A router is an isolated instance of middleware and routes provided in Express. In other words, it's simply a collection of middleware functions devoted to indentifying routes, parsing the path they are sent on, and handling them accordingly.
+A router is an isolated instance of middleware and routes. Routers can be thought of as "mini" applications, capable only of performing middleware and routing functions. Every express application has a built-in app router.
 
-Routers behave like middleware themselves and can be `.use()`d by the app or in other routers. Think back to `app.js`, and how we did exactly that for the 'route handler' - which we are about to write now.
+Routers behave like middleware themselves and can be `.use()`d by the app or in other routers.
 
 We'll now make simple route definitions for the HTTP GET method as below:
 
 ```javascript
-// catches all requests on the path '/'
 router.get('/', function(req, res) {
   return res.render('index', {
     title: 'Codeweekend Notes',
@@ -609,7 +586,6 @@ router.get('/', function(req, res) {
   });
 });
 
-// catches all requests on paths like '/123', '/123456' and even '/dragons'
 router.get('/:id', function(req, res) {
   var noteId = Number(req.params.id);
   if (isNaN(noteId) || noteId < 1 || noteId > req.session.notes.length) {
@@ -621,11 +597,7 @@ router.get('/:id', function(req, res) {
     note: req.session.notes[noteId - 1]
   });
 });
-```
 
-Writing a handler for an HTTP POST request is just as straightforward:
-
-```javascript
 router.post('/create', function(req, res) {
   if (!(req.body.title && req.body.body)) {
     req.session.message = 'You must provide a title and a body!';
@@ -643,9 +615,9 @@ router.post('/create', function(req, res) {
 });
 ```
 
-You'll notice that the first function specifies what is supposed to happen when a  simple route path is requested (such as '/'). Each call to `router.get` or `router.post` takes a callback function that has two objects `req` and `res`. The `req` object usually contains information that is containted in the request. It also gives us access to the session cookie so that we can access and store some information about the user in their browser. The `res` object let's us control the response. Thus `res.redirect` redirects the user to another page and `res.render` uses our templating engine to create a webpage that we send back to the user. 
+You'll notice that the first function specifies what is supposed to happen when a  simple route path is requested (such as '/'). Each all to `router.get` or `router.post` takes a callback function that has two objects `req` and `res`. The `req` object usually contains information that is containted in the request. It also gives us access to the session cookie so that we can access and store some information about the user in their browser. The `res` object let's us control the response. Thus `res.redirect` redirects the user to another page and `res.render` uses our templating engine to create a webpage that we send back to the user. 
 
-Whenever we have an error in the request made to our webapp, we can see that we store the error message into the session and return a redirect back to the simple routing path using this nifty structure inside the callback functions:
+Whenever we have an error in the request made to our webapp, we can see that we store the error message into the session and return a redirect back to the simply routing path using this nifty structure inside the callback functions:
 
 ```javascript
 req.session.message = 'Error message goes here';
@@ -654,7 +626,7 @@ return res.redirect('/');
 
 This allows for clean error handling since we always send users to the same page when they get an error, and the actual error message is bound to the user's cookie, not the page itself.
 
-And lastly, just so that we get all this handy code available to the rest of the application, let's export it so that it's created when we 'require' it in another file with:
+And lastly, just so that we get all this handy code available to the rest of the application, let's export it with:
 
 ```javascript
 module.exports = router;

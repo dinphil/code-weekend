@@ -1,0 +1,14 @@
+body {
+    padding: 50px 100px;
+}
+h1 {
+    font-size: 40px;
+    font-weight: lighter;
+    color: blue;
+}
+.red-text {
+    color: red;
+}
+#intro-para {
+    border: 2px solid black;
+}

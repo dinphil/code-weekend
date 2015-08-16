@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Note: {{ note.title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{#message}}
+      <h3>{{message}}</h3>
+    {{/message}}
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.body }}</p>
+    <a href='/'>Go back</a>
+  </body>
+</html>

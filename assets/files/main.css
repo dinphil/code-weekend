@@ -1,14 +1,21 @@
+/* 
+	Code Weekend materials.
+*/
+
 body {
     padding: 50px 100px;
 }
 h1 {
+	/* This style applies to all the h1 tags used on the page */
     font-size: 40px;
     font-weight: lighter;
     color: blue;
 }
 .red-text {
+	/* This style applies to all elememts with this class */
     color: red;
 }
 #intro-para {
+	/* This style applies to a single element, with this ID */
     border: 2px solid black;
 }
