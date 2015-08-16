@@ -473,9 +473,9 @@ This is a basic JSON file that describes the app we're building and its associat
 
 ```json
 {
-    "Name": "code-weekend" // Module name 
-    "Version": "v1.0.0" // Version number 
-    "Private": true // keep this node app private 
+    "Name": "code-weekend", // Module name 
+    "Version": "v1.0.0", // Version number 
+    "Private": true, // keep this node app private 
     "Dependencies": {
         "express": "^v1.0.0"
     }
@@ -543,6 +543,7 @@ app.use(function(err, req, res, next) {
   }); 
 });
 ```
+
 This section of code serves as the last of the middleware in the app - if any requests find themselves here *without* being handled by our previous middleware handler function, they should return 404 errors.
 
 The functions used by the application here accept `req` (request), `res` (response) and `next` (the next function in the middleware stack) parameters. In order to send a response from our server to any incoming requests, we use the `res` object that's passed into the function. In this case, we set the response status to the error status (404) and render an error page.

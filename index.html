@@ -433,10 +433,10 @@
 <h4 id="packagejson"><a name="user-content-packagejson" href="#packagejson" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Package.json</h4>
 <p>This is a basic JSON file that describes the app we&rsquo;re building and its associated <em>dependencies</em>. Dependencies are basically modules, or other pieces of software that somebody else made, that lets us do things, like use Express, the module that makes it really easy to create webapps using NodeJS. This file lists the minimum version we require for each of the modules (if for example, only v2.0 and above of a module has a feature that we need). When we run <code>npm install</code> via command line, the package manager goes and finds modules that are least the version we&rsquo;ve specified, and installs them. It&rsquo;s actually pretty neat!</p>
 <div class="codehilite"><pre><span class="p">{</span>
-    <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;code-weekend&quot;</span> <span class="err">//</span> <span class="err">Module</span> <span class="err">name</span> 
-    <span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1.0.0&quot;</span> <span class="err">//</span> <span class="err">Version</span> <span class="err">number</span> 
-    <span class="s2">&quot;Private&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="err">//</span> <span class="err">keep</span> <span class="err">this</span> <span class="err">node</span> <span class="err">app</span> <span class="err">private</span> 
-    <span class="s2">&quot;Dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;code-weekend&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Module</span> <span class="err">name</span> 
+    <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1.0.0&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Version</span> <span class="err">number</span> 
+    <span class="nt">&quot;Private&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="err">//</span> <span class="err">keep</span> <span class="err">this</span> <span class="err">node</span> <span class="err">app</span> <span class="err">private</span> 
+    <span class="nt">&quot;Dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^v1.0.0&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -479,7 +479,7 @@
 <p>The second section above constitutes a set of functions known as middleware. Each of these functions are run <em>in order</em> whenever an incoming request is processed by the server. The first parameter to the <code>app.use</code> function is a <em>path</em> to run the middleware on (depending on which route/path the incoming request is made on) - and if left blank, as above, it runs the functions - specified in the second parameter - for <em>every</em> incoming request, regardless of path.</p>
 <p>Notice the last middleware in this section is a custom route handler that we will write soon. This will handle specific types of requests on specific paths, for example, to &lsquo;/&rsquo; and &lsquo;/home&rsquo;. We only write handler functions for the routes we care about, and for the rest, we&rsquo;ll simply return one of the most famous errors on the Internet - 404 Not Found!</p>
 <p>Google&rsquo;s server handles routes like &lsquo;/mail&rsquo; or &lsquo;/search&rsquo;, but it almost certainly returns a 404 error to &lsquo;/mail/lakdfmladkfmadlkfmadlkfmaldkfmadlkfmad&rsquo;. Let&rsquo;s make sure that any routes we haven&rsquo;t <em>explicitly</em> defined return a 404 error as the server response:</p>
-<p><div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span> 
+<div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span> 
   <span class="kd">var</span> <span class="nx">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Not Found&#39;</span><span class="p">);</span> 
   <span class="nx">err</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">404</span><span class="p">;</span> 
   <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> 
@@ -493,8 +493,9 @@
   <span class="p">});</span> 
 <span class="p">});</span>
 </pre></div>
-<br />
-This section of code serves as the last of the middleware in the app - if any requests find themselves here <em>without</em> being handled by our previous middleware handler function, they should return 404 errors.</p>
+
+
+<p>This section of code serves as the last of the middleware in the app - if any requests find themselves here <em>without</em> being handled by our previous middleware handler function, they should return 404 errors.</p>
 <p>The functions used by the application here accept <code>req</code> (request), <code>res</code> (response) and <code>next</code> (the next function in the middleware stack) parameters. In order to send a response from our server to any incoming requests, we use the <code>res</code> object that&rsquo;s passed into the function. In this case, we set the response status to the error status (404) and render an error page.</p>
 <p>Just to really drill down on our route handler, let&rsquo;s look at the code again.</p>
 <div class="codehilite"><pre><span class="kd">var</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">);</span>
