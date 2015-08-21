@@ -994,6 +994,8 @@ Intro to Databases <a id="db-section"></a>
 Making information stick around
 -------------------------------
 
+![Such data, so big, wow](https://s3.amazonaws.com/compose-articles/2015/Mar/Doge-Big-Data-Meme_vb8hxi_n8oxuq.jpg)
+
 Topics to be covered:
 
 - MongoDB: what it is, how to use it
@@ -1027,12 +1029,13 @@ Just type in `mongod` into Terminal before you run your node app. On Windows, yo
 
 Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.
 
-
 You may wondering why we should even consider databases when things like cookies exist. After all, we've been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.
 
 Firstly, not all information that needs to be stored is relevant to your application's user, and they probably won't have enough space on their device to store all of it! Imagine what would happen if Amazon's entire online catalogue was stored on your iPhone - it'd be a miracle if it even manages to switch on. Cookies are better suited to storing information that's unique and relevant to a user's interaction with an application. It's also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the 'Clear Cookies' option on all web browsers, and some users disable cookies entirely!
 
-Databases let us store information we need, and give us greater control over how it's handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there's another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application.
+Databases let us store information we need, and give us greater control over how it's handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there's another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually doe through *queries* to a database.
+
+![Don't query SQL](http://www.quickmeme.com/img/9a/9a87002957d106568dcfc2b8135c213b608a268232d7259fbc19d42b831488cd.jpg)
 
 That's why MongoDB is so popular with NodeJS. While it is still a separate database, _it stores its information in a large JSON file_. That's right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don't have to worry about the formatting of the data, cause it's already in the format we need! You might hear people argue for (or against) the use of MongoDB because it's a NoSQL database, but this has a lot of tradeoffs and there's no clear cut winner between SQL and NoSQL; they're each suited for different applications.
 
@@ -1044,7 +1047,7 @@ Just to get this structure down, let's consider how Twitter data stored in Mongo
 
 ![Trending hashtags](assets/img/trending.png)
 
-It's an incredibly powerful method of storing and accessing your data and it turns out that it's suprisingly efficient as well.
+It's an incredibly powerful method of storing and accessing your data and it often turns out to be suprisingly efficient as well.
 
 ### Integrating MongoDB into the web app
 
@@ -1079,7 +1082,7 @@ Now, let's actually import the database into the app. Any guesses on how to allo
 "var mongo = require('mongodb');" 
 ```
 
-Add it to our main file, app.js. Cool. Now that we access to the Mongo wrapper (which was nicely written for us and packaged into a simple module by the folks over at Mongo) let's make use of it. Since this is a database for the internet, it's only natural that it runs on its own server. Luckily for us, that code for the server is already written inside the ```mongo``` module that we just required, so all that we have to do is configure it! See if you can understand the lines below, which we're going to add to ```app.js``` _before_ any of the middleware functions we've already written.
+Add it to our main file, app.js. Cool. Now that we access to the Mongo wrapper (which was nicely written for us and packaged into a simple module by the folks over at Mongo) let's make use of it. Since this is a database for the internet, it's only natural that it runs on its own server. Luckily for us, that code for the server is already written inside the ```mongo``` module that we just required. All that we have to do is configure it properly! See if you can understand the lines below, which we're going to add to ```app.js``` _before_ any of the middleware functions we've already written.
 
 ```javascript
 var Db = mongo.Db;
@@ -1111,7 +1114,7 @@ First things first:
 var ObjectID = require('mongodb').ObjectID;
 ```
 
-Let's get our database Object ID. Now, our existing code looks a little something like this:
+Let's get our database Object ID. Our existing code looks a little something like this:
 
 ```javascript
 router.get('/', function(req, res) {
@@ -1122,7 +1125,9 @@ router.get('/', function(req, res) {
 });
 ```
 
-We already know that this stores our notes in a session. However, now, let's make use of our up and runnig database instead. With a little change in how we access and store the notes object, we can now route the entire process through our DB, to change the routes.js file to:
+We already know that this stores our notes in a session. However, now, let's make use of that database we've been talking about so much! With a little change in how we access and store the notes object, we can now route the entire process through our DB. We're going to make use of *Queries* in the following sections, which are basically different ways of searching for data in a database. Naturally, each database allows you to create and use queries differently, and [this](http://www.tutorialspoint.com/mongodb/mongodb_query_document.htm) is how Mongo does some of the more popular ones.
+
+First, assuming we've stored all of the notes into a collection called ```notes``` inside of the ```codeweekend``` database, let's render all of the notes in the database for the route '/'.
 
 ```javascript
 var ObjectID = require('mongodb').ObjectID;
@@ -1135,13 +1140,13 @@ router.get('/', function(req, res) {
     });
   });
 });
+```
 
-router.get('/db', function(req, res) {
-  req.db.collection('test').find().toArray(function(err, items) {
-    return res.send(items);
-  });
-});
+The ```find``` query returns all the docurments in the collection, and the ```toArray``` method parses them all into an array, so that they can be rendered as before onto the page. It's important to note that ```find``` only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!
 
+Next, let's return a specific document from the database, using the ObjectID field int he document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.
+
+```javascript
 router.get('/:id', function(req, res) {
   req.db.collection('notes').findOne({_id: ObjectID(req.params.id)}, function(err, note) {
     if (err || !note) {
@@ -1154,7 +1159,10 @@ router.get('/:id', function(req, res) {
     })
   });
 });
+```
+Now that we can retrieve data from the database, let's also add new data to it! It's as simple as finding data. Using the ```insert``` method, we can quickly and easily add a new JSON document to the ```notes``` collection, as below.
 
+```javascript
 router.post('/create', function(req, res) {
   if (!(req.body.title && req.body.body)) {
     req.session.message = 'You must provide a title and a body!';
@@ -1173,17 +1181,22 @@ router.post('/create', function(req, res) {
 module.exports = router;
 ```
 
-Well that wasn't so bad. Every call to the database involves referencing our middleware `req.db` and using the collection (aka database) called 'notes'. We then use different functions like `findOne`, that finds one result, or `find().toArray` that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there's an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy? 
+Well that wasn't so bad. Im summary: every call to the database involves referencing our middleware `req.db` and using the collection (aka database) called 'notes'. We then use different functions like `findOne`, that finds one result, or `find().toArray` that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there's an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy? 
 
 #### You're done!
 
 With that you've succesfully integrated your first database into a Node application and it's up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. 
 
-Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you've learned!
-
 #### Files
 
 [These files](assets/files/ws4.zip) should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!
+
+## Thanks for being a part of Code Weekend!
+
+### We hope you enjoyed these workshops as much as we enjoyed making them for you.
+
+Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you've learned!
+
 
 <div class="footer"><p>&copy; Dining Philosophers 2015. Page created by <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a>. Workshops designed by <a href="http://github.com/bclay/">Brynn Claypoole</a>, <a href="http://lewisjellis.com/">Lewis Ellis</a>, <a href="http://pvrnav.com">Pranav Vishnu Ramabhadran</a> and <a href="http://smuralidhar.com">Sudarshan Muralidhar</a>.</div>
 
