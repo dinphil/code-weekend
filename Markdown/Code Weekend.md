@@ -1,11 +1,11 @@
 <div class="hidden"><meta property="og:image" content="http://the-dining-philosophers.github.io/code-weekend/assets/img/logo.png"><link rel="shortcut icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/global.css"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"><link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' type='text/css'></div><img class="full-img" src="assets/img/logo.png"><div class="nav-items"><div class="nav-item" id="setup-menu">Intro to Web</div><div class="nav-item" id="node-menu">NodeJS</div><div class="nav-item" id="apis-menu">APIs</div><div class="nav-item" id="dbs-menu">Databases</div></div>
 
-Code Weekend
-============
+Code Weekend Fall 2015
+======================
 Building your first webapp
 --------------------------
 
-[Sign up here!](http://goo.gl/forms/0lg3QIwvMB)
+[In case you haven't already, sign up for the Fall 2015 workshops here!](http://goo.gl/forms/0lg3QIwvMB)
 
 Code Weekend is scheduled for *August 29 and 30th, 2015* and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with [PennApps](http://pennapps.com "PennApps XII") scheduled for the weekend after. If you haven't already, check it out - it's a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they're doing great stuff for first-time hackers as well).
 
@@ -1005,7 +1005,7 @@ Topics to be covered:
 
 Let's move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a database, we can store, search and access large amounts of data very quickly.
 
-_Mac_
+_Mac (OS X)_
 
 Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: `mkdir -p /data/db`. You should now be able to go straight into the MongoDB shell by typing in `mongod` into Terminal.
 
@@ -1021,25 +1021,38 @@ Full instructions to install MongoDB on Linux can be found [here](http://docs.mo
 
 ### Running MongoDB
 
-Just type in `mongod` into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at `C:\Program Files\MongoDB\bin\mongod.exe`).
+Just type in `mongod` into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at `C:\Program Files\MongoDB\bin\mongod.exe`). This fires up a Mongo instance that will run continously in the background until it's killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!
 
 ### Why use a database? And why MongoDB?
 
 Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.
 
-So we've been storing information in the user's cookies till now, why use a database? After all, doesn't it make sense to distribute this information across everyones computers rather than have everything in one place?
 
-Well there's a lot of reasons why not, but here's a few major ones. First, not all information is relevant to a user, and users don't neccessarily have a lot fo space on their devices. You don't want Amazon's entire catalogue on you iPhone. Cookies are best kept for storing information specific to a user that we can afoord to loose. Which leads us to our next point, which is that cookeis are easily deleted. All a user needs to do is hit the "Clear Cookies" button in theri settings menu. So obviously, this isn't reliable.
+You may wondering why we should even consider databases when things like cookies exist. After all, we've been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.
 
-So databases let us store the information our website needs close to us, making it faster for us to get access to the correct information, as needed, to serve to our users. They make it possible to efficiently store a lot of information and access it quickly. But this means an extra layer of trouble dealing with asking our database for data and sending it new data from our webapp.
+Firstly, not all information that needs to be stored is relevant to your application's user, and they probably won't have enough space on their device to store all of it! Imagine what would happen if Amazon's entire online catalogue was stored on your iPhone - it'd be a miracle if it even manages to switch on. Cookies are better suited to storing information that's unique and relevant to a user's interaction with an application. It's also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the 'Clear Cookies' option on all web browsers, and some users disable cookies entirely!
 
-That's why MongoDB is so popular with NodeJS. While it is still a separate database, it stores its information in a large JSON file. That's right, just JSON. So when we ask Mongo for results, it can jsut give us an array of javascript objects and that means we don't have to worry about the formatting of the data, cause it's already in the format we need! You might hear people argue for the use of MongoDB because it's a NoSQL database, but this has a lot of tradeoffs and there's no clear cut winner between SQL and NoSQL; they've each more apporpriate for different sets of circumstances.
+Databases let us store information we need, and give us greater control over how it's handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there's another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application.
 
-### Now for the code!
+That's why MongoDB is so popular with NodeJS. While it is still a separate database, _it stores its information in a large JSON file_. That's right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don't have to worry about the formatting of the data, cause it's already in the format we need! You might hear people argue for (or against) the use of MongoDB because it's a NoSQL database, but this has a lot of tradeoffs and there's no clear cut winner between SQL and NoSQL; they're each suited for different applications.
 
-We're now going to integrate a database into our application to store data. A really popular database to use with NodeJS is MongoDB. It's a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we're going to have to do is add MongoDB to our dependencies list inside of ```package.json```.
+### How MongoDB structures your data
 
-Add "mongodb": "~1.4.19" to the dependencies object inside the JSON so that it looks like this.
+Before we go into the details of accessing data stored in the database, let's first understand _how_ it's stored. Within a single MongoDB instance (like the one we fired up with the ```mongod``` command), it's possible to create and work with several databases. Within each of these these databases, we store data in *collections*. Each database holds a set of collections, which in turn store documents. Now the documents are what we are already familiar with: a set of key-value pairs, AKA, JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, ```_id```, populated with an *ObjectId*. We can find specific documents using either this field, or any other, by generating a search query.
+
+Just to get this structure down, let's consider how Twitter data stored in Mongo might look. If we wanted to find the top most trending hashtag in the United States, we'd have to look in the ```tweets``` database, inside the ```trending_hashtags``` collection. Within this collection there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field ```country: 'United States'```. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.
+
+![Trending hashtags](assets/img/trending.png)
+
+It's an incredibly powerful method of storing and accessing your data and it turns out that it's suprisingly efficient as well.
+
+### Integrating MongoDB into the web app
+
+We're now going to integrate a MongoDB database into our application to store data. As said earlier, Mongo is a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we're going to have to do is add MongoDB to our dependencies list inside of ```package.json```.
+
+> *TIP:* Think back to what the dependencies section of the ```package.json``` is for! Also, isn't it cool how all we need to do to include all the source code for handling MongoDB is by requiring a new module? This is one of the reasons why NodeJS is so popular!
+
+Add "mongodb": "~1.4.19" to the dependencies object inside the JSON so that it looks a little like this.
 
 ```json
 {
@@ -1066,7 +1079,7 @@ Now, let's actually import the database into the app. Any guesses on how to allo
 "var mongo = require('mongodb');" 
 ```
 
-Add it to our main file, app.js. Cool. Now let's make use of it. We're first going to have to create a database object and a server object and then create & open a specific database so that we can use it later. See if you can understand the lines below.
+Add it to our main file, app.js. Cool. Now that we access to the Mongo wrapper (which was nicely written for us and packaged into a simple module by the folks over at Mongo) let's make use of it. Since this is a database for the internet, it's only natural that it runs on its own server. Luckily for us, that code for the server is already written inside the ```mongo``` module that we just required, so all that we have to do is configure it! See if you can understand the lines below, which we're going to add to ```app.js``` _before_ any of the middleware functions we've already written.
 
 ```javascript
 var Db = mongo.Db;
@@ -1078,13 +1091,19 @@ var db = new Db('codeweekend',
 db.open(function(){});
 ```
 
-Hopefully, that was easy to follow. We've created a new database called 'codeweekend' that we can reach at port 27017. Inside of our middleware, we're also going to have to route any incoming database requests to our MongoDB, so let's add in this to the end of the function.
+For convenience, we made two new variables called ```Db``` and ```Server``` that simply extract the code for both objects from inside the mongo module. We then configure a new instance of a database called 'codeweekend', that runs on a MongoDB server that's located at ```localhost:27017```. Don't worry if that seems a little bizarre to you - it's the default location provided by Mongo and its where you can find the server instance you ran earlier on with the ```mongod``` command. Lastly, we simply open a connection to this database so that we can interact with the data stored within the database.
+
+Hopefully, that was easy to follow. Now you might be wondering why it was so important that we opened a connection to our database before the middleware functions. It's simple - now that we have an open connection, it makes sense that we provide each route handler access to this connection, so that it can interact with the data in the database. 
+
+Inside of our first and main middleware function, let's store the ```db``` object inside the ```req``` object. This may seem a little confusing at first, but the `req` request object is a JavaScript object just like any other, which means that it's okay to create new fields in it!
 
 ```javascript
 req.db = db;
 ```
 
-Now, let's really get our hands messy and jump into `routes.js`, where we'll change our existing code to make use of the powerful database we know have access to.
+With this line, what we've essentially done is hand each request coming into any route handler a connection to our database. Sweet!
+
+Now, let's really get our hands messy and jump into `routes.js`, where we'll change our existing code to make use of the powerful database we now have access to.
 
 First things first:
 
