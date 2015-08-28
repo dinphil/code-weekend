@@ -1,1 +1,1 @@
-A simple application for Code Weekend
+A simple, but ever so slightly more useful application for Code Weekend
