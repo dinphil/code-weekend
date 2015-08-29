@@ -287,7 +287,7 @@ function idPlusString (number) {
 Javascript mainly works on Objects and Arrays to store and access data.
 
 ```javascript
-// Here's an Object that conatins an array
+// Here's an Object that contains an array
 var myDetails = {
     'name' : "Mark Gates",
     'age' : 24,
@@ -381,7 +381,7 @@ NOTE: Sometimes, when you save your work, a window will pop up asking you to buy
 
 ### Making a Personal Landing Page
 
-Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Take a look at some of our organizers' websites for inspiration ([Devesh](http://www.seas.upenn.edu), [Brady](http://www.google.com)) or browse around the internet to see nice designs (like [Medium](http://medium.com)).
+Well done! You've got everything you need installed. Now let's test what you've learned in this workshop. Here's an [HTML](assets/files/sample.html) and a [CSS](assets/files/main.css) file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Take a look at some of our organizers' websites for inspiration ([Devesh](http://www.seas.upenn.edu), [Dhruv](http://dhruvagarwal.me)) or browse around the internet to see nice designs (like [Medium](http://medium.com)).
 
 #### Files
 
