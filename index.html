@@ -303,7 +303,7 @@
 
 
 <p>Javascript mainly works on Objects and Arrays to store and access data.</p>
-<div class="codehilite"><pre><span class="c1">// Here&#39;s an Object that conatins an array</span>
+<div class="codehilite"><pre><span class="c1">// Here&#39;s an Object that contains an array</span>
 <span class="kd">var</span> <span class="nx">myDetails</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;name&#39;</span> <span class="o">:</span> <span class="s2">&quot;Mark Gates&quot;</span><span class="p">,</span>
     <span class="s1">&#39;age&#39;</span> <span class="o">:</span> <span class="mi">24</span><span class="p">,</span>
@@ -381,7 +381,7 @@
 <p>We&rsquo;ve got to install a whole buch of stuff over the next few workshops. Let&rsquo;s start simple, go and download <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. It&rsquo;s the best text editor in existence (yes, that&rsquo;s arguable) and this is where we&rsquo;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it.</p>
 <p>NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit &ldquo;Cancel&rdquo; and you can use it forever. Alternatively, you can buy it and support a fellow developer.</p>
 <h3 id="making-a-personal-landing-page"><a name="user-content-making-a-personal-landing-page" href="#making-a-personal-landing-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Making a Personal Landing Page</h3>
-<p>Well done! You&rsquo;ve got everything you need installed. Now let&rsquo;s test what you&rsquo;ve learned in this workshop. Here&rsquo;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Take a look at some of our organizers&rsquo; websites for inspiration (<a href="http://www.seas.upenn.edu">Devesh</a>, <a href="http://www.google.com">Brady</a>) or browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
+<p>Well done! You&rsquo;ve got everything you need installed. Now let&rsquo;s test what you&rsquo;ve learned in this workshop. Here&rsquo;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Take a look at some of our organizers&rsquo; websites for inspiration (<a href="http://www.seas.upenn.edu">Devesh</a>, <a href="http://dhruvagarwal.me">Dhruv</a>) or browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
 <h4 id="files"><a name="user-content-files" href="#files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Files</h4>
 <p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links. Use these as starting points for building your personal landing pages.</p>
 <h1 id="intro-to-javascript-and-nodejs"><a name="user-content-intro-to-javascript-and-nodejs" href="#intro-to-javascript-and-nodejs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Intro to Javascript and NodeJS <a id="node-section"></a></h1>
@@ -411,8 +411,12 @@
 <p><em>Linux</em></p>
 <p>There are about a million different ways to install things on various Linux-based operating systems. Go to <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">this link</a> for a full list.</p>
 <p>Alright, let&rsquo;s get started.</p>
+<h3 id="what-does-server-side-really-mean"><a name="user-content-what-does-server-side-really-mean" href="#what-does-server-side-really-mean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What does server-side really mean?</h3>
+<p>Till now, we&rsquo;ve dealt with HTML, CSS and JavaScript. These are the files that a server send over the internet to your browser when your browser tries to navigate to that website. However, as we saw in the last workshop, these files aren&rsquo;t intelligent, they simply display information that is entered into them.</p>
+<p>So real webapps (anything more complicated than a personal landing page) have servers that use some boilerplate <em>static files</em> (i.e. HTML, CSS and JavaScript) and do their own logic to fill them in with real, intelligent information (the difference between a recipe that you can write down once - you can make it as fancy as you want but it&rsquo;s static and won&rsquo;t change - and something that displays the weight of the person eating all that food in real time - dynamic, because this would change depending on who the person was and when they check this). These servers can be written in many languages, right from C to Java to Python or even Assembly language if you wanted to. In this workshop, we&rsquo;re going to use NodeJS, that allows us to use JavaScript to write our server-side code, even though JavaScript was initially designed to run only inside the web browser and not on servers.</p>
+<p>We usually have servers to do the thinking, databases to store the information and static files to display this information in the user&rsquo;s web browser. These 3 parts come together to form the core of any website. Often, websites also use APIs (basically a way for websites to talk to each other) to make their websites more dynamic, or to pull in information from other websites.</p>
 <h3 id="what-is-a-nodejs-app"><a name="user-content-what-is-a-nodejs-app" href="#what-is-a-nodejs-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is a NodeJS app?</h3>
-<p>Node is a very common Javascript-based web framework. In other words, it&rsquo;s a structure for making websites that many people use where the app/server logic is written mostly in Javascript. Remember the servers we spoke about in the first workshop? Node is a framework that lets us write our own servers in JavaScript to run on our machines. Node is great because it has <em>modules</em>, which are bits of code other people have already written that can easily be added to give new functionality to your app. NodeJS has the most modules of most modern web frameworks, and that&rsquo;s part of what makes it really great for writing webapps fast.</p>
+<p>Node is a very common JavaScript-based web framework. Node is a framework that lets us write our own servers in JavaScript to run on our machines. Node is great because it has <em>modules</em>, which are bits of code other people have already written that can easily be added to give new functionality to your app. NodeJS has the most modules of most modern web frameworks, and that&rsquo;s part of what makes it really great for writing webapps fast.</p>
 <h3 id="the-anatomy-of-a-node-app"><a name="user-content-the-anatomy-of-a-node-app" href="#the-anatomy-of-a-node-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Anatomy of a Node app</h3>
 <p>A common Node app has several main components, as described below:</p>
 <p><em>app.js:</em> The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. The last section tells the app to run on a particular <a href="https://answers.yahoo.com/question/index?qid=20080617203733AA9kwiT">port</a> (3000 in this case).</p>
@@ -445,16 +449,14 @@
 
 <h4 id="appjs"><a name="user-content-appjs" href="#appjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App.js</h4>
 <div class="codehilite"><pre><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span> 
-<span class="kd">var</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;morgan&#39;</span><span class="p">);</span> 
 <span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span> 
-<span class="kd">var</span> <span class="nx">cookieParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cookie-parser&#39;</span><span class="p">);</span> 
-<span class="kd">var</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;body-parser&#39;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">cookieParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cookie-parser&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cookie-session&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">);</span> <span class="c1">// this refers to the routes.js file we will write soon</span>
 </pre></div>
 
 
-<p>We start off by obtaining all of the required resources and packages for the application that we&rsquo;re going to use later on. We can do this in Node by using the <code>require('name of module')</code> syntax. <code>name of module</code> can either be the name of some module you specified or the path to a file that you&rsquo;ve written yourself. Morgan is an HTTP request logger middleware for NodeJS (don&rsquo;t worry if you don&rsquo;t understand that, this isn&rsquo;t too important and the app won&rsquo;t break if we get rid of it). Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides &ldquo;guest&rdquo; sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We&rsquo;ll see more of both cookie modules - and their applications in our web app - a little later on.</p>
+<p>We start off by obtaining all of the required resources and packages for the application that we&rsquo;re going to use later on. We can do this in Node by using the <code>require('name of module')</code> syntax. <code>name of module</code> can either be the name of some module you specified or the path to a file that you&rsquo;ve written yourself. Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides &ldquo;guest&rdquo; sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We&rsquo;ll see more of both cookie modules - and their applications in our web app - a little later on.</p>
 <p>Now that we&rsquo;ve stated what we need, let&rsquo;s instantiate our app:</p>
 <div class="codehilite"><pre><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 </pre></div>
@@ -466,8 +468,6 @@
 <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;view engine&#39;</span><span class="p">,</span> <span class="s1">&#39;hjs&#39;</span><span class="p">);</span> 
 <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3000</span><span class="p">);</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">logger</span><span class="p">(</span><span class="s1">&#39;dev&#39;</span><span class="p">));</span> 
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span><span class="nx">extended</span><span class="o">:</span> <span class="kc">false</span><span class="p">}));</span> 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cookieParser</span><span class="p">());</span> 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">session</span><span class="p">({</span><span class="nx">secret</span><span class="o">:</span> <span class="s1">&#39;codeweekend&#39;</span><span class="p">}));</span> 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;public&#39;</span><span class="p">)));</span>
@@ -695,7 +695,7 @@
 <h4 id="preppin-appjs-for-our-api"><a name="user-content-preppin-appjs-for-our-api" href="#preppin-appjs-for-our-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Preppin&rsquo; app.js for our API</h4>
 <p>First open app.js. We need to set our Node app to try to reach Venmo if someone using the app goes to localhost:3000/venmo. This is a route that takes us into venmo.js, and, importantly, relativizes the URL so that what here is /venmo/foo looks to venmo.js just like /foo.</p>
 <div class="codehilite"><pre><span class="kd">var</span> <span class="nx">venmo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./venmo&#39;</span><span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">,</span> <span class="nx">Venmo</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">,</span> <span class="nx">venmo</span><span class="p">);</span>
 </pre></div>
 
 
@@ -710,6 +710,14 @@ We&rsquo;ll use the express router.<br />
 </pre></div>
 </p>
 <p>Next, we have a few lines of Venmo configuration - information identifying our application (fill this in with your App Secret and ID, which you got when you created an application on the Venmo Developer Console page), the location of the Venmo authentication service, the location that Venmo should redirect to after a user authenticates (so that we can authenticate our application), and the API url where we can send payment requests. All of this is copy-pasted from the Venmo documentation.</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">clientId</span> <span class="o">=</span> <span class="s1">&#39;FILL ME IN FROM YOUR ACCOUNT&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">clientSecret</span> <span class="o">=</span> <span class="s1">&#39;FILL ME IN FROM YOUR ACCOUNT&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">authorizeUrl</span> <span class="o">=</span> <span class="s1">&#39;https://api.venmo.com/v1/oauth/authorize?client_id=&#39;</span> <span class="o">+</span> <span class="nx">clientId</span> <span class="o">+</span> <span class="s1">&#39;&amp;scope=make_payments%20access_profile&amp;response_type=code&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">accessTokenUrl</span> <span class="o">=</span> <span class="s1">&#39;https://api.venmo.com/v1/oauth/access_token&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">paymentUrl</span> <span class="o">=</span> <span class="s1">&#39;https://api.venmo.com/v1/payments&#39;</span><span class="p">;</span>
+</pre></div>
+
+
 <p>After the five lines of Venmo config are three separate routes, for</p>
 <div class="codehilite"><pre><span class="s1">&#39;/&#39;</span>
 <span class="s1">&#39;/authorize&#39;</span>
@@ -718,20 +726,64 @@ We&rsquo;ll use the express router.<br />
 
 
 <p>As you know, each of these routes is activated when the proper URL is requested by your app&rsquo;s adoring fans. As a reminder, the fact that the function call is &ldquo;router.get&rdquo; does not mean you&rsquo;re &ldquo;getting&rdquo; something from the router (like Java&rsquo;s ArrayList.get()), it means it&rsquo;s responding to a HTTP GET call from the browser.</p>
-<p>Let&rsquo;s go through each of the routes. First up is the &ldquo;root&rdquo; or &ldquo;/&rdquo; Venmo page. First off, we initialize the variable venmo.</p>
+<p>Let&rsquo;s go through each of the routes. First up is the &ldquo;root&rdquo; or &ldquo;/&rdquo; Venmo page.<br />
+<div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+<br />
+First off, we initialize the variable venmo.<br />
 <div class="codehilite"><pre><span class="nx">venmo</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</pre></div>
+</p>
+<p>This variable will hold the user&rsquo;s Venmo information. The next thing we do is check to see if we have a cookie with the info (meaning the user has already logged in). Regardless, it then renders &ldquo;venmo.hjs&rdquo;, the actual HTML document that the user will see. We&rsquo;ll go over this in a bit.<br />
+<div class="codehilite"><pre>  <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">venmo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">venmo</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">venmo</span><span class="p">.</span><span class="nx">user</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;venmo&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">venmo</span><span class="o">:</span> <span class="nx">venmo</span>
+  <span class="p">});</span>
+<span class="p">});</span> <span class="c1">// end &#39;/&#39; route</span>
+</pre></div>
+</p>
+<p>Second up is <code>'/authorize'</code>. The user clicks on a link from the root Venmo page to come here, and its one line of code is why you had to tell Venmo what your Web Redirect URL was. When the user hits this page, you hand them off to Venmo (notice how you send them the authorizeUrl defined at the top of the file.) After they log in, Venmo sends them back to &ldquo;/oauth&rdquo;, which is the path you define next!<br />
+<div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/authorize&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">authorizeUrl</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</p>
+<p>The next route in our Venmo app, <code>'/oauth'</code>, is the second part of Venmo&rsquo;s verification process. We already sent the user to Venmo so that Venmo could tell us they were all set. They called our <code>/oauth</code> page, and passed it req.query.code if the authorization went well. The first if statement under router.get(&lsquo;oauth&rsquo;) simply means that if the authorization failed, we don&rsquo;t continue with the exchange.</p>
+<div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/oauth&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;no code provided&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
 </pre></div>
 
 
-<p>This variable will hold the user&rsquo;s Venmo information. The next thing we do is check to see if we have a cookie with the info (meaning the user has already logged in). Regardless, it then renders &ldquo;venmo.hjs&rdquo;, the actual HTML document that the user will see. We&rsquo;ll go over this in a bit.</p>
-<p>Second up is <code>'/authorize'</code>. The user clicks on a link from the root Venmo page to come here, and its one line of code is why you had to tell Venmo what your Web Redirect URL was. When the user hits this page, you hand them off to Venmo (notice how you send them the authorizeUrl defined at the top of the file.) After they log in, Venmo sends them back to &ldquo;/oauth&rdquo;, which is the path you define next!</p>
-<p>The next route in our Venmo app, <code>'/oauth'</code>, is the second part of Venmo&rsquo;s verification process. We already sent the user to Venmo so that Venmo could tell us they were all set. They called our <code>/oauth</code> page, and passed it req.query.code if the authorization went well. The first if statement under router.get(&lsquo;oauth&rsquo;) simply means that if the authorization failed, we don&rsquo;t continue with the exchange.</p>
-<p>In the event that the authorization went through, Venmo needs to verify us as a developer. This is where the request module comes into play. We actually have to make a call directly to Venmo&rsquo;s website (using their API). Notice that we&rsquo;re using a POST request, sending them both our unique clientId and clientSecret, and req.query.code, which Venmo sent back to us. If this all checks out on Venmo&rsquo;s side, what we get back,</p>
+<p>In the event that the authorization went through, Venmo needs to verify us as a developer. This is where the request module comes into play. We actually have to make a call directly to Venmo&rsquo;s website (using their API). Notice that we&rsquo;re using a POST request, sending them both our unique clientId and clientSecret, and req.query.code, which Venmo sent back to us.</p>
+<div class="codehilite"><pre><span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="nx">accessTokenUrl</span><span class="p">,</span>
+  <span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">client_id</span><span class="o">:</span> <span class="nx">clientId</span><span class="p">,</span>
+    <span class="nx">client_secret</span><span class="o">:</span> <span class="nx">clientSecret</span><span class="p">,</span>
+    <span class="nx">code</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">code</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+
+
+<p>If this all checks out on Venmo&rsquo;s side, what we get back,</p>
 <div class="codehilite"><pre><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">venmo</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
 </pre></div>
 
 
 <p>is a session from Venmo that&rsquo;s unique between your application and your client, so Venmo knows that future payment requests are legit. If all goes well, it prints a notice to the user that they&rsquo;ve been authenticated, and redirects them to your app&rsquo;s Venmo hompage.</p>
+<div class="codehilite"><pre>    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Authenticated Venmo successfully!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span> <span class="c1">// end &#39;/oauth&#39; route</span>
+</pre></div>
+
+
 <p>Our last route in venmo.js, <code>router.post('/send')</code>, is where the magic happens. Handshakes have gone through, and if your user types in the amount, phone #, and note fields properly (checked by the first if statement), you&rsquo;re ready to do a payment.</p>
 <p>This takes the form of another POST request to Venmo&rsquo;s API. You send them the relevant transfer information, as well as the unique user/client token that you generated in &ldquo;/oauth.&rdquo; The following code defines how you handle this.</p>
 <div class="codehilite"><pre><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
@@ -758,16 +810,9 @@ We&rsquo;ll use the express router.<br />
     <span class="p">}</span>
 
     <span class="kd">var</span> <span class="nx">recipient</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">).</span><span class="nx">data</span><span class="p">.</span><span class="nx">payment</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">display_name</span><span class="p">;</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;payments&#39;</span><span class="p">).</span><span class="nx">insert</span><span class="p">({</span>
-      <span class="nx">amount</span><span class="o">:</span> <span class="nx">amount</span><span class="p">,</span>
-      <span class="nx">phone</span><span class="o">:</span> <span class="nx">phone</span><span class="p">,</span>
-      <span class="nx">note</span><span class="o">:</span> <span class="nx">note</span><span class="p">,</span>
-      <span class="nx">recipient</span><span class="o">:</span> <span class="nx">recipient</span><span class="p">,</span>
-      <span class="nx">date</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
-    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Sent $&#39;</span> <span class="o">+</span> <span class="nx">amount</span> <span class="o">+</span> <span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="nx">recipient</span> <span class="o">+</span> <span class="s1">&#39; successfully!&#39;</span><span class="p">;</span>
-      <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Sent $&#39;</span> <span class="o">+</span> <span class="nx">amount</span> <span class="o">+</span> <span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="nx">recipient</span> <span class="o">+</span> <span class="s1">&#39; successfully!&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/venmo&#39;</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
