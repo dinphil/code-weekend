@@ -3,6 +3,8 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var session = require('cookie-session');
 var routes = require('./routes');
+var venmo = require('./venmo');
+
 
 var app = express();
 
@@ -30,6 +32,8 @@ app.use(function(req, res, next) {
 
 // custom route handler is placed strategically here in the middleware stack
 app.use('/', routes);
+app.use('/venmo', venmo);
+
 
 // If no routes handled by now, catch the 404 and forward to error handler
 app.use(function(req, res, next) {
