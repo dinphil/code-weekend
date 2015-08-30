@@ -1055,11 +1055,11 @@ Topics to be covered:
 
 ### Installing MongoDB
 
-Let's move on to MongoDB. Mongo is a NoSQL Database, so all data is stored as key-value pairs, similar to JSON. Of course, this being a database, we can store, search and access large amounts of data very quickly.
+Let's move on to MongoDB. Mongo is a NoSQL Database; this means that rather than the data being stored in SQL tables, it's stored in some other format. In the case of MongoDB, the format is **BSON**, which is a more efficient way of storing JSON. Like other databases, we can store, search and access large amounts of data very quickly.
 
 _Mac (OS X)_
 
-Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, type this into Terminal: `mkdir -p /data/db`. You should now be able to go straight into the MongoDB shell by typing in `mongod` into Terminal.
+Assuming you have Homebrew installed by this point you can just type `brew install mongodb` into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, run `mkdir -p /data/db` to create the default location for the database.
 
 In case you run into any problems, [look at MongoDB's full instructions page](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/) and Google around before asking mentors for help.
 
@@ -1069,7 +1069,9 @@ MongoDB has a full set of instructions [here](http://docs.mongodb.org/manual/tut
 
 _Linux_
 
-Full instructions to install MongoDB on Linux can be found [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
+Most Linux distros should have MongoDB available for installation in their respective package managers (`apt-get`, `yum`, `pacman`, etc.). Alternately, you can read the full instructions to install MongoDB on Ubuntu can be found [here](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/).
+
+Before you start mongo for the first time, run `mkdir -p /data/db` to create the default location for the database.
 
 ### Running MongoDB
 
@@ -1087,11 +1089,12 @@ Databases let us store information we need, and give us greater control over how
 
 ![Don't query SQL](http://www.quickmeme.com/img/9a/9a87002957d106568dcfc2b8135c213b608a268232d7259fbc19d42b831488cd.jpg)
 
-That's why MongoDB is so popular with NodeJS. While it is still a separate database, _it stores its information in a large JSON file_. That's right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don't have to worry about the formatting of the data, cause it's already in the format we need! You might hear people argue for (or against) the use of MongoDB because it's a NoSQL database, but this has a lot of tradeoffs and there's no clear cut winner between SQL and NoSQL; they're each suited for different applications.
+That's why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
+JSON format. That's right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don't have to worry about the formatting of the data, cause it's already in the format we need! You might hear people argue for (or against) the use of MongoDB because it's a NoSQL database, but this has a lot of tradeoffs and there's no clear cut winner between SQL and NoSQL; they're each suited for different applications.
 
 ### How MongoDB structures your data
 
-Before we go into the details of accessing data stored in the database, let's first understand _how_ it's stored. Within a single MongoDB instance (like the one we fired up with the ```mongod``` command), it's possible to create and work with several databases. Within each of these these databases, we store data in *collections*. Each database holds a set of collections, which in turn store documents. Now the documents are what we are already familiar with: a set of key-value pairs, AKA, JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, ```_id```, populated with an *ObjectId*. We can find specific documents using either this field, or any other, by generating a search query.
+Before we go into the details of accessing data stored in the database, let's first understand *how* it's stored. Within a single MongoDB instance (like the one we fired up with the `mongod` command), it's possible to create and work with several databases. Within each of these these databases, we store data in *collections*. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, `_id`, populated with an *ObjectId*. We can find specific documents using either this field, or any other, by generating a search query. (You can also explicitly set the `_id` field if you'd like, although this isn't need in most cases)
 
 Just to get this structure down, let's consider how Twitter data stored in Mongo might look. If we wanted to find the top most trending hashtag in the United States, we'd have to look in the ```tweets``` database, inside the ```trending_hashtags``` collection. Within this collection there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field ```country: 'United States'```. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.
 
@@ -1126,45 +1129,43 @@ Add "mongodb": "~1.4.19" to the dependencies object inside the JSON so that it l
 }
 ```
 
-Now, let's actually import the database into the app. Any guesses on how to allow our app to use MongoDB's core functionality? Yup, we're first going to tell our app that we require it, which is done with the line: 
+Now let's go to `routes.js`. Just like any other module, we first need to require `mongodb`:
 
 ```javascript
-"var mongo = require('mongodb');" 
+var mongo = require('mongodb');
 ```
 
-Add it to our main file, app.js. Cool. Now that we access to the Mongo wrapper (which was nicely written for us and packaged into a simple module by the folks over at Mongo) let's make use of it. Since this is a database for the internet, it's only natural that it runs on its own server. Luckily for us, that code for the server is already written inside the ```mongo``` module that we just required. All that we have to do is configure it properly! See if you can understand the lines below, which we're going to add to ```app.js``` _before_ any of the middleware functions we've already written.
+Next, let's add the following code to open a connection to the database:
 
 ```javascript
-var Db = mongo.Db;
-var Server = mongo.Server;
-var db = new Db('codeweekend',
-  new Server('localhost', '27017', {auto_reconnect: true}, {}),
-  {safe: true}
-);
-db.open(function(){});
+var db;
+var MongoClient = mongo.MongoClient;
+var uri = "mongodb://localhost:27017/codeweekend";
+
+MongoClient.connect(uri, function(err, database) {
+   if (err) {
+      throw err;
+   }
+
+   db = database;
+});
 ```
 
-For convenience, we made two new variables called ```Db``` and ```Server``` that simply extract the code for both objects from inside the mongo module. We then configure a new instance of a database called 'codeweekend', that runs on a MongoDB server that's located at ```localhost:27017```. Don't worry if that seems a little bizarre to you - it's the default location provided by Mongo and its where you can find the server instance you ran earlier on with the ```mongod``` command. Lastly, we simply open a connection to this database so that we can interact with the data stored within the database.
+The first thing we need to do is declare a variable for the database to be stored in (we'll see why in a minute). We also store the MongoClient object in a helper variable.
 
-Hopefully, that was easy to follow. Now you might be wondering why it was so important that we opened a connection to our database before the middleware functions. It's simple - now that we have an open connection, it makes sense that we provide each route handler access to this connection, so that it can interact with the data in the database. 
+Next, we store the connection string in a variable. The connection string looks complicated, so let's break it down into parts. The beginning of any connection string for MongoDB is always "mongodb://". Next, you put the server name, a colon, and then the port number to connect to. In our case, since we're running the database on the same computer as the Node app, we can just use "localhost". The port number, 27017, is just the default port that `mongod` listens on; we didn't specify a different port when we ran `mongod` before, so that's where ours is listening. Finally, the string ends with a slash and then the name of the database to connect to. You can pick whatever name you'd like for the database; it's just a way of identifying which one you want to connect to in the case that you have multiple databases on your server. This also demonstrates one of the really nice features of MongoDB; if you specify a database that doesn't already exist, then it will create it for you.
 
-Inside of our first and main middleware function, let's store the ```db``` object inside the ```req``` object. This may seem a little confusing at first, but the `req` request object is a JavaScript object just like any other, which means that it's okay to create new fields in it!
+Finally, we connect to the database using the connection string we've defined. Notice that the function `connect` actually takes a callback rather than returning the database directly. This can useful in some cases, since it allows your app to do other things while waiting for the database to connect. In our case, though, we just want to be able to use the database outside the callback, which is why we declared the `db` variable earlier.
+
+In practice, you'll want to handle your errors more gracefully—meaning your app should do something other than just crash! For the purposes of this demo, though, it's simpler just to throw the error you get when trying to connect to the database. If your app crashes when you try to run it after adding this section, make sure that you have `mongod` running in an open terminal, and try again.
+
+We also need to make a helper variable for the function `ObjectID`:
 
 ```javascript
-req.db = db;
+var ObjectID = mongo.ObjectID;
 ```
 
-With this line, what we've essentially done is hand each request coming into any route handler a connection to our database. Sweet!
-
-Now, let's really get our hands messy and jump into `routes.js`, where we'll change our existing code to make use of the powerful database we now have access to.
-
-First things first:
-
-```javascript
-var ObjectID = require('mongodb').ObjectID;
-```
-
-Let's get our database Object ID. Our existing code looks a little something like this:
+Now, let's really get our hands messy and change our existing code to make use of the powerful database we now have access to.
 
 ```javascript
 router.get('/', function(req, res) {
@@ -1175,15 +1176,15 @@ router.get('/', function(req, res) {
 });
 ```
 
-We already know that this stores our notes in a session. However, now, let's make use of that database we've been talking about so much! With a little change in how we access and store the notes object, we can now route the entire process through our DB. We're going to make use of *Queries* in the following sections, which are basically different ways of searching for data in a database. Naturally, each database allows you to create and use queries differently, and [this](http://www.tutorialspoint.com/mongodb/mongodb_query_document.htm) is how Mongo does some of the more popular ones.
+We already know that this stores our notes in a session. However, now, let's make use of that database we've been talking about so much! With a little change in how we access and store the notes object, we can now route the entire process through our DB. We're going to make use of *queries* in the following sections, which are basically different ways of searching for data in a database. Naturally, each database allows you to create and use queries differently, and [this](http://www.tutorialspoint.com/mongodb/mongodb_query_document.htm) is how Mongo does some of the more popular ones.
 
-First, assuming we've stored all of the notes into a collection called ```notes``` inside of the ```codeweekend``` database, let's render all of the notes in the database for the route '/'.
+First, assuming we've stored all of the notes into a collection called `notes` inside of the `codeweekend` database, let's render all of the notes in the database for the route '/'.
 
 ```javascript
 var ObjectID = require('mongodb').ObjectID;
 
 router.get('/', function(req, res) {
-  req.db.collection('notes').find().toArray(function(err, notes) {
+  db.collection('notes').find().toArray(function(err, notes) {
     return res.render('index', {
       title: 'Codeweekend Notes',
       notes: notes
@@ -1192,13 +1193,13 @@ router.get('/', function(req, res) {
 });
 ```
 
-The ```find``` query returns all the docurments in the collection, and the ```toArray``` method parses them all into an array, so that they can be rendered as before onto the page. It's important to note that ```find``` only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!
+The ```find``` query returns all the documents in the collection, and the ```toArray``` method parses them all into an array, so that they can be rendered as before onto the page. It's important to note that ```find``` only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!
 
-Next, let's return a specific document from the database, using the ObjectID field int he document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.
+Next, let's return a specific document from the database, using the `_id` field in the document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.
 
 ```javascript
 router.get('/:id', function(req, res) {
-  req.db.collection('notes').findOne({_id: ObjectID(req.params.id)}, function(err, note) {
+  db.collection('notes').findOne({ _id: ObjectID(req.params.id) }, function(err, note) {
     if (err || !note) {
       req.session.message = 'That note does not exist!';
       return res.redirect('/');
@@ -1210,7 +1211,15 @@ router.get('/:id', function(req, res) {
   });
 });
 ```
-Now that we can retrieve data from the database, let's also add new data to it! It's as simple as finding data. Using the ```insert``` method, we can quickly and easily add a new JSON document to the ```notes``` collection, as below.
+
+Before we do anything else, we'll briefly need to make a change in `index.hjs`. Before, we were using the `id` field for each note, but if you recall from before, MongoDB stores them in a field called `_id`. We'll need to change this in our links to be able to have them correctly send the user to the page for a given note. So let's change the section for the notes to the following:
+
+```html
+{{#notes}}
+  <li><a href='/{{ _id }}'>{{ title }}</a></li>
+```
+
+Now that we can retrieve data from the database, let's also add new data to it! Let's go back to `routes.js` and change the final route. Using the `insert` method, we can quickly and easily add a new JSON document to the `notes` collection:
 
 ```javascript
 router.post('/create', function(req, res) {
@@ -1219,7 +1228,7 @@ router.post('/create', function(req, res) {
     return res.redirect('/');
   }
 
-  req.db.collection('notes').insert({
+  db.collection('notes').insert({
     title: req.body.title,
     body: req.body.body
   }, function(err, result) {
@@ -1231,7 +1240,7 @@ router.post('/create', function(req, res) {
 module.exports = router;
 ```
 
-Well that wasn't so bad. Im summary: every call to the database involves referencing our middleware `req.db` and using the collection (aka database) called 'notes'. We then use different functions like `findOne`, that finds one result, or `find().toArray` that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there's an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy? 
+Well, that wasn't so bad! In summary: every call to the database involves referencing our middleware `req.db` and using the collection (aka database) called 'notes'. We then use different functions like `findOne`, that finds one result, or `find().toArray` that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there's an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy?
 
 #### You're done!
 
