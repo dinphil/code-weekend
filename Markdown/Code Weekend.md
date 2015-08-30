@@ -1122,8 +1122,6 @@ Add "mongodb": "~1.4.19" to the dependencies object inside the JSON so that it l
     "express": "~4.8.6",
     "hjs": "~0.0.6",
     "mongodb": "~1.4.19",
-    "morgan": "~1.2.3",
-    "nodemailer": "^1.2.2",
     "request": "^2.42.0"
   }
 }
