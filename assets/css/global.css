@@ -7,7 +7,7 @@
 
 
 body {
-  font: 0.8em "Open Sans", Helvetica Neue, sans-serif;
+  font: 1em "Open Sans", Helvetica Neue, sans-serif;
   color: #333333; }
 
 h1 {
@@ -35,7 +35,7 @@ h4 {
 p, ol, ul {
   letter-spacing: 0.07em;
   font-family: "Helvetica";
-  font-size: 0.8em;
+  font-size: 1em;
   line-height: 1.4em;
   color: #444444;
   font-weight: 300; }
@@ -51,8 +51,8 @@ body {
   position: relative;
   height: auto;
   padding: 0px;
-/*  border: #2e4b97 solid 2px;
-*/  background: white;
+  border: #2e4b97 solid 2px;
+  background: white;
 }
 
 .hidden{
@@ -83,7 +83,7 @@ body {
     display: inline-block;
   }
   .nav-item:hover{
-    background-color: #17822c;
+    background-color: #2e4b97;
     color: white;
     cursor: pointer;
     -webkit-transition: background-color 0.3s ease-in-out;
@@ -112,7 +112,7 @@ body {
    p{
     margin: 10px 10%;
     color: #111111;
-    font-size: 0.8em;
+    font-size: 1em;
     display: block;
     padding: 10px;
     font-weight: 300;
@@ -150,9 +150,6 @@ body {
    }
 
 /* Code blocks */
-.codehilite {
-  margin: 10px 8%;
-}
 .codehilite pre{
   text-align: left;
   font-weight: 300;

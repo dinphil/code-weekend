@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Hunter Lightman">
+
+    <title>Code Weekend Fall 2k15</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme-1.min.css" rel="stylesheet">
+    <link href="css/more.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- TODO: Favicons -->
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Code Weekend</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://dp.seas.upenn.edu/">Dining Philosophers</a></li>
+            <li><a href="http://dinphil.github.io/">Hacking & Learning</a></li>
+            <li><a href="http://architechs.seas.upenn.edu/">The Architechs</a></li>
+            <li><a href="http://2016s.pennapps.com/">PennApps</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron" id="jumbo">
+      <div class="container">
+        <h1>Hello.</h1>
+        <p>Welcome to Code Weekend! We're a series a workshops run by
+          The Dining Philosophers and the Architechs aimed at getting
+          Penn students with none-to-some coding experience ready for PennApps.
+          Anyone can follow along online—we've made these series of web
+          development tutorials free for everyone—but students can also sign
+        up below and register to attend the workshops in person.</p>
+
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign me up! &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+<div class="col-xs-9">
+<span id="sec-1" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Code Weekend Fall 2015</h2></div><span id="sec-1-1" class="anchor"></span><div id="" class="subgroup"><h3>Building your first webapp</h3><p> <a href="http://goo.gl/forms/0lg3QIwvMB">In case you haven&#39;t already, sign up for the Fall 2015 workshops here!</a></p>
+<p>Code Weekend is scheduled for <em>August 29 and 30th, 2015</em> and will comprise of four workshops to help participants build their very own webapp. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first time hackers (a fun term we use for people that build things!) especially with <a href="http://pennapps.com" title="PennApps XII">PennApps</a> scheduled for the weekend after. If you haven&#39;t already, check it out - it&#39;s a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they&#39;re doing great stuff for first-time hackers as well).</p>
+<blockquote>
+<p>These workshops have been organized by the Dining Philosophers, PennApps and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding-based workshops.</p>
+</blockquote>
+<p>If you already have some coding experience, then feel free to skip the first session. Here&#39;s what we expect you to know and have installed before you jump into the second session:</p>
+<ul>
+<li>The basics of how the web works.</li>
+<li>HTML/CSS/Javascript to the extent that you can build a simple static webpage.</li>
+<li>Know how to use Terminal/Command Prompt to move folders, change directories, and create files.</li>
+</ul>
+<blockquote>
+<p>You can find the workshops from the last Code Weekend (Spring 2015) <a href="../spring15/index.html">here</a>.</p>
+</blockquote>
+</div></section><span id="sec-2" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Intro to Web</h2></div><span id="sec-2-1" class="anchor"></span><div id="" class="subgroup"><h3>Web Pages and the basics of development</h3><p>Welcome to your first coding experience!</p>
+<p>We&#39;ll be going over quite a few things in this opening workshop:</p>
+<ul>
+<li><a href="#an-introduction-to-the-life-of-a-developer">How to search effectively using Google + Using Stack Overflow</a></li>
+<li><a href="#an-introduction-to-the-web">How the internet works and why web development is so different from, say, Java</a></li>
+<li><a href="#simple-html-and-css">Basic HTML and CSS and how webpages are structured</a></li>
+<li><a href="#javascript-finally">Javascript, JSON and how to make things more fun</a></li>
+<li><a href="#what-is-terminalcommand-prompt">The basics of Terminal/Command Prompt</a></li>
+<li><a href="#making-a-personal-landing-page">Building your own personal landing page!</a></li>
+</ul>
+<p>This shouldn&#39;t take too long though, so whatever time we have left at the end of the workshop will be for you to make your own personal landing page!</p>
+<p>Alright, let&#39;s get started!</p>
+</div><span id="sec-2-2" class="anchor"></span><div id="" class="subgroup"><h3>An Introduction to (the) Life (of a Developer)</h3><p>When coding, you&#39;ll run into tons of small problems and errors that you don&#39;t initially know how to solve. <strong><em>This is completely normal.</em></strong> In order to write solutions to every problem that you could hypothetically run into, you&#39;d need a manual taller than the Empire State building. </p>
+<p>Thankfully, we all have a resource with more information that we can possibly imagine - teh interwebz. You&#39;ve probably searched for things using Google before, but most coding problems can actually be solved by effectively Googling your issue. Here are some tips for finding the answers to all your problems on the Internet:</p>
+<ul>
+<li>Be descriptive. If you&#39;re searching for what&#39;s causing an error then you can try just searching for the entire error message, or try describing what happened. For example, &quot;Homebrew does not install through terminal on OSX Yosemite&quot; is a better search query than &quot;homebrew not working&quot;, though the best search query is often some combination of plain text and the actual error message. Often error codes make great search queries, as long as they are contextualized (i.e. with the name of the language/environment).</li>
+<li>Along that vein, use as many specific words as possible. You can use complete sentences if you&#39;d like, but normally four or five very descriptive nouns/verbs is ideal, and you won&#39;t throw Google off-track by searching for unnecessary things. For example, you try to put a banner at the top of a web page, but there&#39;s a weird white border around the entire page. Googling &quot;there&#39;s a weird white border around the entire page&quot; isn&#39;t helpful. Always start with the name of the language you think is suspect if you can (in this case, it&#39;s CSS, since all style things on the page are controlled by CSS). Then, describe the problem with just a few words. Here, I used &quot;CSS no page border&quot;. The first result was really helpful, and ended up solving my problem.</li>
+</ul>
+<p>These resources are also awesome:</p>
+<ul>
+<li><a href="http://stackoverflow.com">Stack Overflow</a> is the best. Search results that link here are often the most helpful, and you can almost always find someone who&#39;s had the same problem as you on here. You should mostly refrain from posting questions to Stack Overflow since odds are your question has already been answered there somewhere.</li>
+<li>If you&#39;re looking for syntax, or lists of inbuilt functions, then look for the Official Documentation for the language in question. <a href="http://www.w3schools.com">W3C Schools</a> is great for HTML, CSS, and Javascript.</li>
+<li><a href="https://www.bento.io">Bentobox</a> is a great all-in-one resource to learn to code for a huge number of technologies. </li>
+<li><a href="http://www.codecademy.com/learn">Code Academy</a> has some great tutorials. The lessons for each language can get tedious, but the tutorials where you build actual things are pretty great. If you&#39;re looking for a good introduction to HTML/CSS, <a href="https://dash.generalassemb.ly/">General Assembly&#39;s Dash</a> is probably the best place to start.</li>
+</ul>
+</div><span id="sec-2-3" class="anchor"></span><div id="" class="subgroup"><h3>An Introduction to the web</h3><p>There&#39;s pretty much three things happening every time you open a website:</p>
+<ul>
+<li>Your browser looks up an address (say google.com) and follows it back to its home - the server which actually runs the website. This server is basically just a computer, albeit a huge, immensely powerful computer possibly comprising acres of computer hardware connected together. For this workshop though, that&#39;s just going to be your laptop...we don&#39;t provide that kind of computing power.</li>
+<li>This server is what we call the <em>backend</em>. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in to a dashboard - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.</li>
+<li>Your computer now reads this response and converts it into the webpage you actually see on your computer. This last bit of conversion is what we call the <em>frontend</em> doing its work.</li>
+</ul>
+<p><img src="assets/img/server-browser.png" alt="Server- Browser"></p>
+<p>So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are the two main components of any website.</p>
+<p>You&#39;ll see later on that requests aren&#39;t just made to the server when we first open the website; it&#39;s often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they&#39;re needed (think <a href="http://www.facebook.com">Facebook&#39;s Newsfeed</a>). It&#39;s also used when we do things like attempt to log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.</p>
+<p><img src="http://www.product-reviews.net/wp-content/uploads/facebook-not-working.jpg" alt="Facebook Loading using Javascript"></p>
+</div><span id="sec-2-4" class="anchor"></span><div id="" class="subgroup"><h3>Simple HTML and CSS</h3><p>HTML (HyperText Markup Language) is the backbone of any webpage. It&#39;s where we add in all the information - what the webpage actually displays, as well as information about the page itself such as its title.</p>
+<p><img src="http://static.webplatform.org/w/public/6/6e/article4.gif" alt="With and without CSS"></p>
+<p>CSS (Cascading Style Sheets) dresses up this information. Most (but really all) webpages link to a CSS file that stores information on how a browser should display the information it recieves in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
+<p>Javascript is the fun part. It does dynamic things with your webpage, updates content on the fly and can animate just about anything. We&#39;ll talk about this later.</p>
+<p>In short, we can visualize it as follows: a full website is a program with raw structure defined via HTML, dressed up with CSS and controlled/manipulated with JavaScript.</p>
+<p>Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
+<p>Let&#39;s start with HTML (HyperText Markup Language).</p>
+<p><img src="http://38.media.tumblr.com/tumblr_m4fl5qPjdU1rw659vo1_400.png" alt="HTML meme"></p>
+<p>HyperText is text that will hyperlink you to other text. That&#39;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
+<p>It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called &#39;tags.&#39; Tags are denoted by <code>&lt;</code> followed by <code>&gt;</code>. Below is the most basic HTML document we can create (except for the comments that we&#39;ve added in to make things clearer).</p>
+<pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;This is a basic HTML webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><code>&lt;!DOCTYPE html&gt; &lt;html&gt;</code> is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contatined in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, <code>&lt;html&gt;</code> must eventually be closed by <code>&lt;/html&gt;</code>.</p>
+<p>Aside from the content rendered into the <em>body</em> of a webpage, we often define more information about the site in the <code>&lt;head&gt;</code> tag like this:</p>
+<pre><code class="lang-html">&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+&lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<p>So now we&#39;ve specified the character set that the page uses - this is just to make sure the browser doesn&#39;t think that the page is in a language other than english. Then there&#39;s a description followed by the actual page title (this is what you see in the title bar of your browser). Finally there&#39;s a tag where we&#39;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage - which we&#39;ll do soon enough, don&#39;t worry!</p>
+<p>Now let&#39;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your webpage goes. Let&#39;s try adding some information in.</p>
+<pre><code class="lang-html">&lt;body&gt;
+&lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+&lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+&lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+&lt;p&gt;
+Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Let&#39;s look at this whole document now.</p>
+<pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&#39;t have any information about styles. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+&lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+&lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+&lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+&lt;p&gt;
+Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Here are some more important HTML tags:</p>
+<ul>
+<li><code>&lt;a href=&quot;link here&quot;&gt;text for the link&lt;/a&gt;</code> - used to create links</li>
+<li><code>&lt;img src=&quot;path/link to image&quot; alt=&quot;text to show if image doesn&#39;t load&quot; /&gt;</code> - used to add images</li>
+<li><code>&lt;em&gt;text here&lt;/em&gt;</code> - used for italicising text</li>
+<li><code>&lt;strong&gt;text here&lt;/strong&gt;</code> - used to bold text</li>
+<li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> - used to start Unordered and Ordered Lists</li>
+<li><code>&lt;li&gt;Item here&lt;/li&gt;</code> - used to denote each item in a list</li>
+<li><code>&lt;script&gt; Code in here &lt;/script&gt;</code> - used to add non-HTML code such as Javascript to a page. We can (and should) instead add an <code>src</code> attribute to the <code>&lt;script&gt;</code> tag and link to an external Javascript file to keep our ccode clean and maintainable.</li>
+<li><code>&lt;div&gt;</code> - used to denote different divisions within your HTML body. Possibly one of the most useful tags when it comes to layout and styling in CSS.</li>
+</ul>
+</div><span id="sec-2-5" class="anchor"></span><div id="" class="subgroup"><h3>Umm, what about CSS?</h3><p>Almost there! Before we can decide how elements on the page should look, we actually need a way to find and identify these elements. That HTML document we said was almost complete, well, it was almost complete. The last thing we need to add in are identifiers as <em>tag attributes</em>, and these fall into two categories:</p>
+<ul>
+<li>IDs: These are unique to an individual HTML element. Once I give an ID to an element, it cannot be used again. Think Penn IDs. Every element can be assigned an ID. For example: <code>&lt;p id=&quot;workshop-introduction&quot;&gt;</code>.</li>
+<li>Classes: These are reusable names that we give to ranges of elements. This allows us to do thigns like apply the same style (say, a font) to multiple elements that have the same class, rather than writing the same thing over and over. For example, we can create multiple paragraphs with the same class: <code>&lt;p class=&quot;red-text&quot;&gt; This text is theoretically red.&lt;/p&gt; &lt;p class=&quot;red-text&quot;&gt; This text is also presumably red. &lt;/p&gt;</code>.</li>
+</ul>
+<p>Now we have a way to decide on styles. Let&#39;s look at that HTML document again:</p>
+<pre><code class="lang-html">&lt;!-- This is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&#39;t have any information about styles. It however does use identifiers, so we&#39;re one step closer to styling. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+&lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+&lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+&lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+&lt;p class=&quot;red-text&quot; id=&quot;intro-para&quot;&gt;
+Here&#39;s a paragraph of text. It&#39;s ID is &#39;intro-para&#39; and it belongs to the &#39;red-text&#39; class.
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>We can also just change the style for an entire kind of element. So we could just change how all the <code>p</code> or <code>&lt;h1&gt;</code> tags look. </p>
+</div><span id="sec-2-6" class="anchor"></span><div id="" class="subgroup"><h3>Let's take a look at what CSS looks like!</h3><pre><code class="lang-css">body {
+padding: 50px 100px;
+}
+h1 {
+font-size: 40px;
+font-weight: lighter;
+color: blue;
+}
+.red-text {
+color: red;
+}
+#intro-para {
+border: 2px solid black;
+}
+</code></pre>
+<p>As you can see, there are small differences in syntax depending on the selector (whether you&#39;re changing all instances of an element, instances of a class, or just a single element by ID) but it&#39;s mostly quite simple.</p>
+<p>You should look through the resources at the top of this section for more information on HTML tags and CSS attributes, but the best thing to do is to Google things you&#39;re looking to do and look for the <a href="http://www.w3schools.com">W3C Schools</a> or <a href="http://stackoverflow.com">Stack Overflow</a> results.</p>
+<p><img src="http://i.stack.imgur.com/XdONP.png" alt="Stack Overflow"></p>
+<p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links.</p>
+<p>A great way to play around with CSS styles is to right-click on this page in Chrome, Firefox or Safari (<a href="http://www.howtogeek.com/howto/32372/htg-explains-why-do-so-many-geeks-hate-internet-explorer/">Here&#39;s why you should avoid Internet Explorer</a>), choose Inspect Element, and try changing the CSS styles on the right hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
+<p><img src="https://developer.chrome.com/devtools/docs/css-preprocessors-files/sass-debugging.png" alt="Chrome dev tools"></p>
+</div><span id="sec-2-7" class="anchor"></span><div id="" class="subgroup"><h3>Javscript, finally!</h3><p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&#39;re (maybe) used to. You just write code in a file, link to it in your HTML and it exectutes.</p>
+</div><span id="sec-2-8" class="anchor"></span><div id="" class="subgroup"><h3>In fact...</h3><p><img src="http://www.memegenerator.eu/media/created/iyflyp.jpg" alt="Javascript meme"></p>
+<p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <em>Integer</em> with the value of <code>5</code>. Writing <code>var x = &quot;5&quot;</code> would create a <em>String</em> named <code>x</code> with the string <code>5</code> as its value.</p>
+<p>The most common types we will use are Strings (just text, such as &quot;This is some text&quot;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&#39;ll be surprised by how common almost everything you want to do is).</p>
+<p>Here&#39;s some sample Javascript code:</p>
+<pre><code class="lang-javascript">var myVariable = &quot;Code Weekend&quot;;
+alert (&quot;I&#39;m learning the basics of JavaScript at &quot; + myVariable);
+</code></pre>
+<p>This creates an alert (a pop-up on a webpage) that says &quot;I&#39;m learning the basics of JavaScript at Code Weekend&quot;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&#39;s a function in Javascript that squares a number:</p>
+<pre><code class="lang-javascript">function square (number) {
+return number * number;
+}
+
+// This is a single line comment that does not need to be closed.
+
+/* This is a multi-line comment
+that only ends when we do this */
+
+console.log(square (5)); // This prints the result to the javascript console in your browser&#39;s (Chrome or Firefox) developer tools.
+
+// We can also write the above function as the following:
+var square = function (number) {
+return number * number;
+}
+
+// Here&#39;s an anonymous function that calculates the square of 5:
+(function (number) {
+return number*number;
+}) (5);
+
+// In that case, we were executing the anonymous function immediately, but we don&#39;t have to always do that:
+function idPlusString (number) {
+var cube = number * number * number;
+return function (name) {
+return &quot;Hi &quot;+ name + &quot;. &quot; + &quot;Your ID is &quot; + cube + &quot;.&quot;;
+}
+}
+// This returns a function that you can add a string to. If you don&#39;t understand this last function, it&#39;s okay.
+</code></pre>
+<p>Javascript mainly works on Objects and Arrays to store and access data.</p>
+<pre><code class="lang-javascript">// Here&#39;s an Object that contains an array
+var myDetails = {
+&#39;name&#39; : &quot;Mark Gates&quot;,
+&#39;age&#39; : 24,
+&#39;interests&#39;: [&#39;Figure Skating&#39;, &#39;Javascript&#39;, &#39;Tennis&#39;, &#39;EDM&#39;]
+}
+
+console.log(myDetails.name); // prints the name property of the object, ie, &#39;Mark Gates&#39;
+
+console.log(myDetails.interests[1]); // prints &#39;Javascript&#39; (array positions start from 0!) to the console
+</code></pre>
+<p>Objects are essentially key-value pairs. We can access to values easily using the notation <code>object.key</code>.</p>
+<p>If you haven&#39;t noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It&#39;s okay if you end every line with one, it&#39;s better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitions and pretty much everything that ends in curly braces (<code>}</code>).</p>
+<p><img src="http://classic.splurd.com/comics/images/1337794967.jpg" alt="Semicolons are death"></p>
+<p><em>JSON (Javascript Object Notation)</em> is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays to liberally to store information. Let&#39;s look at an example of a JSON file:</p>
+<pre><code class="lang-json">{
+&quot;employees&quot;:[
+{
+&quot;firstName&quot;:&quot;John&quot;, 
+&quot;lastName&quot;:&quot;Doe&quot;
+}, 
+{
+&quot;firstName&quot;:&quot;Anna&quot;, 
+&quot;lastName&quot;:&quot;Smith&quot;
+},
+{
+&quot;firstName&quot;:&quot;Peter&quot;, 
+&quot;lastName&quot;:&quot;Jones&quot;
+}
+],
+&quot;company&quot; : &quot;ABC Holdings&quot;,
+&quot;lastUpdated&quot; : &quot;September 6th&quot;
+}
+</code></pre>
+<p>It&#39;s exactly like a Javascript Object, and that&#39;s because that&#39;s exactly what it is. Just for kicks, let&#39;s compare this to XML:</p>
+<pre><code class="lang-xml">&lt;employees&gt;
+&lt;employee&gt;
+&lt;firstName&gt;John&lt;/firstName&gt; 
+&lt;lastName&gt;Doe&lt;/lastName&gt;
+&lt;/employee&gt;
+&lt;employee&gt;
+&lt;firstName&gt;Anna&lt;/firstName&gt; 
+&lt;lastName&gt;Smith&lt;/lastName&gt;
+&lt;/employee&gt;
+&lt;employee&gt;
+&lt;firstName&gt;Peter&lt;/firstName&gt; 
+&lt;lastName&gt;Jones&lt;/lastName&gt;
+&lt;/employee&gt;
+&lt;/employees&gt;
+&lt;company&gt;ABC Holdings&lt;/company&gt;
+&lt;lastUpdated&gt;September 6th&lt;/lastUpdated&gt;
+</code></pre>
+<p>So much better isn&#39;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier, and websites much faster.</p>
+<p>And that covers the basics of HTML, CSS and JavaScript. Naturally, there&#39;s a lot more we could go into depth about for each of them, but we&#39;ve found that it&#39;s best to learn by experimenting and trying out things on your own, using the resources listed at the start of this session. But before we get to that, let&#39;s not forget the pertinent question:</p>
+</div><span id="sec-2-9" class="anchor"></span><div id="" class="subgroup"><h3>What is Terminal&#47;Command Prompt?</h3><p><img src="assets/img/terminal.png" alt="Terminal"></p>
+<p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let&#39;s take some time to get used to it.</p>
+<p>Once you fire up Terminal or Command Prompt (on Windows, you&#39;ll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you&#39;ll know it&#39;s running as Admin if your path ends in <code>../system32</code>), here are a few simple commands that you can type:</p>
+<ul>
+<li><code>ls</code> (<code>DIR</code> on Windows) lists all the files in the current folder</li>
+<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents, if there is such a folder in the current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
+<li><code>pwd</code> prints out the current path you&#39;ve traversed in the file system. It&#39;s particularly helpful once you&#39;ve used <code>cd</code> a few times, and aren&#39;t sure where you are anymore.</li>
+<li><code>mkdir</code> allows you to make a folder in the current directory. So <code>mkdir Such Magic</code> makes a folder named &#39;Such Magic&#39;.</li>
+<li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from <code>C:\windows\temp</code> to <code>C:\temp</code>. <code>*</code> works as a wildcard operator here. Careful with this one - you may not want to move things around haphazardly.</li>
+</ul>
+<p>Once you&#39;ve installed Node.JS (which we&#39;ll do in the next workshop), you&#39;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&#39;ll aso be able to start up MongoDB from here using <code>mongod</code>.</p>
+<h3 id="let-s-start-making-stuff-">Let&#39;s start making stuff!</h3>
+<p>Whoohoo! We&#39;ve made it this far, and it&#39;s finally time to start making stuff!</p>
+<h4 id="sublime-text-2">Sublime Text 2</h4>
+<p>We&#39;ve got to install a whole buch of stuff over the next few workshops. Let&#39;s start simple, go and download <a href="http://www.sublimetext.com/2">Sublime Text 2</a>. It&#39;s the best text editor in existence (yes, that&#39;s arguable) and this is where we&#39;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it.</p>
+<p>NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit &quot;Cancel&quot; and you can use it forever. Alternatively, you can buy it and support a fellow developer.</p>
+<h3 id="making-a-personal-landing-page">Making a Personal Landing Page</h3>
+<p>Well done! You&#39;ve got everything you need installed. Now let&#39;s test what you&#39;ve learned in this workshop. Here&#39;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal landing page. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Take a look at some of our organizers&#39; websites for inspiration (<a href="http://www.seas.upenn.edu">Devesh</a>, <a href="http://dhruvagarwal.me">Dhruv</a>) or browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
+<h4 id="files">Files</h4>
+<p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links. Use these as starting points for building your personal landing pages.</p>
+</div></section><span id="sec-3" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Intro to Javascript and NodeJS</h2></div><span id="sec-3-1" class="anchor"></span><div id="" class="subgroup"><h3>The most powerful web development tools ever</h3><p>Stuff to be covered:</p>
+<ul>
+<li>Installing Node</li>
+<li>Basics of Node.js and Node package manager</li>
+<li>The Express framework</li>
+<li>Templates, sessions, and middlewares</li>
+<li>Simple form processing</li>
+</ul>
+</div><span id="sec-3-2" class="anchor"></span><div id="" class="subgroup"><h3>Installing NodeJS</h3><p>Now that you&#39;ve got that installed, let&#39;s move on to some slightly more complicated stuff. Let&#39;s start with Node.JS.</p>
+<p>Node.js is a commonly used web framework for building applications with Javascript. You need to run Node from command line. Instructions for different operating systems are below.</p>
+<p><em>Mac</em></p>
+<p>The easiest way to install Node is through Homebrew, a package manager for OSX. Sometimes Homebrew is already installed on your computer, and sometimes you need to install it. Bring up a terminal window and type in <code>brew install node</code>. When it finishes, it might show you a few commands you need to run in Terminal. Run those commands and you&#39;re all set! </p>
+<p>If instead that command spit out something about not knowing what <code>brew</code> is, it means you don&#39;t have Homebrew installed. No worries. Let&#39;s try and install Homebrew by typing this into Terminal: <code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</code></p>
+<p>If Homebrew installed succesfully, then go ahead and try <code>brew install node</code>. If you run into any more errors here, try Googling the error text and looking for solutions. If that still doesn&#39;t work, look around for a mentor to help.</p>
+<p>If Homebrew is causing too many problems then just try the installer <a href="http://nodejs.org/download/">here</a>. You can also install NodeJS using Fink (<code>fink install nodejs</code>) or MacPorts(<code>port install nodejs</code>).</p>
+<p><em>Windows</em></p>
+<p>It&#39;s easy to get Node.js setup with a Windows machine:</p>
+<ol>
+<li>Download the .msi file from <a href="http://nodejs.org/download/">here</a></li>
+<li>Use Windows Installer to get it set up.</li>
+</ol>
+<p><em>Linux</em></p>
+<p>There are about a million different ways to install things on various Linux-based operating systems. Go to <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">this link</a> for a full list.</p>
+<p>Alright, let&#39;s get started.</p>
+</div><span id="sec-3-3" class="anchor"></span><div id="" class="subgroup"><h3>What does server-side really mean?</h3><p>Till now, we&#39;ve dealt with HTML, CSS and JavaScript. These are the files that a server send over the internet to your browser when your browser tries to navigate to that website. However, as we saw in the last workshop, these files aren&#39;t intelligent, they simply display information that is entered into them.</p>
+<p>So real webapps (anything more complicated than a personal landing page) have servers that use some boilerplate <em>static files</em> (i.e. HTML, CSS and JavaScript) and do their own logic to fill them in with real, intelligent information (the difference between a recipe that you can write down once - you can make it as fancy as you want but it&#39;s static and won&#39;t change - and something that displays the weight of the person eating all that food in real time - dynamic, because this would change depending on who the person was and when they check this). These servers can be written in many languages, right from C to Java to Python or even Assembly language if you wanted to. In this workshop, we&#39;re going to use NodeJS, that allows us to use JavaScript to write our server-side code, even though JavaScript was initially designed to run only inside the web browser and not on servers.</p>
+<p>We usually have servers to do the thinking, databases to store the information and static files to display this information in the user&#39;s web browser. These 3 parts come together to form the core of any website. Often, websites also use APIs (basically a way for websites to talk to each other) to make their websites more dynamic, or to pull in information from other websites.</p>
+</div><span id="sec-3-4" class="anchor"></span><div id="" class="subgroup"><h3>What is a NodeJS app?</h3><p>Node is a very common JavaScript-based web framework. Node is a framework that lets us write our own servers in JavaScript to run on our machines. Node is great because it has <em>modules</em>, which are bits of code other people have already written that can easily be added to give new functionality to your app. NodeJS has the most modules of most modern web frameworks, and that&#39;s part of what makes it really great for writing webapps fast.</p>
+</div><span id="sec-3-5" class="anchor"></span><div id="" class="subgroup"><h3>The Anatomy of a Node App</h3><p>A common Node app has several main components, as described below:</p>
+<p><em>app.js:</em> The main file, and the first one to be read. At the beginning, this file initializes the functionality described in the Node modules. The last section tells the app to run on a particular <a href="https://answers.yahoo.com/question/index?qid=20080617203733AA9kwiT">port</a> (3000 in this case).</p>
+<p><em>package.json:</em> A standardized JSON file containing information about this app. It&#39;s fairly readable, but there&#39;s info about the authors, app version and versions of Node modules used.</p>
+<p>_node<em>modules:</em> This is a folder which contains external modules, which are snippets of code written by others that perform very specific functions within your code. These are really what make Node so powerful and flexible—you can easily import functionality written by other people. You can look through Node modules on <a href="http://www.npmjs.org">http://www.npmjs.org</a>, or just Google functionality you want and look for modules that perform that function. To add a new Node module to your program, type &quot;npm install [[module_name]]&quot; in the main directory of your program.</p>
+<p>One very common module is called Express. It provides a lot of the framework required to make our app work over the Internet.</p>
+<p><em>public:</em> Holds CSS, Javascript, image, and video files used to render web pages.</p>
+<p><em>routes:</em> Contains the routing files. Think of each existing URL contained in a website as a route (website.com/home and website.com/contact). Files in this folder contain information on how handle requests made to specific routes on the site.</p>
+<p><em>views:</em> Contains files that are actually rendered. This folder contains HJS, or Hogan.js, files. HJS is essentially HTML, but with a few extra features that make it easier to use. This lets us populate HTML with variables that are determined depending on the nature of te request made from a browser to our server.</p>
+</div><span id="sec-3-6" class="anchor"></span><div id="" class="subgroup"><h3>Running a Node app</h3><p>To run on Mac/Linux, bring up a normal terminal window. On Windows, search your computer for the Node.js Command Prompt application, and open it (it should look very similar to the normal command prompt).</p>
+<p>Enter the folder the contains your Node app with simple terminal commands like &quot;cd&quot;. Once there, type &quot;node&quot; and hit enter. If you see a blank line that starts with &quot;&gt;&quot;, Node is installed properly and you&#39;re ready to go. If not, go back to the installation instructions and reinstall.</p>
+<p>The first time you run a node app, <code>cd</code> into the directory (remember Terminal/Command Line?) and run <code>npm install</code>. This installs the <em>node_modules</em> folder if it doesn&#39;t already exist, and overwrites it if it does. To run the Node app, type <code>node app.js</code> into the terminal from the folder that contains app.js.</p>
+<p>To see the app working, pull up an Internet browser. In the address bar, enter <code>localhost:3000</code>. Since we&#39;re running this server on our own machines and not publicly on the internet, our website <em>domain</em> is <code>localhost</code> (common to all systems) and the port is <code>3000</code>. If all goes well, you should be able to see your app!</p>
+</div><span id="sec-3-7" class="anchor"></span><div id="" class="subgroup"><h3>Writing our first NodeJS app</h3><p>Download <a href="assets/files/ws2-start.zip">this file</a> to get the directory structure and files we need to start off with.</p>
+<p>Let&#39;s start off by looking at the code that&#39;s already there in the package.json file, and then moving on to the code we need to write in app.js.</p>
+</div><span id="sec-3-8" class="anchor"></span><div id="" class="subgroup"><h3>Package.json</h3><p>This is a basic JSON file that describes the app we&#39;re building and its associated <em>dependencies</em>. Dependencies are basically modules, or other pieces of software that somebody else made, that lets us do things, like use Express, the module that makes it really easy to create webapps using NodeJS. This file lists the minimum version we require for each of the modules (if for example, only v2.0 and above of a module has a feature that we need). When we run <code>npm install</code> via command line, the package manager goes and finds modules that are least the version we&#39;ve specified, and installs them. It&#39;s actually pretty neat!</p>
+<pre><code class="lang-json">{
+&quot;Name&quot;: &quot;code-weekend&quot;, // Module name 
+&quot;Version&quot;: &quot;v1.0.0&quot;, // Version number 
+&quot;Private&quot;: true, // keep this node app private 
+&quot;Dependencies&quot;: {
+&quot;express&quot;: &quot;^v1.0.0&quot;
+}
+}
+</code></pre>
+</div><span id="sec-3-9" class="anchor"></span><div id="" class="subgroup"><h3>App.js</h3><pre><code class="lang-javascript">var path = require(&#39;path&#39;); 
+var express = require(&#39;express&#39;); 
+var cookieParser = require(&#39;cookie-parser&#39;);
+var session = require(&#39;cookie-session&#39;);
+var routes = require(&#39;./routes&#39;); // this refers to the routes.js file we will write soon
+</code></pre>
+<p>We start off by obtaining all of the required resources and packages for the application that we&#39;re going to use later on. We can do this in Node by using the <code>require(&#39;name of module&#39;)</code> syntax. <code>name of module</code> can either be the name of some module you specified or the path to a file that you&#39;ve written yourself. Cookie-parser allows us to parse and use cookies with signatures. Cookie-session is a module which provides &quot;guest&quot; sessions, meaning any visitor will have a session, authenticated or not. If a session is new a Set-Cookie will be produced regardless of populating the session. We&#39;ll see more of both cookie modules - and their applications in our web app - a little later on.</p>
+<p>Now that we&#39;ve stated what we need, let&#39;s instantiate our app:</p>
+<pre><code class="lang-javascript">var app = express();
+</code></pre>
+<p>Express is a minimal and flexible NodeJS web application framework that provides a robust set of features for web and mobile applications. This line both instantiates Express and assigns our variable <code>app</code> to it.</p>
+<p>We should now tell the app where to find the views (HTML templates/files) it needs, what engines to render them with (we&#39;re going to use HJS, you can find more on the tempalte syntax it uses <a href="http://mustache.github.io/mustache.5.html">here</a>) and which methods to use to get things up and running (just telling our app to use the logger and parsers we defined above, setting the secret that we use to encrypt cookies that store session information and telling the app where to look for public files like CSS, and frontend Javascript).</p>
+<pre><code class="lang-javascript">app.set(&#39;views&#39;, path.join(__dirname, &#39;views&#39;)); 
+app.set(&#39;view engine&#39;, &#39;hjs&#39;); 
+app.set(&#39;port&#39;, process.env.PORT || 3000);
+
+app.use(cookieParser()); 
+app.use(session({secret: &#39;codeweekend&#39;})); 
+app.use(express.static(path.join(__dirname, &#39;public&#39;)));
+app.use(&#39;/&#39;, routes); // this a custom route handler, which we will write soon in routes.js
+</code></pre>
+<p>Note how the last line tells the app to treat the folder directory like the top-level. This just means that if we have a web page running on the server and we want to link a CSS file to it which has a filepath of <code>public/stylesheets/main.css</code>, we simply have to link to it as <code>stylesheets/main.css</code> and it&#39;s automatically found for us. This makes it pretty easy to locate files you need to render a webpage, doesn&#39;t it?</p>
+<p>The second section above constitutes a set of functions known as middleware. Each of these functions are run <em>in order</em> whenever an incoming request is processed by the server. The first parameter to the <code>app.use</code> function is a <em>path</em> to run the middleware on (depending on which route/path the incoming request is made on) - and if left blank, as above, it runs the functions - specified in the second parameter - for <em>every</em> incoming request, regardless of path.</p>
+<p>Notice the last middleware in this section is a custom route handler that we will write soon. This will handle specific types of requests on specific paths, for example, to &#39;/&#39; and &#39;/home&#39;. We only write handler functions for the routes we care about, and for the rest, we&#39;ll simply return one of the most famous errors on the Internet - 404 Not Found!</p>
+<p>Google&#39;s server handles routes like &#39;/mail&#39; or &#39;/search&#39;, but it almost certainly returns a 404 error to &#39;/mail/lakdfmladkfmadlkfmadlkfmaldkfmadlkfmad&#39;. Let&#39;s make sure that any routes we haven&#39;t <em>explicitly</em> defined return a 404 error as the server response:</p>
+<pre><code class="lang-javascript">app.use(function(req, res, next) { 
+var err = new Error(&#39;Not Found&#39;); 
+err.status = 404; 
+next(err); 
+}); 
+
+app.use(function(err, req, res, next) { 
+res.status(err.status || 500); 
+res.render(&#39;error&#39;, { 
+errorMessage: err.message, 
+error: app.get(&#39;env&#39;) === &#39;development&#39; ? err : {} 
+}); 
+});
+</code></pre>
+<p>This section of code serves as the last of the middleware in the app - if any requests find themselves here <em>without</em> being handled by our previous middleware handler function, they should return 404 errors.</p>
+<p>The functions used by the application here accept <code>req</code> (request), <code>res</code> (response) and <code>next</code> (the next function in the middleware stack) parameters. In order to send a response from our server to any incoming requests, we use the <code>res</code> object that&#39;s passed into the function. In this case, we set the response status to the error status (404) and render an error page.</p>
+<p>Just to really drill down on our route handler, let&#39;s look at the code again.</p>
+<pre><code class="lang-javascript">var routes = require(&#39;./routes&#39;);
+app.use(&#39;/&#39;, routes);
+</code></pre>
+<p>These lines initialize our routes. Routes are basically what tells our app what to do when the user goes to a certain url within our website. For example, going to google.com/mail corresponds to the &#39;/mail&#39; route as far as Google&#39;s backend is concerned. By requiring the <code>&#39;./routes&#39;</code> file, we&#39;re saying that we&#39;ve stored our routes in a separate file, and the next line tells node to look there for all its routes. We&#39;ll take a look at the routes file soon.</p>
+<p>And finally, to get the app really off the ground and make it actually work for someone trying to reach our website, let&#39;s make it listen for requests.</p>
+<pre><code class="lang-javascript">app.listen(app.get(&#39;port&#39;), function() { 
+console.log(&#39;Express server listening on port &#39; + app.get(&#39;port&#39;)); 
+});
+</code></pre>
+<p>We&#39;ll use the port and resources we defined earlier on.</p>
+<p>Just to make things interesting, we can also add in some <em>more</em> middleware. This middleware will work with data stored in request cookies, and since we want this to run for every route before they&#39;re handled by our route handler, don&#39;t forget to put it <em>before</em> the middleware <code>app.use</code> call for the route handler!</p>
+<pre><code class="lang-javascript">app.use(function(req, res, next) { 
+if (req.session.message) { 
+res.locals.message = req.session.message; 
+req.session.message = null; 
+}
+
+if (!req.session.notes) { 
+req.session.notes = []; 
+}
+
+next(); 
+});
+</code></pre>
+<p>If we get session messages, we set them to our local state. This means we can access these messages later when we&#39;re handling routes. And if no session notes exist, let&#39;s make an empty collection (array) for them. We&#39;ll use this nifty code soon to create and store notes in the user&#39;s browser cookies. Each time a request comes into the server, it&#39;ll contain the same cookies (which will reflect any changes we make to them). Think of cookies as contextual data provided with each incoming request to the server that lets us provide contextual reponses!</p>
+</div><span id="sec-3-10" class="anchor"></span><div id="" class="subgroup"><h3>routes.js</h3><p>Let&#39;s talk about a file called routes.js. This handles all the &quot;middleware routing&quot;: that our app has to do. So basically it tells our app what to do when someone goes to google.com/mail or to google.com/maps, ie, it specifies the behavior and results for making GET/POST requests at different routes (or paths). To begin with, as usual, we&#39;ll get the Express variable. Except this time, we&#39;ll specify a new variable called router which is created as folows:</p>
+<pre><code class="lang-javascript">var express = require(&#39;express&#39;);
+var router = express.Router();
+</code></pre>
+<p>A router is an isolated instance of middleware and routes provided in Express. In other words, it&#39;s simply a collection of middleware functions devoted to indentifying routes, parsing the path they are sent on, and handling them accordingly.</p>
+<p>Routers behave like middleware themselves and can be <code>.use()</code>d by the app or in other routers. Think back to <code>app.js</code>, and how we did exactly that for the &#39;route handler&#39; - which we are about to write now.</p>
+<p>We&#39;ll now make simple route definitions for the HTTP GET method as below:</p>
+<pre><code class="lang-javascript">// catches all requests on the path &#39;/&#39;
+router.get(&#39;/&#39;, function(req, res) {
+return res.render(&#39;index&#39;, {
+title: &#39;Codeweekend Notes&#39;,
+notes: req.session.notes
+});
+});
+
+// catches all requests on paths like &#39;/123&#39;, &#39;/123456&#39; and even &#39;/dragons&#39;
+router.get(&#39;/:id&#39;, function(req, res) {
+var noteId = Number(req.params.id);
+if (isNaN(noteId) || noteId &lt; 1 || noteId &gt; req.session.notes.length) {
+req.session.message = &#39;That note does not exist!&#39;;
+return res.redirect(&#39;/&#39;);
+}
+
+return res.render(&#39;note&#39;, {
+note: req.session.notes[noteId - 1]
+});
+});
+</code></pre>
+<p>Writing a handler for an HTTP POST request is just as straightforward:</p>
+<pre><code class="lang-javascript">router.post(&#39;/create&#39;, function(req, res) {
+if (!(req.body.title &amp;&amp; req.body.body)) {
+req.session.message = &#39;You must provide a title and a body!&#39;;
+return res.redirect(&#39;/&#39;);
+}
+
+req.session.notes.push({
+id: req.session.notes.length + 1,
+title: req.body.title,
+body: req.body.body
+});
+
+req.session.message = &#39;Note created!&#39;;
+return res.redirect(&#39;/&#39;);
+});
+</code></pre>
+<p>You&#39;ll notice that the first function specifies what is supposed to happen when a  simple route path is requested (such as &#39;/&#39;). Each call to <code>router.get</code> or <code>router.post</code> takes a callback function that has two objects <code>req</code> and <code>res</code>. The <code>req</code> object usually contains information that is containted in the request. It also gives us access to the session cookie so that we can access and store some information about the user in their browser. The <code>res</code> object let&#39;s us control the response. Thus <code>res.redirect</code> redirects the user to another page and <code>res.render</code> uses our templating engine to create a webpage that we send back to the user. </p>
+<p>Whenever we have an error in the request made to our webapp, we can see that we store the error message into the session and return a redirect back to the simple routing path using this nifty structure inside the callback functions:</p>
+<pre><code class="lang-javascript">req.session.message = &#39;Error message goes here&#39;;
+return res.redirect(&#39;/&#39;);
+</code></pre>
+<p>This allows for clean error handling since we always send users to the same page when they get an error, and the actual error message is bound to the user&#39;s cookie, not the page itself.</p>
+<p>And lastly, just so that we get all this handy code available to the rest of the application, let&#39;s export it so that it&#39;s created when we &#39;require&#39; it in another file with:</p>
+<p>```javascript
+module.exports = router;</p>
+</div><span id="sec-3-11" class="anchor"></span><div id="" class="subgroup"><h3>Views</h3><p>As you may have already noticed, there&#39;s another folder in our project files called Views. This is where you write the front-end of the application. The front-end is basically the part of the website that the users see and interact with, the HTML/CSS/Javascript that we&#39;ve seen in the last workshop. Let&#39;s break it down by looking at what each file is supposed to do and how it does it. First, we have:</p>
+</div><span id="sec-3-12" class="anchor"></span><div id="" class="subgroup"><h3>index.hjs</h3><p>As we can see, most of the code follows from the very basic HTML structure you saw earlier on in the first workshop. This file builds the first landing page for the application and a basic web form for creating a new one. </p>
+<pre><code class="lang-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;{{ title }}&lt;/title&gt;
+&lt;link rel=&#39;stylesheet&#39; href=&#39;/stylesheets/style.css&#39; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;{{ title }}&lt;/h1&gt;
+{{#message}}
+&lt;h3&gt;{{message}}&lt;/h3&gt;
+{{/message}}
+&lt;p&gt;Welcome to {{ title }}. Your notes:&lt;/p&gt;
+&lt;ul&gt;
+{{#notes}}
+&lt;li&gt;&lt;a href=&#39;/{{ id }}&#39;&gt;{{ title }}&lt;/a&gt;&lt;/li&gt;
+{{/notes}}
+{{^notes}}
+&lt;li&gt;You don&#39;t have any notes yet!&lt;/li&gt;
+{{/notes}}
+&lt;/ul&gt;
+&lt;p&gt;Make a new note:&lt;/p&gt;
+&lt;form action=&#39;/create&#39; method=&#39;post&#39;&gt;
+&lt;input type=&#39;text&#39; name=&#39;title&#39; placeholder=&#39;Title&#39;&gt;&lt;br/&gt;
+&lt;textarea name=&#39;body&#39; rows=&#39;8&#39; cols=&#39;80&#39; placeholder=&#39;Body&#39;&gt;&lt;/textarea&gt;&lt;br/&gt;
+&lt;input type=&#39;submit&#39; value=&#39;Save Note&#39;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>If you look carefully, you&#39;ll see that some parts of this code are a little different from the basic syntax we introduced you to. That&#39;s right, you&#39;re probably confused about what lines of code like this mean:</p>
+<pre><code class="lang-html">{{ title }}
+</code></pre>
+<p>The way this works, is that the application dynamically treats these fields as variables and fills them in when the app is run. It then sends the filled in HTML file to the client&#39;s web browser. In this way, we only ever have to state, for example, the title of the application, once while sending the command to render the template - and it&#39;ll change everywhere around the views.</p>
+<p>The page gets access to all these variables from the object that gets passed to the page when we use <code>res.render</code> from our Node backend. So <code>{{ title }}</code> just prints out whatever the contents of the attribute <code>title</code> is from that object. The syntax <code>{{#notes}}</code> is the same as saying &quot;if the notes attribute is non-empty/non-null, then display everything between this and <code>{{/notes}}</code>&quot; and <code>{{^notes}}</code> is the same idea, but if the notes variable is empty/null.</p>
+<p>Let&#39;s now move on to the next view.</p>
+</div><span id="sec-3-13" class="anchor"></span><div id="" class="subgroup"><h3>error.hjs</h3><p>The code in this file is mainly used to build a generic view for any error that our application may have to handle and process.</p>
+<pre><code class="lang-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Error&lt;/title&gt;
+    &lt;link rel=&#39;stylesheet&#39; href=&#39;/stylesheets/style.css&#39; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;{{ errorMessage }}&lt;/h1&gt;
+    {{#error}}
+    &lt;h3&gt;{{ status }}&lt;/h3&gt;
+    &lt;pre&gt;{{ stack }}&lt;/pre&gt;
+    {{/error}}
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>As you can see above, the <code>errorMessage</code>, <code>status</code> and <code>stack</code> will all be dynamically completed, depending on the error. This means the screen will be structually identical for any error that we display - even if the content is different.</p>
+</div><span id="sec-3-14" class="anchor"></span><div id="" class="subgroup"><h3>note.hjs</h3><p>This file works in a similar manner to the previous error.hjs file, in that it uses static HTML code to create a structurally identical page to display notes in, with dynamically loaded varied content. </p>
+<pre><code class="lang-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Note: {{ note.title }}&lt;/title&gt;
+&lt;link rel=&#39;stylesheet&#39; href=&#39;/stylesheets/style.css&#39; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+{{#message}}
+&lt;h3&gt;{{message}}&lt;/h3&gt;
+{{/message}}
+&lt;h1&gt;{{ note.title }}&lt;/h1&gt;
+&lt;p&gt;{{ note.body }}&lt;/p&gt;
+&lt;a href=&#39;/&#39;&gt;Go back&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>In this specific case, tags such as note.title or note.body are loaded and populated once the application is run.</p>
+</div><span id="sec-3-15" class="anchor"></span><div id="" class="subgroup"><h3>Files</h3><p> <a href="assets/files/ws2.zip">This ZIP file</a> contains a snapshot of what your code should look like at the end of this workshop.</p>
+</div></section><span id="sec-4" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Intro to APIs</h2></div><span id="sec-4-1" class="anchor"></span><div id="" class="subgroup"><h3>Adding the internet to your app</h3><p>Topics to be covered:</p>
+<ul>
+<li>What APIs are, how they work, why we use them</li>
+<li>Sending HTTP requests from Node</li>
+<li>Authenticating with an API via OAuth</li>
+<li>Sending emails and Venmo payments</li>
+</ul>
+</div><span id="sec-4-2" class="anchor"></span><div id="" class="subgroup"><h3>What's an API?</h3><p>APIs are basically ways to interact with, or access data, on other parts of the internet that are not our own website. So we can make requests of the Rotten Tomatoes API to pull movie information into our website, or use the Facebook API to let people login and import their credentials to our website. For this workshop we&#39;re going to be using the Venmo API to send payments to our friends.</p>
+</div><span id="sec-4-3" class="anchor"></span><div id="" class="subgroup"><h3>Before that, OAuth</h3><p>OAuth is what makes interacting with other APIs secure. It allows us to sign into spammygames.com using our Facebook login, without compromising our Facebook credentials - first, spammygames has us log in on Facebook.com. Then, Facebook then sends back a token to spammygames.com asking it to verify that it is a valid Facebook developer; spammygames sends back its credentials to  Facebook. On seeing that both the user and the website have valid credentials, Facebook now sends back an access token that the website can use to access this particular user&#39;s data. This is often called 2-legged OAuth, since there are two steps to it.</p>
+<p><img src="assets/img/ws3.jpg" alt="OAuth"></p>
+<p>For the Venmo API to work, it&#39;s important to get these keys. You&#39;ll have to go to the <a href="https://venmo.com/account/settings/developers">Venmo Developer Console</a> and create a new app. Then you should be able to get your &#39;Secret&#39; and &#39;ID&#39; that you should add into your code as shown a little below. Also make sure to set your web redirect url to &#39;<a href="http://localhost:3000/venmo/oauth">http://localhost:3000/venmo/oauth</a>&#39;. Time to get to some real code.</p>
+</div><span id="sec-4-4" class="anchor"></span><div id="" class="subgroup"><h3>Preppin' app.js for our API</h3><p>First open app.js. We need to set our Node app to try to reach Venmo if someone using the app goes to localhost:3000/venmo. This is a route that takes us into venmo.js, and, importantly, relativizes the URL so that what here is /venmo/foo looks to venmo.js just like /foo.</p>
+<pre><code class="lang-javascript">var venmo = require(&#39;./venmo&#39;);
+app.use(&#39;/venmo&#39;, venmo);
+</code></pre>
+</div><span id="sec-4-5" class="anchor"></span><div id="" class="subgroup"><h3>Where all the Venmo happens, venmo.js</h3><p>In the same directory as your other .js files, write to venmo.js. We&#39;ll go through it line by line. First off, list dependencies, request, express, and router, which you&#39;ve used before. We won&#39;t focus on those now, but to review: </p>
+<pre><code class="lang-javascript">var request = require(&#39;request&#39;);
+var express = require(&#39;express&#39;);
+</code></pre>
+<p>We&#39;ll use the express router.</p>
+<pre><code class="lang-javascript">var router = express.Router();
+</code></pre>
+<p>Next, we have a few lines of Venmo configuration - information identifying our application (fill this in with your App Secret and ID, which you got when you created an application on the Venmo Developer Console page), the location of the Venmo authentication service, the location that Venmo should redirect to after a user authenticates (so that we can authenticate our application), and the API url where we can send payment requests. All of this is copy-pasted from the Venmo documentation.</p>
+<pre><code class="lang-javascript">var clientId = &#39;FILL ME IN FROM YOUR ACCOUNT&#39;;
+var clientSecret = &#39;FILL ME IN FROM YOUR ACCOUNT&#39;;
+var authorizeUrl = &#39;https://api.venmo.com/v1/oauth/authorize?client_id=&#39; + clientId + &#39;&amp;scope=make_payments%20access_profile&amp;response_type=code&#39;;
+var accessTokenUrl = &#39;https://api.venmo.com/v1/oauth/access_token&#39;;
+var paymentUrl = &#39;https://api.venmo.com/v1/payments&#39;;
+</code></pre>
+<p>After the five lines of Venmo config are three separate routes, for</p>
+<pre><code class="lang-javascript">&#39;/&#39;
+&#39;/authorize&#39;
+&#39;/oauth&#39;
+</code></pre>
+<p>As you know, each of these routes is activated when the proper URL is requested by your app&#39;s adoring fans. As a reminder, the fact that the function call is &quot;router.get&quot; does not mean you&#39;re &quot;getting&quot; something from the router (like Java&#39;s ArrayList.get()), it means it&#39;s responding to a HTTP GET call from the browser.</p>
+<p>Let&#39;s go through each of the routes. First up is the &quot;root&quot; or &quot;/&quot; Venmo page.</p>
+<pre><code class="lang-javascript">router.get(&#39;/&#39;, function(req, res) {
+</code></pre>
+<p>First off, we initialize the variable venmo.</p>
+<pre><code class="lang-javascript">venmo = null;
+</code></pre>
+<p>This variable will hold the user&#39;s Venmo information. The next thing we do is check to see if we have a cookie with the info (meaning the user has already logged in). Regardless, it then renders &quot;venmo.hjs&quot;, the actual HTML document that the user will see. We&#39;ll go over this in a bit.</p>
+<pre><code class="lang-javascript">if (req.session.venmo) {
+venmo = req.session.venmo.user;
+}
+
+return res.render(&#39;venmo&#39;, {
+venmo: venmo
+});
+}); // end &#39;/&#39; route
+</code></pre>
+<p>Second up is <code>&#39;/authorize&#39;</code>. The user clicks on a link from the root Venmo page to come here, and its one line of code is why you had to tell Venmo what your Web Redirect URL was. When the user hits this page, you hand them off to Venmo (notice how you send them the authorizeUrl defined at the top of the file.) After they log in, Venmo sends them back to &quot;/oauth&quot;, which is the path you define next!</p>
+<pre><code class="lang-javascript">router.get(&#39;/authorize&#39;, function(req, res) {
+return res.redirect(authorizeUrl);
+});
+</code></pre>
+<p>The next route in our Venmo app, <code>&#39;/oauth&#39;</code>, is the second part of Venmo&#39;s verification process. We already sent the user to Venmo so that Venmo could tell us they were all set. They called our <code>/oauth</code> page, and passed it req.query.code if the authorization went well. The first if statement under router.get(&#39;oauth&#39;) simply means that if the authorization failed, we don&#39;t continue with the exchange.</p>
+<pre><code class="lang-javascript">router.get(&#39;/oauth&#39;, function(req, res) {
+if (!req.query.code) {
+return res.send(&#39;no code provided&#39;);
+}
+</code></pre>
+<p>In the event that the authorization went through, Venmo needs to verify us as a developer. This is where the request module comes into play. We actually have to make a call directly to Venmo&#39;s website (using their API). Notice that we&#39;re using a POST request, sending them both our unique clientId and clientSecret, and req.query.code, which Venmo sent back to us.</p>
+<pre><code class="lang-javascript">request.post({
+url: accessTokenUrl,
+form: {
+client_id: clientId,
+client_secret: clientSecret,
+code: req.query.code
+}
+}, function(err, response, body) {
+</code></pre>
+<p>If this all checks out on Venmo&#39;s side, what we get back,</p>
+<pre><code class="lang-javascript">req.session.venmo = JSON.parse(body);
+</code></pre>
+<p>is a session from Venmo that&#39;s unique between your application and your client, so Venmo knows that future payment requests are legit. If all goes well, it prints a notice to the user that they&#39;ve been authenticated, and redirects them to your app&#39;s Venmo hompage.</p>
+<pre><code class="lang-javascript">req.session.message = &#39;Authenticated Venmo successfully!&#39;;
+return res.redirect(&#39;/venmo&#39;);
+});
+}); // end &#39;/oauth&#39; route
+</code></pre>
+<p>Our last route in venmo.js, <code>router.post(&#39;/send&#39;)</code>, is where the magic happens. Handshakes have gone through, and if your user types in the amount, phone #, and note fields properly (checked by the first if statement), you&#39;re ready to do a payment.</p>
+<p>This takes the form of another POST request to Venmo&#39;s API. You send them the relevant transfer information, as well as the unique user/client token that you generated in &quot;/oauth.&quot; The following code defines how you handle this.</p>
+<pre><code class="lang-javascript">router.post(&#39;/send&#39;, function(req, res, next) {
+var amount = req.body.amount;
+var phone = req.body.phone;
+var note = req.body.note;
+
+if (!(amount &amp;&amp; phone &amp;&amp; note)) {
+req.session.message = &#39;You must provide all three fields!&#39;;
+return res.redirect(&#39;/venmo&#39;);
+}
+
+request.post({
+url: paymentUrl,
+form: {
+access_token: req.session.venmo.access_token,
+phone: phone,
+amount: amount,
+note: note
+}
+}, function(err, response, body) {
+if (err) {
+next(err);
+}
+
+var recipient = JSON.parse(body).data.payment.target.user.display_name;
+req.session.message = &#39;Sent $&#39; + amount + &#39; to &#39; + recipient + &#39; successfully!&#39;;
+
+return res.redirect(&#39;/venmo&#39;);
+});
+});
+</code></pre>
+<p>What does this code do? It first says that we are listening for post requests on the route <code>/send</code>, which is where our form will be submitting its request (more on that below). We expect 3 form inputs - if any of these don&#39;t exist, we create an error page and redirect back to the main page.</p>
+<p>If the form was submitted correctly, we send a post request containing this information to Venmo&#39;s payment API (recall we defined <code>paymentUrl</code> at the top). We also include the access token, which is part of the <code>venmo</code> cookie (we created this in the <code>oauth</code> route when we get a response to our authentication post request).</p>
+<p>Next, look at the callback function to this post request. First, it checks to see if Venmo returned an error. If not, it continues, and parses the Venmo response for user data. Finally, it prints a message to the user telling them that the payment was successful, and it redirects them back to the root Venmo page!</p>
+</div><span id="sec-4-6" class="anchor"></span><div id="" class="subgroup"><h3>Okay, but we're not done yet</h3><p>Now, especially if you learned HTML/CSS earlier this weekend, you may be wondering, &quot;what actually is determining what the user sees at page /vemno?&quot; What a great question! They&#39;re seeing <code>views/venmo.hjs</code>!</p>
+<p>You&#39;ve seen .hjs before, but to recap, the biggest difference between .hjs and html is that you update certain parts of it dynamically based on what we tell NodeJS. So, if we were to change the value of <code>req.session.message</code> in the last block of code,</p>
+<pre><code class="lang-javascript">req.session.message = &quot;yodelyodelyoda&quot;
+</code></pre>
+<p>In venmo.hjs, when you see</p>
+<pre><code class="lang-html">{{#message}}
+&lt;h3&gt;{{message}}&lt;/h3&gt;
+{{/message}}
+</code></pre>
+<p>You&#39;re taking req.session.message and inserting it into {{message}} in venmo.hjs!</p>
+<p>Take note that the field,</p>
+<p><code>{{#message}}</code> means &quot;if this field is present, show the following&quot;,</p>
+<p><code>{{^message}}</code> means &quot;if this field is not present, show the following&quot;, and</p>
+<p><code>{{/message}}</code> just closes these blocks.</p>
+<p>This becomes more important at the next &quot;if statement&quot;,</p>
+<pre><code class="lang-html">{{#Venmo}}
+code
+{{/venmo}}
+</code></pre>
+<p>There&#39;s a lot of code between these tags, and none of it is shown unless the &quot;Venmo&quot; field, denoting that the user has authenticated, is present. This is important, because not only does the Venmo variable decide what would be shown if you happened to include <code>{{Venmo}}</code> as part of the text, but it actually acts as an &quot;if&quot; statement for what should be shown to the user.</p>
+<p>So, let&#39;s assume that the user has authenticated. In this case, it shows the fields <code>{{display_name}}</code> and <code>{{username}}</code>, and most importantly, includes a <code>&lt;form&gt;</code>. Let&#39;s see the whole thing: </p>
+<pre><code class="lang-html">&lt;form action=&#39;/venmo/send&#39; method=&#39;post&#39;&gt;
+Pay $&lt;input type=&#39;text&#39; name=&#39;amount&#39; placeholder=&#39;Amount in dollars&#39;&gt; to
+&lt;input type=&#39;text&#39; name=&#39;phone&#39; placeholder=&#39;Phone Number&#39;&gt; for:&lt;br/&gt;
+&lt;textarea name=&#39;note&#39; rows=&#39;3&#39; cols=&#39;80&#39; placeholder=&#39;For...&#39;&gt;&lt;/textarea&gt;           &lt;br/&gt;
+&lt;input type=&#39;submit&#39; name=&#39;Send Payment&#39;&gt;
+&lt;/form&gt;
+</code></pre>
+<p>The form action designates what type of call the the browser will make when the form is submitted. In this case, the form is for the user to actually make a payment, and we have a venmo.js route that we created to handle a POST request to /venmo/send, so we want the browser to send the request to that URL (action=&#39;/venmo/send&#39;), with POST (method=&#39;post&#39;).</p>
+<p>In this form, there are 3 input fields. The first is the total amount of money being transfered. While we will parse it as a decimal, its input <code>type=&#39;text&#39;</code>. The &#39;name&#39; field we use to tell our app what variable it is assigned to, so we can access it in venmo.js. The placeholder, as you can probably tell, determines what is shown when the user has not yet typed anything in.</p>
+<p>The next field is, by most measures, the same. Make sure to note, however, that the field name is assigned the value &#39;phone&#39;, again so we can reference the input as a variable by that name in venmo.js. The third field is of type <code>&lt;textarea&gt;</code> instead of type <code>&lt;input&gt;</code>. The biggest difference between a textarea and an input to understand is that a textarea has better accounting for large input of paragraph-length. Note that we specify the field <code>rows=&#39;3&#39;</code>, and <code>cols=&#39;80&#39;</code>. Thus, unlike an <code>&lt;input&gt;</code>, we can guess that this field might be a sentence or two but probably no longer, and tailor the size of hte textfield to that. Furthermore, it handles newlines well, so the user can happily use multiple paragraphs.</p>
+<p>The final important piece of your form is <code>&lt;input type=&#39;submit&#39; name=&#39;Send Payment.&#39;&gt;</code>. Note that the <code>type=&#39;submit&#39;</code> field is not specifying a variable, but is a keyword in your form that your browser knows to interpret as a submission of the form. the name field determines what is shown on the button. Because this submit button is within the same form as the other input fields (see that it comes before the ending <code>&lt;/form&gt;</code> tag), it will submit everything within that form.</p>
+<p>Notice now the end tag {{/venmo}}. This is the end of our if statement. i.e., if the user hadn&#39;t authenticated yet, she would have seen none of what we just went over. Now, on the next lines, we see</p>
+<pre><code class="lang-html">{{^Venmo}}
+&lt;p&gt;You have not authorized yet. &lt;a href=&#39;/venmo/authorize&#39;&gt;Click here&lt;/a&gt; to authorize with venmo.&lt;/p&gt;
+{{/venmo}}
+</code></pre>
+<p>So, if <code>{{#Venmo}}</code> is the beginning of an if statement, <code>{{^Venmo}}</code> is the beginning of an &quot;if not&quot; statement. Thus, the first time your user sees a Venmo page, since they will not yet have authenticated, this statement will return &quot;true&quot;, and they&#39;ll be given the link to the &quot;authorize&quot; page, and be allowed to authorize. Not very tricky, very cool. As always, make sure to end your if with a <code>{{/venmo}}</code>, just like you always remember to end your <strong> tags, right? Right. ... </strong>.</p>
+</div><span id="sec-4-7" class="anchor"></span><div id="" class="subgroup"><h3>Incorporating SendGrid API to Send Email</h3><p>Let&#39;s incorporate one other API. Unlike Venmo, SendGrid doesn&#39;t use OAuth, and so is much easier to include.</p>
+<p>First, we make a SendGrid developer account. Go to <a href="https://sendgrid.com">SendGrid</a> and register. Then, import the SendGrid module at the top of venmo.js</p>
+<pre><code class="lang-javascript">var sendgrid = require(&quot;sendgrid&quot;)(&quot;username&quot;, &quot;password&quot;);
+</code></pre>
+<p>Next, we write a function to send an email. Fill in your email address for my_email.</p>
+<pre><code class="lang-javascript">var sendEmail = function (phone, amount) {
+var my_email = &quot;your email address&quot;;
+var email = new sendgrid.Email();
+
+email.addTo(my_email);
+email.setFrom(&quot;venmo@codeweekend.com&quot;);
+email.setSubject(&quot;Your Venmo Payment&quot;);
+email.setHtml(&quot;You paid &quot; + phone + &quot; $&quot; + amount + &quot;! Hope it was worth it!&quot;);
+
+sendgrid.send(email);
+}
+</code></pre>
+<p>This is fairly self-explanatory, and is copied directly from the SendGrid developer documentation.</p>
+<p>Finally, we call this function at the end of the <code>router.post(&#39;/send&#39;)</code> route.</p>
+<pre><code class="lang-javascript">sendEmail (req.body.phone, req.body.amount);
+</code></pre>
+</div><span id="sec-4-8" class="anchor"></span><div id="" class="subgroup"><h3>Files</h3><p> <a href="assets/files/ws3.zip">This zip file</a> contains what you should have at the end of this workshop. </p>
+</div></section><span id="sec-5" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Intro to Databases</h2></div><span id="sec-5-1" class="anchor"></span><div id="" class="subgroup"><h3>Making information stick around</h3><p><img src="https://s3.amazonaws.com/compose-articles/2015/Mar/Doge-Big-Data-Meme_vb8hxi_n8oxuq.jpg" alt="Such data, so big, wow"></p>
+<p>Topics to be covered:</p>
+<ul>
+<li>MongoDB: what it is, how to use it</li>
+<li>Why we pair MongoDB with Node and how</li>
+<li>Persisting our prior inputs</li>
+<li>Basic login authentication</li>
+</ul>
+</div><span id="sec-5-2" class="anchor"></span><div id="" class="subgroup"><h3>Installing MongoDB</h3><p>Let&#39;s move on to MongoDB. Mongo is a NoSQL Database; this means that rather than the data being stored in SQL tables, it&#39;s stored in some other format. In the case of MongoDB, the format is <strong>BSON</strong>, which is a more efficient way of storing JSON. Like other databases, we can store, search and access large amounts of data very quickly.</p>
+<p><em>Mac (OS X)</em></p>
+<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
+<p>In case you run into any problems, <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/">look at MongoDB&#39;s full instructions page</a> and Google around before asking mentors for help.</p>
+<p><em>Windows</em></p>
+<p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&#39;d need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
+<p><em>Linux</em></p>
+<p>Most Linux distros should have MongoDB available for installation in their respective package managers (<code>apt-get</code>, <code>yum</code>, <code>pacman</code>, etc.). Alternately, you can read the full instructions to install MongoDB on Ubuntu can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
+<p>Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
+</div><span id="sec-5-3" class="anchor"></span><div id="" class="subgroup"><h3>Running MongoDB</h3><p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>). This fires up a Mongo instance that will run continously in the background until it&#39;s killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!</p>
+</div><span id="sec-5-4" class="anchor"></span><div id="" class="subgroup"><h3>Why use a database? And why MongoDB?</h3><p>Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
+<p>You may wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
+<p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalogue was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
+<p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually doe through <em>queries</em> to a database.</p>
+<p><img src="http://www.quickmeme.com/img/9a/9a87002957d106568dcfc2b8135c213b608a268232d7259fbc19d42b831488cd.jpg" alt="Don&#39;t query SQL"></p>
+<p>That&#39;s why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
+JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don&#39;t have to worry about the formatting of the data, cause it&#39;s already in the format we need! You might hear people argue for (or against) the use of MongoDB because it&#39;s a NoSQL database, but this has a lot of tradeoffs and there&#39;s no clear cut winner between SQL and NoSQL; they&#39;re each suited for different applications.</p>
+</div><span id="sec-5-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command), it&#39;s possible to create and work with several databases. Within each of these these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field, or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t need in most cases)</p>
+<p>Just to get this structure down, let&#39;s consider how Twitter data stored in Mongo might look. If we wanted to find the top most trending hashtag in the United States, we&#39;d have to look in the <code>tweets</code> database, inside the <code>trending_hashtags</code> collection. Within this collection there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field <code>country: &#39;United States&#39;</code>. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.</p>
+<p><img src="assets/img/trending.png" alt="Trending hashtags"></p>
+<p>It&#39;s an incredibly powerful method of storing and accessing your data and it often turns out to be suprisingly efficient as well.</p>
+</div><span id="sec-5-6" class="anchor"></span><div id="" class="subgroup"><h3>Integrating MongoDB into the web app</h3><p>We&#39;re now going to integrate a MongoDB database into our application to store data. As said earlier, Mongo is a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we&#39;re going to have to do is add MongoDB to our dependencies list inside of <code>package.json</code>.</p>
+<blockquote>
+<p><em>TIP:</em> Think back to what the dependencies section of the <code>package.json</code> is for! Also, isn&#39;t it cool how all we need to do to include all the source code for handling MongoDB is by requiring a new module? This is one of the reasons why NodeJS is so popular!</p>
+</blockquote>
+<p>Add &quot;mongodb&quot;: &quot;~1.4.19&quot; to the dependencies object inside the JSON so that it looks a little like this.</p>
+<pre><code class="lang-json">{
+&quot;name&quot;: &quot;codeweekend&quot;,
+&quot;version&quot;: &quot;0.0.0&quot;,
+&quot;private&quot;: true,
+&quot;dependencies&quot;: {
+&quot;body-parser&quot;: &quot;~1.6.6&quot;,
+&quot;cookie-parser&quot;: &quot;~1.3.3&quot;,
+&quot;cookie-session&quot;: &quot;~1.0.2&quot;,
+&quot;express&quot;: &quot;~4.8.6&quot;,
+&quot;hjs&quot;: &quot;~0.0.6&quot;,
+&quot;mongodb&quot;: &quot;~1.4.19&quot;,
+&quot;request&quot;: &quot;^2.42.0&quot;
+}
+}
+</code></pre>
+<p>Now let&#39;s go to <code>routes.js</code>. Just like any other module, we first need to require <code>mongodb</code>:</p>
+<pre><code class="lang-javascript">var mongo = require(&#39;mongodb&#39;);
+</code></pre>
+<p>Next, let&#39;s add the following code to open a connection to the database:</p>
+<pre><code class="lang-javascript">var db;
+var MongoClient = mongo.MongoClient;
+var uri = &quot;mongodb://localhost:27017/codeweekend&quot;;
+
+MongoClient.connect(uri, function(err, database) {
+if (err) {
+throw err;
+}
+
+db = database;
+});
+</code></pre>
+<p>The first thing we need to do is declare a variable for the database to be stored in (we&#39;ll see why in a minute). We also store the MongoClient object in a helper variable.</p>
+<p>Next, we store the connection string in a variable. The connection string looks complicated, so let&#39;s break it down into parts. The beginning of any connection string for MongoDB is always &quot;mongodb://&quot;. Next, you put the server name, a colon, and then the port number to connect to. In our case, since we&#39;re running the database on the same computer as the Node app, we can just use &quot;localhost&quot;. The port number, 27017, is just the default port that <code>mongod</code> listens on; we didn&#39;t specify a different port when we ran <code>mongod</code> before, so that&#39;s where ours is listening. Finally, the string ends with a slash and then the name of the database to connect to. You can pick whatever name you&#39;d like for the database; it&#39;s just a way of identifying which one you want to connect to in the case that you have multiple databases on your server. This also demonstrates one of the really nice features of MongoDB; if you specify a database that doesn&#39;t already exist, then it will create it for you.</p>
+<p>Finally, we connect to the database using the connection string we&#39;ve defined. Notice that the function <code>connect</code> actually takes a callback rather than returning the database directly. This can useful in some cases, since it allows your app to do other things while waiting for the database to connect. In our case, though, we just want to be able to use the database outside the callback, which is why we declared the <code>db</code> variable earlier.</p>
+<p>In practice, you&#39;ll want to handle your errors more gracefully—meaning your app should do something other than just crash! For the purposes of this demo, though, it&#39;s simpler just to throw the error you get when trying to connect to the database. If your app crashes when you try to run it after adding this section, make sure that you have <code>mongod</code> running in an open terminal, and try again.</p>
+<p>We also need to make a helper variable for the function <code>ObjectID</code>:</p>
+<pre><code class="lang-javascript">var ObjectID = mongo.ObjectID;
+</code></pre>
+<p>Now, let&#39;s really get our hands messy and change our existing code to make use of the powerful database we now have access to.</p>
+<pre><code class="lang-javascript">router.get(&#39;/&#39;, function(req, res) {
+return res.render(&#39;index&#39;, {
+title: &#39;Codeweekend Notes&#39;,
+notes: req.session.notes
+});
+});
+</code></pre>
+<p>We already know that this stores our notes in a session. However, now, let&#39;s make use of that database we&#39;ve been talking about so much! With a little change in how we access and store the notes object, we can now route the entire process through our DB. We&#39;re going to make use of <em>queries</em> in the following sections, which are basically different ways of searching for data in a database. Naturally, each database allows you to create and use queries differently, and <a href="http://www.tutorialspoint.com/mongodb/mongodb_query_document.htm">this</a> is how Mongo does some of the more popular ones.</p>
+<p>First, assuming we&#39;ve stored all of the notes into a collection called <code>notes</code> inside of the <code>codeweekend</code> database, let&#39;s render all of the notes in the database for the route &#39;/&#39;.</p>
+<pre><code class="lang-javascript">var ObjectID = require(&#39;mongodb&#39;).ObjectID;
+
+router.get(&#39;/&#39;, function(req, res) {
+db.collection(&#39;notes&#39;).find().toArray(function(err, notes) {
+return res.render(&#39;index&#39;, {
+title: &#39;Codeweekend Notes&#39;,
+notes: notes
+});
+});
+});
+</code></pre>
+<p>The <code>find</code> query returns all the documents in the collection, and the <code>toArray</code> method parses them all into an array, so that they can be rendered as before onto the page. It&#39;s important to note that <code>find</code> only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!</p>
+<p>Next, let&#39;s return a specific document from the database, using the <code>_id</code> field in the document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.</p>
+<pre><code class="lang-javascript">router.get(&#39;/:id&#39;, function(req, res) {
+db.collection(&#39;notes&#39;).findOne({ _id: ObjectID(req.params.id) }, function(err, note) {
+if (err || !note) {
+req.session.message = &#39;That note does not exist!&#39;;
+return res.redirect(&#39;/&#39;);
+}
+
+return.res.render(&#39;note&#39;, {
+note: note
+})
+});
+});
+</code></pre>
+<p>Before we do anything else, we&#39;ll briefly need to make a change in <code>index.hjs</code>. Before, we were using the <code>id</code> field for each note, but if you recall from before, MongoDB stores them in a field called <code>_id</code>. We&#39;ll need to change this in our links to be able to have them correctly send the user to the page for a given note. So let&#39;s change the section for the notes to the following:</p>
+<pre><code class="lang-html">{{#notes}}
+&lt;li&gt;&lt;a href=&#39;/{{ _id }}&#39;&gt;{{ title }}&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<p>Now that we can retrieve data from the database, let&#39;s also add new data to it! Let&#39;s go back to <code>routes.js</code> and change the final route. Using the <code>insert</code> method, we can quickly and easily add a new JSON document to the <code>notes</code> collection:</p>
+<pre><code class="lang-javascript">router.post(&#39;/create&#39;, function(req, res) {
+if (!(req.body.title &amp;&amp; req.body.body)) {
+req.session.message = &#39;You must provide a title and a body!&#39;;
+return res.redirect(&#39;/&#39;);
+}
+
+db.collection(&#39;notes&#39;).insert({
+title: req.body.title,
+body: req.body.body
+}, function(err, result) {
+req.session.message = &#39;Note created!&#39;;
+return res.redirect(&#39;/&#39;);
+});
+});
+
+module.exports = router;
+</code></pre>
+<p>Well, that wasn&#39;t so bad! In summary: every call to the database involves referencing our middleware <code>req.db</code> and using the collection (aka database) called &#39;notes&#39;. We then use different functions like <code>findOne</code>, that finds one result, or <code>find().toArray</code> that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there&#39;s an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy?</p>
+</div><span id="sec-5-7" class="anchor"></span><div id="" class="subgroup"><h3>You're done!</h3><p>With that you&#39;ve succesfully integrated your first database into a Node application and it&#39;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
+</div><span id="sec-5-8" class="anchor"></span><div id="" class="subgroup"><h3>Files</h3><p> <a href="assets/files/ws4.zip">These files</a> should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!</p>
+</div></section><span id="sec-6" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Thanks for being a part of Code Weekend!</h2></div><span id="sec-6-1" class="anchor"></span><div id="" class="subgroup"><h3>We hope you enjoyed these workshops as much as we enjoyed making them for you.</h3><p>Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you&#39;ve learned!</p>
+</div></section></div>
+
+<nav class="col-xs-3 docs-sidebar">
+<ul class="nav nav-stacked" id="sidebar">
+<li><a href="#sec-1">Code Weekend Fall 2015</a><ul class="nav nav-stacked"><li><a href="#sec-1-1">Building your first webapp</a></li></ul></li><li><a href="#sec-2">Intro to Web</a><ul class="nav nav-stacked"><li><a href="#sec-2-1">Web Pages and the basics of development</a></li><li><a href="#sec-2-2">An Introduction to (the) Life (of a Developer)</a></li><li><a href="#sec-2-3">An Introduction to the web</a></li><li><a href="#sec-2-4">Simple HTML and CSS</a></li><li><a href="#sec-2-5">Umm, what about CSS?</a></li><li><a href="#sec-2-6">Let's take a look at what CSS looks like!</a></li><li><a href="#sec-2-7">Javscript, finally!</a></li><li><a href="#sec-2-8">In fact...</a></li><li><a href="#sec-2-9">What is Terminal&#47;Command Prompt?</a></li></ul></li><li><a href="#sec-3">Intro to Javascript and NodeJS</a><ul class="nav nav-stacked"><li><a href="#sec-3-1">The most powerful web development tools ever</a></li><li><a href="#sec-3-2">Installing NodeJS</a></li><li><a href="#sec-3-3">What does server-side really mean?</a></li><li><a href="#sec-3-4">What is a NodeJS app?</a></li><li><a href="#sec-3-5">The Anatomy of a Node App</a></li><li><a href="#sec-3-6">Running a Node app</a></li><li><a href="#sec-3-7">Writing our first NodeJS app</a></li><li><a href="#sec-3-8">Package.json</a></li><li><a href="#sec-3-9">App.js</a></li><li><a href="#sec-3-10">routes.js</a></li><li><a href="#sec-3-11">Views</a></li><li><a href="#sec-3-12">index.hjs</a></li><li><a href="#sec-3-13">error.hjs</a></li><li><a href="#sec-3-14">note.hjs</a></li><li><a href="#sec-3-15">Files</a></li></ul></li><li><a href="#sec-4">Intro to APIs</a><ul class="nav nav-stacked"><li><a href="#sec-4-1">Adding the internet to your app</a></li><li><a href="#sec-4-2">What's an API?</a></li><li><a href="#sec-4-3">Before that, OAuth</a></li><li><a href="#sec-4-4">Preppin' app.js for our API</a></li><li><a href="#sec-4-5">Where all the Venmo happens, venmo.js</a></li><li><a href="#sec-4-6">Okay, but we're not done yet</a></li><li><a href="#sec-4-7">Incorporating SendGrid API to Send Email</a></li><li><a href="#sec-4-8">Files</a></li></ul></li><li><a href="#sec-5">Intro to Databases</a><ul class="nav nav-stacked"><li><a href="#sec-5-1">Making information stick around</a></li><li><a href="#sec-5-2">Installing MongoDB</a></li><li><a href="#sec-5-3">Running MongoDB</a></li><li><a href="#sec-5-4">Why use a database? And why MongoDB?</a></li><li><a href="#sec-5-5">How MongoDB structures your data</a></li><li><a href="#sec-5-6">Integrating MongoDB into the web app</a></li><li><a href="#sec-5-7">You're done!</a></li><li><a href="#sec-5-8">Files</a></li></ul></li><li><a href="#sec-6">Thanks for being a part of Code Weekend!</a><ul class="nav nav-stacked"><li><a href="#sec-6-1">We hope you enjoyed these workshops as much as we enjoyed making them for you.</a></li></ul></li></ul>
+</nav>
+    </div>
+
+
+  <hr>
+
+  <footer>
+    <p>
+      &copy; <a href="http://dp.seas.upenn.edu/">Dining Philosophers</a> 2016.
+      Page created by <a href="http://hunterlightman.com/">Hunter Lightman</a>.
+      Workshops designed by the <a href="http://dinphil.github.io/">H&amp;L team.</a>
+    </p>
+  </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('body').scrollspy({
+          target: '.docs-sidebar',
+          offset: 10
+        });
+
+        $("#sidebar").affix({
+          offset: {
+            top: $('#jumbo').height() + $('#topnav').height()
+          }
+        });
+      });
+    </script>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>
