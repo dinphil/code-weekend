@@ -24,11 +24,7 @@
     <!-- TODO: Favicons -->
     <!-- <link rel="icon" href="/favicon.ico"> -->
   </head>
-  <style>
-  img {
-    max-width: 100%;
-  }
-  </style>
+
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
       <div class="container">
@@ -224,22 +220,25 @@
     &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
     &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
     &lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+
     &lt;p&gt;
       Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
     &lt;/p&gt;
     &lt;p&gt;
         Let&#39;s continue building our chat app. We&#39;ll first add a textarea element to input text, and apply some CSS properties to make it look pretty!
     &lt;/p&gt;
+
+
     &lt;form&gt;
-    &lt;textarea placeholder=&quot;Write your message here...&quot; required&gt;&lt;/textarea&gt;
-    &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
+        &lt;textarea placeholder=&quot;Write your message here...&quot; required&gt;&lt;/textarea&gt;
+        &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
     &lt;/form&gt;
     &lt;h3&gt; Messages &lt;/h3&gt;
     &lt;p&gt;
         Here&#39;s a list of all the messages so far:
     &lt;/p&gt;
-      &lt;ul&gt;
-      &lt;/ul&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -266,27 +265,31 @@
         &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
         &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
         &lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+
         &lt;p class=&quot;red-text&quot; id=&quot;intro-para&quot;&gt;
             Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to finish the paragraph.
         &lt;/p&gt;
         &lt;p&gt;
-        Let&#39;s continue building our chat app. We&#39;ll first add a textarea element to input text, and apply some CSS properties to make it look pretty!
+            Let&#39;s continue building our chat app. We&#39;ll first add a textarea element to input text, and apply some CSS properties to make it look pretty!
         &lt;/p&gt;
-    &lt;ul id=&quot;messages&quot;&gt;&lt;/ul&gt;
-    &lt;form id=&quot;message-form&quot; action=&quot;#&quot;&gt;
-    &lt;textarea id=&quot;message&quot; placeholder=&quot;Write your message here...&quot; required&gt;&lt;/textarea&gt;
-    &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
-    &lt;/form&gt;
-    &lt;h3&gt; Messages &lt;/h3&gt;
-    &lt;p&gt;
-        Here&#39;s a list of all the messages so far:
-    &lt;/p&gt;
-      &lt;ul class=&quot;messages&quot;&gt;
-      &lt;/ul&gt;
+
+
+        &lt;ul id=&quot;messages&quot;&gt;&lt;/ul&gt;
+        &lt;form id=&quot;message-form&quot; action=&quot;#&quot;&gt;
+            &lt;textarea id=&quot;message&quot; placeholder=&quot;Write your message here...&quot; required&gt;&lt;/textarea&gt;
+            &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;h3&gt; Messages &lt;/h3&gt;
+
+
+        &lt;p&gt;
+            Here&#39;s a list of all the messages so far:
+        &lt;/p&gt;
+        &lt;ul class=&quot;messages&quot;&gt;
+        &lt;/ul&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<img src="http://i.giphy.com/l3nWfI5x9KGnx8mOs.gif?utm_content=buffereb5ee&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer">
 <p>We can also just change the style for an entire kind of element. So we could just change how all the <code>p</code> or <code>&lt;h1&gt;</code> tags look.</p>
 </div><span id="sec-3-3" class="anchor"></span><div id="" class="subgroup"><h3>Let's take a look at what CSS looks like!</h3><pre><code class="lang-css">html {
   font-family: Helvetica, Arial, sans-serif;
