@@ -1940,12 +1940,13 @@ let uri = &quot;mongodb://dinphil:dinph1l@ds054298.mongolab.com:54298/chatsrvr&q
 </code></pre>
 <p>Next, let&#39;s add the following code to open a connection to the database. This code should be inside of the connection block. This is because it should be the first thing that is done on connection.</p>
 <pre><code class="lang-javascript">mongo.connect(uri, function (err, db) {
-  var collection = db.collection(&#39;chatmsgs&#39;)
-  collection.find().sort({ date : -1 }).limit(10).toArray((err, array) =&gt; {
-    if(err) return console.error(err);
-    for(let i = array.length - 1; i &gt;= 0; i--) {
-      socket.emit(&#39;MESG&#39;, array[i]);
-    }
+    var collection = db.collection(&#39;chatmsgs&#39;)
+    collection.find().sort({ date : -1 }).limit(10).toArray((err, array) =&gt; {
+      if(err) return console.error(err);
+      for(let i = array.length - 1; i &gt;= 0; i--) {
+        socket.emit(&#39;MESG&#39;, array[i]);
+      }
+    });
   });
 </code></pre>
 <p>Step by step what this block of code does.</p>
