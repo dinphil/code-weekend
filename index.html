@@ -472,12 +472,12 @@ project, create a new directory named <code>js</code>, and place the file within
 is not a required directory, but this is just for the program to look nice. Now
 you should have a file <code>client/js/jquery.js</code>.</p>
 <p>Once we have done this, we have to let the program know where JQuery is located.
-This is fairly easy, and can be done by adding something like &#39;&lt;script src=&#39;&#39;</p>
+This is fairly easy, and can be done by adding something like `&lt;script src=&#39;&#39;</p>
 <blockquote>
-<p></script>&#39; however, inside of the single quotes, instead we are going to place
+<p></script><code>however, inside of the single quotes, instead we are going to place
 the location of our file. JQuery is a tool, or a script, and what the script tag
 does is it lets us know the location of these tools. In our case, the full line
-should look something like: &#39;<script src="js/jquery.js"></script>&#39;.</p>
+should look something like:</code><script src="js/jquery.js"></script>`.</p>
 </blockquote>
 <h2 id="now-lets-use-it-">Now Lets Use It!!!</h2>
 <p>Recall HTML elements have various tags. Something like
@@ -1898,22 +1898,18 @@ start.</p>
 </ul>
 </div><span id="sec-7-2" class="anchor"></span><div id="" class="subgroup"><h3>Installing MongoDB</h3><p>Let&#39;s move on to MongoDB. Mongo is a NoSQL Database; this means that rather than the data being stored in SQL tables, it&#39;s stored in some other format. In the case of MongoDB, the format is <strong>BSON</strong>, which is a more efficient way of storing JSON. Like other databases, we can store, search and access large amounts of data very quickly.</p>
 <p><em>Mac (OS X)</em></p>
-<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
+<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. We will be hosting the database in the cloud so you can have persistence between sessions and persistence between computers. However, if you would like to have the database locally you can do the following:  before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
 <p>In case you run into any problems, <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/">look at MongoDB&#39;s full instructions page</a> and Google around before asking mentors for help.</p>
 <p><em>Windows</em></p>
-<p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&#39;d need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
+<p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file.  We will be hosting the database in the cloud so you can have persistence between sessions and persistence between computers. However, if you would like to have the database locally you can do the following:  before you run Mongo for the first time, you&#39;d need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
 <p><em>Linux</em></p>
 <p>Most Linux distros should have MongoDB available for installation in their respective package managers (<code>apt-get</code>, <code>yum</code>, <code>pacman</code>, etc.). Alternately, you can read the full instructions to install MongoDB on Ubuntu can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
-<p>Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
-</div><span id="sec-7-3" class="anchor"></span><div id="" class="subgroup"><h3>Running MongoDB</h3><p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>). This fires up a Mongo instance that will run continously in the background until it&#39;s killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!</p>
-</div><span id="sec-7-4" class="anchor"></span><div id="" class="subgroup"><h3>Why use a database? And why MongoDB?</h3><p>Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
-<p>You may wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
-<p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalogue was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
-<p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually doe through <em>queries</em> to a database.</p>
-<p><img src="http://www.quickmeme.com/img/9a/9a87002957d106568dcfc2b8135c213b608a268232d7259fbc19d42b831488cd.jpg" alt="Don&#39;t query SQL"></p>
-<p>That&#39;s why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
-JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don&#39;t have to worry about the formatting of the data, cause it&#39;s already in the format we need! You might hear people argue for (or against) the use of MongoDB because it&#39;s a NoSQL database, but this has a lot of tradeoffs and there&#39;s no clear cut winner between SQL and NoSQL; they&#39;re each suited for different applications.</p>
-</div><span id="sec-7-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command), it&#39;s possible to create and work with several databases. Within each of these these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field, or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t need in most cases)</p>
+<p> We will be hosting the database in the cloud so you can have persistence between sessions and persistence between computers. However, if you would like to have the database locally you can do the following:  before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
+</div><span id="sec-7-3" class="anchor"></span><div id="" class="subgroup"><h3> Mongolab</h3><p>Head out to Mongolab <a href="https://mongolab.com/">here</a> and create a new account. Mongolab is one of the many platforms that will allow  you to have a database in the cloud -- except here it is free for little projects such as this! Once you have created an account and verified your email address, you shoud be able to create a new Mongo instance. You can create an instance on Windows Azure, AWS, etc. which are various cloud platforms. Go ahead and create a single node on any of these platforms, though I would recommend using Azure for speed. You can name the database anything you would like.</p>
+<p>Once you have created the instance, you will need to create a database user. This will allow you to access the database using the standard Mongo URI. For more details about what a URI is you can find info <a href="https://docs.mongodb.org/v3.0/reference/connection-string/">here</a>. This will be an option once you select the database. Once you&#39;ve created the user, the URI is mongodb://<dbuser>:<dbpassword>@ds056698.mongolab.com:56698/<accountname>. We will discuss how the URI will be used later.</p>
+</div><span id="sec-7-4" class="anchor"></span><div id="" class="subgroup"><h3>Running MongoDB</h3><p>This is the option for if you would like to run Mongo locally.</p>
+<p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>). This fires up a Mongo instance that will run continously in the background until it&#39;s killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!</p>
+</div><span id="sec-7-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command or that we have stored on Mongolab), it&#39;s possible to create and work with several databases. Within each of these these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field, or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t need in most cases)</p>
 <p>Just to get this structure down, let&#39;s consider how Twitter data stored in Mongo might look. If we wanted to find the top most trending hashtag in the United States, we&#39;d have to look in the <code>tweets</code> database, inside the <code>trending_hashtags</code> collection. Within this collection there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field <code>country: &#39;United States&#39;</code>. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.</p>
 <p><img src="assets/img/trending.png" alt="Trending hashtags"></p>
 <p>It&#39;s an incredibly powerful method of storing and accessing your data and it often turns out to be suprisingly efficient as well.</p>
@@ -1923,110 +1919,70 @@ JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it c
 </blockquote>
 <p>Add &quot;mongodb&quot;: &quot;~1.4.19&quot; to the dependencies object inside the JSON so that it looks a little like this.</p>
 <pre><code class="lang-json">{
-&quot;name&quot;: &quot;codeweekend&quot;,
-&quot;version&quot;: &quot;0.0.0&quot;,
-&quot;private&quot;: true,
-&quot;dependencies&quot;: {
-&quot;body-parser&quot;: &quot;~1.6.6&quot;,
-&quot;cookie-parser&quot;: &quot;~1.3.3&quot;,
-&quot;cookie-session&quot;: &quot;~1.0.2&quot;,
-&quot;express&quot;: &quot;~4.8.6&quot;,
-&quot;hjs&quot;: &quot;~0.0.6&quot;,
-&quot;mongodb&quot;: &quot;~1.4.19&quot;,
-&quot;request&quot;: &quot;^2.42.0&quot;
+  &quot;name&quot;: &quot;chat-server&quot;,
+  &quot;private&quot;: true,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A chat server built for Code Weekend Spring 2016&quot;,
+  &quot;main&quot;: &quot;server.js&quot;,
+  &quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;^4.13.3&quot;,
+    &quot;giphy-api&quot;: &quot;^1.1.11&quot;,
+    &quot;hjs&quot;: &quot;0.0.6&quot;,
+    &quot;mongodb&quot;: &quot;^1.4.10&quot;,
+    &quot;moniker&quot;: &quot;^0.1.2&quot;,
+    &quot;socket.io&quot;: &quot;^1.3.7&quot;,
+    &quot;underscore&quot;: &quot;^1.8.3&quot;
+  }
 }
-}
 </code></pre>
-<p>Now let&#39;s go to <code>routes.js</code>. Just like any other module, we first need to require <code>mongodb</code>:</p>
-<pre><code class="lang-javascript">var mongo = require(&#39;mongodb&#39;);
+<p>Now let&#39;s go to <code>server.js</code>. Just like any other module, we first need to require <code>mongodb</code>. However, we will also have to point the program towards where all the information will be stored:</p>
+<pre><code class="lang-javascript">let mongo = require(&#39;mongodb&#39;).MongoClient;
+let uri = &quot;mongodb://dinphil:dinph1l@ds054298.mongolab.com:54298/chatsrvr&quot;;
 </code></pre>
-<p>Next, let&#39;s add the following code to open a connection to the database:</p>
-<pre><code class="lang-javascript">var db;
-var MongoClient = mongo.MongoClient;
-var uri = &quot;mongodb://localhost:27017/codeweekend&quot;;
-
-MongoClient.connect(uri, function(err, database) {
-if (err) {
-throw err;
-}
-
-db = database;
-});
+<p>Next, let&#39;s add the following code to open a connection to the database. This code should be inside of the connection block. This is because it should be the first thing that is done on connection.</p>
+<pre><code class="lang-javascript">mongo.connect(uri, function (err, db) {
+  var collection = db.collection(&#39;chatmsgs&#39;)
+  collection.find().sort({ date : -1 }).limit(10).toArray((err, array) =&gt; {
+    if(err) return console.error(err);
+    for(let i = array.length - 1; i &gt;= 0; i--) {
+      socket.emit(&#39;MESG&#39;, array[i]);
+    }
+  });
 </code></pre>
-<p>The first thing we need to do is declare a variable for the database to be stored in (we&#39;ll see why in a minute). We also store the MongoClient object in a helper variable.</p>
-<p>Next, we store the connection string in a variable. The connection string looks complicated, so let&#39;s break it down into parts. The beginning of any connection string for MongoDB is always &quot;mongodb://&quot;. Next, you put the server name, a colon, and then the port number to connect to. In our case, since we&#39;re running the database on the same computer as the Node app, we can just use &quot;localhost&quot;. The port number, 27017, is just the default port that <code>mongod</code> listens on; we didn&#39;t specify a different port when we ran <code>mongod</code> before, so that&#39;s where ours is listening. Finally, the string ends with a slash and then the name of the database to connect to. You can pick whatever name you&#39;d like for the database; it&#39;s just a way of identifying which one you want to connect to in the case that you have multiple databases on your server. This also demonstrates one of the really nice features of MongoDB; if you specify a database that doesn&#39;t already exist, then it will create it for you.</p>
-<p>Finally, we connect to the database using the connection string we&#39;ve defined. Notice that the function <code>connect</code> actually takes a callback rather than returning the database directly. This can useful in some cases, since it allows your app to do other things while waiting for the database to connect. In our case, though, we just want to be able to use the database outside the callback, which is why we declared the <code>db</code> variable earlier.</p>
-<p>In practice, you&#39;ll want to handle your errors more gracefully—meaning your app should do something other than just crash! For the purposes of this demo, though, it&#39;s simpler just to throw the error you get when trying to connect to the database. If your app crashes when you try to run it after adding this section, make sure that you have <code>mongod</code> running in an open terminal, and try again.</p>
-<p>We also need to make a helper variable for the function <code>ObjectID</code>:</p>
-<pre><code class="lang-javascript">var ObjectID = mongo.ObjectID;
-</code></pre>
-<p>Now, let&#39;s really get our hands messy and change our existing code to make use of the powerful database we now have access to.</p>
-<pre><code class="lang-javascript">router.get(&#39;/&#39;, function(req, res) {
-return res.render(&#39;index&#39;, {
-title: &#39;Codeweekend Notes&#39;,
-notes: req.session.notes
-});
+<p>Step by step what this block of code does.</p>
+<p>We connect to the database using the connection string we&#39;ve defined. Notice that the function <code>connect</code> actually takes a callback rather than returning the database directly. This can useful in some cases, since it allows your app to do other things while waiting for the database to connect.</p>
+<p>Within the connection, there are a few important things we note. First, we define a specific collection. A collection in a mongo database is like a file in any computer. In this case, we&#39;re going to name the file <code>chatmsgs</code>, and grab the information from there.</p>
+<p>Next thing that we do is actually find the ten most recent messages. This is done through the <code>collection.find()</code>. The sorting for recency is done through the <code>sort</code> function. These messages are placed in an array, and we then sort through the messages, and then display these messages through the  <code>socket.emit()</code> function. The <code>MESG</code> within this function is the function that displays the information.</p>
+<p>Now, let&#39;s really get our hands messy and actually start adding the messages to the database. Inside of your MESG block add the following:</p>
+<pre><code class="lang-javascript">mongo.connect(uri, function (err, db) {
+    let collection = db.collection(&#39;chatmsgs&#39;);
+    collection.insert({
+      date: new Date().getTime(),
+      from: user.getName(),
+      message: data.message}, function(err, o) {
+          if (err) { console.warn(err.message); }
+          else { console.log(&quot;chat message inserted into db: &quot; + message); }
+    });
 });
 </code></pre>
-<p>We already know that this stores our notes in a session. However, now, let&#39;s make use of that database we&#39;ve been talking about so much! With a little change in how we access and store the notes object, we can now route the entire process through our DB. We&#39;re going to make use of <em>queries</em> in the following sections, which are basically different ways of searching for data in a database. Naturally, each database allows you to create and use queries differently, and <a href="http://www.tutorialspoint.com/mongodb/mongodb_query_document.htm">this</a> is how Mongo does some of the more popular ones.</p>
-<p>First, assuming we&#39;ve stored all of the notes into a collection called <code>notes</code> inside of the <code>codeweekend</code> database, let&#39;s render all of the notes in the database for the route &#39;/&#39;.</p>
-<pre><code class="lang-javascript">var ObjectID = require(&#39;mongodb&#39;).ObjectID;
-
-router.get(&#39;/&#39;, function(req, res) {
-db.collection(&#39;notes&#39;).find().toArray(function(err, notes) {
-return res.render(&#39;index&#39;, {
-title: &#39;Codeweekend Notes&#39;,
-notes: notes
-});
-});
-});
-</code></pre>
-<p>The <code>find</code> query returns all the documents in the collection, and the <code>toArray</code> method parses them all into an array, so that they can be rendered as before onto the page. It&#39;s important to note that <code>find</code> only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!</p>
-<p>Next, let&#39;s return a specific document from the database, using the <code>_id</code> field in the document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.</p>
-<pre><code class="lang-javascript">router.get(&#39;/:id&#39;, function(req, res) {
-db.collection(&#39;notes&#39;).findOne({ _id: ObjectID(req.params.id) }, function(err, note) {
-if (err || !note) {
-req.session.message = &#39;That note does not exist!&#39;;
-return res.redirect(&#39;/&#39;);
-}
-
-return.res.render(&#39;note&#39;, {
-note: note
-})
-});
-});
-</code></pre>
-<p>Before we do anything else, we&#39;ll briefly need to make a change in <code>index.hjs</code>. Before, we were using the <code>id</code> field for each note, but if you recall from before, MongoDB stores them in a field called <code>_id</code>. We&#39;ll need to change this in our links to be able to have them correctly send the user to the page for a given note. So let&#39;s change the section for the notes to the following:</p>
-<pre><code class="lang-html">{{#notes}}
-&lt;li&gt;&lt;a href=&#39;/{{ _id }}&#39;&gt;{{ title }}&lt;/a&gt;&lt;/li&gt;
-</code></pre>
-<p>Now that we can retrieve data from the database, let&#39;s also add new data to it! Let&#39;s go back to <code>routes.js</code> and change the final route. Using the <code>insert</code> method, we can quickly and easily add a new JSON document to the <code>notes</code> collection:</p>
-<pre><code class="lang-javascript">router.post(&#39;/create&#39;, function(req, res) {
-if (!(req.body.title &amp;&amp; req.body.body)) {
-req.session.message = &#39;You must provide a title and a body!&#39;;
-return res.redirect(&#39;/&#39;);
-}
-
-db.collection(&#39;notes&#39;).insert({
-title: req.body.title,
-body: req.body.body
-}, function(err, result) {
-req.session.message = &#39;Note created!&#39;;
-return res.redirect(&#39;/&#39;);
-});
-});
-
-module.exports = router;
-</code></pre>
-<p>Well, that wasn&#39;t so bad! In summary: every call to the database involves referencing our middleware <code>req.db</code> and using the collection (aka database) called &#39;notes&#39;. We then use different functions like <code>findOne</code>, that finds one result, or <code>find().toArray</code> that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there&#39;s an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy?</p>
-</div><span id="sec-7-7" class="anchor"></span><div id="" class="subgroup"><h3>You're done!</h3><p>With that you&#39;ve succesfully integrated your first database into a Node application and it&#39;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
+<p>This is in the MESG block in order to capture all of the messages that are sent. Another step by step guide here:</p>
+<p>The database has to be connected to again. Once the connection is made again, we access the same exact collection as before. If we were to save to another collection, the database would not be able to pull the previous messages. In order for the information to be properly saved we need to provide a bit of information. First of all, we would need to know the time in order to pull the most recent messages. We will also need to know the user in order to know who the message came from. Of course, we will also need the message. All of this information is inserted with the <code>collection.insert</code></p>
+<p>Well, that wasn&#39;t so bad! </p>
+</div><span id="sec-7-7" class="anchor"></span><div id="" class="subgroup"><h3>Why use a database? And why MongoDB?</h3><p>Databases are these other kinds of web development things, separate from the webapp itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
+<p>You may wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
+<p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalogue was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
+<p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually doe through <em>queries</em> to a database.</p>
+<p><img src="http://www.quickmeme.com/img/9a/9a87002957d106568dcfc2b8135c213b608a268232d7259fbc19d42b831488cd.jpg" alt="Don&#39;t query SQL"></p>
+<p>That&#39;s why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
+JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don&#39;t have to worry about the formatting of the data, cause it&#39;s already in the format we need! You might hear people argue for (or against) the use of MongoDB because it&#39;s a NoSQL database, but this has a lot of tradeoffs and there&#39;s no clear cut winner between SQL and NoSQL; they&#39;re each suited for different applications.</p>
 </div><span id="sec-7-8" class="anchor"></span><div id="" class="subgroup"><h3>Files</h3><p> <a href="assets/files/ws4.zip">These files</a> should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!</p>
+</div><span id="sec-7-9" class="anchor"></span><div id="" class="subgroup"><h3>You're done!</h3><p>With that you&#39;ve succesfully integrated your first database into a Node application and it&#39;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
 </div></section><span id="sec-8" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Thanks for being a part of Code Weekend!</h2></div><span id="sec-8-1" class="anchor"></span><div id="" class="subgroup"><h3>We hope you enjoyed these workshops as much as we enjoyed making them for you.</h3><p>Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you&#39;ve learned!</p>
 </div></section></div>
 
 <nav class="col-xs-3 docs-sidebar">
 <ul class="nav nav-stacked" id="sidebar">
-<li><a href="#sec-1">Code Weekend Spring 2k16</a><ul class="nav nav-stacked"><li><a href="#sec-1-1">Building your first webapp</a></li></ul></li><li><a href="#sec-2">Introduction to Web Development</a><ul class="nav nav-stacked"><li><a href="#sec-2-1">Web Pages and the basics of development</a></li><li><a href="#sec-2-2">An Introduction to (the) Life (of a Developer)</a></li><li><a href="#sec-2-3">An Introduction to the web</a></li><li><a href="#sec-2-4">What is Terminal&#47;Command Prompt?</a></li></ul></li><li><a href="#sec-3"> HTML&#47;CSS</a><ul class="nav nav-stacked"><li><a href="#sec-3-1">Simple HTML and CSS</a></li><li><a href="#sec-3-2">Umm, what about CSS?</a></li><li><a href="#sec-3-3">Let's take a look at what CSS looks like!</a></li><li><a href="#sec-3-4">Download</a></li></ul></li><li><a href="#sec-4"> Javascript</a><ul class="nav nav-stacked"><li><a href="#sec-4-1">Javscript, finally!</a></li><li><a href="#sec-4-2">In fact...</a></li><li><a href="#sec-4-3">JQuery</a></li><li><a href="#sec-4-4">Download</a></li></ul></li><li><a href="#sec-5"> The Server</a><ul class="nav nav-stacked"><li><a href="#sec-5-1">Node</a></li><li><a href="#sec-5-2">Package.json</a></li><li><a href="#sec-5-3">Socket.io</a></li><li><a href="#sec-5-4">server.js</a></li><li><a href="#sec-5-5">socket-client.js</a></li><li><a href="#sec-5-6">Functions</a></li><li><a href="#sec-5-7">Users</a></li><li><a href="#sec-5-8">The socket handler</a></li><li><a href="#sec-5-9">Chat</a></li><li><a href="#sec-5-10">The Image Command</a></li><li><a href="#sec-5-11">Download</a></li></ul></li><li><a href="#sec-6"> Express</a><ul class="nav nav-stacked"><li><a href="#sec-6-1">Express</a></li><li><a href="#sec-6-2">Express Server</a></li><li><a href="#sec-6-3">Error 404</a></li><li><a href="#sec-6-4">Giphy Route</a></li><li><a href="#sec-6-5">Giphy AJAX</a></li></ul></li><li><a href="#sec-7"> Databases</a><ul class="nav nav-stacked"><li><a href="#sec-7-1">Making information stick around</a></li><li><a href="#sec-7-2">Installing MongoDB</a></li><li><a href="#sec-7-3">Running MongoDB</a></li><li><a href="#sec-7-4">Why use a database? And why MongoDB?</a></li><li><a href="#sec-7-5">How MongoDB structures your data</a></li><li><a href="#sec-7-6">Integrating MongoDB into the web app</a></li><li><a href="#sec-7-7">You're done!</a></li><li><a href="#sec-7-8">Files</a></li></ul></li><li><a href="#sec-8">Thanks for being a part of Code Weekend!</a><ul class="nav nav-stacked"><li><a href="#sec-8-1">We hope you enjoyed these workshops as much as we enjoyed making them for you.</a></li></ul></li></ul>
+<li><a href="#sec-1">Code Weekend Spring 2k16</a><ul class="nav nav-stacked"><li><a href="#sec-1-1">Building your first webapp</a></li></ul></li><li><a href="#sec-2">Introduction to Web Development</a><ul class="nav nav-stacked"><li><a href="#sec-2-1">Web Pages and the basics of development</a></li><li><a href="#sec-2-2">An Introduction to (the) Life (of a Developer)</a></li><li><a href="#sec-2-3">An Introduction to the web</a></li><li><a href="#sec-2-4">What is Terminal&#47;Command Prompt?</a></li></ul></li><li><a href="#sec-3"> HTML&#47;CSS</a><ul class="nav nav-stacked"><li><a href="#sec-3-1">Simple HTML and CSS</a></li><li><a href="#sec-3-2">Umm, what about CSS?</a></li><li><a href="#sec-3-3">Let's take a look at what CSS looks like!</a></li><li><a href="#sec-3-4">Download</a></li></ul></li><li><a href="#sec-4"> Javascript</a><ul class="nav nav-stacked"><li><a href="#sec-4-1">Javscript, finally!</a></li><li><a href="#sec-4-2">In fact...</a></li><li><a href="#sec-4-3">JQuery</a></li><li><a href="#sec-4-4">Download</a></li></ul></li><li><a href="#sec-5"> The Server</a><ul class="nav nav-stacked"><li><a href="#sec-5-1">Node</a></li><li><a href="#sec-5-2">Package.json</a></li><li><a href="#sec-5-3">Socket.io</a></li><li><a href="#sec-5-4">server.js</a></li><li><a href="#sec-5-5">socket-client.js</a></li><li><a href="#sec-5-6">Functions</a></li><li><a href="#sec-5-7">Users</a></li><li><a href="#sec-5-8">The socket handler</a></li><li><a href="#sec-5-9">Chat</a></li><li><a href="#sec-5-10">The Image Command</a></li><li><a href="#sec-5-11">Download</a></li></ul></li><li><a href="#sec-6"> Express</a><ul class="nav nav-stacked"><li><a href="#sec-6-1">Express</a></li><li><a href="#sec-6-2">Express Server</a></li><li><a href="#sec-6-3">Error 404</a></li><li><a href="#sec-6-4">Giphy Route</a></li><li><a href="#sec-6-5">Giphy AJAX</a></li></ul></li><li><a href="#sec-7"> Databases</a><ul class="nav nav-stacked"><li><a href="#sec-7-1">Making information stick around</a></li><li><a href="#sec-7-2">Installing MongoDB</a></li><li><a href="#sec-7-3"> Mongolab</a></li><li><a href="#sec-7-4">Running MongoDB</a></li><li><a href="#sec-7-5">How MongoDB structures your data</a></li><li><a href="#sec-7-6">Integrating MongoDB into the web app</a></li><li><a href="#sec-7-7">Why use a database? And why MongoDB?</a></li><li><a href="#sec-7-8">Files</a></li><li><a href="#sec-7-9">You're done!</a></li></ul></li><li><a href="#sec-8">Thanks for being a part of Code Weekend!</a><ul class="nav nav-stacked"><li><a href="#sec-8-1">We hope you enjoyed these workshops as much as we enjoyed making them for you.</a></li></ul></li></ul>
 </nav>
     </div>
 
