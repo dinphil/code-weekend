@@ -2,6 +2,10 @@ p {
   font-size: 12pt;
 }
 
+img {
+  width: 100%;
+}
+
 .group {
   padding-bottom: 10px;
 }
