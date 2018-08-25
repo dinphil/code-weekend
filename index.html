@@ -71,7 +71,7 @@
 <p>If you already have some coding experience, then feel free to skip the first session. Here&#39;s what we expect you to know and have installed before you jump into the second session:</p>
 <ul>
 <li>The basics of how the web works.</li>
-<li>HTML/CSS/Javascript to the extent that you can build a simple static webpage.</li>
+<li>HTML/CSS/Javascript to the extent that you can build a simple static web page.</li>
 <li>Know how to use Terminal/Command Prompt to move folders, change directories, and create files.</li>
 </ul>
 <blockquote>
@@ -102,45 +102,45 @@
 <li><a href="https://www.bento.io">Bentobox</a> is a great all-in-one resource to learn to code for a huge number of technologies. </li>
 <li><a href="http://www.codecademy.com/learn">Code Academy</a> has some great tutorials. The lessons for each language can get tedious, but the tutorials where you build actual things are pretty great. If you&#39;re looking for a good introduction to HTML/CSS, <a href="https://dash.generalassemb.ly/">General Assembly&#39;s Dash</a> is probably the best place to start.</li>
 </ul>
-</div><span id="sec-2-3" class="anchor"></span><div id="" class="subgroup"><h3>An Introduction to the web</h3><p>There&#39;s pretty much three things happening every time you open a website:</p>
+</div><span id="sec-2-3" class="anchor"></span><div id="" class="subgroup"><h3>An Introduction to the Web</h3><p>There&#39;s pretty much three things happening every time you open a website:</p>
 <ul>
 <li>Your browser looks up an address (say google.com) and follows it back to its home - the server which actually runs the website. This server is basically just a computer, albeit a huge, immensely powerful computer possibly comprising acres of computer hardware connected together. For this workshop though, that&#39;s just going to be your laptop...we don&#39;t provide that kind of computing power.</li>
 <li>This server is what we call the <em>backend</em>. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in to a dashboard - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.</li>
-<li>Your computer now reads this response and converts it into the webpage you actually see on your computer. This last bit of conversion is what we call the <em>frontend</em> doing its work.</li>
+<li>Your computer now reads this response and converts it into the web page you actually see on your computer. This last bit of conversion is what we call the <em>frontend</em> doing its work.</li>
 </ul>
 <p><img src="assets/img/server-browser.png" alt="Server- Browser"></p>
 <p>So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are the two main components of any website.</p>
-<p>You&#39;ll see later on that requests aren&#39;t just made to the server when we first open the website; it&#39;s often faster to make smaller requests first, load the important parts of a webpage and then request additional bits of information when they&#39;re needed (think <a href="http://www.facebook.com">Facebook&#39;s Newsfeed</a>). It&#39;s also used when we do things like attempt to log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the webpage immediately without having to refresh the page.</p>
+<p>You&#39;ll see later on that requests aren&#39;t just made to the server when we first open the website; it&#39;s often faster to make smaller requests first, load the important parts of a web page and then request additional bits of information when they&#39;re needed (think <a href="http://www.facebook.com">Facebook&#39;s Newsfeed</a>). It&#39;s also used when we do things like attempt to log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the web page immediately without having to refresh the page.</p>
 <p><img src="/assets/img/facebook_loading.png" alt="Facebook Loading using Javascript"></p>
 </div><span id="sec-2-4" class="anchor"></span><div id="" class="subgroup"><h3>What is Terminal&#47;Command Prompt?</h3><p><img src="/assets/img/terminal.png" alt="Terminal"></p>
 <p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let&#39;s take some time to get used to it.</p>
-<p>Once you fire up Terminal or Command Prompt (on Windows, you&#39;ll later need to run cmd.exe by right clicking on the shortcut and clicking Run as Administrator, you&#39;ll know it&#39;s running as Admin if your path ends in <code>../system32</code>), here are a few simple commands that you can type:</p>
+<p>Once you fire up Terminal or Command Prompt (on Windows, you&#39;ll later need to run cmd.exe by right-clicking on the shortcut and click Run as Administrator, you&#39;ll know it&#39;s running as Admin if your path ends in <code>../system32</code>), here are a few simple commands that you can type:</p>
 <ul>
 <li><code>ls</code> (<code>DIR</code> on Windows) lists all the files in the current folder</li>
-<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents, if there is such a folder in the current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
+<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents if there is such a folder in the current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
 <li><code>pwd</code> prints out the current path you&#39;ve traversed in the file system. It&#39;s particularly helpful once you&#39;ve used <code>cd</code> a few times, and aren&#39;t sure where you are anymore.</li>
 <li><code>mkdir</code> allows you to make a folder in the current directory. So <code>mkdir Such Magic</code> makes a folder named &#39;Such Magic&#39;.</li>
 <li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from <code>C:\windows\temp</code> to <code>C:\temp</code>. <code>*</code> works as a wildcard operator here. Careful with this one - you may not want to move things around haphazardly.</li>
 </ul>
-<p>Once you&#39;ve installed Node.JS (which we&#39;ll do in the next workshop), you&#39;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&#39;ll aso be able to start up MongoDB from here using <code>mongod</code>.</p>
+<p>Once you&#39;ve installed Node.JS (which we&#39;ll do in the next workshop), you&#39;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&#39;ll also be able to start up MongoDB from here using <code>mongod</code>.</p>
 <h3 id="let-s-start-making-stuff-">Let&#39;s start making stuff!</h3>
 <p>Whoohoo! We&#39;ve made it this far, and it&#39;s finally time to start making stuff!</p>
 <h4 id="sublime-text-3">Sublime Text 3</h4>
-<p>We&#39;ve got to install a whole buch of stuff over the next few workshops. Let&#39;s start simple, go and download <a href="http://www.sublimetext.com/3">Sublime Text 3</a>. It&#39;s the best text editor in existence (yes, that&#39;s arguable) and this is where we&#39;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it.</p>
+<p>We&#39;ve got to install a whole bunch of stuff over the next few workshops. Let&#39;s start simple, go and download <a href="http://www.sublimetext.com/3">Sublime Text 3</a>. It&#39;s the best text editor in existence (yes, that&#39;s arguable) and this is where we&#39;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it.</p>
 <p>NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit &quot;Cancel&quot; and you can use it forever. Alternatively, you can buy it and support a fellow developer.</p>
 <h3 id="making-a-chat-app">Making a Chat App</h3>
-<p>Well done! You&#39;ve got everything you need installed. Now let&#39;s test what you&#39;ve learned in this workshop. Here&#39;s an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal chat app. The adventurous ones among you can even try and create a complete static website; you know enough that you can just Google for anything you need. Browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
+<p>Well done! You&#39;ve got everything you need installed. Now let&#39;s test what you&#39;ve learned in this workshop. Here are an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal chat app. The adventurous ones among you can even try and create a completely static website; you know enough that you can just Google for anything you need. Browse the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
     <!--Take a look at some of our organizers&#39; websites for inspiration (<a href="http://www.seas.upenn.edu">Devesh</a>, <a href="http://dhruvagarwal.me">Dhruv</a>) or browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>-->
-</div></section><span id="sec-3" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> HTML&#47;CSS</h2></div><span id="sec-3-1" class="anchor"></span><div id="" class="subgroup"><h3>Simple HTML and CSS</h3><p>HTML (HyperText Markup Language) is the backbone of any webpage. It&#39;s where we add in all the information - what the webpage actually displays, as well as information about the page itself such as its title.</p>
+</div></section><span id="sec-3" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> HTML&#47;CSS</h2></div><span id="sec-3-1" class="anchor"></span><div id="" class="subgroup"><h3>Simple HTML and CSS</h3><p>HTML (HyperText Markup Language) is the backbone of any web page. It&#39;s where we add in all the information - what the web page actually displays, as well as information about the page itself such as its title.</p>
 <p><img src="/assets/img/with_and_without_css.gif" alt="With and without CSS"></p>
-<p>CSS (Cascading Style Sheets) dresses up this information. Most (but really all) webpages link to a CSS file that stores information on how a browser should display the information it recieves in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
-<p>Javascript is the fun part. It does dynamic things with your webpage, updates content on the fly and can animate just about anything. We&#39;ll talk about this later.</p>
-<p>In short, we can visualize it as follows: a full website is a program with raw structure defined via HTML, dressed up with CSS and controlled/manipulated with JavaScript.</p>
-<p>Every webpage is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
+<p>CSS (Cascading Style Sheets) dresses up this information. Most (but really all) web pages link to a CSS file that stores information on how a browser should display the information it receives in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
+<p>Javascript is the fun part. It does dynamic things with your web page, updates content on the fly and can animate just about anything. We&#39;ll talk about this later.</p>
+<p>In short, we can visualize it as follows: a full website is a program with a raw structure defined via HTML, dressed up with CSS and controlled/manipulated with JavaScript.</p>
+<p>Every web page is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
 <p>Let&#39;s start with HTML (HyperText Markup Language).</p>
 <p><img src="/assets/img/html_meme.png" alt="HTML meme"></p>
 <p>HyperText is text that will hyperlink you to other text. That&#39;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
-<p>It is called a Markup Language because HTML is not written as plain text. It is marked up into the form of HTML elements called &#39;tags.&#39; Tags are denoted by <code>&lt;</code> followed by <code>&gt;</code>. Below is the most basic HTML document we can create (except for the comments that we&#39;ve added in to make things clearer).</p>
+<p>It is called a Markup Language because HTML is not written as plain text. It is marked up in the form of HTML elements called &#39;tags.&#39; Tags are denoted by <code>&lt;</code> followed by <code>&gt;</code>. Below is the most basic HTML document we can create (except for the comments that we&#39;ve added in to make things clearer).</p>
 <pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -148,12 +148,12 @@
     &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
   &lt;/head&gt;
     &lt;body&gt;
-    &lt;p&gt;This is a basic HTML webpage.&lt;/p&gt;
+    &lt;p&gt;This is a basic HTML web page.&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p><code>&lt;!DOCTYPE html&gt; &lt;html&gt;</code> is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contatined in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, <code>&lt;html&gt;</code> must eventually be closed by <code>&lt;/html&gt;</code>.</p>
-<p>Aside from the content rendered into the <em>body</em> of a webpage, we often define more information about the site in the <code>&lt;head&gt;</code> tag like this:</p>
+<p><code>&lt;!DOCTYPE html&gt; &lt;html&gt;</code> is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contained in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, <code>&lt;html&gt;</code> must eventually be closed by <code>&lt;/html&gt;</code>.</p>
+<p>Aside from the content rendered into the <em>body</em> of a web page, we often define more information about the site in the <code>&lt;head&gt;</code> tag like this:</p>
 <pre><code class="lang-html">&lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
@@ -161,8 +161,8 @@
   &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
 &lt;/head&gt;
 </code></pre>
-<p>So now we&#39;ve specified the character set that the page uses - this is just to make sure the browser doesn&#39;t think that the page is in a language other than english. Then there&#39;s a description followed by the actual page title (this is what you see in the title bar of your browser). Finally there&#39;s a tag where we&#39;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a webpage - which we&#39;ll do soon enough, don&#39;t worry!</p>
-<p>Now let&#39;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your webpage goes. Let&#39;s try adding some information in.</p>
+<p>So now we&#39;ve specified the character set that the page uses - this is just to make sure the browser doesn&#39;t think that the page is in a language other than English. Then there&#39;s a description followed by the actual page title (this is what you see in the title bar of your browser). Finally, there&#39;s a tag where we&#39;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a web page - which we&#39;ll do soon enough, don&#39;t worry!</p>
+<p>Now let&#39;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your web page goes. Let&#39;s try adding some information in.</p>
 <pre><code class="lang-html">&lt;body&gt;
   &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
   &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
@@ -241,7 +241,7 @@
 </div><span id="sec-3-2" class="anchor"></span><div id="" class="subgroup"><h3>Umm, what about CSS?</h3><p>Almost there! Before we can decide how elements on the page should look, we actually need a way to find and identify these elements. That HTML document we said was almost complete, well, it was almost complete. The last thing we need to add in are identifiers as <em>tag attributes</em>, and these fall into two categories:</p>
 <ul>
 <li>IDs: These are unique to an individual HTML element. Once I give an ID to an element, it cannot be used again. Think Penn IDs. Every element can be assigned an ID. For example: <code>&lt;p id=&quot;workshop-introduction&quot;&gt;</code>.</li>
-<li>Classes: These are reusable names that we give to ranges of elements. This allows us to do thigns like apply the same style (say, a font) to multiple elements that have the same class, rather than writing the same thing over and over. For example, we can create multiple paragraphs with the same class: <code>&lt;p class=&quot;red-text&quot;&gt; This text is theoretically red.&lt;/p&gt; &lt;p class=&quot;red-text&quot;&gt; This text is also presumably red. &lt;/p&gt;</code>.</li>
+<li>Classes: These are reusable names that we give to ranges of elements. This allows us to do things like apply the same style (say, a font) to multiple elements that have the same class, rather than writing the same thing over and over. For example, we can create multiple paragraphs with the same class: <code>&lt;p class=&quot;red-text&quot;&gt; This text is theoretically red.&lt;/p&gt; &lt;p class=&quot;red-text&quot;&gt; This text is also presumably red. &lt;/p&gt;</code>.</li>
 </ul>
 <p>Now we have a way to decide on styles. Let&#39;s look at that HTML document again:</p>
 <pre><code class="lang-html">&lt;!-- This is a slightly more complete HTML document, but with no styles as yet. --&gt;
@@ -347,12 +347,12 @@ button:hover {
 <p>A great reference for all things HTML/CSS/JavaScript is the Mozilla Developer Reference.</p>
 <p><img src="/assets/img/stack_overflow.png" alt="Stack Overflow"></p>
 <p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links.</p>
-<p>A great way to play around with CSS styles is to right-click on this page in Chrome, Firefox or Safari (<a href="http://www.howtogeek.com/howto/32372/htg-explains-why-do-so-many-geeks-hate-internet-explorer/">Here&#39;s why you should avoid Internet Explorer</a>), choose Inspect Element, and try changing the CSS styles on the right hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
+<p>A great way to play around with CSS styles is to right-click on this page in Chrome, Firefox or Safari (<a href="http://www.howtogeek.com/howto/32372/htg-explains-why-do-so-many-geeks-hate-internet-explorer/">Here&#39;s why you should avoid Internet Explorer</a>), choose Inspect Element, and try changing the CSS styles on the right-hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
 <p><img src="assets/img/sass-debugging.png" alt="Chrome dev tools"></p>
 <p>Now, our chat app looks a little more complete. Now let&#39;s learn how to actually make this app work!</p>
 </div><span id="sec-3-4" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project so far:</p>
 <p><a href="/assets/files/html-css.zip">HTML and CSS .zip</a></p>
-</div></section><span id="sec-4" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Javascript</h2></div><span id="sec-4-1" class="anchor"></span><div id="" class="subgroup"><h3>Javscript, finally!</h3><p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&#39;re (maybe) used to. You just write code in a file, link to it in your HTML and it exectutes.</p>
+</div></section><span id="sec-4" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Javascript</h2></div><span id="sec-4-1" class="anchor"></span><div id="" class="subgroup"><h3>Javascript, finally!</h3><p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language, we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&#39;re (maybe) used to. You just write code in a file, link to it in your HTML and it executes.</p>
 </div><span id="sec-4-2" class="anchor"></span><div id="" class="subgroup"><h3>In fact...</h3><p><img src="/assets/img/javascript_meme.jpg" alt="Javascript meme"></p>
 <p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <em>Integer</em> with the value of <code>5</code>. Writing <code>var x = &quot;5&quot;</code> would create a <em>String</em> named <code>x</code> with the string <code>5</code> as its value.</p>
 <p>The most common types we will use are Strings (just text, such as &quot;This is some text&quot;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&#39;ll be surprised by how common almost everything you want to do is).</p>
@@ -360,7 +360,7 @@ button:hover {
 <pre><code class="lang-javascript">var myVariable = &quot;Code Weekend&quot;;
 alert (&quot;I&#39;m learning the basics of JavaScript at &quot; + myVariable);
 </code></pre>
-<p>This creates an alert (a pop-up on a webpage) that says &quot;I&#39;m learning the basics of JavaScript at Code Weekend&quot;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&#39;s a function in Javascript that squares a number:</p>
+<p>This creates an alert (a pop-up on a web page) that says &quot;I&#39;m learning the basics of JavaScript at Code Weekend&quot;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&#39;s a function in Javascript that squares a number:</p>
 <pre><code class="lang-javascript">function square (number) {
   return number * number;
 }
@@ -445,7 +445,7 @@ console.log(myDetails.interests[1]); // prints &#39;Javascript&#39; (array posit
 &lt;lastUpdated&gt;September 6th&lt;/lastUpdated&gt;
 </code></pre>
 <p>So much better isn&#39;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier, and websites much faster.</p>
-<p>And that covers the basics of HTML, CSS and JavaScript. Naturally, there&#39;s a lot more we could go into depth about for each of them, but we&#39;ve found that it&#39;s best to learn by experimenting and trying out things on your own, using the resources listed at the start of this session. But before we get to that, let&#39;s not forget the pertinent question:</p>
+<p>And that covers the basics of HTML, CSS, and JavaScript. Naturally, there&#39;s a lot more we could go into depth about for each of them, but we&#39;ve found that it&#39;s best to learn by experimenting and trying out things on your own, using the resources listed at the start of this session. But before we get to that, let&#39;s not forget the pertinent question:</p>
 </div><span id="sec-4-3" class="anchor"></span><div id="" class="subgroup"><h3>JQuery</h3><p>Javascript is pretty cool on its own.</p>
 <p>But it&#39;s cooler with external libraries.</p>
 <p>One of the most popular third-party JS libraries is
@@ -466,11 +466,11 @@ you should have a file <code>client/js/jquery.js</code>.</p>
 This is fairly easy, and can be done by adding something like &#39;&lt;script src=&#39;&#39;</p>
 <blockquote>
 <p></script>&#39; however, inside of the single quotes, instead we are going to place
-the location of our file. JQuery is a tool, or a script, and what the script tag
+the location of our file. JQuery is a tool or a script, and what the script tag
 does is it lets us know the location of these tools. In our case, the full line
 should look something like: &#39;<script src="js/jquery.js"></script>&#39;.</p>
 </blockquote>
-<h2 id="now-lets-use-it-">Now Lets Use It!!!</h2>
+<h2 id="now-lets-use-it-">Now Let&#39;s Use It!!!</h2>
 <p>Recall HTML elements have various tags. Something like
 <code>&lt;h1 style=&quot;color: red;&quot; id=&quot;first-big-line&quot;&gt;Hello world!&lt;/h1&gt;</code> makes use of
 various HTML tags. Namely, it has an <code>id</code> and a <code>style</code> tag. In
@@ -499,17 +499,17 @@ script. It&#39;s as easy as:</p>
 </code></pre>
 <p>Now, open up <code>client/js/jquery-client.js</code>. It&#39;s time to code.</p>
 <p><img src="assets/img/yolo_swag.gif" alt="YOLO swag"></p>
-<p>Okay so now that we have basic setup of all your files. Let&#39;s break down what
+<p>Okay so now that we have a basic setup of all your files. Let&#39;s break down what
 you need to do when processing a message. Recall that our messages will be stored
 in a JSON object with just the text itself. No sort of styling. We need to create
 chat boxes for every message that comes in. jQuery has a neat function <code>appendTo()</code>
-that takes html as its one argument. It is formatted in the following manner:</p>
+that takes HTML as its one argument. It is formatted in the following manner:</p>
 <pre><code class="lang-javascript">$(&#39;selector&#39;).appendTo(&#39;&lt;SOME HTML TAG HERE&gt;blah&lt;/SOME HTML TAG HERE&gt;&#39;);
 </code></pre>
-<p>Like the name suggests, it <em>appends</em> html code to the element you have selected.
+<p>Like the name suggests, it <em>appends</em> HTML code to the element you have selected.
 In the main part of our website that contains the messages, we can <em>append</em>
 formatted messages. </p>
-<p>Also another neat thing, is that you can assign variables to functions
+<p>Also, another neat thing is that you can assign variables to functions
 (think of it as naming a function for use later). Let&#39;s do that now.</p>
 <pre><code class="lang-javascript">var infoColor = &#39;#888888&#39;;
 var errorColor = &#39;red&#39;;
@@ -595,7 +595,7 @@ screen. Look at the line</p>
 the <code>#messages</code> element, and then animate its fade in. That&#39;s some pretty
 intermediate jQuery right there. We first &quot;hide&quot; the text (make its visibility 0,
 but add it to the page), then append it to the messages, and finally go ahead and
-fade in the message from transparent to visibile in 200 milliseconds (note most
+fade in the message from transparent to visible in 200 milliseconds (note most
 Javascript timestamps are in milliseconds).</p>
 <p>Next, we define an <code>event</code> for when the message form is submitted:</p>
 <pre><code class="lang-javascript">$(&#39;#message-form&#39;).submit(function (event) {
@@ -619,7 +619,7 @@ you should see jQuery working to push your messages to the screen.</p>
 <p><a href="http://seas.upenn.edu/~eneyman/files/jquery.zip">Javascript and JQuery .zip</a></p>
 </div></section><span id="sec-5" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> The Server</h2></div><span id="sec-5-1" class="anchor"></span><div id="" class="subgroup"><h3>Node</h3><p>Node.js is, at its core, an environment for using Javascript to program web
 servers. Because some people like Javascript, and because we all think PHP
-sucks, the Internet in general seems to think Node is pretty cool. So, while we
+sucks, the Internet, in general, seems to think Node is pretty cool. So, while we
 could feasibly use <a href="https://golang.org/">any</a> <a href="https://secure.php.net/">number</a>
 of <a href="https://www.python.org/">different</a> <a href="https://www.java.com/en/">languages</a> to
 make the back-end of our chat client, today the focus will be on Node.</p>
@@ -629,14 +629,14 @@ see why.</p>
 <p>First things first, let&#39;s install Node. Instructions for installing depend on
 your operating system, so keep scrolling until you find the right directions.</p>
 <h4 id="mac">Mac</h4>
-<p>The easiest way to install Node is through Homebrew, a package manage for OSX.
+<p>The easiest way to install Node is through Homebrew, a package manager for OSX.
 Sometimes Homebrew is already installed on your computer, and sometimes you need
 to install it. Bring up a terminal window and type <code>brew install node</code>. When it
 finishes, it might show you a few commands you need to run in Terminal. Run
 those commands and you&#39;re set!</p>
 <p>If instead of that command terminal got angry and said it doesn&#39;t know what
-<code>brew</code> is, it means you don&#39;t have Homebrew. No worried. Let&#39;s install Homebrew
-by typing this into terminal:</p>
+<code>brew</code> is, it means you don&#39;t have Homebrew. No worries. Let&#39;s install Homebrew
+by typing this into the terminal:</p>
 <p><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</code></p>
 <p>If Homebrew installs successfully, try <code>brew install node</code> again. If that still
 doesn&#39;t work, try Googling the error text and looking for solutions. If that
@@ -659,7 +659,7 @@ link</a>
 for a full list.</p>
 <p>All set? Let&#39;s get started.</p>
 <h3 id="what-does-server-side-really-mean-">What does server-side really mean?</h3>
-<p>Till now, we&#39;ve dealt with HTML, CSS and JavaScript. These are the files that
+<p>Till now, we&#39;ve dealt with HTML, CSS, and JavaScript. These are the files that
 a server send over the internet to your browser when your browser tries to
 navigate to that website. However, as we saw in the last workshop, these files
 aren&#39;t intelligent, they simply display information that is entered into them.</p>
@@ -683,7 +683,7 @@ because it has modules, which are bits of code other people have already written
 that can easily be added to give new functionality to your app. NodeJS has the
 most modules of most modern web frameworks, 3 parts come together to form the
 core of any website. Often, websites also use APIs (basically a way for websites
-to talk to each other) to make their websites more dynamic, or to pull in
+to talk to each other) to make their websites more dynamic or to pull in
 information from other websites.</p>
 <h3 id="what-is-a-nodejs-app-">What is a NodeJS app?</h3>
 <p>Node is a very common JavaScript-based web framework. Node is a framework that
@@ -694,12 +694,12 @@ has the most <em>modules</em> of most modern web frameworks, and that’s part o
 makes it really great for writing web apps fast.</p>
 <p>Now that you know a bit about Node, let&#39;s jump in and explore the different
 components of our Node app.</p>
-</div><span id="sec-5-2" class="anchor"></span><div id="" class="subgroup"><h3>Package.json</h3><p>The first bit of the Node app is purely logisitcal. A <code>package.json</code> is
+</div><span id="sec-5-2" class="anchor"></span><div id="" class="subgroup"><h3>Package.json</h3><p>The first bit of the Node app is purely logistical. A <code>package.json</code> is
 a standardized JSON file containing all the pertinent information about this
 app. It&#39;s fairly readable and contains information about the authors, app
 version, and versions of Node modules used.</p>
 <p>For this bit, you&#39;ll want to hop into the <code>server</code> folder in your main project
-directory, and create a <code>package.json</code>. Yours should look something like this</p>
+directory and create a <code>package.json</code>. Yours should look something like this</p>
 <pre><code class="lang-json">{
   &quot;name&quot;: &quot;chat-server&quot;, // module name
   &quot;private&quot;: true, // keeps this app private
@@ -734,8 +734,8 @@ a single TCP connection. For our purposes, it boils down into a set of rules
 that allow web browsers to communicate in real time with web servers over HTTP.</p>
 <p>Many web servers in the real world have the main task of getting HTTP requests
 (the kinds your browser sends whenever you enter an address in your address bar)
-and streaming responses in the form of webpages. Later, in workshop 4, we&#39;ll
-use Express to serve the webpages in our <code>client</code> folder exactly like that. For
+and streaming responses in the form of web pages. Later, in workshop 4, we&#39;ll
+use Express to serve the web pages in our <code>client</code> folder exactly like that. For
 now, though, we can just open our <code>client/index.html</code> file in a browser.</p>
 <p>In the end, the interesting part of our application is going to be how those
 client files communicate with our Node app via these WebSockets.</p>
@@ -752,7 +752,7 @@ work. In the <code>server</code> folder, we&#39;re going to be building a <code>
 we can run using Node. This&#39;ll act as our Socket.io server, handling connections
 and streaming important information like chat messages. In the <code>client/js</code>
 folder, we&#39;ll be building a new <code>.js</code> file, <code>socket-client.js</code>, which will
-handle the client-sided communication with the server.</p>
+handle the client-side communication with the server.</p>
 <p>If you&#39;ve taken CIS120, or have some similar experience, you might be able to
 use this description to start envisioning how we might implement the model for
 our chat server. If not, don&#39;t worry. Once we start coding everything should
@@ -796,18 +796,18 @@ down the code into its component parts.</p>
 </code></pre><p>This line isn&#39;t super important. It just signals to Node that we want to use
 Javascript in &#39;strict mode&#39;. For most of what we&#39;re doing, the differences
 between regular js and strict mode js are irrelevant, but it&#39;s generally
-considered good practice to code in strict mode, as it causes Node to throw
+considered a good practice to code in strict mode, as it causes Node to throw
 errors more easily and often helps keep code cleaner, more clear, and more
 &#39;strict&#39;.</p>
 <pre><code class="lang-javascript">let Server = require(&#39;socket.io&#39;);
 let io = Server(3000);
 </code></pre>
-<p>A few things of important here. First, <code>let</code>. You haven&#39;t seen this before, but
+<p>A few things of importance here. First, <code>let</code>. You haven&#39;t seen this before, but
 you&#39;ll see it a lot in the server side code. Recently, Javascript underwent
 a big revision, called ES6 (or ES2015, depending on who you ask). One such
 change is the addition of the <code>let</code> and <code>const</code> keyword. In ES5 Javascript, the
 only way to initialize a variable was using the <code>var</code> keyword. The <code>var</code> keyword
-worked, but was generally regarded as very clumsy when it came to <a href="http://stackoverflow.com/questions/1047454/what-is-lexical-scope">lexical
+worked but was generally regarded as very clumsy when it came to <a href="http://stackoverflow.com/questions/1047454/what-is-lexical-scope">lexical
 scoping</a>.
 Essentially, programmers were upset with how <code>var</code> sometimes behaved ambiguously
 compared to what they&#39;d expect in other modern languages. The <code>let</code> keyword is,
@@ -823,15 +823,15 @@ familiarize you with ES6, since more and more Javascript will get the ES6
 treatment in times to come. It&#39;s not super important to know the differences,
 but I&#39;ll generally try to prefer ES6 idioms to ES5 code whenever possible in
 this <code>server.js</code>. Unfortunately, ES6 isn&#39;t fully adopted yet to many major web
-browsers, so our client code will stay ES5 compliant. I&#39;ll try to note the
+browsers so our client code will stay ES5 compliant. I&#39;ll try to note the
 differences whenever possible, but don&#39;t worry about getting too caught up in it
 all. If you get confused, feel free to ask for help. At least some of your
 mentors love talking about ES6, and so they&#39;d be glad to explain what&#39;s going
 on.</p>
 <p>Next, the Node <code>require</code> function. You&#39;ll see a more explicit use of this
-function later, when we implement users, but, for now, just note that <code>require</code>
+function later when we implement users, but, for now, just note that <code>require</code>
 is analogous to <code>import</code> in many languages. The <code>require</code> function will try to
-pull in an external module (either another file in your project or, in this
+pull in an external module (either another file in your project or in this
 case, a separate dependency) for use by the current module. In this case, we use
 <code>require</code> to pull in the Socket.io library from our <code>node_modules</code> directory. We
 label that import <code>Server</code>. In this case, socket.io exposes itself as
@@ -858,7 +858,7 @@ should be executed. You&#39;ll notice functions in Javascript are first-class, w
 can pass them as parameters to other functions, just like variables. You&#39;ll also
 notice we&#39;re using the ES6 arrow notation here for our functions. In this case,
 <code>(socket) =&gt; { /* code */ }</code> is very similar to <code>function (socket) { /* code */
-}</code> except it behaves a bit differently wit the <code>this</code> keyword and tends to look
+}</code> except it behaves a bit differently with the <code>this</code> keyword and tends to look
 better for inline anonymous functions.</p>
 <p>Here we tell <code>io</code> (the socket server, remember?) to handle new <code>connection</code>
 messages with this anonymous function that takes the socket (client) as
@@ -1562,7 +1562,7 @@ opened up a web browser and navigated to our Node server, we wouldn&#39;t see
 anything useful! Our server <em>functions</em>. It <em>knows</em> how to handle web sockets,
 but it doesn&#39;t yet know how to handle basic HTTP requests. So the server doesn&#39;t
 know how to handle arbitrary connections on the internet, which means it can&#39;t
-serve our webpages to clients by itself.</p>
+serve our web pages to clients by itself.</p>
 <p>That&#39;s where Express comes in. Node, on its own, has a pretty nice <code>http</code>
 library for building <code>http</code> servers, but Express massively simplified the
 project, which is why many large applications built with Node depend on Express
