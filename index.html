@@ -922,7 +922,7 @@ let _ = require(&#39;underscore&#39;);
 let users = {};
 </code></pre>
 <p>Here, we see more of the <code>require</code> syntax. This time, we&#39;re pulling in a couple
-other libraries. Moniker will help us randomly generate user names (just to
+other libraries. Moniker will help us randomly generate usernames (just to
 illustrate how easy it is to use external packages) and Underscore will provide
 some helpful functions for manipulating our data.</p>
 <p>For those CIS120 and up, check out the <a href="http://underscorejs.org/">Underscore
@@ -962,10 +962,10 @@ function getUniqueName() {
 them out just by careful reading. If you can&#39;t, don&#39;t worry too much. They&#39;re
 mostly just showcasing usages of the <code>Moniker</code> and <code>Underscore</code> libraries that
 we just <code>require</code>d. <code>isUniqueName</code> checks to see if a name is unique. It does
-this in only 2 lines by utilizing some <code>Underscore</code> functions. First we apply
+this in only 2 lines by utilizing some <code>Underscore</code> functions. First, we apply
 <code>_.mapObject</code> to the <code>users</code> dictionary. To those familiar, it should look at
 lot like the <code>map</code> function in many other languages. Essentially, it iterates
-through the <code>users</code> dictionary and, for each user, grabs the lower case version
+through the <code>users</code> dictionary and, for each user, grabs the lowercase version
 of their name, putting all of the names into an array of <code>names</code>, before using
 <code>_.contains</code> to check if any of those <code>names</code> equals the <code>name</code> passed to the
 function.</p>
@@ -1019,17 +1019,17 @@ function sendMessage(message) {
 </code></pre>
 <p>As before, <code>getUserList</code> uses some familiar <code>Underscore</code>. The <code>_.reduce</code> method
 is analogous to <code>fold</code> in many languages. Here, we <code>reduce</code> or <code>fold</code> on the
-<code>user</code> dictionary to get a string of comma separated usernames.</p>
+<code>user</code> dictionary to get a string of comma-separated usernames.</p>
 <p>In <code>sendMessage</code> we use Socket.io to emit a <code>MESG</code>. You can see here how we add
 an extra parameter to the <code>socket.emit</code>. This lets us send a JSON object with
-our message so the server has some data to handle. In this case, our JSON
+our message, so the server has some data to handle. In this case, our JSON
 object is very simple: containing only a <code>message</code> field.</p>
 <p>You&#39;ll notice this code hasn&#39;t really done much so far. That&#39;s just because
 we&#39;re simply laying the groundwork for the rest of the code. In the next step,
 we&#39;ll create a User model, showing off Node&#39;s module pattern, and then we&#39;ll be
 ready to add some actual chat functionality!</p>
 </div><span id="sec-5-7" class="anchor"></span><div id="" class="subgroup"><h3>Users</h3><p>So now the <code>client</code> and <code>server</code> both have a <code>users</code> dictionary, but we still
-need to create a user object to populate those dictionary. What better way to do
+need to create a user object to populate those dictionaries. What better way to do
 that than with a Node module! This section of the workshop should help
 familiarize you with how Node handles external files. If you ever want to create
 bigger projects in Node, this information is a must, as trying to put thousands
@@ -1101,7 +1101,7 @@ module.exports = function(socket, name) {
 }
 </code></pre>
 <p>Again drawing on CIS120, this pattern will remind some of you of the object
-pattern used in the OCaml Paint Project. Essentially, we&#39;re exported a <strong>factory
+pattern used in the OCaml Paint Project. Essentially, we&#39;ve exported a <strong>factory
 function</strong> that returns an object literal with a bunch of relevant functions
 stored inside. <code>socket</code> and <code>name</code> get glued to the closure that&#39;s created, and
 the result is a User object factory. If none of that made sense, don&#39;t worry.
@@ -1171,10 +1171,10 @@ update their own user list.</p>
 that has, (1) a <code>users</code> field containing all the users currently connected and
 (2) a <code>user</code> field containing the <code>id</code> of this connection (so the socket knows
 who it is in the <code>users</code> list). We use <code>_.mapObject</code> again here to translate
-from the server-sided User model to something simpler -- methods and closures
+from the server-side User model to something simpler -- methods and closures
 don&#39;t transfer well over Socket.io, so we need to translate each user object
 into something a bit simpler.</p>
-<p>Next we broadcast the <code>JOINED</code> event to the entire server so everyone else can
+<p>Next, we broadcast the <code>JOINED</code> event to the entire server so everyone else can
 know they have a new chatter</p>
 <pre><code class="lang-javascript">socket.broadcast.emit(&#39;JOINED&#39;, {user: users[socket.id].toObj()});
 </code></pre>
@@ -1319,13 +1319,13 @@ remember from <code>server.js</code> is called when the client first connects to
 server. <code>STATE</code> is passed a data object containing a specially formatted list of
 users, which we then print out to tell us who is currently in the channel.</p>
 <p>And that&#39;s it! An entire chat app (almost). If you run the server now (<code>node
-server.js</code> in terminal from the <code>server</code> directory) and open <code>index.html</code> in
+server.js</code> in the terminal from the <code>server</code> directory) and open <code>index.html</code> in
 multiple tabs/windows, you should be able to play with the basic functionality.</p>
 <p>Right click on the page, click <code>inspect element</code> and send messages by using the
 browser console: Try entering <code>sendMessage(&#39;Hello World!&#39;)</code>! If everything
 worked, the message should end up on all connected windows.</p>
 <p>Over course, requiring communication via the console does not make for a very
-user friendly chat app. In the next (short) step, we&#39;ll dive back into
+user-friendly chat app. In the next (short) step, we&#39;ll dive back into
 <code>jquery-client.js</code>, make some very small changes to hook our existing UI up to
 this new functionality, and the result will be a fully functional chat client.</p>
 </div><span id="sec-5-9" class="anchor"></span><div id="" class="subgroup"><h3>Chat</h3><p>This is going to be super complicated. Ready?</p>
@@ -1340,7 +1340,7 @@ a new message uses our <code>sendMessage</code> functionality from <code>socket-
 send a message to the server. That&#39;s it! Cool, right?</p>
 <h4 id="changing-names">Changing names</h4>
 <p>Of course, this chat server is kind of barebones. We&#39;ll use the rest of this
-section and one more section afterwards to make it a bit cooler. First we&#39;ll add
+section and one more section afterward to make it a bit cooler. First, we&#39;ll add
 functionality to change your name (because <code>Moniker</code> names are only so cool) and
 then we&#39;ll hook up to the Giphy API to let people post images and GIFs to the
 chat room. Ready? Let&#39;s go.</p>
@@ -1391,7 +1391,7 @@ message. It&#39;ll go below our handler for <code>MESG</code>, above the handler
   });
 </code></pre>
 <p>Try to parse this method yourself.</p>
-<p>First we <code>let user</code> be the user from <code>users</code> that send the message. We then
+<p>First, we <code>let user</code> be the user from <code>users</code> that send the message. We then
 check to see if the requested name <code>isUnique</code>. If it is, we update <code>user</code>&#39;s name
 on the server and then <code>io.emit</code> the new <code>user</code> object to the whole server.
 We&#39;ll assume that, once we set it up, the <code>NAME</code> handler on the client knows how
@@ -1463,7 +1463,7 @@ is <code>/</code>. This&#39;ll signify our command. If you want, you can change 
 something else, but I figured <code>/</code> is pretty standard for these things. If the
 <code>message</code> is a command, it parses the parameters into an array using standard
 Javascript and then called <code>sendCommand</code> on the result.</p>
-<p>Obviously this isn&#39;t enough. We still need to write a <code>sendCommand</code> function
+<p>Obviously, this isn&#39;t enough. We still need to write a <code>sendCommand</code> function
 that actually handles these commands. Let&#39;s do that now.</p>
 <pre><code class="lang-javascript">/**
  * Handles commands
@@ -1483,7 +1483,7 @@ function sendCommand(cmd, params) {
 
 }
 </code></pre>
-<p>Obviously there&#39;s only one command at this point, so for now this function is
+<p>Obviously, there&#39;s only one command at this point, so, for now, this function is
 simple. We do a switch statement on the <code>cmd</code> and if it is <code>setname</code> we know the
 user is trying to change their name. The last thing to do is to add a <code>setName</code>
 function to the bottom of the file that&#39;ll catch the program when it executes
@@ -1554,7 +1554,7 @@ http://example.com/image.png</code>.</p>
 </div><span id="sec-5-11" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
 <p><a href="/assets/files/node.zip">Socket.io .zip files</a></p>
 </div></section><span id="sec-6" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Express</h2></div><span id="sec-6-1" class="anchor"></span><div id="" class="subgroup"><h3>Express</h3><p><a href="http://expressjs.com/en/index.html">Express</a> is a web framework for NodeJS.</p>
-<p>Right now, our app is pretty cool. We have some static pages, and a neat Node
+<p>Right now, our app is pretty cool. We have some static pages and a neat Node
 script that uses Socket.IO to handle back-and-forth chat messages with our
 server.</p>
 <p>But, in its current state, that isn&#39;t very useful. For example, if we just
@@ -1563,8 +1563,8 @@ anything useful! Our server <em>functions</em>. It <em>knows</em> how to handle 
 but it doesn&#39;t yet know how to handle basic HTTP requests. So the server doesn&#39;t
 know how to handle arbitrary connections on the internet, which means it can&#39;t
 serve our web pages to clients by itself.</p>
-<p>That&#39;s where Express comes in. Node, on its own, has a pretty nice <code>http</code>
-library for building <code>http</code> servers, but Express massively simplified the
+<p>That&#39;s where Express comes in. Node, on its own, has a pretty nice <code>HTTP</code>
+library for building <code>HTTP</code> servers, but Express massively simplified the
 project, which is why many large applications built with Node depend on Express
 to handle their HTTP routing. For this chat server, we&#39;re going to use Express
 to (1) serve our static pages (so, rather than clicking the <code>index.html</code> file we
@@ -1574,7 +1574,7 @@ a simple route for Giphy integration.</p>
 a brief overview of what HTTP servers do. Realize this is oversimplified. It&#39;s
 meant to give an overview of web servers in the context of Express and Node, and
 if you&#39;re really interested in learning more, you should hit Google, Wikipedia,
-Stackoverflow, and whatnot.</p>
+StackOverflow, and whatnot.</p>
 <p>HTTP servers respond to various kinds of HTTP requests. The most common kind of
 HTTP request you see on a daily basis are <code>GET</code> requests. Every time you open up
 <code>Generic Web Browser</code>, type a web address and hit enter, you&#39;re sending an HTTP
@@ -1637,8 +1637,8 @@ middleware (middleware is called in order) is the build in <code>express.static<
 middleware. As its name implies, it&#39;s built for serving static files. Here, we
 tell it to serve statically the files in <code>../client</code> which, clearly, is where
 all our client files are.</p>
-<p>Usually you&#39;d have a <code>public</code> folder sitting next to your <code>server.js</code>, but we
-don&#39;t need to re-structure the project now just for that.</p>
+<p>Usually, you&#39;d have a <code>public</code> folder sitting next to your <code>server.js</code>, but we
+don&#39;t need to restructure the project now just for that.</p>
 <p>Finally, we create a <code>server</code> that&#39;s simply the Express <code>app</code> listening on port
 3000, and then we pass that <code>server</code> to Socket.IO, initializing <code>io</code> to be
 a Socket.IO instance that runs on the Express server, rather than by itself.</p>
@@ -1744,7 +1744,7 @@ use this file whenever a request is made to a child of the <code>/</code> URL (s
 essentially, any request). If we wanted to, we might <code>.use</code> different route
 files for different endpoints, like instead of having all handled at the <code>/</code>
 level, we might have one route handler that handles routes to <code>/user/</code> and
-another that handles routes to <code>/blog/</code>, etc. For now though, we only have
+another that handles routes to <code>/blog/</code>, etc. For now, though, we only have
 a single route, so this setup makes sense.</p>
 <p>To finalize the setup, we need to actually build our <code>routes.js</code> handler.
 Please create a <code>server/routes.js</code> file and fill it like this:</p>
@@ -1825,7 +1825,7 @@ want.</p>
 <p>Now let&#39;s head back into our client and set up a <code>/giphy</code> command.</p>
 <h4 id="final-notes-on-express">Final notes on Express</h4>
 <p>This has been a very brief overview of Express. The Express framework is very
-powerful, and can be used to compose very complicated applications. I&#39;ve tried
+powerful and can be used to compose very complicated applications. I&#39;ve tried
 to overview the most important bits, from middleware to templating to routing.
 If you really want to keep building on these skills, you should find some
 Express tutorials online. You should find that you now have a good foundation
@@ -1867,8 +1867,8 @@ it an object with options. The options we use here are <code>method</code> (<cod
 <code>url</code> (we want the <code>giphy/json/</code> endpoint since we want to retrieve json data,
 and we also pass it our search term). Then, we use <code>.done</code> on this AJAX
 request, which lets us pass a function to be called when the AJAX request is
-complete. We have to do this since AJAX is asynchronous, meaning it run
-separate from the rest of our code.</p>
+complete. We have to do this since AJAX is asynchronous, meaning it runs
+separately from the rest of our code.</p>
 <p>In that <code>.done</code> function, we handle the results of the request -- our callback
 takes a <code>result</code> parameter with those results. If no image is found, we return
 an error. If an image is found, we call <code>sendImage</code> on the
@@ -1896,18 +1896,18 @@ start.</p>
 <p><em>Linux</em></p>
 <p>Most Linux distros should have MongoDB available for installation in their respective package managers (<code>apt-get</code>, <code>yum</code>, <code>pacman</code>, etc.). Alternately, you can read the full instructions to install MongoDB on Ubuntu can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
 <p>Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
-</div><span id="sec-7-3" class="anchor"></span><div id="" class="subgroup"><h3>Running MongoDB</h3><p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>). This fires up a Mongo instance that will run continously in the background until it&#39;s killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!</p>
-</div><span id="sec-7-4" class="anchor"></span><div id="" class="subgroup"><h3>Why use a database? And why MongoDB?</h3><p>Databases are these other kinds of web development things, separate from the web app itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogues, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
-<p>You may wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
-<p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalogue was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
-<p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly acessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually doe through <em>queries</em> to a database.</p>
+</div><span id="sec-7-3" class="anchor"></span><div id="" class="subgroup"><h3>Running MongoDB</h3><p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>). This fires up a Mongo instance that will run continuously in the background until it&#39;s killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!</p>
+</div><span id="sec-7-4" class="anchor"></span><div id="" class="subgroup"><h3>Why use a database? And why MongoDB?</h3><p>Databases are these other kinds of web development things, separate from the web app itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogs, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
+<p>You may be wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
+<p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalog was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
+<p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly accessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually done through <em>queries</em> to a database.</p>
 <p><img src="/assets/img/query_oracle_db_meme.jpg" alt="Don&#39;t query SQL"></p>
 <p>That&#39;s why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
 JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don&#39;t have to worry about the formatting of the data, cause it&#39;s already in the format we need! You might hear people argue for (or against) the use of MongoDB because it&#39;s a NoSQL database, but this has a lot of tradeoffs and there&#39;s no clear cut winner between SQL and NoSQL; they&#39;re each suited for different applications.</p>
-</div><span id="sec-7-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command), it&#39;s possible to create and work with several databases. Within each of these these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field, or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t need in most cases)</p>
-<p>Just to get this structure down, let&#39;s consider how Twitter data stored in Mongo might look. If we wanted to find the top most trending hashtag in the United States, we&#39;d have to look in the <code>tweets</code> database, inside the <code>trending_hashtags</code> collection. Within this collection there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field <code>country: &#39;United States&#39;</code>. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.</p>
+</div><span id="sec-7-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command), it&#39;s possible to create and work with several databases. Within each of these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t needed in most cases)</p>
+<p>Just to get this structure down, let&#39;s consider how Twitter data stored in Mongo might look. If we wanted to find the topmost trending hashtag in the United States, we&#39;d have to look in the <code>tweets</code> database, inside the <code>trending_hashtags</code> collection. Within this collection, there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field <code>country: &#39;United States&#39;</code>. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.</p>
 <p><img src="/assets/img/trending.png" alt="Trending hashtags"></p>
-<p>It&#39;s an incredibly powerful method of storing and accessing your data and it often turns out to be suprisingly efficient as well.</p>
+<p>It&#39;s an incredibly powerful method of storing and accessing your data and it often turns out to be surprisingly efficient as well.</p>
 </div><span id="sec-7-6" class="anchor"></span><div id="" class="subgroup"><h3>Integrating MongoDB into the web app</h3><p>We&#39;re now going to integrate a MongoDB database into our application to store data. As said earlier, Mongo is a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we&#39;re going to have to do is add MongoDB to our dependencies list inside of <code>package.json</code>.</p>
 <blockquote>
 <p><em>TIP:</em> Think back to what the dependencies section of the <code>package.json</code> is for! Also, isn&#39;t it cool how all we need to do to include all the source code for handling MongoDB is by requiring a new module? This is one of the reasons why NodeJS is so popular!</p>
@@ -1946,7 +1946,7 @@ db = database;
 </code></pre>
 <p>The first thing we need to do is declare a variable for the database to be stored in (we&#39;ll see why in a minute). We also store the MongoClient object in a helper variable.</p>
 <p>Next, we store the connection string in a variable. The connection string looks complicated, so let&#39;s break it down into parts. The beginning of any connection string for MongoDB is always &quot;mongodb://&quot;. Next, you put the server name, a colon, and then the port number to connect to. In our case, since we&#39;re running the database on the same computer as the Node app, we can just use &quot;localhost&quot;. The port number, 27017, is just the default port that <code>mongod</code> listens on; we didn&#39;t specify a different port when we ran <code>mongod</code> before, so that&#39;s where ours is listening. Finally, the string ends with a slash and then the name of the database to connect to. You can pick whatever name you&#39;d like for the database; it&#39;s just a way of identifying which one you want to connect to in the case that you have multiple databases on your server. This also demonstrates one of the really nice features of MongoDB; if you specify a database that doesn&#39;t already exist, then it will create it for you.</p>
-<p>Finally, we connect to the database using the connection string we&#39;ve defined. Notice that the function <code>connect</code> actually takes a callback rather than returning the database directly. This can useful in some cases, since it allows your app to do other things while waiting for the database to connect. In our case, though, we just want to be able to use the database outside the callback, which is why we declared the <code>db</code> variable earlier.</p>
+<p>Finally, we connect to the database using the connection string we&#39;ve defined. Notice that the function <code>connect</code> actually takes a callback rather than returning the database directly. This can be useful in some cases since it allows your app to do other things while waiting for the database to connect. In our case, though, we just want to be able to use the database outside the callback, which is why we declared the <code>db</code> variable earlier.</p>
 <p>In practice, you&#39;ll want to handle your errors more gracefully—meaning your app should do something other than just crash! For the purposes of this demo, though, it&#39;s simpler just to throw the error you get when trying to connect to the database. If your app crashes when you try to run it after adding this section, make sure that you have <code>mongod</code> running in an open terminal, and try again.</p>
 <p>We also need to make a helper variable for the function <code>ObjectID</code>:</p>
 <pre><code class="lang-javascript">var ObjectID = mongo.ObjectID;
@@ -1972,7 +1972,7 @@ notes: notes
 });
 });
 </code></pre>
-<p>The <code>find</code> query returns all the documents in the collection, and the <code>toArray</code> method parses them all into an array, so that they can be rendered as before onto the page. It&#39;s important to note that <code>find</code> only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!</p>
+<p>The <code>find</code> query returns all the documents in the collection, and the <code>toArray</code> method parses them all into an array so that they can be rendered as before onto the page. It&#39;s important to note that <code>find</code> only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!</p>
 <p>Next, let&#39;s return a specific document from the database, using the <code>_id</code> field in the document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.</p>
 <pre><code class="lang-javascript">router.get(&#39;/:id&#39;, function(req, res) {
 db.collection(&#39;notes&#39;).findOne({ _id: ObjectID(req.params.id) }, function(err, note) {
@@ -2009,8 +2009,8 @@ return res.redirect(&#39;/&#39;);
 
 module.exports = router;
 </code></pre>
-<p>Well, that wasn&#39;t so bad! In summary: every call to the database involves referencing our middleware <code>req.db</code> and using the collection (aka database) called &#39;notes&#39;. We then use different functions like <code>findOne</code>, that finds one result, or <code>find().toArray</code> that gives us an array of all results in the databse. These functions also have callbacks that specify what to do in case there&#39;s an error, and if not, what to actually do with the result(s) we get. Who know switching storage stage could be that easy?</p>
-</div><span id="sec-7-7" class="anchor"></span><div id="" class="subgroup"><h3>You're done!</h3><p>With that you&#39;ve succesfully integrated your first database into a Node application and it&#39;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
+<p>Well, that wasn&#39;t so bad! In summary: every call to the database involves referencing our middleware <code>req.db</code> and using the collection (aka database) called &#39;notes&#39;. We then use different functions like <code>findOne</code>, that finds one result, or <code>find().toArray</code> that gives us an array of all results in the database. These functions also have callbacks that specify what to do in case there&#39;s an error, and if not, what to actually do with the result(s) we get. Who knows switching storage stage could be that easy?</p>
+</div><span id="sec-7-7" class="anchor"></span><div id="" class="subgroup"><h3>You're done!</h3><p>With that, you&#39;ve successfully integrated your first database into a Node application and it&#39;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
 </div><span id="sec-7-8" class="anchor"></span><div id="" class="subgroup"><h3>Files</h3><p> <a href="https://github.com/dinphil/codeweekend-frontend">This repository</a> should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!</p>
 </div></section><span id="sec-8" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Thanks for being a part of Code Weekend!</h2></div><span id="sec-8-1" class="anchor"></span><div id="" class="subgroup"><h3>We hope you enjoyed these workshops as much as we enjoyed making them for you.</h3><p>Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you&#39;ve learned!</p>
 </div></section></div>
