@@ -111,8 +111,8 @@
 <p><img src="assets/img/server-browser.png" alt="Server- Browser"></p>
 <p>So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are the two main components of any website.</p>
 <p>You&#39;ll see later on that requests aren&#39;t just made to the server when we first open the website; it&#39;s often faster to make smaller requests first, load the important parts of a web page and then request additional bits of information when they&#39;re needed (think <a href="http://www.facebook.com">Facebook&#39;s Newsfeed</a>). It&#39;s also used when we do things like attempt to log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the web page immediately without having to refresh the page.</p>
-<p><img src="/assets/img/facebook_loading.png" alt="Facebook Loading using Javascript"></p>
-</div><span id="sec-2-4" class="anchor"></span><div id="" class="subgroup"><h3>What is Terminal&#47;Command Prompt?</h3><p><img src="/assets/img/terminal.png" alt="Terminal"></p>
+<p><img src="assets/img/facebook_loading.png" alt="Facebook Loading using Javascript"></p>
+</div><span id="sec-2-4" class="anchor"></span><div id="" class="subgroup"><h3>What is Terminal&#47;Command Prompt?</h3><p><img src="assets/img/terminal.png" alt="Terminal"></p>
 <p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let&#39;s take some time to get used to it.</p>
 <p>Once you fire up Terminal or Command Prompt (on Windows, you&#39;ll later need to run cmd.exe by right-clicking on the shortcut and click Run as Administrator, you&#39;ll know it&#39;s running as Admin if your path ends in <code>../system32</code>), here are a few simple commands that you can type:</p>
 <ul>
@@ -132,13 +132,13 @@
 <p>Well done! You&#39;ve got everything you need installed. Now let&#39;s test what you&#39;ve learned in this workshop. Here are an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal chat app. The adventurous ones among you can even try and create a completely static website; you know enough that you can just Google for anything you need. Browse the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
     <!--Take a look at some of our organizers&#39; websites for inspiration (<a href="http://www.seas.upenn.edu">Devesh</a>, <a href="http://dhruvagarwal.me">Dhruv</a>) or browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>-->
 </div></section><span id="sec-3" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> HTML&#47;CSS</h2></div><span id="sec-3-1" class="anchor"></span><div id="" class="subgroup"><h3>Simple HTML and CSS</h3><p>HTML (HyperText Markup Language) is the backbone of any web page. It&#39;s where we add in all the information - what the web page actually displays, as well as information about the page itself such as its title.</p>
-<p><img src="/assets/img/with_and_without_css.gif" alt="With and without CSS"></p>
+<p><img src="assets/img/with_and_without_css.gif" alt="With and without CSS"></p>
 <p>CSS (Cascading Style Sheets) dresses up this information. Most (but really all) web pages link to a CSS file that stores information on how a browser should display the information it receives in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
 <p>Javascript is the fun part. It does dynamic things with your web page, updates content on the fly and can animate just about anything. We&#39;ll talk about this later.</p>
 <p>In short, we can visualize it as follows: a full website is a program with a raw structure defined via HTML, dressed up with CSS and controlled/manipulated with JavaScript.</p>
 <p>Every web page is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
 <p>Let&#39;s start with HTML (HyperText Markup Language).</p>
-<p><img src="/assets/img/html_meme.png" alt="HTML meme"></p>
+<p><img src="assets/img/html_meme.png" alt="HTML meme"></p>
 <p>HyperText is text that will hyperlink you to other text. That&#39;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
 <p>It is called a Markup Language because HTML is not written as plain text. It is marked up in the form of HTML elements called &#39;tags.&#39; Tags are denoted by <code>&lt;</code> followed by <code>&gt;</code>. Below is the most basic HTML document we can create (except for the comments that we&#39;ve added in to make things clearer).</p>
 <pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. --&gt;
@@ -345,15 +345,15 @@ button:hover {
 <p>As you can see, there are small differences in syntax depending on the selector (whether you&#39;re changing all instances of an element, instances of a class, or just a single element by ID) but it&#39;s mostly quite simple. How did we know what attributes to change? Google! If you&#39;re ever confused about what a certain attribute does, and what possible values the attribute can take - do not hesitate to use Google or an HTML/CSS reference website.</p>
 <p>You should look through the resources at the top of this section for more information on HTML tags and CSS attributes, but the best thing to do is to Google things you&#39;re looking to do and look for the <a href="http://www.w3schools.com">W3C Schools</a> or <a href="http://stackoverflow.com">Stack Overflow</a> results.</p>
 <p>A great reference for all things HTML/CSS/JavaScript is the Mozilla Developer Reference.</p>
-<p><img src="/assets/img/stack_overflow.png" alt="Stack Overflow"></p>
+<p><img src="assets/img/stack_overflow.png" alt="Stack Overflow"></p>
 <p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links.</p>
 <p>A great way to play around with CSS styles is to right-click on this page in Chrome, Firefox or Safari (<a href="http://www.howtogeek.com/howto/32372/htg-explains-why-do-so-many-geeks-hate-internet-explorer/">Here&#39;s why you should avoid Internet Explorer</a>), choose Inspect Element, and try changing the CSS styles on the right-hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
 <p><img src="assets/img/sass-debugging.png" alt="Chrome dev tools"></p>
 <p>Now, our chat app looks a little more complete. Now let&#39;s learn how to actually make this app work!</p>
 </div><span id="sec-3-4" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project so far:</p>
-<p><a href="/assets/files/html-css.zip">HTML and CSS .zip</a></p>
+<p><a href="assets/files/html-css.zip">HTML and CSS .zip</a></p>
 </div></section><span id="sec-4" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Javascript</h2></div><span id="sec-4-1" class="anchor"></span><div id="" class="subgroup"><h3>Javascript, finally!</h3><p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language, we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&#39;re (maybe) used to. You just write code in a file, link to it in your HTML and it executes.</p>
-</div><span id="sec-4-2" class="anchor"></span><div id="" class="subgroup"><h3>In fact...</h3><p><img src="/assets/img/javascript_meme.jpg" alt="Javascript meme"></p>
+</div><span id="sec-4-2" class="anchor"></span><div id="" class="subgroup"><h3>In fact...</h3><p><img src="assets/img/javascript_meme.jpg" alt="Javascript meme"></p>
 <p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <em>Integer</em> with the value of <code>5</code>. Writing <code>var x = &quot;5&quot;</code> would create a <em>String</em> named <code>x</code> with the string <code>5</code> as its value.</p>
 <p>The most common types we will use are Strings (just text, such as &quot;This is some text&quot;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&#39;ll be surprised by how common almost everything you want to do is).</p>
 <p>Here&#39;s some sample Javascript code:</p>
@@ -616,7 +616,7 @@ contents of the form (overwriting the <code>val</code> of the text field to an e
 you should see jQuery working to push your messages to the screen.</p>
 <p>If that&#39;s not happening, blame Devesh.</p>
 </div><span id="sec-4-4" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
-<p><a href="/assets/files/jquery.zip">Javascript and JQuery .zip</a></p>
+<p><a href="assets/files/jquery.zip">Javascript and JQuery .zip</a></p>
 </div></section><span id="sec-5" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> The Server</h2></div><span id="sec-5-1" class="anchor"></span><div id="" class="subgroup"><h3>Node</h3><p>Node.js is, at its core, an environment for using Javascript to program web
 servers. Because some people like Javascript, and because we all think PHP
 sucks, the Internet, in general, seems to think Node is pretty cool. So, while we
@@ -1552,7 +1552,7 @@ some images! Note that the command takes the shape of <code>/image
 http://example.com/image.png</code>.</p>
 <p>Next up: Express, Giphy, and Databases!</p>
 </div><span id="sec-5-11" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
-<p><a href="/assets/files/node.zip">Socket.io .zip files</a></p>
+<p><a href="assets/files/node.zip">Socket.io .zip files</a></p>
 </div></section><span id="sec-6" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Express</h2></div><span id="sec-6-1" class="anchor"></span><div id="" class="subgroup"><h3>Express</h3><p><a href="http://expressjs.com/en/index.html">Express</a> is a web framework for NodeJS.</p>
 <p>Right now, our app is pretty cool. We have some static pages and a neat Node
 script that uses Socket.IO to handle back-and-forth chat messages with our
@@ -1879,7 +1879,7 @@ result in <code>.gif</code>s, and everything should work as intended.</p>
 <p>There&#39;s obviously a lot more to be done with AJAX. If you want to learn more,
 the <a href="http://api.jquery.com/jquery.ajax/">jQuery docs</a> are a great place to
 start.</p>
-</div></section><span id="sec-7" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Databases</h2></div><span id="sec-7-1" class="anchor"></span><div id="" class="subgroup"><h3>Making information stick around</h3><p><img src="/assets/img/Doge-Big-Data-Meme.jpg" alt="Such data, so big, wow"></p>
+</div></section><span id="sec-7" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Databases</h2></div><span id="sec-7-1" class="anchor"></span><div id="" class="subgroup"><h3>Making information stick around</h3><p><img src="assets/img/Doge-Big-Data-Meme.jpg" alt="Such data, so big, wow"></p>
 <p>Topics to be covered:</p>
 <ul>
 <li>MongoDB: what it is, how to use it</li>
@@ -1901,12 +1901,12 @@ start.</p>
 <p>You may be wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
 <p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalog was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
 <p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly accessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually done through <em>queries</em> to a database.</p>
-<p><img src="/assets/img/query_oracle_db_meme.jpg" alt="Don&#39;t query SQL"></p>
+<p><img src="assets/img/query_oracle_db_meme.jpg" alt="Don&#39;t query SQL"></p>
 <p>That&#39;s why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
 JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don&#39;t have to worry about the formatting of the data, cause it&#39;s already in the format we need! You might hear people argue for (or against) the use of MongoDB because it&#39;s a NoSQL database, but this has a lot of tradeoffs and there&#39;s no clear cut winner between SQL and NoSQL; they&#39;re each suited for different applications.</p>
 </div><span id="sec-7-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command), it&#39;s possible to create and work with several databases. Within each of these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t needed in most cases)</p>
 <p>Just to get this structure down, let&#39;s consider how Twitter data stored in Mongo might look. If we wanted to find the topmost trending hashtag in the United States, we&#39;d have to look in the <code>tweets</code> database, inside the <code>trending_hashtags</code> collection. Within this collection, there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field <code>country: &#39;United States&#39;</code>. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.</p>
-<p><img src="/assets/img/trending.png" alt="Trending hashtags"></p>
+<p><img src="assets/img/trending.png" alt="Trending hashtags"></p>
 <p>It&#39;s an incredibly powerful method of storing and accessing your data and it often turns out to be surprisingly efficient as well.</p>
 </div><span id="sec-7-6" class="anchor"></span><div id="" class="subgroup"><h3>Integrating MongoDB into the web app</h3><p>We&#39;re now going to integrate a MongoDB database into our application to store data. As said earlier, Mongo is a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we&#39;re going to have to do is add MongoDB to our dependencies list inside of <code>package.json</code>.</p>
 <blockquote>
