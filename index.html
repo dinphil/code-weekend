@@ -1818,7 +1818,7 @@ asynchronous call to Giphy is complete, we <code>res.send</code> the <code>resul
 was an error, we <code>res.render</code> the error page.</p>
 <p>That&#39;s the complete server code. Try running the server and navigating to
 <code>localhost:3000/test</code> or, if you&#39;re feeling adventurous, go to
-<code>localhost:3000/html/nodejs</code>. The <code>html</code> part will tell Giphy we want an <code>html</code>
+<code>localhost:3000/giphy/html/nodejs</code>. The <code>html</code> part will tell Giphy we want an <code>html</code>
 response, and you can replace <code>nodejs</code> with whatever Giphy search term you
 want.</p>
 <p>I think that&#39;s pretty cool.</p>
@@ -1879,7 +1879,9 @@ result in <code>.gif</code>s, and everything should work as intended.</p>
 <p>There&#39;s obviously a lot more to be done with AJAX. If you want to learn more,
 the <a href="http://api.jquery.com/jquery.ajax/">jQuery docs</a> are a great place to
 start.</p>
-</div></section><span id="sec-7" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Databases</h2></div><span id="sec-7-1" class="anchor"></span><div id="" class="subgroup"><h3>Making information stick around</h3><p><img src="assets/img/Doge-Big-Data-Meme.jpg" alt="Such data, so big, wow"></p>
+</div></section><span id="sec-6-6" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
+<p><a href="assets/files/express.zip">express .zip files</a></p>
+</div><span id="sec-7" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Databases</h2></div><span id="sec-7-1" class="anchor"></span><div id="" class="subgroup"><h3>Making information stick around</h3><p><img src="assets/img/Doge-Big-Data-Meme.jpg" alt="Such data, so big, wow"></p>
 <p>Topics to be covered:</p>
 <ul>
 <li>MongoDB: what it is, how to use it</li>
@@ -1981,7 +1983,7 @@ req.session.message = &#39;That note does not exist!&#39;;
 return res.redirect(&#39;/&#39;);
 }
 
-return.res.render(&#39;note&#39;, {
+return res.render(&#39;note&#39;, {
 note: note
 })
 });
@@ -2017,7 +2019,7 @@ module.exports = router;
 
 <nav class="col-xs-3 docs-sidebar">
 <ul class="nav nav-stacked" id="sidebar">
-<li><a href="#sec-1">Code Weekend Fall 2k18</a><ul class="nav nav-stacked"><li><a href="#sec-1-1">Building your first web app</a></li></ul></li><li><a href="#sec-2">Introduction to Web Development</a><ul class="nav nav-stacked"><li><a href="#sec-2-1">Web Pages and the basics of development</a></li><li><a href="#sec-2-2">An Introduction to (the) Life (of a Developer)</a></li><li><a href="#sec-2-3">An Introduction to the web</a></li><li><a href="#sec-2-4">What is Terminal&#47;Command Prompt?</a></li></ul></li><li><a href="#sec-3"> HTML&#47;CSS</a><ul class="nav nav-stacked"><li><a href="#sec-3-1">Simple HTML and CSS</a></li><li><a href="#sec-3-2">Umm, what about CSS?</a></li><li><a href="#sec-3-3">Let's take a look at what CSS looks like!</a></li><li><a href="#sec-3-4">Download</a></li></ul></li><li><a href="#sec-4"> Javascript</a><ul class="nav nav-stacked"><li><a href="#sec-4-1">Javscript, finally!</a></li><li><a href="#sec-4-2">In fact...</a></li><li><a href="#sec-4-3">JQuery</a></li><li><a href="#sec-4-4">Download</a></li></ul></li><li><a href="#sec-5"> The Server</a><ul class="nav nav-stacked"><li><a href="#sec-5-1">Node</a></li><li><a href="#sec-5-2">Package.json</a></li><li><a href="#sec-5-3">Socket.io</a></li><li><a href="#sec-5-4">server.js</a></li><li><a href="#sec-5-5">socket-client.js</a></li><li><a href="#sec-5-6">Functions</a></li><li><a href="#sec-5-7">Users</a></li><li><a href="#sec-5-8">The socket handler</a></li><li><a href="#sec-5-9">Chat</a></li><li><a href="#sec-5-10">The Image Command</a></li><li><a href="#sec-5-11">Download</a></li></ul></li><li><a href="#sec-6"> Express</a><ul class="nav nav-stacked"><li><a href="#sec-6-1">Express</a></li><li><a href="#sec-6-2">Express Server</a></li><li><a href="#sec-6-3">Error 404</a></li><li><a href="#sec-6-4">Giphy Route</a></li><li><a href="#sec-6-5">Giphy AJAX</a></li></ul></li><li><a href="#sec-7"> Databases</a><ul class="nav nav-stacked"><li><a href="#sec-7-1">Making information stick around</a></li><li><a href="#sec-7-2">Installing MongoDB</a></li><li><a href="#sec-7-3">Running MongoDB</a></li><li><a href="#sec-7-4">Why use a database? And why MongoDB?</a></li><li><a href="#sec-7-5">How MongoDB structures your data</a></li><li><a href="#sec-7-6">Integrating MongoDB into the web app</a></li><li><a href="#sec-7-7">You're done!</a></li><li><a href="#sec-7-8">Files</a></li></ul></li><li><a href="#sec-8">Thanks for being a part of Code Weekend!</a><ul class="nav nav-stacked"><li><a href="#sec-8-1">We hope you enjoyed these workshops as much as we enjoyed making them for you.</a></li></ul></li></ul>
+<li><a href="#sec-1">Code Weekend Fall 2k18</a><ul class="nav nav-stacked"><li><a href="#sec-1-1">Building your first web app</a></li></ul></li><li><a href="#sec-2">Introduction to Web Development</a><ul class="nav nav-stacked"><li><a href="#sec-2-1">Web Pages and the basics of development</a></li><li><a href="#sec-2-2">An Introduction to (the) Life (of a Developer)</a></li><li><a href="#sec-2-3">An Introduction to the web</a></li><li><a href="#sec-2-4">What is Terminal&#47;Command Prompt?</a></li></ul></li><li><a href="#sec-3"> HTML&#47;CSS</a><ul class="nav nav-stacked"><li><a href="#sec-3-1">Simple HTML and CSS</a></li><li><a href="#sec-3-2">Umm, what about CSS?</a></li><li><a href="#sec-3-3">Let's take a look at what CSS looks like!</a></li><li><a href="#sec-3-4">Download</a></li></ul></li><li><a href="#sec-4"> Javascript</a><ul class="nav nav-stacked"><li><a href="#sec-4-1">Javscript, finally!</a></li><li><a href="#sec-4-2">In fact...</a></li><li><a href="#sec-4-3">JQuery</a></li><li><a href="#sec-4-4">Download</a></li></ul></li><li><a href="#sec-5"> The Server</a><ul class="nav nav-stacked"><li><a href="#sec-5-1">Node</a></li><li><a href="#sec-5-2">Package.json</a></li><li><a href="#sec-5-3">Socket.io</a></li><li><a href="#sec-5-4">server.js</a></li><li><a href="#sec-5-5">socket-client.js</a></li><li><a href="#sec-5-6">Functions</a></li><li><a href="#sec-5-7">Users</a></li><li><a href="#sec-5-8">The socket handler</a></li><li><a href="#sec-5-9">Chat</a></li><li><a href="#sec-5-10">The Image Command</a></li><li><a href="#sec-5-11">Download</a></li></ul></li><li><a href="#sec-6"> Express</a><ul class="nav nav-stacked"><li><a href="#sec-6-1">Express</a></li><li><a href="#sec-6-2">Express Server</a></li><li><a href="#sec-6-3">Error 404</a></li><li><a href="#sec-6-4">Giphy Route</a></li><li><a href="#sec-6-5">Giphy AJAX</a></li><li><a href="#sec-6-6">Download</a></li></ul></li><li><a href="#sec-7"> Databases</a><ul class="nav nav-stacked"><li><a href="#sec-7-1">Making information stick around</a></li><li><a href="#sec-7-2">Installing MongoDB</a></li><li><a href="#sec-7-3">Running MongoDB</a></li><li><a href="#sec-7-4">Why use a database? And why MongoDB?</a></li><li><a href="#sec-7-5">How MongoDB structures your data</a></li><li><a href="#sec-7-6">Integrating MongoDB into the web app</a></li><li><a href="#sec-7-7">You're done!</a></li><li><a href="#sec-7-8">Files</a></li></ul></li><li><a href="#sec-8">Thanks for being a part of Code Weekend!</a><ul class="nav nav-stacked"><li><a href="#sec-8-1">We hope you enjoyed these workshops as much as we enjoyed making them for you.</a></li></ul></li></ul>
 </nav>
     </div>
 
