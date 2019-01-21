@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Hunter Lightman">
+
+    <title>Code Weekend </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme-1.min.css" rel="stylesheet">
+    <link href="css/more.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- TODO: Favicons -->
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Code Weekend</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://css.cis.upenn.edu/">Computer Science Society</a></li>
+            <li><a href="http://dinphil.github.io/">Hacking & Learning</a></li>
+            <li><a href="http://pennapps.com/">PennApps</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron" id="jumbo">
+      <div class="container">
+        <h1>Hello.</h1>
+        <p>Welcome to Code Weekend! We're a series of workshops run by
+          Computer Science Society aimed at getting
+          Penn students with none-to-some coding experience ready for PennApps.
+          Anyone can follow along online—we've made these series of web
+          development tutorials free for everyone—but students can also sign
+        up below and register to attend the workshops in person.</p>
+
+      <p><a class="btn btn-primary btn-lg" href="https://goo.gl/forms/4LhJzBAUKNz4FwvD2" role="button">Sign me up! &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+<div class="col-xs-9">
+<span id="sec-1" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Code Weekend Fall 2k18</h2></div><span id="sec-1-1" class="anchor"></span><div id="" class="subgroup"><h3>Building your first web app</h3><p>Code Weekend is scheduled for <em>Saturday and Sunday, September 1st and 2nd</em> and will comprise of four workshops to help participants build their very own web app. Participants are expected to have very minimal coding experience as we will be carefully explaining everything we do as we go. This should be extremely helpful to first-time hackers (a fun term we use for people that build things!) especially with <a href="http://pennapps.com" title="PennApps XIII">PennApps</a> scheduled for the weekend after. If you haven&#39;t already, check it out - it&#39;s a great way to jump in the deep end and expose yourself to the incredible world of building things (and actually they&#39;re doing great stuff for first-time hackers as well).</p>
+<blockquote>
+<p>These workshops have been organized by the Computer Science Society (CSS), PennApps, and many talented individuals. Student mentors will be around to help participants as we go through these highly interactive, live-coding-based workshops.</p>
+</blockquote>
+<p>If you already have some coding experience, then feel free to skip the first session. Here&#39;s what we expect you to know and have installed before you jump into the second session:</p>
+<ul>
+<li>The basics of how the web works.</li>
+<li>HTML/CSS/Javascript to the extent that you can build a simple static web page.</li>
+<li>Know how to use Terminal/Command Prompt to move folders, change directories, and create files.</li>
+</ul>
+<blockquote>
+<p>You can find the workshops from the previous Code Weekend (Fall 2015) <a href="http://dinphil.github.io/code-weekend/past/fall15/index.html">here</a>.</p>
+</blockquote>
+</div></section><span id="sec-2" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Introduction to Web Development</h2></div><span id="sec-2-1" class="anchor"></span><div id="" class="subgroup"><h3>Web Pages and the basics of development</h3><p>Welcome to your first coding experience!</p>
+<p>We&#39;ll be going over quite a few things in this opening workshop:</p>
+<ul>
+<li><a href="#an-introduction-to-the-life-of-a-developer">How to search effectively using Google + Using Stack Overflow</a></li>
+<li><a href="#an-introduction-to-the-web">How the internet works and why web development is so different from, say, Java</a></li>
+<li><a href="#simple-html-and-css">Basic HTML and CSS and how web pages are structured</a></li>
+<li><a href="#javascript-finally">Javascript, JSON and how to make things more fun</a></li>
+<li><a href="#what-is-terminalcommand-prompt">The basics of Terminal/Command Prompt</a></li>
+<li><a href="#making-a-personal-landing-page">Building your own personal landing page!</a></li>
+</ul>
+<p>This shouldn&#39;t take too long though, so whatever time we have left at the end of the workshop will be for you to make your own personal landing page!</p>
+<p>Alright, let&#39;s get started!</p>
+</div><span id="sec-2-2" class="anchor"></span><div id="" class="subgroup"><h3>An Introduction to (the) Life (of a Developer)</h3><p>When coding, you&#39;ll run into tons of small problems and errors that you don&#39;t initially know how to solve. <strong><em>This is completely normal.</em></strong> In order to write solutions to every problem that you could hypothetically run into, you&#39;d need a manual taller than the Empire State building. </p>
+<p>Thankfully, we all have a resource with more information that we can possibly imagine - teh interwebz. You&#39;ve probably searched for things using Google before, but most coding problems can actually be solved by effectively Googling your issue. Here are some tips for finding the answers to all your problems on the Internet:</p>
+<ul>
+<li>Be descriptive. If you&#39;re searching for what&#39;s causing an error then you can try just searching for the entire error message, or try describing what happened. For example, &quot;Homebrew does not install through the terminal on OSX Yosemite&quot; is a better search query than &quot;homebrew not working&quot;, though the best search query is often some combination of plain text and the actual error message. Often error codes make great search queries, as long as they are contextualized (i.e. with the name of the language/environment).</li>
+<li>Along with that vein, use as many specific words as possible. You can use complete sentences if you&#39;d like, but normally four or five very descriptive nouns/verbs is ideal, and you won&#39;t throw Google off-track by searching for unnecessary things. For example, you try to put a banner at the top of a web page, but there&#39;s a weird white border around the entire page. Googling &quot;there&#39;s a weird white border around the entire page&quot; isn&#39;t helpful. Always start with the name of the language you think is suspect if you can (in this case, it&#39;s CSS, since all style things on the page are controlled by CSS). Then, describe the problem with just a few words. Here, I used &quot;CSS no page border&quot;. The first result was really helpful and ended up solving my problem.</li>
+</ul>
+<p>These resources are also awesome:</p>
+<ul>
+<li><a href="http://stackoverflow.com">Stack Overflow</a> is the best. Search results that link here are often the most helpful, and you can almost always find someone who&#39;s had the same problem as you on here. You should mostly refrain from posting questions to Stack Overflow since odds are your question has already been answered there somewhere.</li>
+<li>If you&#39;re looking for syntax, or lists of inbuilt functions, then look for the Official Documentation for the language in question. <a href="http://www.w3schools.com">W3Schools</a> is great for HTML, CSS, and Javascript.</li>
+<li><a href="https://www.bento.io">Bentobox</a> is a great all-in-one resource to learn to code for a huge number of technologies. </li>
+<li><a href="http://www.codecademy.com/learn">Code Academy</a> has some great tutorials. The lessons for each language can get tedious, but the tutorials where you build actual things are pretty great. If you&#39;re looking for a good introduction to HTML/CSS, <a href="https://dash.generalassemb.ly/">General Assembly&#39;s Dash</a> is probably the best place to start.</li>
+</ul>
+</div><span id="sec-2-3" class="anchor"></span><div id="" class="subgroup"><h3>An Introduction to the Web</h3><p>There&#39;s pretty much three things happening every time you open a website:</p>
+<ul>
+<li>Your browser looks up an address (say google.com) and follows it back to its home - the server which actually runs the website. This server is basically just a computer, albeit a huge, immensely powerful computer possibly comprising acres of computer hardware connected together. For this workshop though, that&#39;s just going to be your laptop...we don&#39;t provide that kind of computing power.</li>
+<li>This server is what we call the <em>backend</em>. This server now processes your request - it could be a request to view the website or something more complicated like an attempt to log in to a dashboard - and sends a response back to your computer. This server will often be programmed in languages such as Python, Ruby on Rails, even Java (but not as much these days). Node.JS is a framework that lets us use Javascript on the backend as well as the frontend.</li>
+<li>Your computer now reads this response and converts it into the web page you actually see on your computer. This last bit of conversion is what we call the <em>frontend</em> doing its work.</li>
+</ul>
+<p><img src="assets/img/server-browser.png" alt="Server- Browser"></p>
+<p>So basically, any work done on a server has been programmed into the backend, while anything done inside your browser has been programmed into the frontend. These are the two main components of any website.</p>
+<p>You&#39;ll see later on that requests aren&#39;t just made to the server when we first open the website; it&#39;s often faster to make smaller requests first, load the important parts of a web page and then request additional bits of information when they&#39;re needed (think <a href="http://www.facebook.com">Facebook&#39;s Newsfeed</a>). It&#39;s also used when we do things like attempt to log in to a website. This is one of the reasons why Javascript is so useful as a frontend programming language, as it allows us to do these kinds of things very easily and update the web page immediately without having to refresh the page.</p>
+<p><img src="assets/img/facebook_loading.png" alt="Facebook Loading using Javascript"></p>
+</div><span id="sec-2-4" class="anchor"></span><div id="" class="subgroup"><h3>What is Terminal&#47;Command Prompt?</h3><p><img src="assets/img/terminal.png" alt="Terminal"></p>
+<p>Terminal (or Command Prompt on Windows) is basically a way for us to access the Command Line. This gives us access to a wonderful variety of things that we can do. We will be spending a good amount of time this weekend in here, so let&#39;s take some time to get used to it.</p>
+<p>Once you fire up Terminal or Command Prompt (on Windows, you&#39;ll later need to run cmd.exe by right-clicking on the shortcut and click Run as Administrator, you&#39;ll know it&#39;s running as Admin if your path ends in <code>../system32</code>), here are a few simple commands that you can type:</p>
+<ul>
+<li><code>ls</code> (<code>DIR</code> on Windows) lists all the files in the current folder</li>
+<li><code>cd</code> allows you to change directory. So <code>cd Documents</code> will move into the folder Documents if there is such a folder in the current directory. You can check this by using <code>ls</code> (<code>DIR</code> on windows). To move up a directory, say back to where you were before you went into Documents, type in <code>cd ../</code>.</li>
+<li><code>pwd</code> prints out the current path you&#39;ve traversed in the file system. It&#39;s particularly helpful once you&#39;ve used <code>cd</code> a few times, and aren&#39;t sure where you are anymore.</li>
+<li><code>mkdir</code> allows you to make a folder in the current directory. So <code>mkdir Such Magic</code> makes a folder named &#39;Such Magic&#39;.</li>
+<li><code>mv</code> (<code>move</code> on windows) will let you move files and folders. In Terminal you can do <code>mv ~/Desktop/MyFile.rtf /Volumes/Backup/MyFolder</code> to move MyFile.rtf. On Windows <code>move c:\windows\temp\*.* c:\temp</code> will move everything from <code>C:\windows\temp</code> to <code>C:\temp</code>. <code>*</code> works as a wildcard operator here. Careful with this one - you may not want to move things around haphazardly.</li>
+</ul>
+<p>Once you&#39;ve installed Node.JS (which we&#39;ll do in the next workshop), you&#39;ll also be able to enter commands like <code>npm install express</code> that will use Node Package manager to install plugins such as Express. You&#39;ll also be able to start up MongoDB from here using <code>mongod</code>.</p>
+<h3 id="let-s-start-making-stuff-">Let&#39;s start making stuff!</h3>
+<p>Whoohoo! We&#39;ve made it this far, and it&#39;s finally time to start making stuff!</p>
+<h4 id="sublime-text-3">Sublime Text 3</h4>
+<p>We&#39;ve got to install a whole bunch of stuff over the next few workshops. Let&#39;s start simple, go and download <a href="http://www.sublimetext.com/3">Sublime Text 3</a>. It&#39;s the best text editor in existence (yes, that&#39;s arguable) and this is where we&#39;re gonna be doing all our work. If you have a different favorite text editor, feel free to use it.</p>
+<p>NOTE: Sometimes, when you save your work, a window will pop up asking you to buy Sublime. Just ignore this and hit &quot;Cancel&quot; and you can use it forever. Alternatively, you can buy it and support a fellow developer.</p>
+<h3 id="making-a-chat-app">Making a Chat App</h3>
+<p>Well done! You&#39;ve got everything you need installed. Now let&#39;s test what you&#39;ve learned in this workshop. Here are an <a href="assets/files/sample.html">HTML</a> and a <a href="assets/files/main.css">CSS</a> file. Try and use this as a base to create your own personal chat app. The adventurous ones among you can even try and create a completely static website; you know enough that you can just Google for anything you need. Browse the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>
+    <!--Take a look at some of our organizers&#39; websites for inspiration (<a href="http://www.seas.upenn.edu">Devesh</a>, <a href="http://dhruvagarwal.me">Dhruv</a>) or browse around the internet to see nice designs (like <a href="http://medium.com">Medium</a>).</p>-->
+</div></section><span id="sec-3" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> HTML&#47;CSS</h2></div><span id="sec-3-1" class="anchor"></span><div id="" class="subgroup"><h3>Simple HTML and CSS</h3><p>HTML (HyperText Markup Language) is the backbone of any web page. It&#39;s where we add in all the information - what the web page actually displays, as well as information about the page itself such as its title.</p>
+<p><img src="assets/img/with_and_without_css.gif" alt="With and without CSS"></p>
+<p>CSS (Cascading Style Sheets) dresses up this information. Most (but really all) web pages link to a CSS file that stores information on how a browser should display the information it receives in the HTML. While it is possible to add CSS code into the HTML document, it is never done as it makes it nearly impossible to keep track of code and also slows down the page.</p>
+<p>Javascript is the fun part. It does dynamic things with your web page, updates content on the fly and can animate just about anything. We&#39;ll talk about this later.</p>
+<p>In short, we can visualize it as follows: a full website is a program with a raw structure defined via HTML, dressed up with CSS and controlled/manipulated with JavaScript.</p>
+<p>Every web page is built in the HTML DOM (Document Object Model). This means that every element in the HTML is an element (or a Node, the mathematical kind - not to be confused with Node.JS). So we could call this paragraph an element in the DOM; the same is true of any of the images and pretty much everything else here.</p>
+<p>Let&#39;s start with HTML (HyperText Markup Language).</p>
+<p><img src="assets/img/html_meme.png" alt="HTML meme"></p>
+<p>HyperText is text that will hyperlink you to other text. That&#39;s it. Think <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">links</a>.</p>
+<p>It is called a Markup Language because HTML is not written as plain text. It is marked up in the form of HTML elements called &#39;tags.&#39; Tags are denoted by <code>&lt;</code> followed by <code>&gt;</code>. Below is the most basic HTML document we can create (except for the comments that we&#39;ve added in to make things clearer).</p>
+<pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is also the most basic HTML document you can create. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+  &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;This is a basic HTML web page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><code>&lt;!DOCTYPE html&gt; &lt;html&gt;</code> is how you should start any HTML file. For every HTML tag that we open, there must be one that closes it. This way we can easily tell what information is contained in what tag, and it allows for easy nesting. The obvious drawback is that this is highly verbose. For example, <code>&lt;html&gt;</code> must eventually be closed by <code>&lt;/html&gt;</code>.</p>
+<p>Aside from the content rendered into the <em>body</em> of a web page, we often define more information about the site in the <code>&lt;head&gt;</code> tag like this:</p>
+<pre><code class="lang-html">&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+  &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<p>So now we&#39;ve specified the character set that the page uses - this is just to make sure the browser doesn&#39;t think that the page is in a language other than English. Then there&#39;s a description followed by the actual page title (this is what you see in the title bar of your browser). Finally, there&#39;s a tag where we&#39;ve linked this HTML file to a CSS document (the <code>href</code> component is how we tell the browser where to look for this file - it can be a path or a web address). This is how we add external CSS files to a web page - which we&#39;ll do soon enough, don&#39;t worry!</p>
+<p>Now let&#39;s get to the fun part - the <code>&lt;body&gt;</code> tag. This is where all the actual stuff that shows up on your web page goes. Let&#39;s try adding some information in.</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+  &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+  &lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+  &lt;p&gt;
+    Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+  &lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Let&#39;s look at this whole document now.</p>
+<pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&#39;t have any information about styles. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+    &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+    &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+    &lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+    &lt;p&gt;
+      Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Here are some more important HTML tags:</p>
+<ul>
+<li><code>&lt;a href=&quot;link here&quot;&gt;text for the link&lt;/a&gt;</code> - used to create links</li>
+<li><code>&lt;img src=&quot;path/link to image&quot; alt=&quot;text to show if image doesn&#39;t load&quot; /&gt;</code> - used to add images</li>
+<li><code>&lt;em&gt;text here&lt;/em&gt;</code> - used for italicising text</li>
+<li><code>&lt;strong&gt;text here&lt;/strong&gt;</code> - used to bold text</li>
+<li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> - used to start Unordered and Ordered Lists</li>
+<li><code>&lt;li&gt;Item here&lt;/li&gt;</code> - used to denote each item in a list</li>
+<li><code>&lt;script&gt; Code in here &lt;/script&gt;</code> - used to add non-HTML code such as Javascript to a page. We can (and should) instead add an <code>src</code> attribute to the <code>&lt;script&gt;</code> tag and link to an external Javascript file to keep our ccode clean and maintainable.</li>
+<li><code>&lt;div&gt;</code> - used to denote different divisions within your HTML body. Possibly one of the most useful tags when it comes to layout and styling in CSS.</li>
+<li><code>&lt;textarea&gt;</code> - used to display text and/or allow the user to type text.</li>
+<li><code>&lt;button&gt;</code> - used to add buttons to a given page.</li>
+</ul>
+<p>Now let&#39;s add a little more functionality to our chat app. First, we&#39;ll add a way for the users to enter messages and then we&#39;ll allow them to submit those messages to the server.</p>
+<pre><code class="lang-html">&lt;!-- This, is a comment that does not affect any of the code we write. We can use this to leave notes in the code for our future selves, or for others reading our code. This is a slightly more compelte HTML document, but still doesn&#39;t have any information about styles. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+    &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+    &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+    &lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+    &lt;p&gt;
+      Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to fininsh the paragraph.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Let&#39;s continue building our chat app. We&#39;ll first add a textarea element to input text, and apply some CSS properties to make it look pretty!
+    &lt;/p&gt;
+    &lt;form&gt;
+    &lt;textarea placeholder=&quot;Write your message here...&quot; required&gt;&lt;/textarea&gt;
+    &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;h3&gt; Messages &lt;/h3&gt;
+    &lt;p&gt;
+        Here&#39;s a list of all the messages so far:
+    &lt;/p&gt;
+      &lt;ul&gt;
+      &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div><span id="sec-3-2" class="anchor"></span><div id="" class="subgroup"><h3>Umm, what about CSS?</h3><p>Almost there! Before we can decide how elements on the page should look, we actually need a way to find and identify these elements. That HTML document we said was almost complete, well, it was almost complete. The last thing we need to add in are identifiers as <em>tag attributes</em>, and these fall into two categories:</p>
+<ul>
+<li>IDs: These are unique to an individual HTML element. Once I give an ID to an element, it cannot be used again. Think Penn IDs. Every element can be assigned an ID. For example: <code>&lt;p id=&quot;workshop-introduction&quot;&gt;</code>.</li>
+<li>Classes: These are reusable names that we give to ranges of elements. This allows us to do things like apply the same style (say, a font) to multiple elements that have the same class, rather than writing the same thing over and over. For example, we can create multiple paragraphs with the same class: <code>&lt;p class=&quot;red-text&quot;&gt; This text is theoretically red.&lt;/p&gt; &lt;p class=&quot;red-text&quot;&gt; This text is also presumably red. &lt;/p&gt;</code>.</li>
+</ul>
+<p>Now we have a way to decide on styles. Let&#39;s look at that HTML document again:</p>
+<pre><code class="lang-html">&lt;!-- This is a slightly more complete HTML document, but with no styles as yet. --&gt;
+&lt;!-- This, by the way, is a comment that does not affect any of the code we write.
+ We can use this to leave notes in the code for our future selves,
+ or for others reading our code --&gt;
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;Code Weekend Sample Page&quot;&gt;
+        &lt;title&gt;Code Weekend Sample Page&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Code Weekend Sample Page&lt;/h1&gt;
+        &lt;h2&gt;Here&#39;s a smaller heading. We can go all the way down to H6&lt;/h2&gt;
+        &lt;!-- Here&#39;s a comment that will not show up on the actual page --&gt;
+        &lt;p class=&quot;red-text&quot; id=&quot;intro-para&quot;&gt;
+            Here&#39;s a paragraph of text. You can fill in whatever you feel like in here and just end this tag to finish the paragraph.
+        &lt;/p&gt;
+        &lt;p&gt;
+        Let&#39;s continue building our chat app. We&#39;ll first add a textarea element to input text, and apply some CSS properties to make it look pretty!
+        &lt;/p&gt;
+    &lt;ul id=&quot;messages&quot;&gt;&lt;/ul&gt;
+    &lt;form id=&quot;message-form&quot; action=&quot;#&quot;&gt;
+    &lt;textarea id=&quot;message&quot; placeholder=&quot;Write your message here...&quot; required&gt;&lt;/textarea&gt;
+    &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;h3&gt; Messages &lt;/h3&gt;
+    &lt;p&gt;
+        Here&#39;s a list of all the messages so far:
+    &lt;/p&gt;
+      &lt;ul class=&quot;messages&quot;&gt;
+      &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>We can also just change the style for an entire kind of element. So we could just change how all the <code>p</code> or <code>&lt;h1&gt;</code> tags look.</p>
+</div><span id="sec-3-3" class="anchor"></span><div id="" class="subgroup"><h3>Let's take a look at what CSS looks like!</h3><pre><code class="lang-css">html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+}
+
+body {
+  padding: 50px 100px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: lighter;
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+#intro-para {
+  border: 2px solid black;
+}
+
+#message-form {
+  margin-top: 1.5rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  min-height: 100px;
+  margin-bottom: 1rem;
+}
+
+button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.6rem 1em;
+  color: white;
+  margin: 0 0.25rem;
+  text-align: center;
+  background: #BABABA;
+  border-bottom: 1px solid #999;
+}
+
+button[type=&quot;submit&quot;] {
+  background: #86b32d;
+  border-bottom: 1px solid #5d7d1f;
+}
+
+button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+</code></pre>
+<p>As you can see, there are small differences in syntax depending on the selector (whether you&#39;re changing all instances of an element, instances of a class, or just a single element by ID) but it&#39;s mostly quite simple. How did we know what attributes to change? Google! If you&#39;re ever confused about what a certain attribute does, and what possible values the attribute can take - do not hesitate to use Google or an HTML/CSS reference website.</p>
+<p>You should look through the resources at the top of this section for more information on HTML tags and CSS attributes, but the best thing to do is to Google things you&#39;re looking to do and look for the <a href="http://www.w3schools.com">W3C Schools</a> or <a href="http://stackoverflow.com">Stack Overflow</a> results.</p>
+<p>A great reference for all things HTML/CSS/JavaScript is the Mozilla Developer Reference.</p>
+<p><img src="assets/img/stack_overflow.png" alt="Stack Overflow"></p>
+<p>You can download the <a href="assets/files/sample.html">HTML</a> and <a href="assets/files/main.css">CSS</a> files we looked at here by following these links.</p>
+<p>A great way to play around with CSS styles is to right-click on this page in Chrome, Firefox or Safari (<a href="http://www.howtogeek.com/howto/32372/htg-explains-why-do-so-many-geeks-hate-internet-explorer/">Here&#39;s why you should avoid Internet Explorer</a>), choose Inspect Element, and try changing the CSS styles on the right-hand side of the Developer Tools window after selecting the HTML element you want to edit.</p>
+<p><img src="assets/img/sass-debugging.png" alt="Chrome dev tools"></p>
+<p>Now, our chat app looks a little more complete. Now let&#39;s learn how to actually make this app work!</p>
+</div><span id="sec-3-4" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project so far:</p>
+<p><a href="assets/files/html-css.zip">HTML and CSS .zip</a></p>
+</div></section><span id="sec-4" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Javascript</h2></div><span id="sec-4-1" class="anchor"></span><div id="" class="subgroup"><h3>Javascript, finally!</h3><p>Javascript is a scripting language and has very little to do with Java other than vaguely resembling it in syntax. By scripting language, we mean that there are no Classes, Interfaces, Main Methods or any of the regular Object-Oriented Programming that we&#39;re (maybe) used to. You just write code in a file, link to it in your HTML and it executes.</p>
+</div><span id="sec-4-2" class="anchor"></span><div id="" class="subgroup"><h3>In fact...</h3><p><img src="assets/img/javascript_meme.jpg" alt="Javascript meme"></p>
+<p>Javascript is a very easy language to pick up. There are no types, Javascript just guesses (mostly well) what you want. This means that writing <code>var x = 5</code> will create a variable named <code>x</code> of the type <em>Integer</em> with the value of <code>5</code>. Writing <code>var x = &quot;5&quot;</code> would create a <em>String</em> named <code>x</code> with the string <code>5</code> as its value.</p>
+<p>The most common types we will use are Strings (just text, such as &quot;This is some text&quot;), Integers (just plain old numbers, like 5, 6, 42, or 314596 - no decimal points though), Doubles (decimal points are now allowed, so 3.14 is good to go) and Booleans (True or False). There are a whole bunch of functions and operators built into Javascript that we can use on these data-types. You should search for them as and when you need to do something that you think is fairly common (you&#39;ll be surprised by how common almost everything you want to do is).</p>
+<p>Here&#39;s some sample Javascript code:</p>
+<pre><code class="lang-javascript">var myVariable = &quot;Code Weekend&quot;;
+alert (&quot;I&#39;m learning the basics of JavaScript at &quot; + myVariable);
+</code></pre>
+<p>This creates an alert (a pop-up on a web page) that says &quot;I&#39;m learning the basics of JavaScript at Code Weekend&quot;. There was absolutely no reason to use a variable here other than to show how we can use it. Here&#39;s a function in Javascript that squares a number:</p>
+<pre><code class="lang-javascript">function square (number) {
+  return number * number;
+}
+
+// This is a single line comment that does not need to be closed.
+
+/* This is a multi-line comment
+that only ends when we do this */
+
+console.log(square (5)); // This prints the result to the javascript console in your browser&#39;s (Chrome or Firefox) developer tools.
+
+// We can also write the above function as the following:
+var square = function (number) {
+  return number * number;
+}
+
+// Here&#39;s an anonymous function that calculates the square of 5:
+(function (number) {
+  return number*number;
+}) (5);
+
+// In that case, we were executing the anonymous function immediately, but we don&#39;t have to always do that:
+function idPlusString (number) {
+  var cube = number * number * number;
+  return function (name) {
+    return &quot;Hi &quot;+ name + &quot;. &quot; + &quot;Your ID is &quot; + cube + &quot;.&quot;;
+  }
+}
+// This returns a function that you can add a string to. If you don&#39;t understand this last function, it&#39;s okay.
+</code></pre>
+<p>Javascript mainly works on Objects and Arrays to store and access data.</p>
+<pre><code class="lang-javascript">// Here&#39;s an Object that contains an array
+var myDetails = {
+  &#39;name&#39; : &quot;Mark Gates&quot;,
+  &#39;age&#39; : 24,
+  &#39;interests&#39;: [&#39;Figure Skating&#39;, &#39;Javascript&#39;, &#39;Tennis&#39;, &#39;EDM&#39;]
+}
+
+console.log(myDetails.name); // prints the name property of the object, ie, &#39;Mark Gates&#39;
+
+console.log(myDetails.interests[1]); // prints &#39;Javascript&#39; (array positions start from 0!) to the console
+</code></pre>
+<p>Objects are essentially key-value pairs. We can access to values easily using the notation <code>object.key</code>.</p>
+<p>If you haven&#39;t noticed yet, we end almost every line (or more specifically, every command) with a semicolon. It&#39;s okay if you end every line with one, it&#39;s better to err on the side of more rather than less, but you can get away with leaving off the semicolons after function definitions and pretty much everything that ends in curly braces (<code>}</code>).</p>
+<p><img src="assets/img/semicolons.jpg" alt="Semicolons are death"></p>
+<p><em>JSON (Javascript Object Notation)</em> is the data format of the internet. This is what is used to send data that is not HTML/CSS/JS across the internet. That could range from search results to login sessions. Another commonly used format is XML, but that is slowly being replaced everywhere by JSON. JSON is very simple to understand because every JSON file is simply one Javascript Object. It uses key-value pairs and Arrays to liberally to store information. Let&#39;s look at an example of a JSON file:</p>
+<pre><code class="lang-json">{
+  &quot;employees&quot;:[
+    {
+      &quot;firstName&quot;:&quot;John&quot;, 
+      &quot;lastName&quot;:&quot;Doe&quot;
+    }, 
+    {
+      &quot;firstName&quot;:&quot;Anna&quot;, 
+      &quot;lastName&quot;:&quot;Smith&quot;
+    },
+    {
+      &quot;firstName&quot;:&quot;Peter&quot;, 
+      &quot;lastName&quot;:&quot;Jones&quot;
+    }
+  ],
+  &quot;company&quot; : &quot;ABC Holdings&quot;,
+  &quot;lastUpdated&quot; : &quot;September 6th&quot;
+}
+</code></pre>
+<p>It&#39;s exactly like a Javascript Object, and that&#39;s because that&#39;s exactly what it is. Just for kicks, let&#39;s compare this to XML:</p>
+<pre><code class="lang-xml">&lt;employees&gt;
+  &lt;employee&gt;
+    &lt;firstName&gt;John&lt;/firstName&gt; 
+    &lt;lastName&gt;Doe&lt;/lastName&gt;
+  &lt;/employee&gt;
+  &lt;employee&gt;
+    &lt;firstName&gt;Anna&lt;/firstName&gt; 
+    &lt;lastName&gt;Smith&lt;/lastName&gt;
+  &lt;/employee&gt;
+  &lt;employee&gt;
+    &lt;firstName&gt;Peter&lt;/firstName&gt; 
+    &lt;lastName&gt;Jones&lt;/lastName&gt;
+  &lt;/employee&gt;
+&lt;/employees&gt;
+&lt;company&gt;ABC Holdings&lt;/company&gt;
+&lt;lastUpdated&gt;September 6th&lt;/lastUpdated&gt;
+</code></pre>
+<p>So much better isn&#39;t it! JSON is way more readable and saves you the trouble of having to close every tag you open. Now imagine this on the scale of thousands of search results. JSON makes your life much easier, and websites much faster.</p>
+<p>And that covers the basics of HTML, CSS, and JavaScript. Naturally, there&#39;s a lot more we could go into depth about for each of them, but we&#39;ve found that it&#39;s best to learn by experimenting and trying out things on your own, using the resources listed at the start of this session. But before we get to that, let&#39;s not forget the pertinent question:</p>
+</div><span id="sec-4-3" class="anchor"></span><div id="" class="subgroup"><h3>JQuery</h3><p>Javascript is pretty cool on its own.</p>
+<p>But it&#39;s cooler with external libraries.</p>
+<p>One of the most popular third-party JS libraries is
+<a href="https://jquery.com/">jQuery</a>. jQuery&#39;s a pretty full-featured set of tools,
+but, at its core, it&#39;s an easy way of manipulating HTML on a page.</p>
+<p>Let&#39;s look at how that works.</p>
+<h2 id="first-things-first-let-s-import-some-code-">First things first, let&#39;s import some code!</h2>
+<p>Before we can use JQuery, we&#39;re going to have to download JQuery and make sure
+our program knows how to access it. Head to the JQuery website linked above and
+head over to the download tab. Once there, you should find JQuery 2.x available
+for download. If your computer doesn&#39;t download the file and displays text 
+instead, don&#39;t worry and just copy and paste the contents of the file into a 
+new text file that you call jquery.js. Go to the <code>client</code> directory of your
+project, create a new directory named <code>js</code>, and place the file within it. This
+is not a required directory, but this is just for the program to look nice. Now
+you should have a file <code>client/js/jquery.js</code>.</p>
+<p>Once we have done this, we have to let the program know where JQuery is located.
+This is fairly easy, and can be done by adding something like &#39;&lt;script src=&#39;&#39;</p>
+<blockquote>
+<p></script>&#39; however, inside of the single quotes, instead we are going to place
+the location of our file. JQuery is a tool or a script, and what the script tag
+does is it lets us know the location of these tools. In our case, the full line
+should look something like: &#39;<script src="js/jquery.js"></script>&#39;.</p>
+</blockquote>
+<h2 id="now-lets-use-it-">Now Let&#39;s Use It!!!</h2>
+<p>Recall HTML elements have various tags. Something like
+<code>&lt;h1 style=&quot;color: red;&quot; id=&quot;first-big-line&quot;&gt;Hello world!&lt;/h1&gt;</code> makes use of
+various HTML tags. Namely, it has an <code>id</code> and a <code>style</code> tag. In
+Javascript, you can use some of these tags to &quot;select&quot; an HTML element. For 
+instance, if you wanted to select this element, you could type
+<code>document.getElementById(&quot;first-big-line&quot;)</code>. That&#39;s a bit of a mouthful, isn&#39;t
+it?</p>
+<p>jQuery makes it way easier. The above <code>&lt;h1&gt;</code> can be selected with jQuery by
+simply typing <code>$(&#39;#first_big_line&#39;)</code>. The <code>#</code> refers to the fact that we&#39;re
+selecting by <code>id</code> (just like how, in CSS, you reference an <code>id</code> with <code>#</code>)
+There are some very neat functions built 
+into jQuery as well. Say I wanted to get the text from my &quot;first-big-line&quot;
+header. I can simply do the following.</p>
+<pre><code class="lang-javascript">var header_text = $(&#39;#first-big-line&#39;).text();
+console.log(header_text);
+</code></pre>
+<p>This will print the text inside the header to your Chrome console 
+(Option + Command + J on Mac).</p>
+<p>Now, how do we use jQuery in an actual project? Let&#39;s make a new file in our
+<code>client/js/</code> directory. Call it <code>jquery-client.js</code>.</p>
+<p>In <code>client/index.html</code> we&#39;ll need to link this new Javascript file. At the
+bottom of the body, below where you linked <code>jquery.js</code>, we&#39;ll link another
+script. It&#39;s as easy as:</p>
+<pre><code class="lang-html">&lt;script src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-client.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Now, open up <code>client/js/jquery-client.js</code>. It&#39;s time to code.</p>
+<p><img src="assets/img/yolo_swag.gif" alt="YOLO swag"></p>
+<p>Okay so now that we have a basic setup of all your files. Let&#39;s break down what
+you need to do when processing a message. Recall that our messages will be stored
+in a JSON object with just the text itself. No sort of styling. We need to create
+chat boxes for every message that comes in. jQuery has a neat function <code>appendTo()</code>
+that takes HTML as its one argument. It is formatted in the following manner:</p>
+<pre><code class="lang-javascript">$(&#39;selector&#39;).appendTo(&#39;&lt;SOME HTML TAG HERE&gt;blah&lt;/SOME HTML TAG HERE&gt;&#39;);
+</code></pre>
+<p>Like the name suggests, it <em>appends</em> HTML code to the element you have selected.
+In the main part of our website that contains the messages, we can <em>append</em>
+formatted messages. </p>
+<p>Also, another neat thing is that you can assign variables to functions
+(think of it as naming a function for use later). Let&#39;s do that now.</p>
+<pre><code class="lang-javascript">var infoColor = &#39;#888888&#39;;
+var errorColor = &#39;red&#39;;
+var messageColor = &#39;#000000&#39;;
+var nameColor = &#39;blue&#39;;
+
+var formatMessage = function(user, message) {
+  return &#39;&lt;span style=&quot;color: &#39; + nameColor + &#39;&quot;&gt;&#39; + user + &#39;&lt;/span&gt;&#39; +
+    &#39;: &#39; + message;
+};
+</code></pre>
+<p>Let&#39;s break this piece of code down. We are assigning a variable to a function
+that has two parameters: the sender username, and the set <code>nameColor</code> color. 
+This will go ahead and put a username before every message. 
+We can go ahead and call this with simply by doing <code>formatMessage(param1,param2)</code>
+where <code>param1</code> corresponds to the <code>user</code> and <code>param2</code> corresponds to <code>message</code>.
+Pretty Dank amirite? Let&#39;s move on to the next piece of code. </p>
+<pre><code class="lang-javascript">var postMessage = function (color, contents) {
+  console.log(&#39;Error: jQuery not ready yet&#39;);
+};
+
+$(function() {
+  postMessage = function(color, contents) {
+    $(&#39;&lt;li&gt;&lt;span style=&quot;color: &#39; + color + &#39;&quot;&gt;&#39; 
+        + contents + &#39;&lt;/span&gt;&lt;/li&gt;&#39;).hide().appendTo(&#39;#messages&#39;).fadeIn(200);
+  };
+
+  $(&#39;#message-form&#39;).submit(function (event) {
+    event.preventDefault();
+
+    //client side messaging only
+    postMessage(&#39;black&#39;, formatMessage(&#39;Me&#39;, $(&#39;#message&#39;).val()));
+    $(&#39;#message&#39;).val(&#39;&#39;);
+  });
+});
+</code></pre>
+<p>Wait, you might be thinking, what the heck is <code>$(function() { ...</code>? That looks
+so confusing! You&#39;re right. It is confusing. Sorry.</p>
+<p>One downside to jQuery is the need to initialize the library before we can use
+it. To handle that, jQuery exposes a <code>$()</code> method that is passed a function as
+the parameter. A function as a parameter? That&#39;s preposterous!</p>
+<p>Nah, it&#39;s not. It&#39;s Javascript. You&#39;d learn this more fully in CIS120, but the
+general gist is pretty simple: Functions in Javascript are treated just like
+variables. So, the <code>$(function param)</code> function takes a function as a parameter
+and then,
+when jQuery is initialized, calls that function. Take, as an example, the code</p>
+<pre><code class="lang-javascript">$(function () {
+    alert(&quot;HELLO WORLD&quot;);
+});
+</code></pre>
+<p>All that&#39;s doing is saying &quot;Hey jQuery! When you&#39;re ready, call this function
+that does <code>alert(&quot;Hello world&quot;);</code>. The code above is just a more complicated
+version of that. It says, jQuery, when you&#39;re ready, do this:</p>
+<pre><code class="lang-javascript">// ... continued from above
+  postMessage = function(color, contents) {
+    $(&#39;&lt;li&gt;&lt;span style=&quot;color: &#39; + color + &#39;&quot;&gt;&#39; 
+    + contents + &#39;&lt;/span&gt;&lt;/li&gt;&#39;).hide().appendTo(&#39;#messages&#39;).fadeIn(200);
+  };
+
+  $(&#39;#message-form&#39;).submit(function (event) {
+    event.preventDefault();
+
+    //client side messaging only
+    postMessage(&#39;black&#39;, formatMessage(&#39;Me&#39;, $(&#39;#message&#39;).val()));
+    $(&#39;#message&#39;).val(&#39;&#39;);
+  });
+// ... and so on
+</code></pre>
+<p>What&#39;s going on here? Well, a couple things.</p>
+<p>First, we define that pesky <code>postMessage</code> function. This function uses jQuery
+to append a new message (defined by <code>color</code> and message <code>contents</code>) to the
+screen. Look at the line</p>
+<pre><code class="lang-javascript">$(&#39;&lt;li&gt;&lt;span style=&quot;color: &#39; + color + &#39;&quot;&gt;&#39; 
+    + contents + &#39;&lt;/span&gt;&lt;/li&gt;&#39;).hide().appendTo(&#39;#messages&#39;).fadeIn(200);
+</code></pre>
+<p>Let&#39;s expand that out and see what&#39;s happening:</p>
+<pre><code class="lang-javascript">$(&#39;&lt;li&gt;&lt;span style=&quot;color: &#39; + color + &#39;&quot;&gt;&#39; + contents + &#39;&lt;/span&gt;&lt;/li&gt;&#39;)
+    .hide() 
+    .appendTo(&#39;#messages&#39;)
+    .fadeIn(200);
+</code></pre>
+<p>We &quot;select&quot; a virtual element (it doesn&#39;t exist yet), hide it, append it to
+the <code>#messages</code> element, and then animate its fade in. That&#39;s some pretty
+intermediate jQuery right there. We first &quot;hide&quot; the text (make its visibility 0,
+but add it to the page), then append it to the messages, and finally go ahead and
+fade in the message from transparent to visible in 200 milliseconds (note most
+Javascript timestamps are in milliseconds).</p>
+<p>Next, we define an <code>event</code> for when the message form is submitted:</p>
+<pre><code class="lang-javascript">$(&#39;#message-form&#39;).submit(function (event) {
+    event.preventDefault();
+
+    //client side messaging only
+    postMessage(&#39;black&#39;, formatMessage(&#39;Me&#39;, $(&#39;#message&#39;).val()));
+    $(&#39;#message&#39;).val(&#39;&#39;);
+});
+</code></pre>
+<p>This snippet does a few things. <code>event.preventDefault()</code> cancels the default
+web browser form-submit behavior. Then, we use that <code>postMessage</code> function to
+post a message the screen. Finally, we do <code>$(&#39;#message&#39;).val(&#39;&#39;);</code> to reset the
+contents of the form (overwriting the <code>val</code> of the text field to an empty string
+<code>&#39;&#39;</code>).</p>
+<p>And that&#39;s that.</p>
+<p>Open up the page again. Try typing. Click send message. If everything worked,
+you should see jQuery working to push your messages to the screen.</p>
+<p>If that&#39;s not happening, blame Devesh.</p>
+</div><span id="sec-4-4" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
+<p><a href="assets/files/jquery.zip">Javascript and JQuery .zip</a></p>
+</div></section><span id="sec-5" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> The Server</h2></div><span id="sec-5-1" class="anchor"></span><div id="" class="subgroup"><h3>Node</h3><p>Node.js is, at its core, an environment for using Javascript to program web
+servers. Because some people like Javascript, and because we all think PHP
+sucks, the Internet, in general, seems to think Node is pretty cool. So, while we
+could feasibly use <a href="https://golang.org/">any</a> <a href="https://secure.php.net/">number</a>
+of <a href="https://www.python.org/">different</a> <a href="https://www.java.com/en/">languages</a> to
+make the back-end of our chat client, today the focus will be on Node.</p>
+<p><img src="assets/img/yo-iojs-i-love-you-and-imma-let-you-finish-but-nodejs-is-the-only-real-dev-language.jpg" alt="... Some people like node"></p>
+<p>Again, some of us seem to think its cool. Hopefully, by the end of this, you&#39;ll
+see why.</p>
+<p>First things first, let&#39;s install Node. Instructions for installing depend on
+your operating system, so keep scrolling until you find the right directions.</p>
+<h4 id="mac">Mac</h4>
+<p>The easiest way to install Node is through Homebrew, a package manager for OSX.
+Sometimes Homebrew is already installed on your computer, and sometimes you need
+to install it. Bring up a terminal window and type <code>brew install node</code>. When it
+finishes, it might show you a few commands you need to run in Terminal. Run
+those commands and you&#39;re set!</p>
+<p>If instead of that command terminal got angry and said it doesn&#39;t know what
+<code>brew</code> is, it means you don&#39;t have Homebrew. No worries. Let&#39;s install Homebrew
+by typing this into the terminal:</p>
+<p><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</code></p>
+<p>If Homebrew installs successfully, try <code>brew install node</code> again. If that still
+doesn&#39;t work, try Googling the error text and looking for solutions. If that
+doesn&#39;t work, look around and ask a mentor to help.</p>
+<p>If Homebrew is causing too many problems then just try the installer
+<a href="https://nodejs.org/download/">here</a>. You can also install NodeJS using Fink
+(<code>fink install nodejs</code>) or MacPorts(<code>port install nodejs</code>).</p>
+<h4 id="windows">Windows</h4>
+<p>It&#39;s easy to get Node.js set up with a Windows machine:</p>
+<ol>
+<li><p>Download the .msi file from <a href="http://nodejs.org/download/">here</a></p>
+</li>
+<li><p>Use the Windows installer to get it set up.</p>
+</li>
+</ol>
+<h4 id="linux">Linux</h4>
+<p>There are about a million different ways to install things on various
+Linux-based operating systems. Go to <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">this
+link</a>
+for a full list.</p>
+<p>All set? Let&#39;s get started.</p>
+<h3 id="what-does-server-side-really-mean-">What does server-side really mean?</h3>
+<p>Till now, we&#39;ve dealt with HTML, CSS, and JavaScript. These are the files that
+a server send over the internet to your browser when your browser tries to
+navigate to that website. However, as we saw in the last workshop, these files
+aren&#39;t intelligent, they simply display information that is entered into them.</p>
+<p>So real web apps (anything more complicated than a personal landing page) have
+servers that use some boilerplate <em>static files</em> (i.e. HTML, CSS and JavaScript)
+and do their own logic to fill them in with real, intelligent information (the
+difference between a recipe that you can write down once - you can make it as
+fancy as you want but it&#39;s static and won&#39;t change - and something that displays
+the weight of the person eating all that food in real time - dynamic, because
+this would change depending on who the person was and when they check this).
+These servers can be written in many languages, right from C to Java to Python
+or even Assembly language if you wanted to. In this workshop, we’re going to use
+NodeJS, that allows us to use JavaScript to write our server-side code, even
+though JavaScript was initially designed to run only inside the web browser and
+not on servers.</p>
+<p>We usually have servers to do the thinking, databases to store the information
+and static files to display this information in the user’s web browser. Node.JS 
+is a very common JavaScript-based web framework. Node is a framework that lets
+us write our own servers in JavaScript to run on our machines. Node is great
+because it has modules, which are bits of code other people have already written
+that can easily be added to give new functionality to your app. NodeJS has the
+most modules of most modern web frameworks, 3 parts come together to form the
+core of any website. Often, websites also use APIs (basically a way for websites
+to talk to each other) to make their websites more dynamic or to pull in
+information from other websites.</p>
+<h3 id="what-is-a-nodejs-app-">What is a NodeJS app?</h3>
+<p>Node is a very common JavaScript-based web framework. Node is a framework that
+lets us write our own servers in JavaScript to run on our machines. Node is
+great because it has modules, which are bits of code other people have already
+written that can easily be added to give new functionality to your app. NodeJS
+has the most <em>modules</em> of most modern web frameworks, and that’s part of what
+makes it really great for writing web apps fast.</p>
+<p>Now that you know a bit about Node, let&#39;s jump in and explore the different
+components of our Node app.</p>
+</div><span id="sec-5-2" class="anchor"></span><div id="" class="subgroup"><h3>Package.json</h3><p>The first bit of the Node app is purely logistical. A <code>package.json</code> is
+a standardized JSON file containing all the pertinent information about this
+app. It&#39;s fairly readable and contains information about the authors, app
+version, and versions of Node modules used.</p>
+<p>For this bit, you&#39;ll want to hop into the <code>server</code> folder in your main project
+directory and create a <code>package.json</code>. Yours should look something like this</p>
+<pre><code class="lang-json">{
+  &quot;name&quot;: &quot;chat-server&quot;, // module name
+  &quot;private&quot;: true, // keeps this app private
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A chat server built for Code Weekend Fall 2018&quot;,
+  &quot;main&quot;: &quot;server.js&quot;,
+  &quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;^4.13.3&quot;,
+    &quot;giphy-api&quot;: &quot;^1.1.11&quot;,
+    &quot;moniker&quot;: &quot;^0.1.2&quot;,
+    &quot;socket.io&quot;: &quot;^1.3.7&quot;,
+    &quot;underscore&quot;: &quot;^1.8.3&quot;
+  }
+}
+</code></pre>
+<p>You&#39;ll notice a couple important things here. Chiefly, you&#39;ll see that list of
+<code>dependencies</code>. That list specifies all the different external node modules
+we&#39;ll be relying on in our app. We have 5 dependencies here, since we&#39;re going
+to, when everything is all set and done, use 5 external packages.</p>
+<p>When you&#39;re done making that file, open up a terminal window, navigate to the
+<code>server</code> folder and type <code>npm install</code>. This&#39;ll read your <code>package.json</code> and
+download all the necessary dependencies. You&#39;ll notice you now have a folder
+called <code>node_modules</code>. That&#39;s where Node houses the code for all of these
+dependencies.</p>
+<p>Once that&#39;s all set we&#39;re ready to keep going.</p>
+</div><span id="sec-5-3" class="anchor"></span><div id="" class="subgroup"><h3>Socket.io</h3><p>We&#39;re almost ready to start writing our Node app. Before that, however, a quick
+interjection to introduce <a href="http://socket.io/">Socket.io</a>.</p>
+<p>Socket.io is a widely used Node module for handling <a href="https://en.wikipedia.org/wiki/WebSocket">web
+sockets</a>. The WebSocket protocol is,
+according to Wikipedia, a means of providing full-duplex communication over
+a single TCP connection. For our purposes, it boils down into a set of rules
+that allow web browsers to communicate in real time with web servers over HTTP.</p>
+<p>Many web servers in the real world have the main task of getting HTTP requests
+(the kinds your browser sends whenever you enter an address in your address bar)
+and streaming responses in the form of web pages. Later, in workshop 4, we&#39;ll
+use Express to serve the web pages in our <code>client</code> folder exactly like that. For
+now, though, we can just open our <code>client/index.html</code> file in a browser.</p>
+<p>In the end, the interesting part of our application is going to be how those
+client files communicate with our Node app via these WebSockets.</p>
+<p>Socket.io does some really cool work to abstract the WebSocket protocol. It
+creates a common language that you&#39;ll see in the next few sections for handling
+these real-time connections on both the client and server. The essence of the
+communication is very simple. Using javascript, we can define (1) a set of rules
+for responding to messages, likely creating different rules for differently
+labeled messages, and (2) we can imperatively emit messages from the client
+(called a socket in Socket.io terms) to the server or from the server to any
+particular socket.</p>
+<p>That means this section of the tutorial will focus on two different areas of
+work. In the <code>server</code> folder, we&#39;re going to be building a <code>server.js</code> file that
+we can run using Node. This&#39;ll act as our Socket.io server, handling connections
+and streaming important information like chat messages. In the <code>client/js</code>
+folder, we&#39;ll be building a new <code>.js</code> file, <code>socket-client.js</code>, which will
+handle the client-side communication with the server.</p>
+<p>If you&#39;ve taken CIS120, or have some similar experience, you might be able to
+use this description to start envisioning how we might implement the model for
+our chat server. If not, don&#39;t worry. Once we start coding everything should
+become more clear.</p>
+</div><span id="sec-5-4" class="anchor"></span><div id="" class="subgroup"><h3>server.js</h3><p>Let&#39;s start with a super simple server set up.</p>
+<p>Head into the <code>server</code> folder and create a <code>server.js</code> file. This will contain
+the bulk of our Node code. To start, enter in this code:</p>
+<pre><code class="lang-javascript">&#39;use strict&#39;; // puts us in strict mode (js in hard mode)
+
+/* This sets up a pure socket-io server.
+ * Later in the guide we upgrade to a full
+ * express server, to serve files as well
+ * as handle websockets */
+let Server = require(&#39;socket.io&#39;);
+let io = Server(3000); //construct a server on port 3000
+console.log(&#39;SocketIO listening on port 3000&#39;);
+
+
+// SOCKET HANDLER FUNCTIONS
+io.on(&#39;connection&#39;, (socket) =&gt; {
+  // on &#39;connection&#39; we need to set some stuff up
+  console.log(&#39;Got a new connection&#39;);
+
+  // -----------------
+  //  SOCKET HANDLERS
+  // -----------------
+  /**
+   * Handles PING
+   * Responds with a PONG
+   */
+  socket.on(&#39;PING&#39;, (data) =&gt; {
+    console.log(&#39;Got a PING&#39;);
+
+    socket.emit(&#39;PONG&#39;); // reply with a PONG
+  });
+});
+</code></pre>
+<p>That&#39;s it! A fully functioning Socket.io server, just like that. Let&#39;s break
+down the code into its component parts.</p>
+<pre><code>&#39;use strict&#39;;
+</code></pre><p>This line isn&#39;t super important. It just signals to Node that we want to use
+Javascript in &#39;strict mode&#39;. For most of what we&#39;re doing, the differences
+between regular js and strict mode js are irrelevant, but it&#39;s generally
+considered a good practice to code in strict mode, as it causes Node to throw
+errors more easily and often helps keep code cleaner, more clear, and more
+&#39;strict&#39;.</p>
+<pre><code class="lang-javascript">let Server = require(&#39;socket.io&#39;);
+let io = Server(3000);
+</code></pre>
+<p>A few things of importance here. First, <code>let</code>. You haven&#39;t seen this before, but
+you&#39;ll see it a lot in the server side code. Recently, Javascript underwent
+a big revision, called ES6 (or ES2015, depending on who you ask). One such
+change is the addition of the <code>let</code> and <code>const</code> keyword. In ES5 Javascript, the
+only way to initialize a variable was using the <code>var</code> keyword. The <code>var</code> keyword
+worked but was generally regarded as very clumsy when it came to <a href="http://stackoverflow.com/questions/1047454/what-is-lexical-scope">lexical
+scoping</a>.
+Essentially, programmers were upset with how <code>var</code> sometimes behaved ambiguously
+compared to what they&#39;d expect in other modern languages. The <code>let</code> keyword is,
+in many ways, identical to <code>var</code> (so in this line we&#39;re creating a <code>Server</code> and
+<code>io</code> variables, as if we replaced <code>let</code> with <code>var</code>) but many developers suggest
+using it over <code>var</code> whenever you work in ES6, so that you never run into any of
+the strange quirks inherent in <code>var</code>s behavior. <code>const</code> is a similar keyword,
+except that, as you might expect, it creates an immutable identifier. If you&#39;ve
+taken CIS120, you&#39;re familiar with the power of immutability, so you know why it
+might be helpful to use <code>const</code>s. </p>
+<p>Regardless of the intricacies, the use of <code>let</code> here is mostly just to help
+familiarize you with ES6, since more and more Javascript will get the ES6
+treatment in times to come. It&#39;s not super important to know the differences,
+but I&#39;ll generally try to prefer ES6 idioms to ES5 code whenever possible in
+this <code>server.js</code>. Unfortunately, ES6 isn&#39;t fully adopted yet to many major web
+browsers so our client code will stay ES5 compliant. I&#39;ll try to note the
+differences whenever possible, but don&#39;t worry about getting too caught up in it
+all. If you get confused, feel free to ask for help. At least some of your
+mentors love talking about ES6, and so they&#39;d be glad to explain what&#39;s going
+on.</p>
+<p>Next, the Node <code>require</code> function. You&#39;ll see a more explicit use of this
+function later when we implement users, but, for now, just note that <code>require</code>
+is analogous to <code>import</code> in many languages. The <code>require</code> function will try to
+pull in an external module (either another file in your project or in this
+case, a separate dependency) for use by the current module. In this case, we use
+<code>require</code> to pull in the Socket.io library from our <code>node_modules</code> directory. We
+label that import <code>Server</code>. In this case, socket.io exposes itself as
+a function, so <code>Server</code> is now assigned to a function. In Socket.io, if the main
+function is passed a port number, it will return a running server, and so that&#39;s
+what we do with the second line. We set <code>io</code> to a server running on port <code>3000</code>.</p>
+<p>Finally, the socket code:</p>
+<pre><code class="lang-javascript">io.on(&#39;connection&#39;, (socket) =&gt; {
+  // on &#39;connection&#39; we need to set some stuff up
+  console.log(&#39;Got a new connection&#39;);
+
+  socket.on(&#39;PING&#39;, (data) =&gt; {
+    console.log(&#39;Got a PING&#39;);
+
+    socket.emit(&#39;PONG&#39;); // reply with a PONG
+  });
+});
+</code></pre>
+<p>What&#39;s this do? The <code>.on</code> function is one of the key components to Socket.io. In
+general, it takes the form of <code>.on(message:String, callback:Function)</code>.
+Essentially, this function defines a rule for handling a socket message. When
+the <code>message:String</code> is received, it tells Socket.io, the <code>callback:Function</code>
+should be executed. You&#39;ll notice functions in Javascript are first-class, we
+can pass them as parameters to other functions, just like variables. You&#39;ll also
+notice we&#39;re using the ES6 arrow notation here for our functions. In this case,
+<code>(socket) =&gt; { /* code */ }</code> is very similar to <code>function (socket) { /* code */
+}</code> except it behaves a bit differently with the <code>this</code> keyword and tends to look
+better for inline anonymous functions.</p>
+<p>Here we tell <code>io</code> (the socket server, remember?) to handle new <code>connection</code>
+messages with this anonymous function that takes the socket (client) as
+a parameter. The body of this function is the bulk of our Node app. It contains
+all the rules for handling individual <code>socket</code>s, as you&#39;ll see soon.</p>
+<p>Right now, the only <code>socket</code> message we handle is <code>PING</code>. We do this by using
+<code>socket.on(&#39;PING&#39;, (data) =&gt; { /* ... */ }</code>. You&#39;ll notice this anonymous
+function has <code>socket.emit(&#39;PONG&#39;);</code>. Essentially, what this does is tell
+Socket.io that, every time a socket sends a <code>PING</code> message, it should respond,
+emitting a <code>PONG</code> response back to the sending socket. By running <code>socket.emit</code>
+we restrict the response to just the socket of interest. If we&#39;d run <code>io.emit</code>
+instead, we would send the message to the entire server.</p>
+<p>That&#39;s our basic server. Now let&#39;s implement the basic client code, and then we
+can come back here and do some more complicated things.</p>
+</div><span id="sec-5-5" class="anchor"></span><div id="" class="subgroup"><h3>socket-client.js</h3><p>Let&#39;s link some more Javascript to our <code>client/index.html</code>. First, at the bottom
+of the <code>&lt;body&gt;</code>, where we currently link to the <code>jquery-client.js</code>, add these
+lines:</p>
+<pre><code class="lang-html">&lt;script src=&quot;https://cdn.socket.io/socket.io-1.3.7.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://underscorejs.org/underscore-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/socket-client.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>This markup will link 2 external libraries (Socket.io and Underscore) as well as
+a new local script, <code>js/socket-client.js</code>, where we&#39;ll handle all of our code
+for handling the connection to the server.</p>
+<p>Create <code>client/js/socket-client.js</code> now, and populate it with this code:</p>
+<pre><code class="lang-javascript">&#39;use strict&#39;;
+var socket = io(&#39;http://localhost:3000&#39;);
+
+socket.emit(&#39;PING&#39;);
+
+// ---------------------
+//    SOCKET HANDLERS
+// ---------------------
+socket.on(&#39;PONG&#39;, function (data) {
+  console.log(&#39;Got PONG!&#39;);
+});
+</code></pre>
+<p>What&#39;s it do? <code>var socket = io(&#39;http://localhost:3000&#39;);</code> uses Socket.io to
+connect to a server running on <code>localhost</code> (the current computer) on port 3000.
+That connects to our Node server. <code>socket.emit(&#39;PING&#39;);</code> sends the <code>PING</code>
+message, and, as before, <code>socket.on(&#39;PONG&#39;, function (data) { /* ... */ }</code>
+handles messages of type <code>PONG</code> coming from the server. Super simple, right?!</p>
+<p>Let&#39;s trying running it.</p>
+<p>First, open terminal, and <code>cd</code> to <code>server</code>. Then run <code>node server.js</code>. That&#39;ll
+start the server.</p>
+<p>Now, re-open <code>client/index.html</code> in your web browser. If you open up the
+developer console (right click -&gt; inspect element), you should see &quot;PONG&quot; in the
+console. Try typing <code>socket.emit(&#39;PING&#39;)</code> into the console, you should see
+&quot;PONG&quot; again. Congratulations! You have a working Node application!</p>
+</div><span id="sec-5-6" class="anchor"></span><div id="" class="subgroup"><h3>Functions</h3><p>It&#39;s almost time to write the rest of our chat handlers. First, we need a few
+more methods on the server side to help us in the implementation of our server
+model. This step will focus on those foundational helper methods, the next step
+will showcase creating a Node module (to represent each User) and then, once
+that&#39;s all set up, we&#39;ll be ready to write our socket handler functions.</p>
+<p>First, these helpers. Open up <code>server/server.js</code>.</p>
+<p>At the top of the file, below <code>&#39;use strict&#39;;</code> add this code:</p>
+<pre><code class="lang-javascript">// gets imports
+let Moniker = require(&#39;moniker&#39;);
+let _ = require(&#39;underscore&#39;);
+
+let users = {};
+</code></pre>
+<p>Here, we see more of the <code>require</code> syntax. This time, we&#39;re pulling in a couple
+other libraries. Moniker will help us randomly generate usernames (just to
+illustrate how easy it is to use external packages) and Underscore will provide
+some helpful functions for manipulating our data.</p>
+<p>For those CIS120 and up, check out the <a href="http://underscorejs.org/">Underscore
+docs</a>. You&#39;ll notice methods like <code>fold</code> and <code>map</code>.
+You can think of Underscore as a kind of standard library for functional
+programming in Javascript. It&#39;s super common to see in projects because it
+provides the kinds of functional patterns that keep code clean and simple.</p>
+<p>The final line, <code>let users = {};</code> initializes the <code>users</code> dictionary. Once we
+set up our <code>User</code> module/data type, this variable will function as a dictionary
+for our logged in users.</p>
+<p>Next, at the bottom of the file, add this code</p>
+<pre><code class="lang-javascript">// HELPER FUNCTIONS
+/**
+ * Sees if a name is unique
+ * @param name The name to check
+ * @return boolean true if the name is unique
+ */
+function isUniqueName(name) {
+  let names = _.mapObject(users, (user) =&gt; user.getName().toLowerCase());
+  return !_.contains(names, name.toLowerCase());
+}
+
+/**
+ * Gets a unique name using Moniker (showcases basic npm modules)
+ * @return String a unique name
+ */
+function getUniqueName() {
+  let name = Moniker.choose();
+  while(!isUniqueName(name)) {
+    name = Moniker.choose();
+  }
+
+  return name;
+}
+</code></pre>
+<p>These functions are clearly documented, so it&#39;s a good exercise to try to figure
+them out just by careful reading. If you can&#39;t, don&#39;t worry too much. They&#39;re
+mostly just showcasing usages of the <code>Moniker</code> and <code>Underscore</code> libraries that
+we just <code>require</code>d. <code>isUniqueName</code> checks to see if a name is unique. It does
+this in only 2 lines by utilizing some <code>Underscore</code> functions. First, we apply
+<code>_.mapObject</code> to the <code>users</code> dictionary. To those familiar, it should look at
+lot like the <code>map</code> function in many other languages. Essentially, it iterates
+through the <code>users</code> dictionary and, for each user, grabs the lowercase version
+of their name, putting all of the names into an array of <code>names</code>, before using
+<code>_.contains</code> to check if any of those <code>names</code> equals the <code>name</code> passed to the
+function.</p>
+<p>Next <code>getUniqueName</code> uses <code>Moniker</code> to choose a new name. We see <code>Moniker</code>
+exposes a <code>.choose()</code> function that just grabs a random name, and this function
+grabs random names until a unique one is found.</p>
+<p>If you&#39;re confused, grab a mentor now. Otherwise, we&#39;re going to move back into
+<code>client/js/socket-client.js</code> and add some useful helper functions there as
+well.</p>
+<h4 id="back-to-client-js-socket-client-js-">Back to <code>client/js/socket-client.js</code></h4>
+<p>First, let&#39;s add some code below <code>var socket = io(&#39;http://localhost:3000&#39;);</code>:</p>
+<pre><code class="lang-javascript">// stores user in channel. It&#39;s a dictionary with id as key
+// User objects have these fields
+//   - id     (user id)
+//   - name   (user name)
+//   - string (string representation)
+var users = {};
+
+// stores the client user id
+// hence users[me] or users.me gives the client user
+var me = socket.id;
+</code></pre>
+<p>As before, this sets up the <code>users</code> dictionary, this time on the client. As you
+see, the dictionary will map user <code>id</code>s to user objects. For client reference,
+we assign <code>var me</code> to the <code>socket.id</code>, so that we can simply use <code>user[me]</code> to
+refer to the current user.</p>
+<p>Now head to the bottom of <code>socket-client.js</code> and add this code:</p>
+<pre><code class="lang-javascript">// ---------------
+//     HELPERS
+// ---------------
+
+/**
+ * Showcases functional Javascript (_.fold) and ternary operators
+ * to get a list of the users currently chatting
+ */
+function getUserList() {
+  return _.reduce(users,
+                  function (rest, user) { 
+                    return (rest ? rest + &#39;, &#39; : &#39;&#39;) + user.name;
+                  },
+                  &#39;&#39;
+                 );
+}
+
+/**
+ * Sends a MESG to the server
+ */
+function sendMessage(message) {
+  socket.emit(&#39;MESG&#39;, {message: message});
+}
+</code></pre>
+<p>As before, <code>getUserList</code> uses some familiar <code>Underscore</code>. The <code>_.reduce</code> method
+is analogous to <code>fold</code> in many languages. Here, we <code>reduce</code> or <code>fold</code> on the
+<code>user</code> dictionary to get a string of comma-separated usernames.</p>
+<p>In <code>sendMessage</code> we use Socket.io to emit a <code>MESG</code>. You can see here how we add
+an extra parameter to the <code>socket.emit</code>. This lets us send a JSON object with
+our message, so the server has some data to handle. In this case, our JSON
+object is very simple: containing only a <code>message</code> field.</p>
+<p>You&#39;ll notice this code hasn&#39;t really done much so far. That&#39;s just because
+we&#39;re simply laying the groundwork for the rest of the code. In the next step,
+we&#39;ll create a User model, showing off Node&#39;s module pattern, and then we&#39;ll be
+ready to add some actual chat functionality!</p>
+</div><span id="sec-5-7" class="anchor"></span><div id="" class="subgroup"><h3>Users</h3><p>So now the <code>client</code> and <code>server</code> both have a <code>users</code> dictionary, but we still
+need to create a user object to populate those dictionaries. What better way to do
+that than with a Node module! This section of the workshop should help
+familiarize you with how Node handles external files. If you ever want to create
+bigger projects in Node, this information is a must, as trying to put thousands
+of lines of code into a single file is nothing but a recipe for disaster.</p>
+<p>Enter the module pattern. Node&#39;s answer for compartmentalizing code.</p>
+<p>The way it works is super simple. Every file in Node gets access to
+a <code>module.exports</code> object. Whenever <code>require</code> is called on a file, this
+<code>module.exports</code> object is what&#39;s returned. Consider a simple example. Say we
+make a file called <code>HelloWorld.js</code> in our <code>server</code> directory, and wrote this
+code:</p>
+<pre><code class="lang-javascript">module.exports = () =&gt; { console.log(&#39;Hello World!&#39;); }
+</code></pre>
+<p>Now, if we were to call <code>require(&#39;./HelloWorld&#39;);</code> from our <code>Server.js</code>, it
+would return a function that, when executed, would log &#39;Hello World!&#39; to the
+console. Some sample code might look like:</p>
+<pre><code class="lang-javascript">let funkyFunction = require(&#39;./HelloWorld&#39;);
+funkyFunction(); // prints Hello World!
+</code></pre>
+<p>Got it? Good. Now let&#39;s create an actual module. In the <code>server</code> directory, make
+a <code>user.js</code> file.</p>
+<p>This module&#39;s goal is the export a User object that we can use to represent
+users in the server model. There are many different object patterns in
+Javascript, and we could spend hours just discussing the differences between
+them. Although ES6 exposes a <code>class</code> syntax that Java developers would be
+familiar with, some devs <a href="https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf#.u2m9b66to">really don&#39;t like
+it</a>,
+so we&#39;re going to use something a bit different. Let&#39;s enter this code into
+<code>user.js</code>.</p>
+<pre><code class="lang-javascript">&#39;use strict&#39;
+
+module.exports = function(socket, name) {
+  /**
+   * User object factory
+   */
+  let self = {
+    setName(newName) {
+      name = newName;
+    },
+
+    getName() {
+      return name;
+    },
+
+    getId() {
+      return socket.id;
+    },
+
+    getSocket() {
+      // this is bad code
+      // it&#39;s not properly encapsulated
+      // sorry
+      return socket;
+    },
+
+    toString() {
+      return name + &#39; (id &#39; + self.getId() + &#39;)&#39;;
+    },
+
+    toObj() {
+      return {
+        name: self.getName(),
+        id: self.getId(),
+        string: self.toString()
+      }
+    }
+  };
+
+  return self;
+}
+</code></pre>
+<p>Again drawing on CIS120, this pattern will remind some of you of the object
+pattern used in the OCaml Paint Project. Essentially, we&#39;ve exported a <strong>factory
+function</strong> that returns an object literal with a bunch of relevant functions
+stored inside. <code>socket</code> and <code>name</code> get glued to the closure that&#39;s created, and
+the result is a User object factory. If none of that made sense, don&#39;t worry.
+Basically, we&#39;re exporting a function that takes a <code>socket</code> and a <code>name</code> as
+a parameter and returns a <code>User</code> object. Now let&#39;s head back to <code>server.js</code> and
+finish this implementation.</p>
+<p>First, beneath our imports (where we <code>require</code> Moniker and Underscore), add this
+line:</p>
+<pre><code class="lang-javascript">let User = require(&#39;./user&#39;);
+</code></pre>
+<p>Now, we&#39;re able to use <code>User(socket:Socket, name:String)</code> to create a new user
+as needed. Neat!</p>
+<p>We&#39;re almost ready to start implementing the socket handlers. First, let&#39;s
+revise our <code>io.on(&#39;connection&#39;, ...</code> function. I&#39;m going to get rid of the
+<code>PING</code> handler, but you can leave it in if you like.</p>
+<pre><code class="lang-javascript">// SOCKET HANDLER FUNCTIONS
+io.on(&#39;connection&#39;, (socket) =&gt; { 
+  // on &#39;connection&#39; we need to set some stuff up
+  let name = getUniqueName(); // get a unique name
+  let user = User(socket, name); // create a User (showcases the factory)
+  users[socket.id] = user; // adds user to dictionary
+  console.log(`:CONNECTION - ${user.toString()})`);
+
+  // emit the current state to the new user
+  socket.emit(&#39;STATE&#39;, {
+    users: _.mapObject(users, (user) =&gt; user.toObj()), //_ for functional js
+    user: user.getId()
+  });
+
+  // emit the new JOIN for all the other users
+  socket.broadcast.emit(&#39;JOINED&#39;, {user: users[socket.id].toObj()});
+
+  // -----------------
+  //  TODO: SOCKET HANDLERS
+  // -----------------
+
+
+  /** Handles diconnect */
+  socket.on(&#39;disconnect&#39;, () =&gt; {
+    let user = users[socket.id];
+    console.log(`:LEFT - ${user.toString()})`);
+    socket.broadcast.emit(&#39;LEFT&#39;, {user: user.toObj()});
+    delete users[socket.id];
+  });
+});
+</code></pre>
+<p>Alright, that leaves us with a fair amount to tease through before we move on.
+What does this code do?</p>
+<p>The first block adds our new user to the <code>users</code> dictionary.</p>
+<pre><code class="lang-javascript">let name = getUniqueName();
+let user = User(socket, name);
+users[socket.id] = user
+</code></pre>
+<p>These three lines (1) get a random name using our helper from the previous
+section, (2) create a new user using that name and the User model we just
+<code>require</code>d, and (3) adds that <code>user</code> to <code>users</code>, mapping it to the <code>id</code> of the
+<code>socket</code>. Now, <code>users[ID]</code> (where <code>ID</code> is the <code>id</code> of this <code>socket</code>) will always
+reference this user.</p>
+<p>Next, we emit the current state of the server to the user, so that they can
+update their own user list.</p>
+<pre><code class="lang-javascript">socket.emit(&#39;STATE&#39;, {
+  users: _.mapObject(users, (user) =&gt; user.toObj()), //_ for functional js
+  user: user.getId()
+});
+</code></pre>
+<p>This emits a <code>STATE</code> message to the socket (client), containing a JSON object
+that has, (1) a <code>users</code> field containing all the users currently connected and
+(2) a <code>user</code> field containing the <code>id</code> of this connection (so the socket knows
+who it is in the <code>users</code> list). We use <code>_.mapObject</code> again here to translate
+from the server-side User model to something simpler -- methods and closures
+don&#39;t transfer well over Socket.io, so we need to translate each user object
+into something a bit simpler.</p>
+<p>Next, we broadcast the <code>JOINED</code> event to the entire server so everyone else can
+know they have a new chatter</p>
+<pre><code class="lang-javascript">socket.broadcast.emit(&#39;JOINED&#39;, {user: users[socket.id].toObj()});
+</code></pre>
+<p>Finally, we need to add a little additional handler for Socket.io&#39;s built int
+<code>disconnect</code> event. When a user leaves, we must delete their entry in the
+<code>users</code> dictionary to free up their name for someone else.</p>
+<pre><code class="lang-javascript">socket.on(&#39;disconnect&#39;, () =&gt; {
+  let user = users[socket.id];
+  console.log(`:LEFT - ${user.toString()})`);
+  socket.broadcast.emit(&#39;LEFT&#39;, {user: user.toObj()});
+  delete users[socket.id];
+});
+</code></pre>
+<p>This code broadcasts the <code>LEFT</code> event to everyone so they can update their own
+user lists, and then <code>delete</code>s the user from the dictionary.</p>
+<p>With that, we&#39;re ready for the remainder of our chat implementation!</p>
+</div><span id="sec-5-8" class="anchor"></span><div id="" class="subgroup"><h3>The socket handler</h3><p>Let&#39;s start by adding the <code>MESG</code> handler to the <code>server.js</code> file.</p>
+<pre><code class="lang-javascript">// ---------------
+// SOCKET HANDLERS
+// ---------------
+</code></pre>
+<p>Add this code </p>
+<pre><code class="lang-javascript">  // -----------------
+  //  SOCKET HANDLERS
+  // -----------------
+  /**
+   * Handles MESG
+   * When a client tries to speak
+   * Data object contains:
+   *   - message
+   */
+  socket.on(&#39;MESG&#39;, (data) =&gt; {
+    let user = users[socket.id];
+    console.log(`:MESG - &lt;${user.getName()}&gt; ${data.message}`);
+
+    let message = {
+      from: user.getName(),
+      message: data.message
+    };
+
+    io.emit(&#39;MESG&#39;, message); // broadcast the message everywhere
+  });
+</code></pre>
+<p>This handler handles <code>MESG</code> events. We already know from <code>socket-client.js</code> what
+the <code>data</code> for these events should look like. There should be a single <code>message</code>
+field containing the content of the message. Using that, we parse the message,
+constructing a new object with two fields (one <code>from</code> for the name of the user
+who is sending the message and a second <code>message</code> again containing the message
+contents). Then, we <code>io.emit</code> a <code>MESG</code> containing that information back to the
+entire server (remember <code>socket.emit</code> is localized to one client, <code>io.emit</code>
+broadcasts to everyone), telling everyone the message.</p>
+<p>And, with that, our server is done. (I mean, we&#39;ll add some more functionality
+later, but this will finish putting it in a working state). If you have time,
+review the <code>server.js</code> code. If something doesn&#39;t make sense, ask a mentor. When
+you&#39;re all set, it&#39;s time to finish handling the events on the <code>client</code> side.
+Then we&#39;ll almost be done with the basic app.</p>
+<p>* A small side-note, I use ES6 template strings in this code. Regular string
+literals in Javascript can be composed with <code>&#39;</code>s or <code>&quot;</code>s. In ES6 (and hence in
+Node), we get a new method of composing template strings using ``s. One
+template string here looks like:</p>
+<pre><code>`:MESG - &lt;${user.getName()}&gt; ${data.message}`
+</code></pre><p>The <code>${}</code>s tags in the string are parsed as regular Javascript, making template
+strings a super convenient way to intersperse dynamic values in ES6 strings. In
+this instance, I use <code>${user.getName()}</code> and <code>${data.message}</code> to grab these
+values midstring, without needing to concatenate them as you typically would.</p>
+<h4 id="on-the-client">On the client</h4>
+<p>Open back up <code>client/js/socket-client.js</code>. Below <code>var me = socket.id</code>, you&#39;re
+going to want to add this code:</p>
+<pre><code class="lang-javascript">// ---------------------
+//    SOCKET HANDLERS
+// ---------------------
+
+/**
+ * Handles STATE events.
+ * These are fired when the client first connects,
+ * the data object contains:
+ *   - users (list of user objects currently connected)
+ *   - user  (the id of the current client)
+ */
+socket.on(&#39;STATE&#39;, function (data) {
+  users = data.users;
+  me = data.user;
+  console.log(&#39;:STATE - Users in channel: &#39; + getUserList());
+
+  postMessage(infoColor, &#39;Hello! You name is &#39; + users[me].name + &#39;. Currently,&#39;
+              + &#39; these people are chatting: &lt;br&gt;&#39; + getUserList());
+});
+
+/**
+ * Handles JOINED events.
+ * When a new user joins.
+ * Data object contains:
+ *   - user (the user that just joined)
+ */
+socket.on(&#39;JOINED&#39;, function (data) {
+  var user = data.user;
+  users[user.id] = user;
+  console.log(&#39;:JOINED - &#39; + user.string);
+
+  postMessage(infoColor, user.name + &#39; just joined the channel!&#39;);
+});
+
+/**
+ * Handles LEFT events.
+ * Deletes users who leave.
+ * Data object:
+ *   - user (the user that left)
+ */
+socket.on(&#39;LEFT&#39;, function (data) {
+  var user = data.user;
+  console.log(&#39;:LEFT - &#39; + user.string);
+  delete users[user.id];
+
+  postMessage(infoColor, user.name + &#39; just left :(&#39;);
+});
+
+/**
+ * Handles MESG events.
+ * For messages to the client.
+ * Data object:
+ *   - from    (the NAME of the user the message is from)
+ *   - message (the message)
+ */
+socket.on(&#39;MESG&#39;, function (data) {
+  console.log(&#39;:MSG - &lt;&#39; + data.from + &#39;&gt; &#39; + data.message);
+
+  postMessage(messageColor, formatMessage(data.from, data.message));
+});
+</code></pre>
+<p>By this point, the code in these events should look familiar. Read the commented
+documentation and try to reason through how they work.</p>
+<p>You&#39;ll note we use the <code>postMessage</code> function from <code>client/js/jquery-client.js</code>
+often as a means of posting text to the message box <code>&lt;ul&gt;</code>. Otherwise, some of
+these events appear very similar to their server sides counterparts. <code>JOINED</code>
+events should look very familiar to the basic <code>connection</code> events from before;
+we add the user to our <code>users</code> dictionary and alert the user that someone new
+has joined the channel. Likewise <code>LEFT</code> looks very similar to <code>disconnect</code>,
+going so far as to use almost identical <code>delete users[user.id]</code> syntax to
+cleanse the user from our <code>users</code> dictionary.</p>
+<p>Indeed, the only truly new event here is the <code>STATE</code> handler, which, if you
+remember from <code>server.js</code> is called when the client first connects to the
+server. <code>STATE</code> is passed a data object containing a specially formatted list of
+users, which we then print out to tell us who is currently in the channel.</p>
+<p>And that&#39;s it! An entire chat app (almost). If you run the server now (<code>node
+server.js</code> in the terminal from the <code>server</code> directory) and open <code>index.html</code> in
+multiple tabs/windows, you should be able to play with the basic functionality.</p>
+<p>Right click on the page, click <code>inspect element</code> and send messages by using the
+browser console: Try entering <code>sendMessage(&#39;Hello World!&#39;)</code>! If everything
+worked, the message should end up on all connected windows.</p>
+<p>Over course, requiring communication via the console does not make for a very
+user-friendly chat app. In the next (short) step, we&#39;ll dive back into
+<code>jquery-client.js</code>, make some very small changes to hook our existing UI up to
+this new functionality, and the result will be a fully functional chat client.</p>
+</div><span id="sec-5-9" class="anchor"></span><div id="" class="subgroup"><h3>Chat</h3><p>This is going to be super complicated. Ready?</p>
+<p>Open <code>client/js/jquery-client.js</code>. Delete this line:</p>
+<pre><code class="lang-javascript">postMessage(&#39;black&#39;, formatMessage(&#39;Me&#39;, $(&#39;#message&#39;).val()));
+</code></pre>
+<p>and replace it with this line:</p>
+<pre><code class="lang-javascript">sendMessage($(&#39;#message&#39;).val()); // server messaging
+</code></pre>
+<p>And that&#39;s it. Now, instead of just printing to the message box, submitting
+a new message uses our <code>sendMessage</code> functionality from <code>socket-client.js</code> to
+send a message to the server. That&#39;s it! Cool, right?</p>
+<h4 id="changing-names">Changing names</h4>
+<p>Of course, this chat server is kind of barebones. We&#39;ll use the rest of this
+section and one more section afterward to make it a bit cooler. First, we&#39;ll add
+functionality to change your name (because <code>Moniker</code> names are only so cool) and
+then we&#39;ll hook up to the Giphy API to let people post images and GIFs to the
+chat room. Ready? Let&#39;s go.</p>
+<p>First, names. Now that you know how the server and client can communicate and
+send messages, you should try to figure how we might use this protocol to change
+a user&#39;s name.</p>
+<p>The answer, of course, is another message handler. Now, we&#39;ll create a <code>NAME</code>
+message that can be sent back and forth between the server and client to update
+a user&#39;s name. We should probably model it like this:</p>
+<ol>
+<li><p>User 1 sends a <code>NAME</code> message to the server, requesting a particular name</p>
+</li>
+<li><p>The server validates the <code>data</code> of the <code>NAME</code> message, makes sure its
+a unique name, and, if it is, broadcasts a <code>NAME</code> message to the whole server
+to reflect the change.</p>
+</li>
+<li><p>All users receive a <code>NAME</code> message informing them of the update, and they
+change their <code>users</code> dictionaries accordingly.</p>
+</li>
+</ol>
+<p>We&#39;ll probably also want some kind of <code>ERROR</code> message the server can throw if
+the name is invalid, but we&#39;ll get there later.</p>
+<p>First, let&#39;s open up <code>server/server.js</code> and create the handler for this <code>NAME</code>
+message. It&#39;ll go below our handler for <code>MESG</code>, above the handler for
+<code>disconnect</code>, and it should look something like this:</p>
+<pre><code class="lang-javascript">  /**
+   * Handles NAME
+   * When a client tries to change their name
+   * Data object contains:
+   *   - newName
+   */
+  socket.on(&#39;NAME&#39;, (data) =&gt; {
+    let user = users[socket.id];
+    console.log(`:NAME - &lt;${user.getName()}&gt; wants to change name to`
+                + ` &lt;${data.newName}&gt;`);
+
+    if(isUniqueName(data.newName)) {
+      // success!
+      console.log(
+        `:NAME - &lt;${user.getName()}&gt; changed name to &lt;${data.newName}&gt;`);
+      user.setName(data.newName);
+      io.emit(&#39;NAME&#39;, {user: user.toObj()});
+    } else {
+      // failure :(
+      console.log(&#39;:ERROR - NON_UNIQUE_NAME&#39;);
+      socket.emit(&#39;ERROR&#39;, {message: &#39;NON_UNIQUE_NAME&#39;});
+    }
+  });
+</code></pre>
+<p>Try to parse this method yourself.</p>
+<p>First, we <code>let user</code> be the user from <code>users</code> that send the message. We then
+check to see if the requested name <code>isUnique</code>. If it is, we update <code>user</code>&#39;s name
+on the server and then <code>io.emit</code> the new <code>user</code> object to the whole server.
+We&#39;ll assume that, once we set it up, the <code>NAME</code> handler on the client knows how
+to handle this data.</p>
+<p>If the name isn&#39;t unique, we fail <code>:(</code> and <code>socket.emit</code> an <code>ERROR</code> message to
+the client that tried to update its name.</p>
+<p>Now, we&#39;ll open up <code>client/js/socket-client.js</code> and add the handlers to the
+client. First, we&#39;ll add a handler for the <code>NAME</code> message below the <code>MESG</code>
+handler. It should look something like this:</p>
+<pre><code class="lang-javascript">/**
+ * Handles NAME events.
+ * Updates a users name.
+ * Data object:
+ *   - user (the updated user object)
+ */
+socket.on(&#39;NAME&#39;, function (data) {
+  var user = data.user;
+  var old = users[user.id];
+  users[user.id] = user;
+
+  console.log(&#39;:NAME - &lt;&#39; + old.string + &#39;&gt; changed to &lt;&#39; + user.name + &#39;&gt;&#39;);
+
+  postMessage(infoColor,
+              &#39;&amp;lt;&#39; + old.name + &#39;&amp;gt; changed their name to &amp;lt;&#39; + user.name + &#39;&amp;gt;&#39;);
+});
+</code></pre>
+<p>As you can see, the function parses the <code>user</code> object in the received <code>data</code>
+object and uses it to update its client-sided dictionary of <code>users</code>. Then it
+<code>postMessage</code>s an update to the message box so the user knows what&#39;s happened.
+Nice and simple.</p>
+<p>Next, we&#39;ll add a handler for <code>ERROR</code>s below this <code>NAME</code> handler. It&#39;ll look
+very similar to our <code>MESG</code> handler, but it&#39;ll print an error in red.</p>
+<pre><code class="lang-javascript">/**
+ * Handles ERROR events.
+ * Data object:
+ *   - message
+ */
+socket.on(&#39;ERROR&#39;, function (data) {
+  console.log(&#39;:ERROR - &#39; + data.message);
+
+  postMessage(errorColor, &#39;ERROR: &#39; + data.message);
+});
+</code></pre>
+<p>Nice and simple.</p>
+<p>However, we still don&#39;t have a way to actually send the <code>NAME</code> change request
+from the client. For that, we&#39;ll have to add <strong>commands</strong>.</p>
+<h4 id="adding-commands">Adding Commands</h4>
+<p>In this case, we&#39;ll keep commands entirely in <code>socket-client.js</code>. For this,
+we&#39;ll start by updating the <code>sendMessage</code> helper to determine if a particular
+message is a command.</p>
+<pre><code class="lang-javascript">/**
+ * Sends a MESG to the server
+ */
+function sendMessage(message) {
+  // check if it&#39;s a command
+  if(message.substring(0,1) != &#39;/&#39;) {
+    socket.emit(&#39;MESG&#39;, {message: message});
+  } else {
+    // it&#39;s a command!
+    let params = message.substring(1).split(&#39; &#39;);
+    let cmd = params[0];
+
+    sendCommand(cmd, params);
+  }
+}
+</code></pre>
+<p>Here, we add an <code>if</code>/<code>else</code> block that checks if the first letter of a message
+is <code>/</code>. This&#39;ll signify our command. If you want, you can change <code>/</code> to
+something else, but I figured <code>/</code> is pretty standard for these things. If the
+<code>message</code> is a command, it parses the parameters into an array using standard
+Javascript and then called <code>sendCommand</code> on the result.</p>
+<p>Obviously, this isn&#39;t enough. We still need to write a <code>sendCommand</code> function
+that actually handles these commands. Let&#39;s do that now.</p>
+<pre><code class="lang-javascript">/**
+ * Handles commands
+ */
+function sendCommand(cmd, params) {
+  console.log(&#39;User attempted cmd &#39; + cmd);
+  console.log(&#39;Params: &#39; + params);
+
+  switch(cmd.toLowerCase()) {
+    case &#39;setname&#39;:
+      setName(params[1]);
+      break;
+
+    default:
+      postMessage(errorColor, &#39;ERROR: Invalid command &quot;&#39; + cmd + &#39;&quot;&#39;);
+  }
+
+}
+</code></pre>
+<p>Obviously, there&#39;s only one command at this point, so, for now, this function is
+simple. We do a switch statement on the <code>cmd</code> and if it is <code>setname</code> we know the
+user is trying to change their name. The last thing to do is to add a <code>setName</code>
+function to the bottom of the file that&#39;ll catch the program when it executes
+<code>setName(params[1]);</code>. That should look something like:</p>
+<pre><code class="lang-javascript">/**
+ * Sends a NAME message to the server
+ * changing this users name
+ */
+function setName(newName) {
+  socket.emit(&#39;NAME&#39;, {newName: newName});
+}
+</code></pre>
+<p>See? All <code>setName</code> needs to do is <code>socket.emit</code> a <code>NAME</code> message with a data
+object containing the <code>newName</code> field. Our methods on the server will handle the
+rest.</p>
+<p>If everything was done right, the commands should work now. Try opening up a few
+instances of the chat client (don&#39;t forget to run the server) and use `/setname</p>
+<p><newname>` to edit your name. Does it work? What happens if you enter an
+already-existing name? What happens if you type a valid command?</p>
+<p>Next up: One more command. Let&#39;s allow users to upload images.</p>
+</div><span id="sec-5-10" class="anchor"></span><div id="" class="subgroup"><h3>The Image Command</h3><p>Let&#39;s add a command to upload images from a URL.</p>
+<p>Again, we&#39;ll start in <code>server/server.js</code>, adding a handler for a new <code>IMG</code>
+message. Below the <code>NAME</code> handler, add this:</p>
+<pre><code class="lang-javascript">/**
+ * Sends an image (specified by a url) to
+ * all clients
+ * Data object contains:
+ *   - url
+ */
+socket.on(&#39;IMG&#39;, (data) =&gt; {
+  let user = users[socket.id];
+  console.log(`:IMG - &lt;${user.getName()}&gt; IMAGE @ ${data.url}`);
+
+  let message = {
+    from: user.getName(),
+    message: `&lt;img src=&quot;${data.url}&quot; class=&quot;message-image&quot;&gt;`
+  };
+
+  io.emit(&#39;MESG&#39;, message);
+});
+</code></pre>
+<p>As you can see, the <code>IMG</code> handler looks very similar to <code>MESG</code>&#39;s handler. The
+only difference is that, instead of the <code>message</code> content being text, it&#39;s HTML
+for an image. Then, to keep things super simple, we just <code>io.emit</code> the <code>message</code>
+as a <code>MESG</code>, which means the client already knows what to do when it receives
+the message!</p>
+<p>Finally, we open up <code>client/js/socket-client.js</code> to add support for this new
+command. At the top of the switch statement for the <code>sendCommand</code> function, add
+this block: </p>
+<pre><code class="lang-javascript">case &#39;image&#39;:
+  sendImage(params[1]);
+  break;
+</code></pre>
+<p>Next, let&#39;s write the <code>sendImage</code> function. Stick this at the bottom of the
+file:</p>
+<pre><code class="lang-javascript">/**
+ * Serves an image
+ */
+function sendImage(imgUrl) {
+  socket.emit(&#39;IMG&#39;, {url: imgUrl});
+}
+</code></pre>
+<p>Like with <code>setName</code>, this command just <code>socket.emit</code>s the necessary information
+to the server. That&#39;s it! Now run the server, open some clients, and try sending
+some images! Note that the command takes the shape of <code>/image
+http://example.com/image.png</code>.</p>
+<p>Next up: Express, Giphy, and Databases!</p>
+</div><span id="sec-5-11" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
+<p><a href="assets/files/node.zip">Socket.io .zip files</a></p>
+</div></section><span id="sec-6" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Express</h2></div><span id="sec-6-1" class="anchor"></span><div id="" class="subgroup"><h3>Express</h3><p><a href="http://expressjs.com/en/index.html">Express</a> is a web framework for NodeJS.</p>
+<p>Right now, our app is pretty cool. We have some static pages and a neat Node
+script that uses Socket.IO to handle back-and-forth chat messages with our
+server.</p>
+<p>But, in its current state, that isn&#39;t very useful. For example, if we just
+opened up a web browser and navigated to our Node server, we wouldn&#39;t see
+anything useful! Our server <em>functions</em>. It <em>knows</em> how to handle web sockets,
+but it doesn&#39;t yet know how to handle basic HTTP requests. So the server doesn&#39;t
+know how to handle arbitrary connections on the internet, which means it can&#39;t
+serve our web pages to clients by itself.</p>
+<p>That&#39;s where Express comes in. Node, on its own, has a pretty nice <code>HTTP</code>
+library for building <code>HTTP</code> servers, but Express massively simplified the
+project, which is why many large applications built with Node depend on Express
+to handle their HTTP routing. For this chat server, we&#39;re going to use Express
+to (1) serve our static pages (so, rather than clicking the <code>index.html</code> file we
+can just navigate to <code>localhost:3000</code> in the web browser) and (2) handle
+a simple route for Giphy integration.</p>
+<p>Before we actually build the meat of the Express application, I&#39;ll try to give
+a brief overview of what HTTP servers do. Realize this is oversimplified. It&#39;s
+meant to give an overview of web servers in the context of Express and Node, and
+if you&#39;re really interested in learning more, you should hit Google, Wikipedia,
+StackOverflow, and whatnot.</p>
+<p>HTTP servers respond to various kinds of HTTP requests. The most common kind of
+HTTP request you see on a daily basis are <code>GET</code> requests. Every time you open up
+<code>Generic Web Browser</code>, type a web address and hit enter, you&#39;re sending an HTTP
+<code>GET</code> request for some content online. Usually, the server will respond by
+streaming you a <code>.html</code> or <code>.php</code> or image file. Some services (like what we&#39;ll
+build today) can also respond to <code>GET</code> requests with <code>.json</code> files, or really
+any kind of data whatsoever. Sometimes the server will tag the response as being
+an error. You&#39;ve probably seen this before in some capacity or another; the most
+common error is, of course, error <code>404</code>.</p>
+<p>That said, my favorite error is still error <code>418</code>.</p>
+<p><img src="assets/img/error418_teapot.gif" alt="Error 418
+@ Google.com"></p>
+<p>(this is <a href="http://www.google.com/teapot">actually a thing</a>)</p>
+<p>HTTP servers can also respond to other kinds of requests. Although I&#39;ve never
+seen a server respond to an HTTP <code>BREW</code> request (that&#39;s where Error <code>418</code>
+usually occurs), other common request types include the <code>POST</code> for posting new
+data to a database (like creating a status update on Facebook) or <code>PUT</code> for
+putting an update to old data. There&#39;s even an HTTP <code>DELETE</code> request.</p>
+<p>Together, these kinds of requests are referred to as HTTP Verbs, and Express
+gives us a really nice interface for building different routes to handle these
+various verbs. In this workshop, we&#39;ll show the construction of a simple <code>GET</code>
+request handler, but you should be able to use that, along with this
+information, as a jumping off point for more complicated web applications.</p>
+<p>First off, let&#39;s set up our server to use Express.</p>
+</div><span id="sec-6-2" class="anchor"></span><div id="" class="subgroup"><h3>Express Server</h3><p>The first thing we need to do is swap out our pure Socket.IO server for an
+Express server. We&#39;ll then re-hook Socket.IO to utilize the Express server for
+WebSockets.</p>
+<p>To do that, delete this code</p>
+<pre><code class="lang-javascript">/* This sets up a pure socket-io server.
+ * Later in the guide we upgrade to a full
+ * express server */
+let Server = require(&#39;socket.io&#39;);
+let io = Server(3000); //construct a server on port 3000
+console.log(&#39;SocketIO listening on port 3000&#39;);
+</code></pre>
+<p>And replace it with the Express equivalent:</p>
+<pre><code class="lang-javascript">// sets up express
+let path = require(&#39;path&#39;);
+let express = require(&#39;express&#39;);
+
+let app = express();
+app.use(express.static(path.join(__dirname, &#39;../client&#39;)));
+
+// TODO: 404 error
+
+let server = app.listen(3000, () =&gt; {
+  console.log(&#39;Express server listening on port 3000&#39;);
+});
+
+let io = require(&#39;socket.io&#39;)(server);
+</code></pre>
+<p>Most of this is boilerplate, so what it does isn&#39;t super important. Essentially,
+we <code>require</code> in <code>path</code> (which helps parse file URIs) and <code>express</code> and then set
+up a new <code>app</code> by calling the <code>express()</code> function.</p>
+<p>Express apps tend to rely a lot on the <code>app.use</code> function in their
+initialization. <code>.use</code> lets us pass a function to Express which it&#39;ll use as
+&quot;middleware.&quot; In simple terms, if you pass a function to <code>app.use</code>, it&#39;ll be
+called every time Express gets a request. Here, we make sure our first
+middleware (middleware is called in order) is the build in <code>express.static</code>
+middleware. As its name implies, it&#39;s built for serving static files. Here, we
+tell it to serve statically the files in <code>../client</code> which, clearly, is where
+all our client files are.</p>
+<p>Usually, you&#39;d have a <code>public</code> folder sitting next to your <code>server.js</code>, but we
+don&#39;t need to restructure the project now just for that.</p>
+<p>Finally, we create a <code>server</code> that&#39;s simply the Express <code>app</code> listening on port
+3000, and then we pass that <code>server</code> to Socket.IO, initializing <code>io</code> to be
+a Socket.IO instance that runs on the Express server, rather than by itself.</p>
+<p>If we run this code, we should find that everything still works, but now,
+instead of having to open the <code>index.html</code> file manually, we can simply direct
+a web browser to <code>localhost:3000</code>.</p>
+<p>That, in essence, is Express.</p>
+<p>But Express can also do a lot more.</p>
+</div><span id="sec-6-3" class="anchor"></span><div id="" class="subgroup"><h3>Error 404</h3><p>For one thing, Express can serve <code>view</code>s. Views are like dynamically rendered
+HTML templates. So far, we&#39;ve only had experience with static HTML, but Express
+can be configured to use a view engine and serve a kind of dynamically compiled
+HTML. </p>
+<p>A common use case of this is in profile pages. Rather than create a static
+<code>.html</code> for every user, websites typically make a <code>profile</code> view that has
+placeholders for all the important information (like names and emails and
+whatnot) then, a view engine like <code>hjs</code> or <code>Jade</code> or <code>Jinja</code> (if you&#39;re using
+Python) will fill in the blanks in the template, sending the finished HTML file
+(with all the profile fields filled out) to the client.</p>
+<p>Here, we&#39;ll use the <code>hjs</code> templating language for a simple 404 page. First,
+replace <code>// TODO: 404 Error</code> with this code:</p>
+<pre><code class="lang-javascript">app.set(&#39;views&#39;, path.join(__dirname, &#39;views&#39;));
+app.set(&#39;view engine&#39;, &#39;hjs&#39;);
+
+// TODO: Routes
+
+// 404
+app.use( (req, res, next) =&gt; {
+  let err = new Error(&#39;Not found&#39;);
+  err.status = 404;
+  next(err);
+} );
+app.use( (err, req, res, next) =&gt; {
+  res.status(err.status || 500);
+  res.render(&#39;error&#39;, {
+    errorMessage: err.message,
+    error: err
+  });
+} );
+</code></pre>
+<p>This code configures our app to use the <code>views</code> directory as a container for
+its views, using <code>hjs</code> as the view engine.</p>
+<p>Then we add some more middleware. Because this middleware runs last, after
+everything else is attended to, it should only be reached if <strong>no other
+middleware knew how to handle the request</strong>. That means this middleware is
+executed only when the file searched for is invalid (which is why the
+middleware stack wasn&#39;t interrupted earlier, nothing knew how to handle the
+request). In cases like these, we can rather safely -- as we do here -- set the
+error code to <code>404</code> indicating the resource wasn&#39;t found. Then if all else
+fails and the request is unresolved, we render a simple template containing the
+error.</p>
+<p>The <code>res</code> (short for response) object in Express always has a <code>render</code> function
+that&#39;ll use the current view engine to render a <code>view</code>. In this case, we
+<code>res.render</code> the <code>error</code> view, passing it the error message in an object.</p>
+<p>Next, we need to create the <code>error</code> view. For this, first create
+a <code>server/views</code> folder to contain our views. Then, in that folder, create an
+<code>error.hjs</code> file. Note it&#39;s a <code>.hjs</code> and not a <code>.html</code> since this is
+a template. It will get resolved into HTML later.</p>
+<p>The contents of <code>error.hjs</code> should look like this:</p>
+<pre><code class="lang-javascript">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Error&lt;/title&gt;
+        &lt;link rel=&#39;stylesheet&#39; href=&#39;/css/main.css&#39; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;{{ errorMessage }}&lt;/h1&gt;
+            {{#error}}
+        &lt;h3&gt;{{ status }}&lt;/h3&gt;
+            &lt;pre&gt;{{ stack }}&lt;/pre&gt;
+        {{/error}}
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>It looks a lot like HTML. That&#39;s a cool thing about hjs. What differentiates hjs
+from HTML are those <code>{{ }}</code> blocks. These are placeholders for information. You
+see this template puts <code>{{ errorMessage }}</code> in the <code>&lt;h1&gt;</code> tag at the top of the
+page. It also uses <code>{{#error}}</code> to check if <code>error</code> is non-null, in which case
+everything between the <code>{{#error}}</code> and <code>{{/error}}</code> block is rendered (in this
+case it&#39;s a stack trace of the error).</p>
+<p>Obviously in a production application you wouldn&#39;t print the stack trace of an
+error, but for these purposes it might help us debug issues.</p>
+<p>Now, the web app should be mostly working. If you go to, for example
+<code>localhost:3000/not/a/real/page</code>, you should get an Error 404.</p>
+<p>Next up, routes.</p>
+</div><span id="sec-6-4" class="anchor"></span><div id="" class="subgroup"><h3>Giphy Route</h3><p>Another cool feature of Express is routing. You can think of a route as
+a definition for how the HTTP server should handle an HTTP request to a specific
+URL. For example, Google might have a route that handles <code>GET</code> requests to the
+url <code>google.com/search/&lt;query&gt;</code> where <code>&lt;query&gt;</code> is some arbitrary search term.
+Facebook might (but doesn&#39;t) have a route that handles <code>POST</code> requests to the
+url <code>facebook.com/status/new/&lt;status&gt;</code>, where <code>&lt;status&gt;</code> is the status update.
+Complicated production web applications have many many routes. Some will perform
+database manipulation. Others might act on the <code>res</code> (response) object to
+<code>res.render</code> a view, kind of like our <code>404</code> handler. Others still might <code>BREW</code>
+a cup of tea or return an error <code>418</code> if coffee were requested.</p>
+<p>For our purposes, we&#39;re going to stick to a simple HTTP <code>get</code> requests that uses
+the Giphy API to resolve a search term into a <code>.gif</code> (please pronounce <code>.gif</code>
+with a soft &#39;g&#39;, as in &#39;giraffe&#39;). </p>
+<p>First, open up <code>server/server.js</code> and replace <code>// TODO: Routes</code> with this code.</p>
+<pre><code class="lang-javascript">let routes = require(&#39;./routes&#39;);
+app.use(&#39;/&#39;, routes);
+</code></pre>
+<p>This code <code>require</code>s a new module (from <code>./routes.js</code>) and then tells Express to
+use this file whenever a request is made to a child of the <code>/</code> URL (so,
+essentially, any request). If we wanted to, we might <code>.use</code> different route
+files for different endpoints, like instead of having all handled at the <code>/</code>
+level, we might have one route handler that handles routes to <code>/user/</code> and
+another that handles routes to <code>/blog/</code>, etc. For now, though, we only have
+a single route, so this setup makes sense.</p>
+<p>To finalize the setup, we need to actually build our <code>routes.js</code> handler.
+Please create a <code>server/routes.js</code> file and fill it like this:</p>
+<pre><code class="lang-javascript">&#39;use strict&#39;;
+
+let giphy = require(&#39;giphy-api&#39;)();
+let express = require(&#39;express&#39;);
+let router = express.Router();
+
+router.get(&#39;/test&#39;, (req, res) =&gt; {
+  return res.send(&#39;Test route&#39;);
+});
+
+module.exports = router;
+</code></pre>
+<p>As you can see, this code does a couple things. It <code>require</code>s the <code>giphy-api</code>
+(we&#39;ll use that later) and then <code>require</code>s Express, grabbing Express&#39;s router.</p>
+<p>Then it builds on that router, using <code>router.get</code> to create a <code>/test</code> route.
+Indeed, we could just as easily used the <code>router.post</code> or <code>router.put</code>
+function, as Express&#39;s router is, again, built to handle all kinds of HTTP
+verbs (but since we&#39;re creating a simple endpoint, <code>router.get</code> is sufficient).</p>
+<p>This route is very simple. It responds to <code>GET</code> requests pointed at <code>/test</code>.
+When express gets a request like this, it calls the second parameter to the
+function, an anonymous function that takes a <code>req</code> (request) and <code>res</code>
+(response) as its parameters. The <code>req</code> contains all kinds of information about
+the request, we&#39;ll see how to use it later, while the <code>res</code> object contains
+functions to perform on the upcoming response. In this case, we return
+<code>res.send(&#39;Test route&#39;);</code> which just responds to the request with raw text. If
+we run the server now, and navigate to <code>localhost:3000/test</code>, we&#39;d see the
+words <code>Test route</code> on the screen. We could just as easily have set up the
+<code>res.send</code> to serve an HTML file or, if we wanted to be super fancy, we could
+have used <code>res.render</code> to render another view. But, for now, this is simple
+enough.</p>
+<p>Finally, the code does <code>module.exports = router</code>. Like in <code>user.js</code>, this
+export sets the result of <code>require(&#39;./routes&#39;)</code>. In this case, we set it to our
+<code>router</code>, so that Express can consume the routing information and handle the
+routes we define in this file.</p>
+<h4 id="but-what-about-giphy-">But what about Giphy?</h4>
+<p>Finally, we need to make a route for handling Giphy requests. Beneath the
+<code>test</code> route (but above the export), type this code:</p>
+<pre><code class="lang-javascript">router.get(&#39;/giphy/:fmt/:search&#39;, (req, res) =&gt; {
+  console.log(`Giphy search for term ${req.params.search}`);
+
+  giphy.random({
+    tag: req.params.search,
+    rating: &#39;g&#39;,
+    fmt: req.params.fmt
+  }, (err, result) =&gt; {
+    if(err) {
+      res.status(err.status || 500);
+      res.render(&#39;error&#39;, {
+        errorMessage: err.message,
+        error: err
+      });
+    }
+
+    res.send(result);
+  });
+});
+</code></pre>
+<p>This is, obviously, a more complicated route. In this case, we use route
+parameters, to parameterize the route. This route is thus built to handle
+<code>GET</code> requests pointed at <code>/giphy/&lt;fmt&gt;/&lt;search&gt;</code> (Express and many frameworks
+use <code>:variable</code> to define route parameters). This means we can put anything in
+the place of <code>:fmt</code> and <code>:search</code> and this route will still be used. We can then
+access what was put in those parameters by using the <code>req</code> object. Here, when
+we call the <code>giphy.random</code> function exposed by <code>giphy-api</code>, we pass it
+<code>req.params.search</code> as the tag (since that&#39;s what was put in <code>:search</code>) and
+<code>req.params.fmt</code> for the requested format of the result. Then, when the
+asynchronous call to Giphy is complete, we <code>res.send</code> the <code>result</code>. If there
+was an error, we <code>res.render</code> the error page.</p>
+<p>That&#39;s the complete server code. Try running the server and navigating to
+<code>localhost:3000/test</code> or, if you&#39;re feeling adventurous, go to
+<code>localhost:3000/giphy/html/nodejs</code>. The <code>html</code> part will tell Giphy we want an <code>html</code>
+response, and you can replace <code>nodejs</code> with whatever Giphy search term you
+want.</p>
+<p>I think that&#39;s pretty cool.</p>
+<p>Now let&#39;s head back into our client and set up a <code>/giphy</code> command.</p>
+<h4 id="final-notes-on-express">Final notes on Express</h4>
+<p>This has been a very brief overview of Express. The Express framework is very
+powerful and can be used to compose very complicated applications. I&#39;ve tried
+to overview the most important bits, from middleware to templating to routing.
+If you really want to keep building on these skills, you should find some
+Express tutorials online. You should find that you now have a good foundation
+to understand more complicated uses of the framework.</p>
+</div><span id="sec-6-5" class="anchor"></span><div id="" class="subgroup"><h3>Giphy AJAX</h3><blockquote>
+<p>Giphy AJAX</p>
+</blockquote>
+<p>That&#39;s surely a term that made no sense to anyone a decade ago.</p>
+<p>So we have a Giphy API exposed on our server. How do we access it? Well, with
+<a href="https://goo.gl/PXhMsS">AJAX</a> of course! AJAX stands for Asynchronous
+Javascript and XML and it&#39;s a very common protocol for sending HTTP requests
+using Javascript. Here, we&#39;ll create a <code>/giphy</code> command that uses AJAX to send
+a <code>GET</code> request to our server for the right Giphy image, and then we&#39;ll send
+that image using <code>sendImage</code>. Let&#39;s jump back into <code>client/js/socket-client.js</code>
+and see how that works.</p>
+<p>In <code>sendCommand</code>, beneath the <code>image</code> case (but still about the <code>default</code>
+case), you&#39;ll want to add this block:</p>
+<pre><code class="lang-javascript">case &#39;giphy&#39;:
+  params.shift();
+  var term = params.join(&#39; &#39;);
+  console.log(&#39;Giphy request of: &#39; + term);
+  $.ajax({
+    method: &quot;GET&quot;,
+    url: &quot;giphy/json/&quot; + term,
+  }).done(function (result) {
+    if(result.data.image_url == undefined) {
+      postMessage(errorColor, &#39;ERROR: No results for giphy search of &quot;&#39;
+                  + term + &#39;&quot;&#39;);
+    } else {
+      sendImage(result.data.image_url);
+    }
+  });
+
+  break;
+</code></pre>
+<p>This creates the <code>giphy</code> command. The bulk of the command work is done in this
+call to <code>$.ajax</code>. This is JQuery&#39;s built in AJAX handler. It&#39;s used by passing
+it an object with options. The options we use here are <code>method</code> (<code>GET</code>) and
+<code>url</code> (we want the <code>giphy/json/</code> endpoint since we want to retrieve json data,
+and we also pass it our search term). Then, we use <code>.done</code> on this AJAX
+request, which lets us pass a function to be called when the AJAX request is
+complete. We have to do this since AJAX is asynchronous, meaning it runs
+separately from the rest of our code.</p>
+<p>In that <code>.done</code> function, we handle the results of the request -- our callback
+takes a <code>result</code> parameter with those results. If no image is found, we return
+an error. If an image is found, we call <code>sendImage</code> on the
+<code>result.data.image_url</code> that was passed back.</p>
+<p>That should be it. If we run the server now and navigate to <code>localhost:3000</code>,
+we should be able to use all of our commands. <code>/giphy &lt;search terms&gt;</code> should
+result in <code>.gif</code>s, and everything should work as intended.</p>
+<p>There&#39;s obviously a lot more to be done with AJAX. If you want to learn more,
+the <a href="http://api.jquery.com/jquery.ajax/">jQuery docs</a> are a great place to
+start.</p>
+</div></section><span id="sec-6-6" class="anchor"></span><div id="" class="subgroup"><h3>Download</h3><p>Click the link below to download the project up to this point:</p>
+<p><a href="assets/files/express.zip">express .zip files</a></p>
+</div><span id="sec-7" class="anchor"></span><section id="" class="group"><div class="page-header"><h2> Databases</h2></div><span id="sec-7-1" class="anchor"></span><div id="" class="subgroup"><h3>Making information stick around</h3><p><img src="assets/img/Doge-Big-Data-Meme.jpg" alt="Such data, so big, wow"></p>
+<p>Topics to be covered:</p>
+<ul>
+<li>MongoDB: what it is, how to use it</li>
+<li>Why we pair MongoDB with Node and how</li>
+<li>Persisting our prior inputs</li>
+<li>Basic login authentication</li>
+</ul>
+</div><span id="sec-7-2" class="anchor"></span><div id="" class="subgroup"><h3>Installing MongoDB</h3><p>Let&#39;s move on to MongoDB. Mongo is a NoSQL Database; this means that rather than the data being stored in SQL tables, it&#39;s stored in some other format. In the case of MongoDB, the format is <strong>BSON</strong>, which is a more efficient way of storing JSON. Like other databases, we can store, search and access large amounts of data very quickly.</p>
+<p><em>Mac (OS X)</em></p>
+<p>Assuming you have Homebrew installed by this point you can just type <code>brew install mongodb</code> into terminal. Then, if all goes well, mongodb should show you three different commands that you should copy-paste into Terminal and run. Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
+<p>In case you run into any problems, <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/">look at MongoDB&#39;s full instructions page</a> and Google around before asking mentors for help.</p>
+<p><em>Windows</em></p>
+<p>MongoDB has a full set of instructions <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">here</a> that you should follow through till you can run MongoDB. You most probably just need to install the 64-bit version of MongoDB using their installation file. Before you run Mongo for the first time, you&#39;d need to run this from Command Prompt: <code>md \data\db</code>. Follow the instructions on the above link to run MongoDB.</p>
+<p><em>Linux</em></p>
+<p>Most Linux distros should have MongoDB available for installation in their respective package managers (<code>apt-get</code>, <code>yum</code>, <code>pacman</code>, etc.). Alternately, you can read the full instructions to install MongoDB on Ubuntu can be found <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">here</a>.</p>
+<p>Before you start mongo for the first time, run <code>mkdir -p /data/db</code> to create the default location for the database.</p>
+</div><span id="sec-7-3" class="anchor"></span><div id="" class="subgroup"><h3>Running MongoDB</h3><p>Just type in <code>mongod</code> into Terminal before you run your node app. On Windows, you might need to find and double-click the mongod.exe file (it\s probably at <code>C:\Program Files\MongoDB\bin\mongod.exe</code>). This fires up a Mongo instance that will run continuously in the background until it&#39;s killed. You only have to run this once to access Mongo databases on your local machine, from any application you make!</p>
+</div><span id="sec-7-4" class="anchor"></span><div id="" class="subgroup"><h3>Why use a database? And why MongoDB?</h3><p>Databases are these other kinds of web development things, separate from the web app itself, where all we do is store information. They make it easy to store and access large amounts of data very quickly and efficiently. All important information, such as user accounts, catalogs, prices, wall posts, tweets etc. across any major website, app or anything else that runs on computers probably stores this information in a database.</p>
+<p>You may be wondering why we should even consider databases when things like cookies exist. After all, we&#39;ve been using those so far, and they work great! However, there are several reasons why databases need to exist, and why, in some scenarios, are far better than cookies.</p>
+<p>Firstly, not all information that needs to be stored is relevant to your application&#39;s user, and they probably won&#39;t have enough space on their device to store all of it! Imagine what would happen if Amazon&#39;s entire online catalog was stored on your iPhone - it&#39;d be a miracle if it even manages to switch on. Cookies are better suited to storing information that&#39;s unique and relevant to a user&#39;s interaction with an application. It&#39;s also crucial that this information is something we can afford to lose - cookies can be deleted in an instance with the &#39;Clear Cookies&#39; option on all web browsers, and some users disable cookies entirely!</p>
+<p>Databases let us store information we need, and give us greater control over how it&#39;s handled. Modern databases can store huge amounts of data in several formats, allowing it to be structured, organized and quickly accessible. However, it does mean there&#39;s another layer of trouble that has to be tackled, in dealing with asking our databases for data and sending new data from our web application. This is usually done through <em>queries</em> to a database.</p>
+<p><img src="assets/img/query_oracle_db_meme.jpg" alt="Don&#39;t query SQL"></p>
+<p>That&#39;s why MongoDB is so popular with NodeJS. While it is still a separate database, all the data that you get from the database is in the 
+JSON format. That&#39;s right, just JSON! So when we ask Mongo for results, it can give us an array of javascript objects and that means we don&#39;t have to worry about the formatting of the data, cause it&#39;s already in the format we need! You might hear people argue for (or against) the use of MongoDB because it&#39;s a NoSQL database, but this has a lot of tradeoffs and there&#39;s no clear cut winner between SQL and NoSQL; they&#39;re each suited for different applications.</p>
+</div><span id="sec-7-5" class="anchor"></span><div id="" class="subgroup"><h3>How MongoDB structures your data</h3><p>Before we go into the details of accessing data stored in the database, let&#39;s first understand <em>how</em> it&#39;s stored. Within a single MongoDB instance (like the one we fired up with the <code>mongod</code> command), it&#39;s possible to create and work with several databases. Within each of these databases, we store data in <em>collections</em>. Each database holds a set of collections, which in turn store documents. Now, the documents are what we are already familiar with: JSON! In order to uniquely identify each of these documents, Mongo automatically generates a field, <code>_id</code>, populated with an <em>ObjectId</em>. We can find specific documents using either this field or any other, by generating a search query. (You can also explicitly set the <code>_id</code> field if you&#39;d like, although this isn&#39;t needed in most cases)</p>
+<p>Just to get this structure down, let&#39;s consider how Twitter data stored in Mongo might look. If we wanted to find the topmost trending hashtag in the United States, we&#39;d have to look in the <code>tweets</code> database, inside the <code>trending_hashtags</code> collection. Within this collection, there are undoubtedly hundreds of documents representing trending tweets in each country, and so we make a query to search for a Document with a field <code>country: &#39;United States&#39;</code>. Like magic, Mongo will return us this document and we can parse it to find a list of hashtags trending in the country, and subsequently the topmost one.</p>
+<p><img src="assets/img/trending.png" alt="Trending hashtags"></p>
+<p>It&#39;s an incredibly powerful method of storing and accessing your data and it often turns out to be surprisingly efficient as well.</p>
+</div><span id="sec-7-6" class="anchor"></span><div id="" class="subgroup"><h3>Integrating MongoDB into the web app</h3><p>We&#39;re now going to integrate a MongoDB database into our application to store data. As said earlier, Mongo is a document database (basically the entire thing is one JSON document) that provides high performance, high availability and easy scalability. The first thing we&#39;re going to have to do is add MongoDB to our dependencies list inside of <code>package.json</code>.</p>
+<blockquote>
+<p><em>TIP:</em> Think back to what the dependencies section of the <code>package.json</code> is for! Also, isn&#39;t it cool how all we need to do to include all the source code for handling MongoDB is by requiring a new module? This is one of the reasons why NodeJS is so popular!</p>
+</blockquote>
+<p>Add &quot;mongodb&quot;: &quot;~1.4.19&quot; to the dependencies object inside the JSON so that it looks a little like this.</p>
+<pre><code class="lang-json">{
+&quot;name&quot;: &quot;codeweekend&quot;,
+&quot;version&quot;: &quot;0.0.0&quot;,
+&quot;private&quot;: true,
+&quot;dependencies&quot;: {
+&quot;body-parser&quot;: &quot;~1.6.6&quot;,
+&quot;cookie-parser&quot;: &quot;~1.3.3&quot;,
+&quot;cookie-session&quot;: &quot;~1.0.2&quot;,
+&quot;express&quot;: &quot;~4.8.6&quot;,
+&quot;hjs&quot;: &quot;~0.0.6&quot;,
+&quot;mongodb&quot;: &quot;~1.4.19&quot;,
+&quot;request&quot;: &quot;^2.42.0&quot;
+}
+}
+</code></pre>
+<p>Now let&#39;s go to <code>routes.js</code>. Just like any other module, we first need to require <code>mongodb</code>:</p>
+<pre><code class="lang-javascript">var mongo = require(&#39;mongodb&#39;);
+</code></pre>
+<p>Next, let&#39;s add the following code to open a connection to the database:</p>
+<pre><code class="lang-javascript">var db;
+var MongoClient = mongo.MongoClient;
+var uri = &quot;mongodb://localhost:27017/codeweekend&quot;;
+
+MongoClient.connect(uri, function(err, database) {
+if (err) {
+throw err;
+}
+
+db = database;
+});
+</code></pre>
+<p>The first thing we need to do is declare a variable for the database to be stored in (we&#39;ll see why in a minute). We also store the MongoClient object in a helper variable.</p>
+<p>Next, we store the connection string in a variable. The connection string looks complicated, so let&#39;s break it down into parts. The beginning of any connection string for MongoDB is always &quot;mongodb://&quot;. Next, you put the server name, a colon, and then the port number to connect to. In our case, since we&#39;re running the database on the same computer as the Node app, we can just use &quot;localhost&quot;. The port number, 27017, is just the default port that <code>mongod</code> listens on; we didn&#39;t specify a different port when we ran <code>mongod</code> before, so that&#39;s where ours is listening. Finally, the string ends with a slash and then the name of the database to connect to. You can pick whatever name you&#39;d like for the database; it&#39;s just a way of identifying which one you want to connect to in the case that you have multiple databases on your server. This also demonstrates one of the really nice features of MongoDB; if you specify a database that doesn&#39;t already exist, then it will create it for you.</p>
+<p>Finally, we connect to the database using the connection string we&#39;ve defined. Notice that the function <code>connect</code> actually takes a callback rather than returning the database directly. This can be useful in some cases since it allows your app to do other things while waiting for the database to connect. In our case, though, we just want to be able to use the database outside the callback, which is why we declared the <code>db</code> variable earlier.</p>
+<p>In practice, you&#39;ll want to handle your errors more gracefully—meaning your app should do something other than just crash! For the purposes of this demo, though, it&#39;s simpler just to throw the error you get when trying to connect to the database. If your app crashes when you try to run it after adding this section, make sure that you have <code>mongod</code> running in an open terminal, and try again.</p>
+<p>We also need to make a helper variable for the function <code>ObjectID</code>:</p>
+<pre><code class="lang-javascript">var ObjectID = mongo.ObjectID;
+</code></pre>
+<p>Now, let&#39;s really get our hands messy and change our existing code to make use of the powerful database we now have access to.</p>
+<pre><code class="lang-javascript">router.get(&#39;/&#39;, function(req, res) {
+return res.render(&#39;index&#39;, {
+title: &#39;Codeweekend Notes&#39;,
+notes: req.session.notes
+});
+});
+</code></pre>
+<p>We already know that this stores our notes in a session. However, now, let&#39;s make use of that database we&#39;ve been talking about so much! With a little change in how we access and store the notes object, we can now route the entire process through our DB. We&#39;re going to make use of <em>queries</em> in the following sections, which are basically different ways of searching for data in a database. Naturally, each database allows you to create and use queries differently, and <a href="http://www.tutorialspoint.com/mongodb/mongodb_query_document.htm">this</a> is how Mongo does some of the more popular ones.</p>
+<p>First, assuming we&#39;ve stored all of the notes into a collection called <code>notes</code> inside of the <code>codeweekend</code> database, let&#39;s render all of the notes in the database for the route &#39;/&#39;.</p>
+<pre><code class="lang-javascript">var ObjectID = require(&#39;mongodb&#39;).ObjectID;
+
+router.get(&#39;/&#39;, function(req, res) {
+db.collection(&#39;notes&#39;).find().toArray(function(err, notes) {
+return res.render(&#39;index&#39;, {
+title: &#39;Codeweekend Notes&#39;,
+notes: notes
+});
+});
+});
+</code></pre>
+<p>The <code>find</code> query returns all the documents in the collection, and the <code>toArray</code> method parses them all into an array so that they can be rendered as before onto the page. It&#39;s important to note that <code>find</code> only returns all of the documents in the collection because we have not specified any search parameters - effectively marking all documents as acceptable for return. Neat!</p>
+<p>Next, let&#39;s return a specific document from the database, using the <code>_id</code> field in the document to identify it. Remember, this id is unique and only one document in the collection will match this query. See if you understand the code below.</p>
+<pre><code class="lang-javascript">router.get(&#39;/:id&#39;, function(req, res) {
+db.collection(&#39;notes&#39;).findOne({ _id: ObjectID(req.params.id) }, function(err, note) {
+if (err || !note) {
+req.session.message = &#39;That note does not exist!&#39;;
+return res.redirect(&#39;/&#39;);
+}
+
+return res.render(&#39;note&#39;, {
+note: note
+})
+});
+});
+</code></pre>
+<p>Before we do anything else, we&#39;ll briefly need to make a change in <code>index.hjs</code>. Before, we were using the <code>id</code> field for each note, but if you recall from before, MongoDB stores them in a field called <code>_id</code>. We&#39;ll need to change this in our links to be able to have them correctly send the user to the page for a given note. So let&#39;s change the section for the notes to the following:</p>
+<pre><code class="lang-html">{{#notes}}
+&lt;li&gt;&lt;a href=&#39;/{{ _id }}&#39;&gt;{{ title }}&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<p>Now that we can retrieve data from the database, let&#39;s also add new data to it! Let&#39;s go back to <code>routes.js</code> and change the final route. Using the <code>insert</code> method, we can quickly and easily add a new JSON document to the <code>notes</code> collection:</p>
+<pre><code class="lang-javascript">router.post(&#39;/create&#39;, function(req, res) {
+if (!(req.body.title &amp;&amp; req.body.body)) {
+req.session.message = &#39;You must provide a title and a body!&#39;;
+return res.redirect(&#39;/&#39;);
+}
+
+db.collection(&#39;notes&#39;).insert({
+title: req.body.title,
+body: req.body.body
+}, function(err, result) {
+req.session.message = &#39;Note created!&#39;;
+return res.redirect(&#39;/&#39;);
+});
+});
+
+module.exports = router;
+</code></pre>
+<p>Well, that wasn&#39;t so bad! In summary: every call to the database involves referencing our middleware <code>req.db</code> and using the collection (aka database) called &#39;notes&#39;. We then use different functions like <code>findOne</code>, that finds one result, or <code>find().toArray</code> that gives us an array of all results in the database. These functions also have callbacks that specify what to do in case there&#39;s an error, and if not, what to actually do with the result(s) we get. Who knows switching storage stage could be that easy?</p>
+</div><span id="sec-7-7" class="anchor"></span><div id="" class="subgroup"><h3>You're done!</h3><p>With that, you&#39;ve successfully integrated your first database into a Node application and it&#39;s up and running. Congratulations, you now have a fully functioning NodeJS app hooked up to MongoDB. </p>
+</div><span id="sec-7-8" class="anchor"></span><div id="" class="subgroup"><h3>Files</h3><p> <a href="https://github.com/dinphil/codeweekend-frontend">This repository</a> should give you the end product that you should have at the end of this workshop, and really, Code Weekend as a whole!</p>
+</div></section><span id="sec-8" class="anchor"></span><section id="" class="group"><div class="page-header"><h2>Thanks for being a part of Code Weekend!</h2></div><span id="sec-8-1" class="anchor"></span><div id="" class="subgroup"><h3>We hope you enjoyed these workshops as much as we enjoyed making them for you.</h3><p>Please do give members of the Code Weekend Team feedback on how to improve these workshops in the future and tell your friends what you&#39;ve learned!</p>
+</div></section></div>
+
+<nav class="col-xs-3 docs-sidebar">
+<ul class="nav nav-stacked" id="sidebar">
+<li><a href="#sec-1">Code Weekend Fall 2k18</a><ul class="nav nav-stacked"><li><a href="#sec-1-1">Building your first web app</a></li></ul></li><li><a href="#sec-2">Introduction to Web Development</a><ul class="nav nav-stacked"><li><a href="#sec-2-1">Web Pages and the basics of development</a></li><li><a href="#sec-2-2">An Introduction to (the) Life (of a Developer)</a></li><li><a href="#sec-2-3">An Introduction to the web</a></li><li><a href="#sec-2-4">What is Terminal&#47;Command Prompt?</a></li></ul></li><li><a href="#sec-3"> HTML&#47;CSS</a><ul class="nav nav-stacked"><li><a href="#sec-3-1">Simple HTML and CSS</a></li><li><a href="#sec-3-2">Umm, what about CSS?</a></li><li><a href="#sec-3-3">Let's take a look at what CSS looks like!</a></li><li><a href="#sec-3-4">Download</a></li></ul></li><li><a href="#sec-4"> Javascript</a><ul class="nav nav-stacked"><li><a href="#sec-4-1">Javscript, finally!</a></li><li><a href="#sec-4-2">In fact...</a></li><li><a href="#sec-4-3">JQuery</a></li><li><a href="#sec-4-4">Download</a></li></ul></li><li><a href="#sec-5"> The Server</a><ul class="nav nav-stacked"><li><a href="#sec-5-1">Node</a></li><li><a href="#sec-5-2">Package.json</a></li><li><a href="#sec-5-3">Socket.io</a></li><li><a href="#sec-5-4">server.js</a></li><li><a href="#sec-5-5">socket-client.js</a></li><li><a href="#sec-5-6">Functions</a></li><li><a href="#sec-5-7">Users</a></li><li><a href="#sec-5-8">The socket handler</a></li><li><a href="#sec-5-9">Chat</a></li><li><a href="#sec-5-10">The Image Command</a></li><li><a href="#sec-5-11">Download</a></li></ul></li><li><a href="#sec-6"> Express</a><ul class="nav nav-stacked"><li><a href="#sec-6-1">Express</a></li><li><a href="#sec-6-2">Express Server</a></li><li><a href="#sec-6-3">Error 404</a></li><li><a href="#sec-6-4">Giphy Route</a></li><li><a href="#sec-6-5">Giphy AJAX</a></li><li><a href="#sec-6-6">Download</a></li></ul></li><li><a href="#sec-7"> Databases</a><ul class="nav nav-stacked"><li><a href="#sec-7-1">Making information stick around</a></li><li><a href="#sec-7-2">Installing MongoDB</a></li><li><a href="#sec-7-3">Running MongoDB</a></li><li><a href="#sec-7-4">Why use a database? And why MongoDB?</a></li><li><a href="#sec-7-5">How MongoDB structures your data</a></li><li><a href="#sec-7-6">Integrating MongoDB into the web app</a></li><li><a href="#sec-7-7">You're done!</a></li><li><a href="#sec-7-8">Files</a></li></ul></li><li><a href="#sec-8">Thanks for being a part of Code Weekend!</a><ul class="nav nav-stacked"><li><a href="#sec-8-1">We hope you enjoyed these workshops as much as we enjoyed making them for you.</a></li></ul></li></ul>
+</nav>
+    </div>
+
+
+  <hr>
+
+  <footer>
+    <p>
+      &copy; <a href="http://css.cis.upenn.edu/">Computer Science Society</a> 2018.
+      Page created by <a href="http://hunterlightman.com/">Hunter Lightman</a>.
+      Workshops designed by the <a href="http://dinphil.github.io/">H&amp;L team.</a>
+    </p>
+  </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('body').scrollspy({
+          target: '.docs-sidebar',
+          offset: 10
+        });
+
+        $("#sidebar").affix({
+          offset: {
+            top: $('#jumbo').height() + $('#topnav').height()
+          }
+        });
+      });
+    </script>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>
